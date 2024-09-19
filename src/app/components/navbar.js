@@ -10,9 +10,9 @@ import {
   sidebarAnimationOpen,
 } from "./utility/animation.jsx";
 import Image from "next/image";
-import Logo from "../assets/logo/whiteLogo.png"
+import Logo from "../assets/logo/whiteLogo.png";
 
-export default function Navbar(){
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
@@ -36,8 +36,8 @@ export default function Navbar(){
     setIsProfileDropdownOpen(isHovering);
     setRotateProfileIcon(isHovering);
   };
-    return (
-        <nav className="relative flex justify-around items-center bg-transparent overflow-hidden z-50 xl:gap-[65rem] md:gap-0 sm:gap-0 lg:gap-[35rem]">
+  return (
+    <nav className="relative flex justify-around items-center bg-transparent overflow-hidden z-50 xl:gap-[65rem] md:gap-0 sm:gap-0 lg:gap-[35rem]">
       <Image
         src={Logo}
         alt="Logo"
@@ -80,7 +80,7 @@ export default function Navbar(){
                   >
                     Products{" "}
                     <MdArrowForwardIos
-                      className={`mt-2 transition-transform duration-300 ${
+                      className={`mt-1 transition-transform duration-300 ${
                         rotateProductsIcon ? "rotate-90" : "rotate-0"
                       }`}
                     />
@@ -169,5 +169,5 @@ export default function Navbar(){
         ></motion.div>
       )}
     </nav>
-    )
+  );
 }
