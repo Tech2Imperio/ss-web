@@ -51,12 +51,12 @@ export default function Navbar(){
           {isOpen ? (
             <>
               <IoClose className="text-2xl" />{" "}
-              <div className="hidden md:block">Close</div>
+              {/* <div className="hidden md:block">Close</div> */}
             </>
           ) : (
             <>
               <GiHamburgerMenu className="text-2xl" />
-              <div className="hidden md:block">Menu</div>
+              {/* <div className="hidden md:block">Menu</div> */}
             </>
           )}
         </button>
