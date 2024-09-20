@@ -10,7 +10,7 @@ import {
   sidebarAnimationOpen,
 } from "./utility/animation.jsx";
 import Image from "next/image";
-import Logo from "../assets/logo/whiteLogo.png";
+import Logo from "../assets/logo/whiteLogo.webp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -298,7 +298,7 @@ export default function Navbar() {
       ) : (
         <motion.div
           {...sidebarAnimationClose()}
-          className="fixed top-0 left-0 w-full h-full bg-gray-800 opacity-65 text-white"
+          className="fixed top-0 left-0 w-full h-full bg-black opacity-80 text-white"
         ></motion.div>
       )}
     </nav>
