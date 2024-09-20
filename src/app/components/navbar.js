@@ -10,7 +10,7 @@ import {
   sidebarAnimationOpen,
 } from "./utility/animation.jsx";
 import Image from "next/image";
-import Logo from "../assets/logo/whiteLogo.png";
+import Logo from "../assets/logo/whiteLogo.webp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,7 +64,7 @@ export default function Navbar() {
       {isOpen ? (
         <motion.div
           {...sidebarAnimationOpen()}
-          className="fixed top-[4rem] left-0 w-full h-auto bg-gray-800 opacity-65 text-white overflow-hidden lg:h-full"
+          className="fixed top-20 left-0 w-full h-auto bg-black opacity-80  overflow-hidden lg:h-full"
         >
           <div className="p-4 flex flex-col">
             <div className="flex flex-col my-10">
@@ -90,7 +90,7 @@ export default function Navbar() {
                 ].map((item, index) => (
                   <li
                     key={index}
-                    className="p-3 text-2xl flex items-center justify-center"
+                    className="p-3 text-2xl flex items-center justify-center text-white"
                   >
                     {item}
                   </li>
@@ -165,7 +165,7 @@ export default function Navbar() {
       ) : (
         <motion.div
           {...sidebarAnimationClose()}
-          className="fixed top-0 left-0 w-full h-full bg-gray-800 opacity-65 text-white"
+          className="fixed top-0 left-0 w-full h-full bg-black opacity-80 text-white"
         ></motion.div>
       )}
     </nav>
