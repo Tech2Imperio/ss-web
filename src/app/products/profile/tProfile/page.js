@@ -287,8 +287,8 @@ import Image from "next/image";
 import wallImg from "../../../assets/product/profile/T_profile/wall.webp";
 // import upofile from "../../../assets/product/profile/U_profile/Uprofile.webp";
 import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";
-import bg from "../../../assets/product/profile/T_profile/bg.webp"
-import { useInView } from 'react-intersection-observer';
+import bg from "../../../assets/product/profile/T_profile/bg.webp";
+import { useInView } from "react-intersection-observer";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
@@ -330,7 +330,7 @@ const page = () => {
       image: "/img/related-product5.jpg",
     },
   ];
-  
+
   const { ref: card1Ref, inView: card1InView } = useInView({
     triggerOnce: true, // Animates only once
     threshold: 0.1, // 10% of the card needs to be visible to trigger the animation
@@ -348,134 +348,175 @@ const page = () => {
 
   return (
     <section className=" ">
-   <div className="relative">
-  <Image className="h-[20rem] w-full object-cover" src={bg} alt="T Profile" />
-  <h1 className="absolute inset-0 flex items-center justify-center text-[#335c98] text-5xl font-bold">
-    T Profile
-  </h1>
-</div>
+      <div className="relative">
+        <Image
+          className="h-[20rem] w-full object-cover"
+          src={bg}
+          alt="T Profile"
+        />
+        <h1 className="absolute inset-0 flex items-center justify-center text-[#335c98] text-5xl font-bold">
+          T Profile
+        </h1>
+      </div>
 
       <div className=" flex flex-col overflow-hidden w-full h-full px-[18rem]">
-      <div className=" flex flex-col justify-center text-justify text-xl text-slate-500 gap-4 dm-sans p-8">
-        <p>
-          Explore the versatility of stainless steel T profiles from Rajgure
-          Steel Industries. Our T profiles are available in seven vibrant
-          colors, making them perfect for enhancing your home design. These
-          durable profiles offer exceptional strength and aesthetic appeal,
-          making them ideal for various applications, from structural supports
-          to decorative elements.
-        </p>
-        {/* <p>
+        <div className=" flex flex-col justify-center text-justify text-xl text-slate-500 gap-4 dm-sans p-8">
+          <p>
+            Explore the versatility of stainless steel T profiles from Rajgure
+            Steel Industries. Our T profiles are available in seven vibrant
+            colors, making them perfect for enhancing your home design. These
+            durable profiles offer exceptional strength and aesthetic appeal,
+            making them ideal for various applications, from structural supports
+            to decorative elements.
+          </p>
+          {/* <p>
           Using T profiles in your home can transform spaces, providing both
           functionality and style. Their unique shape allows for easy
           integration into furniture, shelving, and architectural designs. With
           the added advantage of corrosion resistance, our stainless steel T
           profiles ensure longevity, making them a smart choice for any project.
         </p> */}
-        {/* <p>
+          {/* <p>
           Discover how Rajgure Steel Industries can elevate your designs with
           high-quality T profiles that blend seamlessly with your vision!
         </p> */}
-      </div>
-      <div>
-        <div className="flex justify-center items-start space-x-8">
-          {/* Left: Image */}
-          <div className="w-[50%]">
-            <Image
-              className="object-cover h-[35rem] w-full"
-              src={wallImg}
-              alt="T-profile wall design"
-            />
-          </div>
+        </div>
+        <div>
+          <div className="flex justify-center items-start space-x-8">
+            {/* Left: Image */}
+            <div className="w-[50%]">
+              <Image
+                className="object-cover h-[35rem] w-full"
+                src={wallImg}
+                alt="T-profile wall design"
+              />
+            </div>
 
-          {/* Right: Specification */}
-          <div className="w-[45%] flex flex-col justify-centre">
-            <h2 className="text-[1.40rem] text-center p-4 text-[#335c98] arimo">
-              Stainless Steel T Profile Specifications
-            </h2>
+            {/* Right: Specification */}
+            <div className="w-[45%] flex flex-col justify-centre">
+              <h2 className="text-[1.40rem] text-center p-4 text-[#335c98] arimo">
+                Stainless Steel T Profile Specifications
+              </h2>
 
-            <table className="border-collapse w-full">
-              <tbody className="text-[#0A2540] text-left">
-                {data.map((item, index) => (
-                  <React.Fragment key={index}>
-                    <tr className="text-left">
-                      <th className="align-top border border-[#ddd] p-2">Thickness:</th>
-                      <td className="border border-[#ddd] text-[#0A2540] p-2">{item.thickness}</td>
-                    </tr>
-                    <tr>
-                      <th className="align-top border border-[#ddd] p-2">Finishes:</th>
-                      <td className="border border-[#ddd] text-[#0A2540] p-2">{item.finishes}</td>
-                    </tr>
-                    <tr>
-                      <th className="align-top border border-[#ddd] p-2">Colours:</th>
-                      <td className="border border-[#ddd] text-[#0A2540] p-2">{item.colors}</td>
-                    </tr>
-                    <tr>
-                      <th className="align-top border border-[#ddd] p-2">Grade:</th>
-                      <td className="border border-[#ddd] text-[#0A2540] p-2">{item.grade}</td>
-                    </tr>
-                    <tr>
-                      <th className="align-top border border-[#ddd] p-2">Product Type:</th>
-                      <td className="border border-[#ddd] text-[#0A2540] p-2">{item.productType}</td>
-                    </tr>
-                    <tr>
-                      <th className="align-top border border-[#ddd] p-2">Size:</th>
-                      <td className="border border-[#ddd] text-[#0A2540] p-2">{item.size}</td>
-                    </tr>
-                    <tr>
-                      <th className="align-top border border-[#ddd]  p-2">Length:</th>
-                      <td className="border border-[#ddd] text-[#0A2540] p-2">{item.length}</td>
-                    </tr>
-                  </React.Fragment>
-                ))}
-              </tbody>
-            </table>
+              <table className="border-collapse w-full">
+                <tbody className="text-[#0A2540] text-left">
+                  {data.map((item, index) => (
+                    <React.Fragment key={index}>
+                      <tr className="text-left">
+                        <th className="align-top border border-[#ddd] p-2">
+                          Thickness:
+                        </th>
+                        <td className="border border-[#ddd] text-[#0A2540] p-2">
+                          {item.thickness}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th className="align-top border border-[#ddd] p-2">
+                          Finishes:
+                        </th>
+                        <td className="border border-[#ddd] text-[#0A2540] p-2">
+                          {item.finishes}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th className="align-top border border-[#ddd] p-2">
+                          Colours:
+                        </th>
+                        <td className="border border-[#ddd] text-[#0A2540] p-2">
+                          {item.colors}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th className="align-top border border-[#ddd] p-2">
+                          Grade:
+                        </th>
+                        <td className="border border-[#ddd] text-[#0A2540] p-2">
+                          {item.grade}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th className="align-top border border-[#ddd] p-2">
+                          Product Type:
+                        </th>
+                        <td className="border border-[#ddd] text-[#0A2540] p-2">
+                          {item.productType}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th className="align-top border border-[#ddd] p-2">
+                          Size:
+                        </th>
+                        <td className="border border-[#ddd] text-[#0A2540] p-2">
+                          {item.size}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th className="align-top border border-[#ddd]  p-2">
+                          Length:
+                        </th>
+                        <td className="border border-[#ddd] text-[#0A2540] p-2">
+                          {item.length}
+                        </td>
+                      </tr>
+                    </React.Fragment>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col items-center w-full min-h-screen bg-gray-100">
-        {/* Hero Section */}
+        <div className="flex flex-col items-center w-full min-h-screen bg-gray-100">
+          {/* Hero Section */}
 
+          {/* What is Section */}
+          <div className="w-full py-20 fade-in">
+            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center text-justify">
+              <div className="lg:w-1/2 p-6">
+                <h2 className="text-4xl font-bold text-[#335c98] mb-4">
+                  What is Stainless Steel T Profile?
+                </h2>
+                <p className="text-gray-500 text-lg leading-relaxed dm-sans">
+                  A Stainless Steel T Profile is a metal profile characterized
+                  by a "T"-shaped cross-section, offering superior strength and
+                  versatility in construction and architecture.
+                </p>
+              </div>
+              <div className="lg:w-1/2">
+                <Image
+                  className="rounded-lg  transition-transform duration-300 hover:scale-105"
+                  src={Tprofile}
+                  alt="Stainless Steel T Profile"
+                />
+              </div>
+            </div>
+          </div>
 
-        {/* What is Section */}
-        <div className="w-full py-20 fade-in">
-          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center text-justify">
-            <div className="lg:w-1/2 p-6">
-              <h2 className="text-4xl font-bold text-[#335c98] mb-4">What is Stainless Steel T Profile?</h2>
-              <p className="text-gray-500 text-lg leading-relaxed dm-sans">
-                A Stainless Steel T Profile is a metal profile characterized by a "T"-shaped cross-section, offering superior strength and versatility in construction and architecture.
+          {/* Properties Section */}
+          <div className="w-full bg-[#f7f7f7] py-20 fade-in">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-[#335c98] mb-6">
+                Properties of Stainless Steel T Profiles
+              </h2>
+              <p className="text-gray-500  text-lg leading-relaxed text-justify px-10 dm-sans">
+                At Rajguru Steel Industry, we manufacture stainless steel T
+                profiles using high-quality austenitic stainless steel, known
+                for its exceptional durability and corrosion resistance. These
+                profiles contain significant levels of chromium and nickel,
+                ensuring protection against rust, while the addition of
+                molybdenum enhances resistance to pitting and crevice corrosion
+                in harsh, chloride-rich environments. Austenitic stainless steel
+                also offers impressive mechanical properties like high tensile
+                and yield strength, making it perfect for both industrial and
+                architectural uses. Our stainless steel T profiles are available
+                in a variety of sizes and thicknesses to accommodate different
+                project requirements
               </p>
             </div>
-            <div className="lg:w-1/2">
-              <Image className="rounded-lg  transition-transform duration-300 hover:scale-105" src={Tprofile} alt="Stainless Steel T Profile" />
-            </div>
           </div>
         </div>
 
-        {/* Properties Section */}
-        <div className="w-full bg-[#f7f7f7] py-20 fade-in">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-[#335c98] mb-6">Properties of Stainless Steel T Profiles</h2>
-            <p className="text-gray-500  text-lg leading-relaxed text-justify px-10 dm-sans">
-              At Rajguru Steel Industry, we manufacture stainless steel T
-              profiles using high-quality austenitic stainless steel, known for
-              its exceptional durability and corrosion resistance. These
-              profiles contain significant levels of chromium and nickel,
-              ensuring protection against rust, while the addition of molybdenum
-              enhances resistance to pitting and crevice corrosion in harsh,
-              chloride-rich environments. Austenitic stainless steel also offers
-              impressive mechanical properties like high tensile and yield
-              strength, making it perfect for both industrial and architectural
-              uses. Our stainless steel T profiles are available in a variety of
-              sizes and thicknesses to accommodate different project
-              requirements
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <main className="flex flex-col justify-center text-justify gap-20 translate-y-14 ">
-      <div className="container mx-auto my-14">
+        <main className="flex flex-col justify-center text-justify gap-20 translate-y-14 ">
+          <div className="container mx-auto my-14">
             <div className="overflow-x-auto shadow-lg rounded-lg">
               <table className="min-w-full bg-white rounded-lg">
                 <thead>
@@ -492,7 +533,9 @@ const page = () => {
                       1. Corrosion Resistance
                     </td>
                     <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      Stainless steel T profiles are highly resistant to rust and corrosion, ideal for environments with exposure to moisture, chemicals, or harsh weather conditions.
+                      Stainless steel T profiles are highly resistant to rust
+                      and corrosion, ideal for environments with exposure to
+                      moisture, chemicals, or harsh weather conditions.
                     </td>
                   </tr>
                   {/* Row 2 */}
@@ -501,7 +544,9 @@ const page = () => {
                       2. Durability
                     </td>
                     <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      Known for their strength and long lifespan, stainless steel T profiles can last over 100 years, making them a maintenance-free solution for various projects.
+                      Known for their strength and long lifespan, stainless
+                      steel T profiles can last over 100 years, making them a
+                      maintenance-free solution for various projects.
                     </td>
                   </tr>
                   {/* Row 3 */}
@@ -510,7 +555,9 @@ const page = () => {
                       3. Aesthetic Appeal
                     </td>
                     <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      With their sleek, modern look and minimal upkeep, stainless steel T profiles enhance the aesthetics of commercial and residential structures.
+                      With their sleek, modern look and minimal upkeep,
+                      stainless steel T profiles enhance the aesthetics of
+                      commercial and residential structures.
                     </td>
                   </tr>
                   {/* Row 4 */}
@@ -519,7 +566,9 @@ const page = () => {
                       4. Versatility
                     </td>
                     <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      Whether for architectural designs or automotive reinforcement, stainless steel T profiles are easy to fabricate and fit various applications.
+                      Whether for architectural designs or automotive
+                      reinforcement, stainless steel T profiles are easy to
+                      fabricate and fit various applications.
                     </td>
                   </tr>
                 </tbody>
@@ -531,13 +580,16 @@ const page = () => {
             <div
               ref={card1Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card1InView ? 'animate-wave delay-100' : 'opacity-0'}`}
+                ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
             >
               <h2 className="text-xl font-semibold text-[#335c98] arimo mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-500 dm-sans">
-                T profiles are widely used in building facades, curtain walls, glass railings, and structural supports. The combination of strength and corrosion resistance ensures durability while maintaining an aesthetically pleasing design.
+                T profiles are widely used in building facades, curtain walls,
+                glass railings, and structural supports. The combination of
+                strength and corrosion resistance ensures durability while
+                maintaining an aesthetically pleasing design.
               </p>
             </div>
 
@@ -545,13 +597,16 @@ const page = () => {
             <div
               ref={card2Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card2InView ? 'animate-wave delay-200' : 'opacity-0'}`}
+                ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
               <h2 className="text-xl font-semibold text-[#335c98] arimo mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-500 dm-sans">
-                In interior design, T profiles are employed in furniture, shelving, and display systems. The robust structure of stainless steel ensures the ability to bear heavy loads while providing a sleek, polished look to furniture pieces.
+                In interior design, T profiles are employed in furniture,
+                shelving, and display systems. The robust structure of stainless
+                steel ensures the ability to bear heavy loads while providing a
+                sleek, polished look to furniture pieces.
               </p>
             </div>
 
@@ -559,19 +614,23 @@ const page = () => {
             <div
               ref={card3Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card3InView ? 'animate-wave delay-300' : 'opacity-0'}`}
+                ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
             >
               <h2 className="text-xl font-semibold text-center text-[#335c98] arimo mb-4">
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-500 dm-sans">
-                Stainless steel T profiles are frequently used in car frames, providing essential reinforcement while minimizing weight. In marine applications, their corrosion resistance makes them ideal for use in boat manufacturing, where exposure to saltwater is common.
+                Stainless steel T profiles are frequently used in car frames,
+                providing essential reinforcement while minimizing weight. In
+                marine applications, their corrosion resistance makes them ideal
+                for use in boat manufacturing, where exposure to saltwater is
+                common.
               </p>
             </div>
           </div>
-      </main>
+        </main>
 
-      <div className="w-full py-20 fade-in">
+        <div className="w-full py-20 fade-in">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-[#335c98] mb-6">
               Related Products
@@ -608,7 +667,6 @@ const page = () => {
             </Swiper>
           </div>
         </div>
-    
       </div>
     </section>
   );
