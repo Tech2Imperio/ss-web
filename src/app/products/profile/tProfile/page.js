@@ -287,6 +287,11 @@ import Image from "next/image";
 import wallImg from "../../../assets/product/profile/T_profile/wall.webp";
 // import upofile from "../../../assets/product/profile/U_profile/Uprofile.webp";
 import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";
+import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
+import LProfile from "../../../assets/RelatedProducts/LProfile.webp";
+import fluted from "../../../assets/RelatedProducts/fluted.webp";
+import customized from "../../../assets/RelatedProducts/customized.webp";
+import CProfile from "../../../assets/RelatedProducts/CProfile.webp";
 import bg from "../../../assets/product/profile/T_profile/bg.webp";
 import { useInView } from "react-intersection-observer";
 
@@ -295,6 +300,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"; // Imp
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const page = () => {
   const data = [
@@ -310,24 +316,29 @@ const page = () => {
   ];
   const relatedProducts = [
     {
-      title: "T Profile",
-      image: "/img/related-product1.jpg",
-    },
-    {
       title: "U Profile",
-      image: "/img/related-product2.jpg",
+      image: UProfile,
+      link: "/products/profile/uProfile",
     },
     {
       title: "L Profile",
-      image: "/img/related-product3.jpg",
+      image: LProfile,
+      link: "/products/profile/lProfile",
     },
     {
-      title: "Z Profile",
-      image: "/img/related-product4.jpg",
+      title: "Fluted Panel",
+      image: fluted,
+      link: "/products/profile/flutedPanel",
+    },
+    {
+      title: "C Profile",
+      image: CProfile,
+      link: "/products/profile/cProfile",
     },
     {
       title: "Custom Profile",
-      image: "/img/related-product5.jpg",
+      image: customized,
+      link: "/products/profile/customProfile",
     },
   ];
 
@@ -350,17 +361,17 @@ const page = () => {
     <section className=" ">
       <div className="relative">
         <Image
-          className="h-[20rem] w-full object-cover"
+          className=" h-[22rem] md:h-[30rem] w-full object-cover"
           src={bg}
           alt="T Profile"
         />
-        <h1 className="absolute inset-0 flex items-center justify-center text-[#335c98] text-5xl font-bold">
+        <h1 className="absolute inset-0 flex items-center justify-center pt-24 md:pt-0 text-[#335c98] text-5xl md:text-[5rem] font-bold">
           T Profile
         </h1>
       </div>
 
-      <div className=" flex flex-col overflow-hidden w-full h-full px-[18rem]">
-        <div className=" flex flex-col justify-center text-justify text-xl text-slate-500 gap-4 dm-sans p-8">
+      <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
+        <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 dm-sans p-8">
           <p>
             Explore the versatility of stainless steel T profiles from Rajgure
             Steel Industries. Our T profiles are available in seven vibrant
@@ -369,32 +380,33 @@ const page = () => {
             making them ideal for various applications, from structural supports
             to decorative elements.
           </p>
-          {/* <p>
-          Using T profiles in your home can transform spaces, providing both
-          functionality and style. Their unique shape allows for easy
-          integration into furniture, shelving, and architectural designs. With
-          the added advantage of corrosion resistance, our stainless steel T
-          profiles ensure longevity, making them a smart choice for any project.
-        </p> */}
+          <p>
+            Using T profiles in your home can transform spaces, providing both
+            functionality and style. Their unique shape allows for easy
+            integration into furniture, shelving, and architectural designs.
+            With the added advantage of corrosion resistance, our stainless
+            steel T profiles ensure longevity, making them a smart choice for
+            any project.
+          </p>
           {/* <p>
           Discover how Rajgure Steel Industries can elevate your designs with
           high-quality T profiles that blend seamlessly with your vision!
         </p> */}
         </div>
         <div>
-          <div className="flex justify-center items-start space-x-8">
+          <div className="flex flex-col md:flex-row justify-center items-start md:mb-14 lg:mb-0">
             {/* Left: Image */}
-            <div className="w-[50%]">
+            <div className=" md:w-[2rem]lg:w-[50%]">
               <Image
-                className="object-cover h-[35rem] w-full"
+                className="object-cover h-[20rem] w-[25rem] md:h-[25rem] md:w-auto md:pt-28 lg:h-[35rem] lg:w-full lg:pt-0"
                 src={wallImg}
                 alt="T-profile wall design"
               />
             </div>
 
             {/* Right: Specification */}
-            <div className="w-[45%] flex flex-col justify-centre">
-              <h2 className="text-[1.40rem] text-center p-4 text-[#335c98] arimo">
+            <div className=" p-4 md:p-0 md:w-[45%] flex flex-col justify-centre">
+              <h2 className="text-[25px] text-center p-4 text-[#335c98] montserrat">
                 Stainless Steel T Profile Specifications
               </h2>
 
@@ -404,7 +416,7 @@ const page = () => {
                     <React.Fragment key={index}>
                       <tr className="text-left">
                         <th className="align-top border border-[#ddd] p-2">
-                          Thickness:
+                          Thickness
                         </th>
                         <td className="border border-[#ddd] text-[#0A2540] p-2">
                           {item.thickness}
@@ -412,7 +424,7 @@ const page = () => {
                       </tr>
                       <tr>
                         <th className="align-top border border-[#ddd] p-2">
-                          Finishes:
+                          Finishes
                         </th>
                         <td className="border border-[#ddd] text-[#0A2540] p-2">
                           {item.finishes}
@@ -420,7 +432,7 @@ const page = () => {
                       </tr>
                       <tr>
                         <th className="align-top border border-[#ddd] p-2">
-                          Colours:
+                          Colours
                         </th>
                         <td className="border border-[#ddd] text-[#0A2540] p-2">
                           {item.colors}
@@ -428,7 +440,7 @@ const page = () => {
                       </tr>
                       <tr>
                         <th className="align-top border border-[#ddd] p-2">
-                          Grade:
+                          Grade
                         </th>
                         <td className="border border-[#ddd] text-[#0A2540] p-2">
                           {item.grade}
@@ -436,7 +448,7 @@ const page = () => {
                       </tr>
                       <tr>
                         <th className="align-top border border-[#ddd] p-2">
-                          Product Type:
+                          Product Type
                         </th>
                         <td className="border border-[#ddd] text-[#0A2540] p-2">
                           {item.productType}
@@ -444,7 +456,7 @@ const page = () => {
                       </tr>
                       <tr>
                         <th className="align-top border border-[#ddd] p-2">
-                          Size:
+                          Size
                         </th>
                         <td className="border border-[#ddd] text-[#0A2540] p-2">
                           {item.size}
@@ -452,7 +464,7 @@ const page = () => {
                       </tr>
                       <tr>
                         <th className="align-top border border-[#ddd]  p-2">
-                          Length:
+                          Length
                         </th>
                         <td className="border border-[#ddd] text-[#0A2540] p-2">
                           {item.length}
@@ -469,19 +481,19 @@ const page = () => {
           {/* Hero Section */}
 
           {/* What is Section */}
-          <div className="w-full py-20 fade-in">
+          <div className="w-full py-4 md:py-20 fade-in">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center text-justify">
               <div className="lg:w-1/2 p-6">
-                <h2 className="text-4xl font-bold text-[#335c98] mb-4">
+                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 montserrat">
                   What is Stainless Steel T Profile?
                 </h2>
-                <p className="text-gray-500 text-lg leading-relaxed dm-sans">
+                <p className="text-gray-500 text-sm md:text-[1.10rem] leading-relaxed dm-sans">
                   A Stainless Steel T Profile is a metal profile characterized
                   by a "T"-shaped cross-section, offering superior strength and
                   versatility in construction and architecture.
                 </p>
               </div>
-              <div className="lg:w-1/2">
+              <div className=" w-[28rem] lg:w-[55%] px-14">
                 <Image
                   className="rounded-lg  transition-transform duration-300 hover:scale-105"
                   src={Tprofile}
@@ -492,12 +504,12 @@ const page = () => {
           </div>
 
           {/* Properties Section */}
-          <div className="w-full bg-[#f7f7f7] py-20 fade-in">
+          <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-4xl font-bold text-[#335c98] mb-6">
+              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 montserrat">
                 Properties of Stainless Steel T Profiles
               </h2>
-              <p className="text-gray-500  text-lg leading-relaxed text-justify px-10 dm-sans">
+              <p className="text-gray-500 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 dm-sans">
                 At Rajguru Steel Industry, we manufacture stainless steel T
                 profiles using high-quality austenitic stainless steel, known
                 for its exceptional durability and corrosion resistance. These
@@ -514,67 +526,106 @@ const page = () => {
             </div>
           </div>
         </div>
+        {/* example */}
+        <div className="container mx-auto my-14 hidden md:block">
+          <div className="overflow-x-auto shadow-lg rounded-lg">
+            <table className="min-w-full bg-white rounded-lg">
+              <thead>
+                <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
+                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] montserrat">
+                    Benefits of Stainless Steel T Profiles
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t hover:bg-gray-100 transition-all duration-200">
+                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] montserrat whitespace-nowrap">
+                    1. Corrosion Resistance
+                  </td>
+                  <td className="py-6 px-6 text-base text-gray-500 dm-sans">
+                    Stainless steel T profiles are highly resistant to rust and
+                    corrosion, ideal for environments with exposure to moisture,
+                    chemicals, or harsh weather conditions.
+                  </td>
+                </tr>
+                <tr className="border-t hover:bg-gray-100 transition-all duration-200">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] montserrat whitespace-nowrap">
+                    2. Durability
+                  </td>
+                  <td className="py-6 px-6 text-base text-gray-500 dm-sans">
+                    Known for their strength and long lifespan, stainless steel
+                    T profiles can last over 100 years, making them a
+                    maintenance-free solution for various projects.
+                  </td>
+                </tr>
+                <tr className="border-t hover:bg-gray-100 transition-all duration-200">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] montserrat whitespace-nowrap">
+                    3. Aesthetic Appeal
+                  </td>
+                  <td className="py-6 px-6 text-base text-gray-500 dm-sans">
+                    With their sleek, modern look and minimal upkeep, stainless
+                    steel T profiles enhance the aesthetics of commercial and
+                    residential structures.
+                  </td>
+                </tr>
+                <tr className="border-t hover:bg-gray-100 transition-all duration-200">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] montserrat whitespace-nowrap">
+                    4. Versatility
+                  </td>
+                  <td className="py-6 px-6 text-base text-gray-500 dm-sans">
+                    Whether for architectural designs or automotive
+                    reinforcement, stainless steel T profiles are easy to
+                    fabricate and fit various applications.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* example */}
+        {/* example phone */}
+        <div className="container mx-auto my-14 md:hidden">
+          <div className="p-6 bg-white rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold text-[#335c98] montserrat mb-4">
+              Benefits of Stainless Steel T Profiles
+            </h2>
+            <ul className="space-y-6 text-justify ">
+              <li className="text-base text-gray-500 montserrat">
+                <strong className=" text-[#335c98]">
+                  1. Corrosion Resistance:
+                </strong>{" "}
+                Stainless steel T profiles are highly resistant to rust and
+                corrosion, ideal for environments with exposure to moisture,
+                chemicals, or harsh weather conditions.
+              </li>
+              <li className="text-base text-gray-500 montserrat">
+                <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
+                Known for their strength and long lifespan, stainless steel T
+                profiles can last over 100 years, making them a maintenance-free
+                solution for various projects.
+              </li>
+              <li className="text-base text-gray-500  montserrat">
+                <strong className=" text-[#335c98]">
+                  3. Aesthetic Appeal:
+                </strong>{" "}
+                With their sleek, modern look and minimal upkeep, stainless
+                steel T profiles enhance the aesthetics of commercial and
+                residential structures.
+              </li>
+              <li className="text-base text-gray-500  montserrat">
+                <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
+                Whether for architectural designs or automotive reinforcement,
+                stainless steel T profiles are easy to fabricate and fit various
+                applications.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* example phone colse  */}
 
         <main className="flex flex-col justify-center text-justify gap-20 translate-y-14 ">
-          <div className="container mx-auto my-14">
-            <div className="overflow-x-auto shadow-lg rounded-lg">
-              <table className="min-w-full bg-white rounded-lg">
-                <thead>
-                  <tr className=" border-b-2 border-[#335c98]  whitespace-nowrap">
-                    <th className="py-6 px-4 text-3xl text-[#335c98] ">
-                      Benefits of Stainless Steel T Profiles
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* Row 1 */}
-                  <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                    <td className="py-6 px-6 text-2xl text-[#335c98] arimo whitespace-nowrap">
-                      1. Corrosion Resistance
-                    </td>
-                    <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      Stainless steel T profiles are highly resistant to rust
-                      and corrosion, ideal for environments with exposure to
-                      moisture, chemicals, or harsh weather conditions.
-                    </td>
-                  </tr>
-                  {/* Row 2 */}
-                  <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                    <td className="py-6 px-6 text-2xl text-[#335c98] arimo whitespace-nowrap">
-                      2. Durability
-                    </td>
-                    <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      Known for their strength and long lifespan, stainless
-                      steel T profiles can last over 100 years, making them a
-                      maintenance-free solution for various projects.
-                    </td>
-                  </tr>
-                  {/* Row 3 */}
-                  <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                    <td className="py-6 px-6 text-2xl text-[#335c98] arimo whitespace-nowrap">
-                      3. Aesthetic Appeal
-                    </td>
-                    <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      With their sleek, modern look and minimal upkeep,
-                      stainless steel T profiles enhance the aesthetics of
-                      commercial and residential structures.
-                    </td>
-                  </tr>
-                  {/* Row 4 */}
-                  <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                    <td className="py-6 px-6 text-2xl text-[#335c98] arimo whitespace-nowrap">
-                      4. Versatility
-                    </td>
-                    <td className="py-6 px-6 text-base text-gray-500 dm-sans">
-                      Whether for architectural designs or automotive
-                      reinforcement, stainless steel T profiles are easy to
-                      fabricate and fit various applications.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div
@@ -582,7 +633,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] arimo mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] montserrat mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-500 dm-sans">
@@ -599,7 +650,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] arimo mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] montserrat mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-500 dm-sans">
@@ -616,7 +667,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-center text-[#335c98] arimo mb-4">
+              <h2 className="text-xl font-semibold text-center text-[#335c98] montserrat mb-4">
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-500 dm-sans">
@@ -629,38 +680,38 @@ const page = () => {
             </div>
           </div>
         </main>
-
-        <div className="w-full py-20 fade-in">
+        <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-[#335c98] mb-6">
+            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 montserrat">
               Related Products
             </h2>
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
-              spaceBetween={50}
-              slidesPerView={3}
+              spaceBetween={15}
+              slidesPerView={1}
               navigation
-              pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
               breakpoints={{
-                640: { slidesPerView: 1 },
+                640: { slidesPerView: -1 },
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 },
               }}
             >
               {relatedProducts.map((product, index) => (
                 <SwiperSlide key={index}>
-                  <div className="flex flex-col items-center">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover"
-                    />
-                    <h3 className="mt-4 text-xl font-semibold text-[#335c98]">
-                      {product.title}
-                    </h3>
+                  <div className="flex flex-col items-center cursor-pointer">
+                    <Link href={product.link} passHref>
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={220}
+                        height={250}
+                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
+                      />
+                      <h3 className="mt-4 text-xl font-semibold text-[#335c98] arimo">
+                        {product.title}
+                      </h3>
+                    </Link>
                   </div>
                 </SwiperSlide>
               ))}
