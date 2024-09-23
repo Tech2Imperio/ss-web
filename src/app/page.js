@@ -4,15 +4,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
-import Img1 from "./assets/home-swiper/360_F_517468265_KIyGUVmkEuWBNCSzlbx0RhJDZJinJx3U.jpg";
+import Img1 from "./assets/home-swiper/Img1.webp";
+import Img2 from "./assets/home-swiper/Img2.webp";
+import Img3 from "./assets/home-swiper/Img3.webp";
+import Img4 from "./assets/home-swiper/Img4.webp";
+import Img5 from "./assets/home-swiper/Img5.webp";
 
-const images = [
-  Img1,
-  "https://www.tailwindtap.com/assets/components/vertical-carousel/jungle.jpg",
-  "https://www.tailwindtap.com/assets/components/vertical-carousel/mountainvalley.jpg",
-  "https://www.tailwindtap.com/assets/components/vertical-carousel/rainforest.jpg",
-  "https://www.tailwindtap.com/assets/components/vertical-carousel/sand_background.jpg",
-];
+const images = [Img1, Img2, Img3, Img4, Img5];
 
 const Section1 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +43,7 @@ const Section1 = () => {
   const visibleImages = getVisibleImages();
 
   return (
-    <section className="flex h-screen w-screen relative">
+    <section className="flex top-0 h-auto w-screen absolute ">
       <div className="fixed left-0 flex flex-col justify-evenly h-full px-10 py-24">
         <div className="mt-4 flex items-center justify-center text-4xl cursor-pointer">
           <IoIosArrowUp onClick={handlePrev} />
@@ -60,7 +58,7 @@ const Section1 = () => {
                 className={`transition-opacity duration-300 aspect-3/2 ${
                   imageIndex === currentIndex
                     ? "opacity-100"
-                    : "opacity-30 grayscale"
+                    : "opacity-40 grayscale"
                 }`}
                 onClick={() => handleClickImage(imageIndex)}
               >
@@ -93,43 +91,61 @@ const Section1 = () => {
         initial={{ x: "100%" }}
         animate={{ x: "0%" }}
         exit={{ x: "100%" }}
-        transition={{ duration: 0.6 }}
-        className="fixed bg-gray-950 opacity-60 right-0 w-auto h-full overflow-hidden flex items-center justify-center"
+        transition={{
+          duration: 0.8,
+          repeat: Infinity,
+          repeatType: "loop",
+          repeatDelay: 5,
+        }}
+        className="fixed bg-gray-950 opacity-60 bottom-0 right-0 w-auto h-[90vh] overflow-hidden flex items-center justify-center text-white text-left p-16 flex-col gap-12"
       >
-        <motion.div
-          initial={{ opacity: 0, y: -50 }} // Start position for the container
-          animate={{ opacity: 1, y: 0 }} // End position
-          exit={{ opacity: 0, y: 50 }} // Exit animation
-          transition={{ duration: 0.5 }} // Transition duration
-          className="text-white text-center p-16 flex flex-col gap-12"
+        <motion.h1
+          initial={{ x: "130%" }}
+          animate={{ opacity: 1, x: "0%" }}
+          exit={{ x: "130%" }}
+          transition={{
+            duration: 0.8,
+            delay: 0.6,
+            repeat: Infinity,
+            repeatType: "loop",
+            repeatDelay: 5,
+          }}
+          className="text-5xl font-bold whitespace-nowrap gap-8"
         >
-          <motion.h1
-            initial={{ opacity: 0, x: -50 }} // Coming from the left
-            animate={{ opacity: 1, x: 0 }} // Center position
-            transition={{ duration: 0.5 }}
-            className="text-5xl font-bold whitespace-nowrap gap-8"
-          >
-            Rajguru Stainless Steel: <br />
-            Strength Meets Elegance
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, x: 50 }} // Coming from the right
-            animate={{ opacity: 1, x: 0 }} // Center position
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-2 text-2xl italic"
-          >
-            "Quality You Can Trust, Strength You Can Count On"
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, x: -50 }} // Coming from the left
-            animate={{ opacity: 1, x: 0 }} // Center position
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-2 text-xl"
-          >
-            Experience the perfect blend of form and function with our stainless
-            steel solutions.
-          </motion.p>
-        </motion.div>
+          Rajguru Stainless Steel: <br />
+          Strength Meets Elegance
+        </motion.h1>
+        <motion.p
+          initial={{ x: "-130%" }}
+          animate={{ opacity: 1, x: "0%" }}
+          exit={{ x: "-130%" }}
+          transition={{
+            duration: 0.8,
+            delay: 0.6,
+            repeat: Infinity,
+            repeatType: "loop",
+            repeatDelay: 5,
+          }}
+          className="mt-2 text-2xl italic"
+        >
+          "Quality You Can Trust, Strength You Can Count On"
+        </motion.p>
+        <motion.p
+          initial={{ x: "130%" }}
+          animate={{ opacity: 1, x: "0%" }}
+          exit={{ x: "130%" }}
+          transition={{
+            duration: 0.8,
+            delay: 0.6,
+            repeat: Infinity,
+            repeatType: "loop",
+            repeatDelay: 5,
+          }}
+          className="mt-2 text-xl"
+        >
+          Experience the perfect blend of form and function with our stainless
+          steel solutions.
+        </motion.p>
       </motion.div>
     </section>
   );
