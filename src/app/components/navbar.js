@@ -35,8 +35,8 @@ export default function Navbar() {
           name: "Stainless Steel Profile",
           href: "/",
           subItems: [
-            { name: "Stainless Steel T-Profile", href: "/" },
-            { name: "Stainless Steel U-Profile", href: "/" },
+            { name: "Stainless Steel T-Profile", href: "/products/profile/tProfile" },
+            { name: "Stainless Steel U-Profile", href: "/products/profile/uProfile" },
             { name: "Stainless Steel Q-Profile", href: "/" },
             { name: "Stainless Steel L-Profile", href: "/" },
             { name: "Stainless Steel Fluted Panels", href: "/" },
@@ -75,7 +75,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="px-3 py-2 rounded-md text-xl font-medium hover:text-white"
+                    className="px-3 py-2 rounded-md text-xl font-medium hover:text-white poppins-regular"
                   >
                     {item.name}
                   </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
                           >
                             <Link
                               href={subItem.href}
-                              className="block px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700 hover:text-gray-900"
+                              className="block px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700 hover:text-gray-900 nunito"
                               role="menuitem"
                             >
                               {subItem.name}
@@ -117,7 +117,7 @@ export default function Navbar() {
                                       <Link
                                         key={nestedSubItem.name}
                                         href={nestedSubItem.href}
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 nunito"
                                         role="menuitem"
                                       >
                                         {nestedSubItem.name}

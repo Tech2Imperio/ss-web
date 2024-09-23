@@ -43,7 +43,7 @@ const Section1 = () => {
   const visibleImages = getVisibleImages();
 
   return (
-    <section className="flex top-0 h-auto w-screen absolute ">
+    <section className="flex top-0 h-auto w-screen absolute">
       <div className="fixed left-0 flex flex-col justify-evenly h-full px-10 py-24">
         <div className="mt-4 flex items-center justify-center text-4xl cursor-pointer">
           <IoIosArrowUp onClick={handlePrev} />
@@ -81,7 +81,7 @@ const Section1 = () => {
       <div className="w-full h-full overflow-hidden">
         <Image
           src={images[currentIndex]}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover "
           alt={`Slide ${currentIndex}`}
           width={1090}
           height={1000}
