@@ -988,8 +988,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import wallImg from "../../../assets/product/profile/T_profile/wall.webp";
-// import upofile from "../../../assets/product/profile/U_profile/Uprofile.webp";
-import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";
+import upofile from "../../../assets/product/profile/U_profile/Uprofilem.webp";
 import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
 import LProfile from "../../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../../assets/RelatedProducts/fluted.webp";
@@ -1027,18 +1026,18 @@ import StraightlineImgG from "../../../assets/product/profile/U_profile/finishes
 import MeshImgG from "../../../assets/product/profile/U_profile/finishes/gold/meshGold.png";
 
 //RoseGold finishes
-import MirrorImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/mirrorroseGold.png";
-import HairlineImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/hairlineroseGold.png";
-import StainImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/stainroseGold.png";
-import StraightlineImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/straightlineroseGold.png";
-import MeshImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/meshroseGold.png";
+import MirrorImgR from "../../../assets/product/profile/U_profile/finishes/rosegold/mirrorroseGold.png";
+import HairlineImgR from "../../../assets/product/profile/U_profile/finishes/rosegold/hairlineroseGold.png";
+import StainImgR from "../../../assets/product/profile/U_profile/finishes/rosegold/stainroseGold.png";
+import StraightlineImgR from "../../../assets/product/profile/U_profile/finishes/rosegold/straightlineroseGold.png";
+import MeshImgR from "../../../assets/product/profile/U_profile/finishes/rosegold/meshroseGold.png";
 
-//RoseGold finishes
-import MirrorImgC from "../../../assets/product/profile/T_profile/finishes/champagne/mirrorChampagne.png";
-import HairlineImgC from "../../../assets/product/profile/T_profile/finishes/champagne/hairlineChampagne.png";
-import StainImgC from "../../../assets/product/profile/T_profile/finishes/champagne/stainChampagne.png";
-import StraightlineImgC from "../../../assets/product/profile/T_profile/finishes/champagne/straightlineChampagne.png";
-import MeshImgC from "../../../assets/product/profile/T_profile/finishes/champagne/meshChampagne.png";
+//ChampagnU finishes
+import MirrorImgC from "../../../assets/product/profile/U_profile/finishes/champagne/mirrorChampagne.png";
+import HairlineImgC from "../../../assets/product/profile/U_profile/finishes/champagne/hairlineChampagne.png";
+import StainImgC from "../../../assets/product/profile/U_profile/finishes/champagne/stainChampagne.png";
+import StraightlineImgC from "../../../assets/product/profile/U_profile/finishes/champagne/straightlineChampagne.png";
+import MeshImgC from "../../../assets/product/profile/U_profile/finishes/champagne/meshChampagne.png";
 
 const page = () => {
   const finishes = [
@@ -1257,9 +1256,11 @@ const page = () => {
                 </div>
 
                 {/* CTA Button with Neomorphism Style */}
-                {/* <button className="mt-8 px-6 py-3 bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-    Order now!
-  </button> */}
+                <Link href="#">
+                <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
+                GET A QUOTE
+                </button>
+                </Link>
               </div>
             </div>
 
@@ -1278,7 +1279,7 @@ const page = () => {
                   <span className="text-base">- W x H</span>
                 </h3>
                 <p className="text-lg text-gray-500 nunito">
-                10 x 3 x 10 | 10 x 5 x 10 | 10 x 8 x 10
+                  10 x 3 x 10 | 10 x 5 x 10 | 10 x 8 x 10
                 </p>
               </div>
 
@@ -1323,7 +1324,7 @@ const page = () => {
               <div className=" w-[28rem] lg:w-[55%] px-14">
                 <Image
                   className="rounded-lg  transition-transform duration-300 hover:scale-105"
-                  src={Tprofile}
+                  src={upofile}
                   alt="Stainless Steel T Profile"
                 />
               </div>
