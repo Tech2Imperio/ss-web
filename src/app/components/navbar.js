@@ -23,36 +23,55 @@ export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState("");
   const [hoveredSubItem, setHoveredSubItem] = useState("");
 
+  const arrow = <MdArrowForwardIos />;
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/" },
+    { name: "About Us", href: "/aboutus" },
     {
       name: "Products",
-      href: "/",
+      href: "#",
       subItems: [
-        { name: "Stainless Steel Glass Railing System", href: "/" },
-        { name: "Stainless Steel Decorative Sheet", href: "/" },
+        {
+          name: "Stainless Steel Glass Railing System",
+          href: "/products/ssGlassRailing",
+        },
+        {
+          name: "Stainless Steel Decorative Sheet",
+          href: "/products/ssDecorativeSheet",
+        },
         {
           name: "Stainless Steel Profile",
-          href: "/",
+          href: "#",
           subItems: [
             {
-              name: "Stainless Steel T-Profile",
+              name: "Stainless Steel T-Profile ",
               href: "/products/profile/tProfile",
             },
             {
               name: "Stainless Steel U-Profile",
               href: "/products/profile/uProfile",
             },
-            { name: "Stainless Steel Q-Profile", href: "/" },
-            { name: "Stainless Steel L-Profile", href: "/" },
-            { name: "Stainless Steel Fluted Panels", href: "/" },
-            { name: "Stainless Steel Customize Profile", href: "/" },
+            {
+              name: "Stainless Steel Q-Profile",
+              href: "/products/profile/qProfile",
+            },
+            {
+              name: "Stainless Steel L-Profile",
+              href: "/products/profile/lProfile",
+            },
+            {
+              name: "Stainless Steel Fluted Panels",
+              href: "/products/profile/flutedPanelProfile",
+            },
+            {
+              name: "Stainless Steel Customize Profile",
+              href: "/products/profile/customProfile",
+            },
           ],
         },
-        { name: "Stainless Steel Wire Rope", href: "/" },
-        { name: "Invisible Grill", href: "/" },
-        { name: "Queue Manager", href: "/" },
+        { name: "Stainless Steel Wire Rope", href: "/products/ssWireRope" },
+        { name: "Invisible Grill", href: "/products/ssInvisbleGrill" },
+        { name: "Queue Manager", href: "/products/ssQueueManager" },
       ],
     },
     { name: "Blog", href: "/" },
@@ -61,7 +80,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      setMobileView(window.innerWidth < 768);
+      setMobileView(window.innerWidth <= 1024);
     };
 
     window.addEventListener("resize", handleResize);
@@ -95,7 +114,11 @@ export default function Navbar() {
   const handleSubItemMouseLeave = () => setHoveredSubItem(null);
 
   return (
-    <nav className="bg-gray-950 bg-opacity-60 text-white max-w-full relative z-10">
+    <nav
+      className={`${
+        isMobileView ? "bg-black" : " bg-gray-950 bg-opacity-60"
+      } text-white max-w-full sticky z-10`}
+    >
       {isMobileView ? (
         <>
           <div className="flex justify-between items-center md:px-28 w-full bg-transparent">
@@ -107,7 +130,7 @@ export default function Navbar() {
             />
             <button
               onClick={toggleSidebar}
-              className="p-4 bg-gray-800 rounded-full text-white text-2xl"
+              className="p-4 rounded-full text-white text-2xl"
             >
               {isOpen ? <IoClose /> : <GiHamburgerMenu />}
             </button>
@@ -116,18 +139,25 @@ export default function Navbar() {
           {isOpen ? (
             <motion.div
               {...sidebarAnimationOpen()}
-              className="relative top-5 left-0 h-auto w-full bg-gray-800 opacity-65 text-white lg:h-full -mt-[1.5rem]"
+              className="relative top-5 left-0 h-auto w-full bg-black text-white lg:h-full -mt-[1.5rem]"
             >
               <div className="p-4 flex flex-col">
                 <div className="flex flex-col my-1">
                   <ul className="flex justify-center flex-col gap-5 md:gap-12 cursor-pointer">
-                    <li className="p-3 text-xl flex items-center justify-center">
+                    <Link
+                      href="/"
+                      className="p-3 text-xl flex items-center justify-center"
+                    >
                       Home
-                    </li>
-                    <li className="p-3 text-xl flex items-center justify-center">
+                    </Link>
+                    <Link
+                      href="/aboutus"
+                      className="p-3 text-xl flex items-center justify-center"
+                    >
                       About Us
-                    </li>
-                    <li
+                    </Link>
+                    <Link
+                      href="#"
                       onClick={toggleProductsDropdown}
                       className="flex gap-2 cursor-pointer p-3 text-xl items-center justify-center"
                     >
@@ -137,19 +167,23 @@ export default function Navbar() {
                           rotateProductsIcon ? "rotate-90" : "rotate-0"
                         }`}
                       />
-                    </li>
+                    </Link>
                   </ul>
 
                   {isProductsDropdownOpen && (
                     <motion.div
                       {...dropdownAnimationOpen()}
-                      className="relative bg-gray-900 flex flex-col items-center h-auto gap-4 px-5 w-full cursor-pointer py-8"
+                      className="relative bg-black flex flex-col items-center h-auto gap-4 px-5 w-full cursor-pointer py-8"
                     >
                       <ul className="flex flex-col justify-around h-auto w-full">
-                        <li className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center">
+                        <Link
+                          href="/products/ssGlassRailing"
+                          className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
+                        >
                           Stainless Steel Glass Railing System
-                        </li>
-                        <li
+                        </Link>
+                        <Link
+                          href="#"
                           onMouseEnter={() => handleProfileDropdownHover(true)}
                           onMouseLeave={() => handleProfileDropdownHover(false)}
                           className="flex gap-1 cursor-pointer p-2 text-[1.25rem] items-center justify-center"
@@ -160,7 +194,7 @@ export default function Navbar() {
                               rotateProfileIcon ? "rotate-90" : "rotate-0"
                             }`}
                           />
-                        </li>
+                        </Link>
 
                         {isProfileDropdownOpen && (
                           <motion.ul
@@ -173,56 +207,92 @@ export default function Navbar() {
                               handleProfileDropdownHover(false)
                             }
                           >
-                            <li className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1">
+                            <Link
+                              className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
+                              href="/products/profile/tProfile"
+                            >
                               Stainless Steel T-Profile
-                            </li>
-                            <li className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1">
+                            </Link>
+                            <Link
+                              className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
+                              href="/products/profile/uProfile"
+                            >
                               Stainless Steel U-Profile
-                            </li>
-                            <li className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1">
+                            </Link>
+                            <Link
+                              href="/products/profile/qProfile"
+                              className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
+                            >
                               Stainless Steel Q-Profile
-                            </li>
-                            <li className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1">
+                            </Link>
+                            <Link
+                              href="/products/profile/lProfile"
+                              className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
+                            >
                               Stainless Steel L-Profile
-                            </li>
-                            <li className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1">
+                            </Link>
+                            <Link
+                              href="/products/profile/flutedPanelProfile"
+                              className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
+                            >
                               Stainless Steel Fluted Panels
-                            </li>
-                            <li className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1">
+                            </Link>
+                            <Link
+                              href="/products/profile/customProfile"
+                              className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
+                            >
                               Stainless Steel Customize Profile
-                            </li>
+                            </Link>
                           </motion.ul>
                         )}
 
-                        <li className="p-2 text-[1.25rem] flex items-center justify-center">
+                        <Link
+                          href="/products/ssDecorativeSheet"
+                          className="p-2 text-[1.25rem] flex items-center justify-center"
+                        >
                           Stainless Steel Decorative Sheet
-                        </li>
-                        <li className="p-2 text-[1.25rem] flex items-center justify-center">
+                        </Link>
+                        <Link
+                          href="/products/ssWireRope"
+                          className="p-2 text-[1.25rem] flex items-center justify-center"
+                        >
                           Stainless Steel Wire Rope
-                        </li>
-                        <li className="p-2 text-[1.25rem] flex items-center justify-center">
+                        </Link>
+                        <Link
+                          href="/products/ssInvisibleGrill"
+                          className="p-2 text-[1.25rem] flex items-center justify-center"
+                        >
                           Invisible Grill
-                        </li>
-                        <li className="p-2 text-[1.25rem] flex items-center justify-center">
+                        </Link>
+                        <Link
+                          href="/products/ssQueueManager"
+                          className="p-2 text-[1.25rem] flex items-center justify-center"
+                        >
                           Queue Manager
-                        </li>
+                        </Link>
                       </ul>
                     </motion.div>
                   )}
 
-                  <li className="p-3 text-xl flex items-center justify-center mt-2">
+                  <Link
+                    href="/blog"
+                    className="p-3 text-xl flex items-center justify-center mt-2"
+                  >
                     Blog
-                  </li>
-                  <li className="p-3 text-xl flex items-center justify-center mt-2">
+                  </Link>
+                  <Link
+                    href="/contactus"
+                    className="p-3 text-xl flex items-center justify-center mt-2"
+                  >
                     Contact Us
-                  </li>
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ) : (
             <motion.div
               {...sidebarAnimationClose()}
-              className="fixed top-0 left-0 w-full h-full bg-gray-800 opacity-65 text-white"
+              className="fixed top-0 left-0 w-full h-full bg-black text-white"
             ></motion.div>
           )}
         </>
@@ -248,12 +318,13 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="px-3 py-2 rounded-md text-xl font-medium hover:text-white"
+                      className="px-3 py-2 rounded-md text-xl font-medium hover:text-white flex items-center"
                     >
                       {item.name}
+                      {item.name === "Products" && <MdArrowForwardIos />}
                     </Link>
                     {item.subItems && hoveredItem === item.name && (
-                      <div className="absolute left-0 mt-1 w-72 rounded-md shadow-lg bg-white text-gray-700 ring-1 focus:outline-none z-10">
+                      <div className="absolute left-0 w-72 rounded-md shadow-lg bg-white text-gray-700 ring-1 focus:outline-none z-10">
                         <div className="py-1" role="menu">
                           {item.subItems.map((subItem) => (
                             <div
@@ -266,15 +337,18 @@ export default function Navbar() {
                             >
                               <Link
                                 href={subItem.href}
-                                className="block px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700"
+                                className=" px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700 flex items-center"
                               >
                                 {subItem.name}
+                                {subItem.name === "Stainless Steel Profile" && (
+                                  <MdArrowForwardIos />
+                                )}
                               </Link>
                               {subItem.subItems &&
                                 (hoveredSubItem === subItem.name ||
                                   hoveredItem ===
                                     "Stainless Steel Profile") && (
-                                  <div className="absolute left-full top-0 mt-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                  <div className="absolute left-full top-0 mt-0 w-56 rounded-md shadow-lg bg-gray-300 ring-1 ring-black ring-opacity-5">
                                     <div className="py-1" role="menu">
                                       {subItem.subItems.map((nestedSubItem) => (
                                         <Link
