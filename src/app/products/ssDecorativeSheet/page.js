@@ -168,13 +168,13 @@ const page = () => {
           alt="U Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center pt-24 mt-28 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
+        <h1 className="absolute inset-0 flex items-center justify-center mt-28 md:pt-0 text-[#19355e] text-3xl md:text-[5rem]  poppins-regular">
           SS Decorative Sheets
         </h1>
       </div>
 
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 dm-sans p-8">
+        <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 nunito p-8">
           <p>
             Discover our high-quality stainless steel decorative sheets, perfect
             for enhancing interiors with elegance and durability. Our
