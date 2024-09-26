@@ -70,7 +70,7 @@ export default function Navbar() {
           ],
         },
         { name: "Stainless Steel Wire Rope", href: "/products/ssWireRope" },
-        { name: "Invisible Grill", href: "/products/ssInvisbleGrill" },
+        { name: "Invisible Grill", href: "/products/ssInvisibleGrill" },
         { name: "Queue Manager", href: "/products/ssQueueManager" },
       ],
     },
