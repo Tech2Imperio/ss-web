@@ -13,7 +13,17 @@ import Img8 from "./assets/home-swiper/image8.webp";
 import Img9 from "./assets/home-swiper/image9.webp";
 import section2 from "./assets/home-swiper/2-history.webp";
 import MobSection2 from "./assets/home-swiper/MobSection2.webp";
+import preview from "./assets/home-swiper/previewss.webp";
+import Mobpreview from "./assets/home-swiper/Mobpreview.webp";
 import Image from "next/image";
+import {
+  FaShieldAlt,
+  FaHammer,
+  FaGem,
+  FaFire,
+  FaTools,
+  FaExchangeAlt,
+} from "react-icons/fa";
 
 const images = [Img1, Img2, Img3, Img4, Img5];
 const images2 = [Img6, Img7, Img8, Img9, Img6];
@@ -41,7 +51,7 @@ function Section1() {
   }, []);
 
   return (
-    <section className="-mt-24 flex top-0 h-screen w-screen relative -z-10">
+    <section className=" flex top-0 h-screen w-screen relative -z-10">
       <div className="relative w-full h-full overflow-hidden">
         {(isMobileView ? images2 : images).map(
           (image, index) =>
@@ -64,6 +74,8 @@ function Section1() {
                   src={image}
                   className="object-cover h-full w-full"
                   alt={`Slide ${index}`}
+                  height="auto"
+                  width="auto"
                 />
               </motion.div>
             )
@@ -123,7 +135,7 @@ function Section2() {
 
   useEffect(() => {
     const handleResize = () => {
-      setMobileView(window.innerWidth <= 1024);
+      setMobileView(window.innerWidth >= 1025);
     };
 
     window.addEventListener("resize", handleResize);
@@ -133,15 +145,15 @@ function Section2() {
   }, []);
 
   return (
-    <section className="relative h-[100vh] w-[100vw] flex py-24">
-      <div className="flex flex-col md:flex-row justify-between items-center relative w-full h-full">
+    <section className="relative w-auto h-auto flex flex-col my-20 xl:flex-row xl:h-[100vh] xl:w-[100vw] xl:py-24 xl:my-0">
+      <div className="flex flex-col items-center relative w-auto h-auto xl:w-full xl:h:full xl:flex-row xl:justify-between">
         <Image
           priority
-          src={isMobileView ? MobSection2 : section2}
-          alt="Logo"
-          className="h-[100%] w-full md:w-[60%] left-0 xl:absolute"
+          src={isMobileView ? section2 : MobSection2}
+          alt="Section2Img"
+          className="h-[65vh] w-full xl:w-[60%] xl:h-[100%] xl:left-0 xl:absolute"
         />
-        {isMobileView === false ? (
+        {isMobileView ? (
           <motion.div
             className="bg-gray-800 opacity-95 w-[50%] h-[80%]"
             initial={{ x: "200%" }}
@@ -194,8 +206,8 @@ function Section2() {
             </div>
           </motion.div>
         ) : (
-          <div className="bg-gray-800 w-full h-full">
-            <div className="flex flex-col items-start justify-center p-8 md:p-auto gap-4 text-gray-300 text-lg text-start h-full">
+          <div className="bg-gray-800 w-full h-auto relative py-4">
+            <div className="relative flex flex-col items-start justify-center p-8 md:p-auto gap-4 text-gray-300 text-lg text-start h-auto w-auto">
               <h1 className="poppins-bold text-xl">
                 Shaping the Future of Stainless Steel
               </h1>
@@ -238,26 +250,39 @@ function Section2() {
     </section>
   );
 }
-import preview from "./assets/home-swiper/previewss.webp";
+
 function Section3() {
+  const [isMobileView, setMobileView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMobileView(window.innerWidth <= 1025);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <section className="flex h-screen w-full relative px-[12rem] py-8 align-middle">
-      <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[80vh]">
-          <div className="relative md:h-[100%]">
-            <Image
-              src={preview}
-              alt="Modern room with large windows"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-            />
-          </div>
-          <div className="space-y-4 z-10">
-            <div className="inline-block bg-gray-900 text-amber-500 px-4 py-2 rounded">
-              WINDOW SERVICES
+    <section className="relative flex flex-col xl:flex-row h-auto xl:h-screen gap-2 w-full  p-2 xl:px-[18rem] xl:py-20 align-middle">
+      <div className="relative flex flex-col xl:flex-row justify-center h-auto w-auto xl:h-full xl:w-full xl:px-8 xl:gap-28 gap-4">
+        <div className="h-auto w-auto xl:h-[90%] xl:w-[35%] flex justify-center xl:justify-start xl:items-start">
+          <Image
+            priority
+            src={isMobileView ? Mobpreview : preview}
+            alt="Modern room with large windows"
+            className="rounded-lg relative h-[40%] w-full xl:absolute xl:w-[45%] xl:h-[90%]"
+          />
+        </div>
+
+        <div className="flex flex-col justify-between items-end h-full w-full xl:w-[50%] gap-4">
+          <div className="space-y-2 xl:ml-16 flex flex-col z-10 px-4">
+            <div className=" bg-gray-900 text-amber-500 px-4 py-2 rounded w-36 text-center">
+              Product Quality
             </div>
-            <h2 className="text-4xl font-bold text-gray-800">
+            <h2 className="text-4xl  text-[#335c98] poppins-bold">
               Explore Premium Stainless Steel Products
             </h2>
             <p className="text-gray-600">
@@ -266,46 +291,52 @@ function Section3() {
               Perfect for any setting, they offer both resilience and a sleek,
               contemporary look.
             </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 bg-white p-4 rounded-lg shadow-lg z-20 relative">
-              {[
-                "CASEMENT",
-                "SASH",
-                "LOUVERED",
-                "PIVOTED",
-                "FIXED",
-                "DOUBLE-HUNG",
-              ].map((type) => (
-                <div
-                  key={type}
-                  className="flex flex-col items-center p-4 border rounded"
-                >
-                  <svg
-                    className="w-12 h-12 text-gray-700 mb-2"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect
-                      x="2"
-                      y="2"
-                      width="20"
-                      height="20"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <line x1="12" y1="18" x2="12" y2="6"></line>
-                    <line x1="6" y1="12" x2="18" y2="12"></line>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    {type}
-                  </span>
+          </div>
+          <div className=" grid grid-cols-2 xl:grid-cols-3 bg-white rounded-lg p-4 shadow-lg z-20 w-full xl:w-[110%] h-full xl:h-[60%] ">
+            {[
+              {
+                name: "Inoxydable",
+                icon: <FaShieldAlt className=" w-8 h-8" />,
+              },
+              {
+                name: "Robustness",
+                icon: <FaHammer className=" w-8 h-8" />,
+              },
+              {
+                name: "Elegance",
+                icon: <FaGem className=" w-8 h-8" />,
+              },
+              {
+                name: "Thermal",
+                icon: <FaFire className=" w-8 h-8" />,
+              },
+              {
+                name: "Convenience",
+                icon: <FaTools className=" w-8 h-8" />,
+              },
+              {
+                name: "Adaptability",
+                icon: <FaExchangeAlt className=" w-8 h-8" />,
+              },
+            ].map((type, index) => (
+              <div
+                key={index}
+                className={`flex flex-col justify-center items-center p-2 xl:p-4 gap:2 xl:gap-6 border-[#] ${
+                  index === 0 ? "lg:border-r-[1px] lg:border-b-[1px]" : ""
+                } ${index === 1 ? "lg:border-b-[1px]" : ""} ${
+                  index === 2 ? "lg:border-l-[1px] lg:border-b-[1px]" : ""
+                } ${index === 3 ? " lg:border-r-[1px]" : ""} ${
+                  index === 5 ? " lg:border-l-[1px]" : ""
+                }`}
+              >
+                <div className="group flex flex-col items-center text-lg cursor-pointer transition duration-700 hover:scale-110">
+                  <p className="group-hover:transform group-hover:scale-x-[-1] transition duration-700 text-gray-600">
+                    {type.icon}
+                  </p>
+                  <p className="text-[#335c98]">{type.name}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

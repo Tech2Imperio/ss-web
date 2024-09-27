@@ -115,9 +115,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${
-        isMobileView ? "bg-black" : " bg-gray-950 bg-opacity-60"
-      } text-white max-w-full sticky z-10`}
+      className={`absolute ${
+        isMobileView
+          ? "bg-gray-950  bg-opacity-60"
+          : " bg-gray-950 bg-opacity-60"
+      } text-white w-[100vw] z-10`}
     >
       {isMobileView ? (
         <>
@@ -126,20 +128,24 @@ export default function Navbar() {
               priority
               src={Logo}
               alt="Logo"
-              className="h-[5rem] w-[8rem] cursor-pointer"
+              className="h-[4.5rem] w-[7rem] cursor-pointer hover:scale-105"
             />
             <button
               onClick={toggleSidebar}
               className="p-4 rounded-full text-white text-2xl"
             >
-              {isOpen ? <IoClose /> : <GiHamburgerMenu />}
+              {isOpen ? (
+                <IoClose className="h-8 w-8" />
+              ) : (
+                <GiHamburgerMenu className="h-8 w-8" />
+              )}
             </button>
           </div>
 
           {isOpen ? (
             <motion.div
               {...sidebarAnimationOpen()}
-              className="relative top-5 left-0 h-auto w-full bg-black text-white lg:h-full -mt-[1.5rem]"
+              className="relative top-5 left-0 h-auto w-full bg-gray-950 text-white lg:h-full -mt-[1.5rem]"
             >
               <div className="p-4 flex flex-col">
                 <div className="flex flex-col my-1">
@@ -303,7 +309,7 @@ export default function Navbar() {
               priority
               src={Logo}
               alt="Logo"
-              className="h-[6rem] w-[9rem] cursor-pointer"
+              className="h-[6rem] w-[9rem] cursor-pointer transform transition-transform hover:scale-[1.15] duration-700"
             />
           </Link>
           <div className="flex justify-evenly items-center w-full">
