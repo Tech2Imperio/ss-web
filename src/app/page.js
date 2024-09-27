@@ -292,7 +292,7 @@ function Section3() {
               contemporary look.
             </p>
           </div>
-          <div className=" grid grid-cols-2 xl:grid-cols-3 bg-white rounded-lg p-4 shadow-lg z-20 w-full xl:w-[110%] h-full xl:h-[60%] ">
+          <div className=" grid grid-cols-2 xl:grid-cols-3 bg-white rounded-lg p-4 z-20 w-full xl:w-[110%] h-full xl:h-[60%] ">
             {[
               {
                 name: "Inoxydable",
@@ -321,7 +321,7 @@ function Section3() {
             ].map((type, index) => (
               <div
                 key={index}
-                className={`flex flex-col justify-center items-center p-2 xl:p-4 gap:2 xl:gap-6 border-[#] ${
+                className={`flex flex-col justify-center items-center p-2 xl:p-4 gap:2 xl:gap-6 ${
                   index === 0 ? "lg:border-r-[1px] lg:border-b-[1px]" : ""
                 } ${index === 1 ? "lg:border-b-[1px]" : ""} ${
                   index === 2 ? "lg:border-l-[1px] lg:border-b-[1px]" : ""

@@ -124,12 +124,14 @@ export default function Navbar() {
       {isMobileView ? (
         <>
           <div className="flex justify-between items-center md:px-28 w-full bg-transparent">
-            <Image
-              priority
-              src={Logo}
-              alt="Logo"
-              className="h-[4.5rem] w-[7rem] cursor-pointer hover:scale-105"
-            />
+            <Link href="/">
+              <Image
+                priority
+                src={Logo}
+                alt="Logo"
+                className="h-[4.5rem] w-[7rem] cursor-pointer hover:scale-105"
+              />
+            </Link>
             <button
               onClick={toggleSidebar}
               className="p-4 rounded-full text-white text-2xl"
@@ -304,7 +306,7 @@ export default function Navbar() {
         </>
       ) : (
         <div className="sm:px-6 lg:px-28 w-full flex">
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/">
             <Image
               priority
               src={Logo}
