@@ -1144,8 +1144,8 @@ const page = () => {
   });
 
   return (
-    <section className=" ">
-      <div className="relative -mt-32">
+    <section className=" relative">
+      <div className="relative">
         <Image
           className=" h-[22rem] md:h-[40rem] w-full object-cover"
           src={bg}

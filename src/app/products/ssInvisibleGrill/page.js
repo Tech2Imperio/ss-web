@@ -204,8 +204,8 @@ export default function Home() {
 
 
   return (
-    <main className=" h-full w-full">
-      <div className="relative -mt-32">
+    <main className=" h-full w-full relative">
+      <div className="relative">
         <Image
           className="h-[22rem] md:h-[40rem] w-full object-cover"
           src={bgImg}
