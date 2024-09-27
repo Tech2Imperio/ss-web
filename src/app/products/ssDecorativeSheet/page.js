@@ -168,8 +168,8 @@ const page = () => {
           alt="U Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center mt-28 md:pt-0 text-[#19355e] text-3xl md:text-[5rem]  poppins-regular">
-          SS Decorative Sheets
+        <h1 className="absolute inset-0 flex items-center justify-center mt-28 md:pt-0 text-[#19355e] text-2xl md:text-[5rem]  poppins-regular">
+          Decorative Sheets
         </h1>
       </div>
 
