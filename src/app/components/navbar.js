@@ -153,12 +153,14 @@ export default function Navbar() {
                 <div className="flex flex-col my-1">
                   <ul className="flex justify-center flex-col gap-5 md:gap-12 cursor-pointer">
                     <Link
+                      onClick={toggleSidebar}
                       href="/"
                       className="p-3 text-xl flex items-center justify-center"
                     >
                       Home
                     </Link>
                     <Link
+                      onClick={toggleSidebar}
                       href="/aboutus"
                       className="p-3 text-xl flex items-center justify-center"
                     >
@@ -185,6 +187,7 @@ export default function Navbar() {
                     >
                       <ul className="flex flex-col justify-around h-auto w-full">
                         <Link
+                          onClick={toggleSidebar}
                           href="/products/ssGlassRailing"
                           className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
                         >
@@ -216,36 +219,42 @@ export default function Navbar() {
                             }
                           >
                             <Link
+                              onClick={toggleSidebar}
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                               href="/products/profile/tProfile"
                             >
                               Stainless Steel T-Profile
                             </Link>
                             <Link
+                              onClick={toggleSidebar}
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                               href="/products/profile/uProfile"
                             >
                               Stainless Steel U-Profile
                             </Link>
                             <Link
+                              onClick={toggleSidebar}
                               href="/products/profile/qProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel Q-Profile
                             </Link>
                             <Link
+                              onClick={toggleSidebar}
                               href="/products/profile/lProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel L-Profile
                             </Link>
                             <Link
+                              onClick={toggleSidebar}
                               href="/products/profile/flutedPanelProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel Fluted Panels
                             </Link>
                             <Link
+                              onClick={toggleSidebar}
                               href="/products/profile/customProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
@@ -255,24 +264,28 @@ export default function Navbar() {
                         )}
 
                         <Link
+                          onClick={toggleSidebar}
                           href="/products/ssDecorativeSheet"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Stainless Steel Decorative Sheet
                         </Link>
                         <Link
+                          onClick={toggleSidebar}
                           href="/products/ssWireRope"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Stainless Steel Wire Rope
                         </Link>
                         <Link
+                          onClick={toggleSidebar}
                           href="/products/ssInvisibleGrill"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Invisible Grill
                         </Link>
                         <Link
+                          onClick={toggleSidebar}
                           href="/products/ssQueueManager"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
@@ -283,12 +296,14 @@ export default function Navbar() {
                   )}
 
                   <Link
+                    onClick={toggleSidebar}
                     href="/blog"
                     className="p-3 text-xl flex items-center justify-center mt-2"
                   >
                     Blog
                   </Link>
                   <Link
+                    onClick={toggleSidebar}
                     href="/contactus"
                     className="p-3 text-xl flex items-center justify-center mt-2"
                   >
