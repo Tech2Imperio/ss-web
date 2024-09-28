@@ -164,7 +164,7 @@ function Section2() {
               delay: 0.6,
               repeat: Infinity,
               repeatType: "loop",
-              repeatDelay: 5,
+              repeatDelay: 15,
             }}
           >
             <div className="h-full flex flex-col items-start justify-center px-14 gap-[1.5rem] text-gray-300">
@@ -266,33 +266,33 @@ function Section3() {
   }, []);
 
   return (
-    <section className="relative flex flex-col xl:flex-row h-auto xl:h-screen gap-2 w-full  p-2 xl:px-[18rem] xl:py-20 align-middle">
-      <div className="relative flex flex-col xl:flex-row justify-center h-auto w-auto xl:h-full xl:w-full xl:px-8 xl:gap-28 gap-4">
-        <div className="h-auto w-auto xl:h-[90%] xl:w-[35%] flex justify-center xl:justify-start xl:items-start">
+    <section className="relative flex flex-col h-auto w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:my-20 xl:h-screen xl:flex-row">
+      <div className="relative h-auto w-auto flex flex-col justify-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row ">
+        <div className="h-auto w-auto flex justify-center xl:justify-start xl:items-start xl:h-[90%] xl:w-[35%]">
           <Image
             priority
             src={isMobileView ? Mobpreview : preview}
             alt="Modern room with large windows"
-            className="rounded-lg relative h-[40%] w-full xl:absolute xl:w-[45%] xl:h-[90%]"
+            className="rounded-lg relative h-[40%] w-full xl:absolute xl:w-[45%] xl:h-[75%]"
           />
         </div>
 
-        <div className="flex flex-col justify-between items-end h-full w-full xl:w-[50%] gap-4">
-          <div className="space-y-2 xl:ml-16 flex flex-col z-10 px-4">
-            <div className=" bg-gray-900 text-amber-500 px-4 py-2 rounded w-36 text-center">
+        <div className="flex flex-col justify-between items-end h-[85%] w-full xl:w-[50%]">
+          <div className="space-y-2 flex flex-col px-4 xl:ml-16">
+            <div className=" bg-gray-300 text-[#335c98] px-4 py-2 rounded w-36 text-center poppins-bold whitespace-nowrap">
               Product Quality
             </div>
             <h2 className="text-4xl  text-[#335c98] poppins-bold">
               Explore Premium Stainless Steel Products
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-800 text-justify">
               Uncover the sophistication of our premium stainless steel
               products, combining strength and beauty for lasting appeal.
               Perfect for any setting, they offer both resilience and a sleek,
               contemporary look.
             </p>
           </div>
-          <div className=" grid grid-cols-2 xl:grid-cols-3 bg-white rounded-lg p-4 z-20 w-full xl:w-[110%] h-full xl:h-[60%] ">
+          <div className=" grid grid-cols-2 bg-white rounded-lg z-20 h-full w-full md:shadow-xl xl:h-[45%] xl:grid-cols-3 xl:w-[110%] p-2">
             {[
               {
                 name: "Inoxydable",
@@ -321,7 +321,7 @@ function Section3() {
             ].map((type, index) => (
               <div
                 key={index}
-                className={`flex flex-col justify-center items-center p-2 xl:p-4 gap:2 xl:gap-6 ${
+                className={`flex flex-col justify-center ${
                   index === 0 ? "lg:border-r-[1px] lg:border-b-[1px]" : ""
                 } ${index === 1 ? "lg:border-b-[1px]" : ""} ${
                   index === 2 ? "lg:border-l-[1px] lg:border-b-[1px]" : ""
@@ -329,11 +329,11 @@ function Section3() {
                   index === 5 ? " lg:border-l-[1px]" : ""
                 }`}
               >
-                <div className="group flex flex-col items-center text-lg cursor-pointer transition duration-700 hover:scale-110">
+                <div className="group flex flex-col items-center text-lg cursor-pointer transition duration-700 hover:scale-110 gap-4">
                   <p className="group-hover:transform group-hover:scale-x-[-1] transition duration-700 text-gray-600">
                     {type.icon}
                   </p>
-                  <p className="text-[#335c98]">{type.name}</p>
+                  <p className="text-[#335c98] poppins-medium">{type.name}</p>
                 </div>
               </div>
             ))}
@@ -341,6 +341,12 @@ function Section3() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Section4() {
+  return (
+    <section className="relative w-auto h-auto lg:h-screen lg:w-screen"></section>
   );
 }
 

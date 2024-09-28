@@ -23,7 +23,6 @@ export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState("");
   const [hoveredSubItem, setHoveredSubItem] = useState("");
 
-  const arrow = <MdArrowForwardIos />;
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/aboutus" },
@@ -89,7 +88,18 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleSidebar = () => setIsOpen((prev) => !prev);
+  const toggleSidebar = () => {
+    setIsOpen((prev) => {
+      if (prev) {
+        setIsProductsDropdownOpen(false);
+        setIsProfileDropdownOpen(false);
+        setRotateProductsIcon(false);
+        setRotateProfileIcon(false);
+      }
+      return !prev;
+    });
+  };
+
   const toggleProductsDropdown = () => {
     setIsProductsDropdownOpen((prev) => !prev);
     setRotateProductsIcon((prev) => !prev);
@@ -97,6 +107,11 @@ export default function Navbar() {
       setIsProfileDropdownOpen(false);
       setRotateProfileIcon(false);
     }
+  };
+
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen((prev) => !prev);
+    setRotateProfileIcon((prev) => !prev);
   };
 
   const handleProfileDropdownHover = (isHovering) => {
@@ -115,7 +130,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`absolute ${
+      className={`fixed ${
         isMobileView
           ? "bg-gray-950  bg-opacity-60"
           : " bg-gray-950 bg-opacity-60"
@@ -168,7 +183,9 @@ export default function Navbar() {
                     </Link>
                     <Link
                       href="#"
-                      onClick={toggleProductsDropdown}
+                      onClick={(e) => {
+                        e.preventDefault(), toggleProductsDropdown();
+                      }}
                       className="flex gap-2 cursor-pointer p-3 text-xl items-center justify-center"
                     >
                       Products
@@ -197,6 +214,7 @@ export default function Navbar() {
                           href="#"
                           onMouseEnter={() => handleProfileDropdownHover(true)}
                           onMouseLeave={() => handleProfileDropdownHover(false)}
+                          onClick={toggleProfileDropdown}
                           className="flex gap-1 cursor-pointer p-2 text-[1.25rem] items-center justify-center"
                         >
                           Stainless Steel Profile
@@ -344,7 +362,9 @@ export default function Navbar() {
                       className="px-3 py-2 rounded-md text-xl font-medium hover:text-white flex items-center"
                     >
                       {item.name}
-                      {item.name === "Products" && <MdArrowForwardIos />}
+                      {item.name === "Products" && (
+                        <MdArrowForwardIos className="mt-1" />
+                      )}
                     </Link>
                     {item.subItems && hoveredItem === item.name && (
                       <div className="absolute left-0 w-72 rounded-md shadow-lg bg-white text-gray-700 ring-1 focus:outline-none z-10">
