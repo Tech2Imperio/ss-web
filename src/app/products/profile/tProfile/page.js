@@ -1409,7 +1409,7 @@ const page = () => {
           alt="T Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center pt-24 mt-28 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
+        <h1 className="absolute inset-0 flex items-center justify-center pt-14  md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
           T Profile
         </h1>
       </div>

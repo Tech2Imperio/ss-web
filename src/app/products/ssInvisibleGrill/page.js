@@ -25,7 +25,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 
-
 export default function Home() {
   const items = [img1, img2, img3];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -85,123 +84,120 @@ export default function Home() {
   ];
 
   const accessoriesData = [
-    { 
-      id: 1, 
-      name: 'Bullet Fitting', 
-      image: BulletHook, 
+    {
+      id: 1,
+      name: "Bullet Fitting",
+      image: BulletHook,
       specifications: {
-        GradeField: '304/316',
-        Technique: 'Customized',
-        Material: 'Stainless Steel',
-        ProductType: 'Bullet Hook',
-        UsageApplication: 'For balcony and staircase',
-        GrillDesign: 'Modern',
-        WireDiameter: '3 mm',
-        SurfaceFinish: 'Polished',
-        Colors: 'Silver',
-        Feature: 'Rust Proof, Weather Proof, Durable',
-        MovableBulletFit: 'Yes',
+        GradeField: "304/316",
+        Technique: "Customized",
+        Material: "Stainless Steel",
+        ProductType: "Bullet Hook",
+        UsageApplication: "For balcony and staircase",
+        GrillDesign: "Modern",
+        WireDiameter: "3 mm",
+        SurfaceFinish: "Polished",
+        Colors: "Silver",
+        Feature: "Rust Proof, Weather Proof, Durable",
+        MovableBulletFit: "Yes",
       },
     },
-    { 
-      id: 2, 
-      name: 'Snap Hooks', 
-      image: Hooks, 
+    {
+      id: 2,
+      name: "Snap Hooks",
+      image: Hooks,
       specifications: {
-        GradeField: '	304/316',
-        Technique: 'customized',
-        Material: 'Stainless Steel',
-        ProductType: 'Snap Hook',
-        UsageApplication: '	Construction Industry',
-        GrillDesign: 'Modern',
-        WireDiameter: '3 mm',
-        SurfaceFinish: 'Polished',
-        WireSpacing: '	2,3,4',
-        Colors: 'Silver',
-        Feature: 'Rust Proof, Weather Proof, Durable',
+        GradeField: "	304/316",
+        Technique: "customized",
+        Material: "Stainless Steel",
+        ProductType: "Snap Hook",
+        UsageApplication: "	Construction Industry",
+        GrillDesign: "Modern",
+        WireDiameter: "3 mm",
+        SurfaceFinish: "Polished",
+        WireSpacing: "	2,3,4",
+        Colors: "Silver",
+        Feature: "Rust Proof, Weather Proof, Durable",
       },
     },
-    { 
-      id: 3, 
-      name: 'D-Shackle', 
-      image: Hooks2, 
+    {
+      id: 3,
+      name: "D-Shackle",
+      image: Hooks2,
       specifications: {
-        GradeField: '304/316',
-        Technique: 'Standard',
-        Material: 'Stainless Steel',
-        ProductType: 'D-Shackle',
-        UsageApplication: 'For balcony and staircase',
-        GrillDesign: 'Modern',
-        WireDiameter: '3 mm',
-        WireSpacing: '	2,3,4',
-        SurfaceFinish: 'Polished',
-        Colors: 'Silver',
-        Feature: 'Rust Proof, Weather Proof, Durable',
+        GradeField: "304/316",
+        Technique: "Standard",
+        Material: "Stainless Steel",
+        ProductType: "D-Shackle",
+        UsageApplication: "For balcony and staircase",
+        GrillDesign: "Modern",
+        WireDiameter: "3 mm",
+        WireSpacing: "	2,3,4",
+        SurfaceFinish: "Polished",
+        Colors: "Silver",
+        Feature: "Rust Proof, Weather Proof, Durable",
       },
     },
-    { 
-      id: 4, 
-      name: 'Invisible material', 
-      image: invisiblematerial, 
+    {
+      id: 4,
+      name: "Invisible material",
+      image: invisiblematerial,
       specifications: {
-        GradeField: '	304/316',
-        Technique: 'customized',
-        Material: 'Stainless Steel',
-        ProductType: 'Balcony Grill',
-        UsageApplication: 'Home',
-        GrillDesign: 'Modern',
-        WireDiameter: '2.5 mm',
-        SurfaceFinish: 'Powder Coated',
-        Colors: 'Silver',
-        Feature: 'Rust Proof, Weather Proof, Durable',
+        GradeField: "	304/316",
+        Technique: "customized",
+        Material: "Stainless Steel",
+        ProductType: "Balcony Grill",
+        UsageApplication: "Home",
+        GrillDesign: "Modern",
+        WireDiameter: "2.5 mm",
+        SurfaceFinish: "Powder Coated",
+        Colors: "Silver",
+        Feature: "Rust Proof, Weather Proof, Durable",
       },
     },
-    { 
-      id: 5, 
-      name: 'Turnbuckle hook', 
-      image: turnbuckle, 
+    {
+      id: 5,
+      name: "Turnbuckle hook",
+      image: turnbuckle,
       specifications: {
-        GradeField: '316 Stainless Steel',
-        Technique: 'Standard',
-        Material: 'Stainless Steel',
-        ProductType: '	Invisible Grill Wire Roll Hook',
-        UsageApplication: 'For balcony and staircase',
-        GrillDesign: 'Modern',
-        WireDiameter: '3 mm',
-        WireSpacing: '2,3,4',
-        SurfaceFinish: 'Polished',
-        Colors: 'Silver',
-        Feature: 'Rust Proof, Weather Proof, Durable',
+        GradeField: "	304/316",
+        Technique: "Standard",
+        Material: "Stainless Steel",
+        ProductType: "	Invisible Grill Wire Roll Hook",
+        UsageApplication: "For balcony and staircase",
+        GrillDesign: "Modern",
+        WireDiameter: "3 mm",
+        WireSpacing: "2,3,4",
+        SurfaceFinish: "Polished",
+        Colors: "Silver",
+        Feature: "Rust Proof, Weather Proof, Durable",
       },
     },
-    { 
-      id: 5, 
-      name: 'Wire Roll', 
-      image: Invisiblerope, 
+    {
+      id: 5,
+      name: "Wire Roll",
+      image: Invisiblerope,
       specifications: {
-        GradeField: '	304/316',
-        Technique: 'Standard',
-        Material: 'Stainless Steel',
-        ProductType: '	Invisible Grill Wire Roll',
-        UsageApplication: 'Used To Safeguard Homes',
-        GrillDesign: 'Modern',
-        WireDiameter: '2.5 mm',
-        WireSpacing: '2,3,4', 
-        SurfaceFinish: 'Powder Coated',
-        Colors: 'Black, White, Brown',
-        Feature: 'Rust Proof, Weather Proof, Durable',
+        GradeField: "	304/316",
+        Technique: "Standard",
+        Material: "Stainless Steel",
+        ProductType: "	Invisible Grill Wire Roll",
+        UsageApplication: "Used To Safeguard Homes",
+        GrillDesign: "Modern",
+        WireDiameter: "2.5 mm",
+        WireSpacing: "2,3,4",
+        SurfaceFinish: "Powder Coated",
+        Colors: "Black, White, Brown",
+        Feature: "Rust Proof, Weather Proof, Durable",
       },
     },
-  
   ];
-  
 
   const [selectedAccessory, setSelectedAccessory] = useState(null);
 
   const toggleAccessory = (accessory) => {
     setSelectedAccessory(selectedAccessory === accessory ? null : accessory);
   };
-
 
   return (
     <main className=" h-full w-full relative">
@@ -228,10 +224,12 @@ export default function Home() {
           every installation.
         </p>
         <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-full w-full bg-gray-50">
-      <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
-        <h1 className="text-3xl font-semibold text-[#335c98] p-4">Invisible Grill</h1>
-        <div className="overflow-hidden rounded-3xl h-[25rem] w-[20rem] md:h-[42rem] md:w-[28rem] lg:h-[45rem] lg:w-[28rem] xl:h-[35rem] xl:w-[24rem] border border-gray-300 relative">
-        {items.map((item, index) => (
+          <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
+            <h1 className="text-3xl font-semibold text-[#335c98] p-4">
+              Invisible Grill
+            </h1>
+            <div className="overflow-hidden rounded-3xl h-[25rem] w-[20rem] md:h-[42rem] md:w-[28rem] lg:h-[45rem] lg:w-[28rem] xl:h-[35rem] xl:w-[24rem] border border-gray-300 relative">
+              {items.map((item, index) => (
                 <div
                   key={index}
                   className={`absolute transition-transform duration-500 ease-in-out w-full h-full flex items-center justify-center transform ${
@@ -248,57 +246,72 @@ export default function Home() {
                   />
                 </div>
               ))}
-
-        </div>
-      </div>
-
-      <div className="flex flex-col -mt-28 md:-mt-14 lg:-mt-0">
-        <h2 className="text-3xl font-semibold text-[#335c98] flex justify-center">Accessories</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 justify-center items-center list-none -mx-4 transition-transform duration-300">
-          {accessoriesData.map((accessory) => (
-            <div key={accessory.id} className="flex flex-col items-center">
-              <li
-                className="h-[7rem] w-[7rem] md:h-[10rem] md:w-[10rem] lg:h-[12rem] lg:w-[12rem] xl:h-[10rem] xl:w-[10rem] hover:scale-110 transition-transform duration-300 cursor-pointer"
-                onClick={() => toggleAccessory(accessory)}
-              >
-                <Image src={accessory.image} alt={accessory.name} />
-              </li>
-              <p className="text-center text-gray-700 font-medium">{accessory.name}</p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {selectedAccessory && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg p-6 w-11/12 md:w-1/2 lg:w-1/3 transition-transform duration-500">
-            <h3 className="text-xl poppins-bold text-[#335c98] mb-4">{selectedAccessory.name} Specifications</h3>
-            <table className="min-w-full border-collapse border border-gray-300">
-              <thead>
-                <tr className="bg-gray-200">
-                  <th className="border border-gray-300 p-2 text-left poppins-semibold text-[#335c98]">Specification</th>
-                  <th className="border border-gray-300 p-2 text-left poppins-semibold text-[#335c98]">Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(selectedAccessory.specifications).map(([key, value], index) => (
-                  <tr key={index} className="hover:bg-gray-100">
-                    <td className="border border-gray-300 p-2 nunito text-[#335c98]">{key.replace(/([A-Z])/g, ' $1')}</td>
-                    <td className="border border-gray-300 p-2 nunito text-[#335c98]">{value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <button
-              className="mt-8 px-6 py-3 poppins-regular bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50"
-              onClick={() => setSelectedAccessory(null)}
-            >
-              Close
-            </button>
           </div>
-        </div>
-      )}
-    </section>
+
+          <div className="flex flex-col -mt-28 md:-mt-14 lg:-mt-0">
+            <h2 className="text-3xl font-semibold text-[#335c98] flex justify-center">
+              Accessories
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 justify-center items-center list-none -mx-4 transition-transform duration-300">
+              {accessoriesData.map((accessory) => (
+                <div key={accessory.id} className="flex flex-col items-center">
+                  <li
+                    className="h-[7rem] w-[7rem] md:h-[10rem] md:w-[10rem] lg:h-[12rem] lg:w-[12rem] xl:h-[10rem] xl:w-[10rem] hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    onClick={() => toggleAccessory(accessory)}
+                  >
+                    <Image src={accessory.image} alt={accessory.name} />
+                  </li>
+                  <p className="text-center text-gray-700 font-medium">
+                    {accessory.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {selectedAccessory && (
+            <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+              <div className="bg-white rounded-lg p-6 w-11/12 md:w-1/2 lg:w-1/3 transition-transform duration-500">
+                <h3 className="text-xl poppins-bold text-[#335c98] mb-4">
+                  {selectedAccessory.name} Specifications
+                </h3>
+                <table className="min-w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-gray-200">
+                      <th className="border border-gray-300 p-2 text-left poppins-semibold text-[#335c98]">
+                        Specification
+                      </th>
+                      <th className="border border-gray-300 p-2 text-left poppins-semibold text-[#335c98]">
+                        Details
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(selectedAccessory.specifications).map(
+                      ([key, value], index) => (
+                        <tr key={index} className="hover:bg-gray-100">
+                          <td className="border border-gray-300 p-2 nunito text-[#335c98]">
+                            {key.replace(/([A-Z])/g, " $1")}
+                          </td>
+                          <td className="border border-gray-300 p-2 nunito text-[#335c98]">
+                            {value}
+                          </td>
+                        </tr>
+                      )
+                    )}
+                  </tbody>
+                </table>
+                <button
+                  className="mt-8 px-6 py-3 poppins-regular bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50"
+                  onClick={() => setSelectedAccessory(null)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
+        </section>
       </div>
       <main className="flex flex-col overflow-hidden w-full h-full xl:px-[18rem] p-4 md:p-6 lg:p-8">
         <div className="max-w-screen-xl mx-auto">

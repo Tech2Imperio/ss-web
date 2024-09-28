@@ -4,14 +4,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import wallImg from "../../assets/product/profile/T_profile/wall.webp";
-import upofile from "../../assets/product/profile/U_profile/Uprofilem.webp";
+import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
 // import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
 import LProfile from "../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../assets/RelatedProducts/fluted.webp";
 import customized from "../../assets/RelatedProducts/customized.webp";
+import invisibleGrill from "../../assets/product/invisiblegrill/square.webp";
 import CProfile from "../../assets/RelatedProducts/CProfile.webp";
 import bg from "../../assets/product/profile/T_profile/bg.webp";
-import Umessurement from "../../assets/product/profile/U_profile/Umessure.png";
+import Umessurement from "../../assets/product/ssdecorativesheet/decorativeSheets.webp";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
@@ -49,11 +50,11 @@ import StraightlineImgR from "../../assets/product/ssdecorativesheet/finishes/ro
 import MeshImgR from "../../assets/product/ssdecorativesheet/finishes/rosegold/meshroseGold.png";
 
 //ChampagnU finishes
-import MirrorImgC from "../../assets/product/profile/U_profile/finishes/champagne/mirrorChampagne.png";
-import HairlineImgC from "../../assets/product/profile/U_profile/finishes/champagne/hairlineChampagne.png";
-import StainImgC from "../../assets/product/profile/U_profile/finishes/champagne/stainChampagne.png";
-import StraightlineImgC from "../../assets/product/profile/U_profile/finishes/champagne/straightlineChampagne.png";
-import MeshImgC from "../../assets/product/profile/U_profile/finishes/champagne/meshChampagne.png";
+import MirrorImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/mirrorChampagne.png";
+import HairlineImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/hairlineChampagne.png";
+import StainImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/stainChampagne.png";
+import StraightlineImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/straightlineChampagne.png";
+import MeshImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/meshChampagne.png";
 
 const page = () => {
   const finishes = [
@@ -143,21 +144,26 @@ const page = () => {
       image: customized,
       link: "/products/profile/customProfile",
     },
+    {
+      title: "Invisible Grill",
+      image: invisibleGrill,
+      link: "/products/ssInvisibleGrill",
+    },
   ];
   const { ref: card1Ref, inView: card1InView } = useInView({
     triggerOnce: true, // Animates only once
     threshold: 0.1, // 10% of the card needs to be visible to trigger the animation
   });
 
-  const { ref: card2Ref, inView: card2InView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  // const { ref: card2Ref, inView: card2InView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.1,
+  // });
 
-  const { ref: card3Ref, inView: card3InView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  // const { ref: card3Ref, inView: card3InView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.1,
+  // });
 
   return (
     <section className="relative">
@@ -165,10 +171,10 @@ const page = () => {
         <Image
           className=" h-[22rem] md:h-[40rem] w-full object-cover"
           src={bg}
-          alt="U Profile"
+          alt="decorative sheet"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center mt-28 md:pt-0 text-[#19355e] text-2xl md:text-[5rem]  poppins-regular">
+        <h1 className="absolute inset-0 flex items-center justify-center md:pt-0 text-[#19355e] text-4xl md:text-[5rem]  poppins-regular">
           Decorative Sheets
         </h1>
       </div>
@@ -339,7 +345,7 @@ const page = () => {
               <div className=" w-[28rem] lg:w-[55%] px-14">
                 <Image
                   className="rounded-lg  transition-transform duration-300 hover:scale-105"
-                  src={upofile}
+                  src={allFinishes}
                   alt="Stainless Steel T Profile"
                 />
               </div>
@@ -350,7 +356,7 @@ const page = () => {
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
               <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
-                Properties of Stainless Steel U Profiles
+                Properties of Stainless Steel Decorative Sheets
               </h2>
               <p className="text-gray-500 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 nunito">
                 Stainless steel decorative sheets are premium panels designed
@@ -374,7 +380,7 @@ const page = () => {
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
                   <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] poppins-regular">
-                    Benefits of Stainless Steel U Profiles
+                    Benefits of Stainless Steel Decorative Sheets
                   </th>
                 </tr>
               </thead>
@@ -394,7 +400,9 @@ const page = () => {
                     2. Durability
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
-                  Designed to withstand wear and tear, these decorative panels are perfect for both residential and commercial spaces, providing a robust solution for high-traffic environments..
+                    Designed to withstand wear and tear, these decorative panels
+                    are perfect for both residential and commercial spaces,
+                    providing a robust solution for high-traffic environments..
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
@@ -402,7 +410,9 @@ const page = () => {
                     3. Aesthetic Appeal
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
-                  Available in stunning finishes like brushed and mirrored, stainless steel sheets enhance the visual impact of any wall, making them a chic choice for modern interiors..
+                    Available in stunning finishes like brushed and mirrored,
+                    stainless steel sheets enhance the visual impact of any
+                    wall, making them a chic choice for modern interiors..
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
@@ -410,7 +420,9 @@ const page = () => {
                     4. Versatility
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
-                  Ideal for a range of applications, from accent walls to kitchen backsplashes, stainless steel decorative sheets offer endless design possibilities for any home or business.
+                    Ideal for a range of applications, from accent walls to
+                    kitchen backsplashes, stainless steel decorative sheets
+                    offer endless design possibilities for any home or business.
                   </td>
                 </tr>
               </tbody>
@@ -460,59 +472,62 @@ const page = () => {
 
         {/* example phone colse  */}
 
-        <main className="flex flex-col justify-center text-justify gap-20 translate-y-14 ">
+        <main
+          ref={card1Ref}
+          className={`flex flex-col justify-center text-justify gap-20 translate-y-14 `}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div
-              ref={card1Ref}
+              // ref={card1Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
+               ${card1InView ? "animate-wave delay-100" : "opacity-0"} `}
             >
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-500 nunito">
-                Stainless steel U profiles are essential in architecture and
-                construction, offering strength, versatility, and aesthetic
-                appeal. Ideal for framing and cladding, they provide durable,
-                corrosion-resistant solutions for outdoor use and enhance modern
-                designs in residential and commercial projects.
+                Stainless steel decorative sheets elevate aesthetics and
+                functionality in architecture and construction. Available in
+                various finishes and patterns, they are perfect for cladding and
+                interiors. Their durability and corrosion resistance ensure
+                lasting beauty and performance.
               </p>
             </div>
 
             {/* Card 2 */}
             <div
-              ref={card2Ref}
+              // ref={card2Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
+               ${card1InView ? "animate-wave delay-500" : "opacity-0"}`}
             >
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-500 nunito">
-                Stainless steel U profiles are ideal for furniture and shelving
-                applications, offering strength and stability for innovative
-                designs. Their sleek finish adds a modern touch while providing
-                durable, corrosion-resistant solutions for both residential and
-                commercial spaces.
+                Stainless steel decorative sheets are ideal for modern furniture
+                and shelving, offering sleek designs that enhance any space.
+                Their durability and resistance to scratches and corrosion make
+                them perfect for stylish, long-lasting interiors.
               </p>
             </div>
 
             {/* Card 3 */}
             <div
-              ref={card3Ref}
+              // ref={card3Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
+               ${card1InView ? "animate-wave delay-700" : "opacity-0"} `}
             >
               <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-500 nunito">
-                Stainless steel U profiles are widely used in the automotive and
-                marine industries for their strength and corrosion resistance.
-                These profiles provide robust structural support, ensuring
-                durability and reliability in harsh environments, making them an
-                ideal choice for vehicles and marine applications.
+                Stainless steel decorative sheets are widely used in the
+                automotive and marine industries for stylish wall designs and
+                interior finishes. Their lightweight yet durable properties
+                ensure both aesthetic appeal and resistance to harsh
+                environments, making them an ideal choice for enhancing vehicle
+                and boat interiors.
               </p>
             </div>
           </div>
