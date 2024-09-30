@@ -60,11 +60,11 @@ export default function Navbar() {
             },
             {
               name: "Stainless Steel Fluted Panels",
-              href: "/products/profile/flutedPanelProfile",
+              href: "/products/profile/ssFlutedPanelProfile",
             },
             {
               name: "Stainless Steel Customize Profile",
-              href: "/products/profile/customProfile",
+              href: "/products/profile/ssCustomProfile",
             },
           ],
         },
@@ -74,7 +74,7 @@ export default function Navbar() {
       ],
     },
     { name: "Blog", href: "/" },
-    { name: "Contact Us", href: "/" },
+    { name: "Contact Us", href: "/contactUs" },
   ];
 
   useEffect(() => {
@@ -130,21 +130,21 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed ${
+      className={`absolute xl:fixed ${
         isMobileView
-          ? "bg-gray-950  bg-opacity-60"
+          ? "bg-gray-950  bg-opacity-85"
           : " bg-gray-950 bg-opacity-60"
-      } text-white w-[100vw] z-10`}
+      } text-white w-[100vw] z-50`}
     >
       {isMobileView ? (
         <>
-          <div className="flex justify-between items-center md:px-28 w-full bg-transparent">
-            <Link href="/">
+          <div className="flex justify-between items-center md:px-28 w-full bg-gray-950 opacity-85 z-50">
+            <Link href="/" className="px-2 py-2">
               <Image
                 priority
                 src={Logo}
                 alt="Logo"
-                className="h-[4.5rem] w-[7rem] cursor-pointer hover:scale-105"
+                className="h-[4rem] w-[4rem] cursor-pointer hover:scale-105"
               />
             </Link>
             <button
@@ -152,9 +152,9 @@ export default function Navbar() {
               className="p-4 rounded-full text-white text-2xl"
             >
               {isOpen ? (
-                <IoClose className="h-8 w-8" />
+                <IoClose className="h-9 w-9" />
               ) : (
-                <GiHamburgerMenu className="h-8 w-8" />
+                <GiHamburgerMenu className="h-9 w-9" />
               )}
             </button>
           </div>
@@ -162,11 +162,11 @@ export default function Navbar() {
           {isOpen ? (
             <motion.div
               {...sidebarAnimationOpen()}
-              className="relative top-5 left-0 h-auto w-full bg-gray-950 text-white lg:h-full -mt-[1.5rem]"
+              className="relative top-18 left-0 h-auto w-full bg-gray-950 opacity-85 text-white lg:h-full z-50"
             >
               <div className="p-4 flex flex-col">
                 <div className="flex flex-col my-1">
-                  <ul className="flex justify-center flex-col gap-5 md:gap-12 cursor-pointer">
+                  <ul className="flex justify-center flex-col gap-2 md:gap-12 cursor-pointer">
                     <Link
                       onClick={toggleSidebar}
                       href="/"
@@ -200,7 +200,7 @@ export default function Navbar() {
                   {isProductsDropdownOpen && (
                     <motion.div
                       {...dropdownAnimationOpen()}
-                      className="relative bg-black flex flex-col items-center h-auto gap-4 px-5 w-full cursor-pointer py-8"
+                      className="relative bg-gray-950 opacity-85 flex flex-col items-center h-auto gap-4 px-5 w-full cursor-pointer py-2"
                     >
                       <ul className="flex flex-col justify-around h-auto w-full">
                         <Link
@@ -266,14 +266,14 @@ export default function Navbar() {
                             </Link>
                             <Link
                               onClick={toggleSidebar}
-                              href="/products/profile/flutedPanelProfile"
+                              href="/products/profile/ssFlutedPanelProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel Fluted Panels
                             </Link>
                             <Link
                               onClick={toggleSidebar}
-                              href="/products/profile/customProfile"
+                              href="/products/profile/ssCustomProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel Customize Profile
@@ -316,14 +316,14 @@ export default function Navbar() {
                   <Link
                     onClick={toggleSidebar}
                     href="/blog"
-                    className="p-3 text-xl flex items-center justify-center mt-2"
+                    className="p-3 text-xl flex items-center justify-center"
                   >
                     Blog
                   </Link>
                   <Link
                     onClick={toggleSidebar}
-                    href="/contactus"
-                    className="p-3 text-xl flex items-center justify-center mt-2"
+                    href="/contactUs"
+                    className="p-3 text-xl flex items-center justify-center"
                   >
                     Contact Us
                   </Link>
@@ -338,81 +338,78 @@ export default function Navbar() {
           )}
         </>
       ) : (
-        <div className="sm:px-6 lg:px-28 w-full flex">
-          <Link href="/">
+        <div className="sm:px-6 lg:px-28 w-full h-full hidden md:flex">
+          <Link href="/" className="py-4">
             <Image
               priority
               src={Logo}
               alt="Logo"
-              className="h-[6rem] w-[9rem] cursor-pointer transform transition-transform hover:scale-[1.15] duration-700"
+              className="h-[4rem] w-[5rem] cursor-pointer transform transition-transform hover:scale-[1.15] duration-700"
             />
           </Link>
-          <div className="flex justify-evenly items-center w-full">
-            <div className="hidden md:block">
-              <div className="flex justify-around w-[50vw] items-baseline space-x-4">
-                {navItems.map((item) => (
-                  <div
-                    key={item.name}
-                    className="relative group"
-                    onMouseEnter={() => handleMouseEnter(item.name)}
-                    onMouseLeave={handleMouseLeave}
+          <div className="flex justify-evenly items-center w-full h-auto">
+            <div className="flex justify-around w-[50vw] h-full items-center space-x-4">
+              {navItems.map((item) => (
+                <div
+                  key={item.name}
+                  className="relative group h-full flex items-center"
+                  onMouseEnter={() => handleMouseEnter(item.name)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <Link
+                    href={item.href}
+                    className="px-3 py-2 rounded-md text-xl font-medium hover:text-white flex items-center"
                   >
-                    <Link
-                      href={item.href}
-                      className="px-3 py-2 rounded-md text-xl font-medium hover:text-white flex items-center"
-                    >
-                      {item.name}
-                      {item.name === "Products" && (
-                        <MdArrowForwardIos className="mt-1" />
-                      )}
-                    </Link>
-                    {item.subItems && hoveredItem === item.name && (
-                      <div className="absolute left-0 w-72 rounded-md shadow-lg bg-white text-gray-700 ring-1 focus:outline-none z-10">
-                        <div className="py-1" role="menu">
-                          {item.subItems.map((subItem) => (
-                            <div
-                              key={subItem.name}
-                              className="relative group"
-                              onMouseEnter={() =>
-                                handleSubItemMouseEnter(subItem.name)
-                              }
-                              onMouseLeave={handleSubItemMouseLeave}
-                            >
-                              <Link
-                                href={subItem.href}
-                                className=" px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700 flex items-center"
-                              >
-                                {subItem.name}
-                                {subItem.name === "Stainless Steel Profile" && (
-                                  <MdArrowForwardIos />
-                                )}
-                              </Link>
-                              {subItem.subItems &&
-                                (hoveredSubItem === subItem.name ||
-                                  hoveredItem ===
-                                    "Stainless Steel Profile") && (
-                                  <div className="absolute left-full top-0 mt-0 w-56 rounded-md shadow-lg bg-gray-300 ring-1 ring-black ring-opacity-5">
-                                    <div className="py-1" role="menu">
-                                      {subItem.subItems.map((nestedSubItem) => (
-                                        <Link
-                                          key={nestedSubItem.name}
-                                          href={nestedSubItem.href}
-                                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                        >
-                                          {nestedSubItem.name}
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  </div>
-                                )}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                    {item.name}
+                    {item.name === "Products" && (
+                      <MdArrowForwardIos className="mt-1" />
                     )}
-                  </div>
-                ))}
-              </div>
+                  </Link>
+                  {item.subItems && hoveredItem === item.name && (
+                    <div className="absolute top-24 left-0 w-72 rounded-md shadow-lg bg-white text-gray-700 z-10">
+                      <div className="py-1" role="menu">
+                        {item.subItems.map((subItem) => (
+                          <div
+                            key={subItem.name}
+                            className="relative group"
+                            onMouseEnter={() =>
+                              handleSubItemMouseEnter(subItem.name)
+                            }
+                            onMouseLeave={handleSubItemMouseLeave}
+                          >
+                            <Link
+                              href={subItem.href}
+                              className=" px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700 flex items-center"
+                            >
+                              {subItem.name}
+                              {subItem.name === "Stainless Steel Profile" && (
+                                <MdArrowForwardIos />
+                              )}
+                            </Link>
+                            {subItem.subItems &&
+                              (hoveredSubItem === subItem.name ||
+                                hoveredItem === "Stainless Steel Profile") && (
+                                <div className="absolute left-full top-0 mt-0 w-56 rounded-md shadow-lg bg-gray-300 ring-1 ring-black ring-opacity-5">
+                                  <div className="py-1" role="menu">
+                                    {subItem.subItems.map((nestedSubItem) => (
+                                      <Link
+                                        key={nestedSubItem.name}
+                                        href={nestedSubItem.href}
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                      >
+                                        {nestedSubItem.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

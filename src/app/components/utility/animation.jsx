@@ -3,7 +3,7 @@ export const sidebarAnimationOpen = () => {
     initial: false,
     animate: { y: 0 },
     exit: { y: "-100%" },
-    transition: { duration: 1, ease: "easeInOut" },
+    transition: { duration: 0.8, ease: "easeInOut" },
   };
 };
 
@@ -12,7 +12,7 @@ export const sidebarAnimationClose = () => {
     initial: false,
     animate: { y: "-100%" },
     exit: { y: "100%" },
-    transition: { duration: 1, ease: "easeInOut" },
+    transition: { duration: 0.7, ease: "easeInOut" },
   };
 };
 
@@ -21,15 +21,6 @@ export const dropdownAnimationOpen = () => {
     initial: { x: "-100%" },
     animate: { x: "0%" },
     exit: { x: "-100%" },
-    transition: { duration: 0.8, ease: "easeInOut" },
-  };
-};
-
-export const dropdownAnimationOpen2 = () => {
-  return {
-    initial: { x: "-50%" },
-    animate: { x: "0%" },
-    exit: { x: "-50%" },
     transition: { duration: 0.8, ease: "easeInOut" },
   };
 };

@@ -1417,12 +1417,11 @@ const page = () => {
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
         <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 dm-sans p-8">
           <p>
-            Explore the versatility of stainless steel T profiles from Rajgure
-            Steel Industries. Our T profiles are available in seven vibrant
-            colors, making them perfect for enhancing your home design. These
-            durable profiles offer exceptional strength and aesthetic appeal,
-            making them ideal for various applications, from structural supports
-            to decorative elements.
+            Discover the wide range of stainless steel T profiles offered by
+            Rajgure Steel Industries. Our T profiles are offered in vibrant
+            seven different colors best suited to satisfy your home decor wish.
+            The profiles being durable and strong can be used for structural
+            support and decoration.
           </p>
         </div>
 
