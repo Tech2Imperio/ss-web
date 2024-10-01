@@ -1115,7 +1115,7 @@ const page = () => {
     {
       title: "Fluted Panel",
       image: fluted,
-      link: "/products/profile/flutedPanel",
+      link: "/products/profile/ssFlutedPanelProfile",
     },
     {
       title: "C Profile",
@@ -1158,15 +1158,19 @@ const page = () => {
       </div>
 
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 dm-sans p-8">
+        <div className=" flex flex-col justify-center text-justify text-sm md:text-sm text-slate-500 gap-4 nunito p-8">
           <p>
-            Discover the unmatched versatility of stainless steel U profiles
-            from Rajgure Steel Industries. Our U profiles, available in seven
-            stunning colors, are designed to elevate your home’s aesthetic
-            appeal while providing exceptional durability. These robust profiles
-            are perfect for a wide range of applications, from structural
-            reinforcements to modern decorative accents, effortlessly blending
-            functionality with design.
+            Rajguru Steel Industries offers a remarkable range of stainless
+            steel U profiles that combine aesthetic appeal with exceptional
+            durability. Stainless steel U profiles are suitable for a variety of
+            uses, including structural reinforcements, decorative accents, and
+            architectural elements. Their versatility makes them ideal for both
+            residential and commercial projects. Available in seven stunning
+            colors, these U profiles can enhance the visual appeal of any space,
+            allowing for customization that fits different design themes and
+            preferences. Made from high-quality stainless steel, these profiles
+            are resistant to corrosion, rust, and wear, ensuring long-lasting
+            performance even in challenging environments.
           </p>
         </div>
 
@@ -1256,10 +1260,10 @@ const page = () => {
                 </div>
 
                 {/* CTA Button with Neomorphism Style */}
-                <Link href="#">
-                <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-                GET A QUOTE
-                </button>
+                <Link href="/ContactUs">
+                  <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
+                    GET A QUOTE
+                  </button>
                 </Link>
               </div>
             </div>
@@ -1308,17 +1312,20 @@ const page = () => {
                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
                   What is Stainless Steel U Profile?
                 </h2>
-                <p className="text-gray-500 text-sm md:text-[1.10rem] leading-relaxed nunito">
-                  A Stainless Steel U Profile is a metal profile distinguished
-                  by its U-shaped cross-section, offering exceptional
-                  durability, versatility, and strength for various applications
-                  in construction and interior design. These profiles are highly
-                  sought after for their sleek aesthetic appeal, corrosion
-                  resistance, and ability to seamlessly integrate into
-                  architectural features like shelving, partitioning, and
-                  structural reinforcements. The stainless steel U profile is a
-                  popular choice for modern designs, delivering both
-                  functionality and style in commercial and residential project
+                <p className="text-gray-500 text-xs md:text-[1rem] leading-relaxed nunito">
+                  A stainless steel U profile is a type of structural component
+                  characterized by its U-shaped cross-section. These profiles
+                  are made from stainless steel, which provides them with
+                  exceptional strength, durability, and resistance to corrosion.
+                  They are widely used in various industries, including
+                  construction, manufacturing, and furniture design. The U
+                  profile has a distinct U shape, which allows it to provide
+                  structural support and stability in various applications. Made
+                  from stainless steel, these profiles benefit from the
+                  material's inherent properties, such as resistance to rust,
+                  corrosion, and staining. Stainless steel U profiles come in a
+                  variety of sizes and thicknesses, allowing for customization
+                  based on specific project requirements.
                 </p>
               </div>
               <div className=" w-[28rem] lg:w-[55%] px-14">
@@ -1337,18 +1344,17 @@ const page = () => {
               <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
                 Properties of Stainless Steel U Profiles
               </h2>
-              <p className="text-gray-500 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 nunito">
-                Stainless steel U profiles are versatile structural components
-                widely used in construction and manufacturing. Known for their
-                exceptional strength, corrosion resistance, and durability,
-                these profiles are ideal for various applications, including
-                framing, supports, and reinforcements. Available in different
-                sizes and finishes, stainless steel U profiles offer excellent
-                aesthetic appeal and longevity. Their lightweight yet robust
-                nature makes them easy to handle and install, ensuring
-                efficiency in projects. For optimal performance, choose
-                high-quality stainless steel U profiles that meet your specific
-                requirements.
+              <p className="text-gray-500 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 nunito">
+                Stainless steel U profiles are widely recognized for their
+                unique properties that make them suitable for various
+                applications in construction, manufacturing, and design. The
+                sleek and polished finish of stainless steel U profiles enhances
+                the visual appeal of structures and products. They are often
+                used in architectural designs where aesthetics are a priority.
+                Stainless steel is a recyclable material, contributing to
+                sustainable building practices. Using stainless steel U profiles
+                can help reduce the environmental impact of construction
+                projects.
               </p>
             </div>
           </div>
@@ -1370,11 +1376,13 @@ const page = () => {
                     1. Corrosion Resistance
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
-                    Stainless steel U profiles excel in resisting rust and
-                    corrosion, making them ideal for outdoor and industrial
-                    applications. This property ensures they maintain structural
-                    integrity and appearance over time, reducing maintenance
-                    costs.
+                    The presence of chromium in stainless steel forms a
+                    protective oxide layer on the surface, preventing rust and
+                    corrosion. This property is particularly beneficial in
+                    environments exposed to moisture, chemicals, or harsh
+                    weather conditions. Due to their corrosion resistance,
+                    stainless steel U profiles have a long service life,
+                    reducing the need for frequent replacements or maintenance.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
@@ -1382,11 +1390,12 @@ const page = () => {
                     2. Durability
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
-                    Known for their exceptional strength, stainless steel U
-                    profiles can withstand heavy loads and harsh conditions.
-                    Their durability makes them a reliable choice for
-                    construction and manufacturing projects, ensuring
-                    long-lasting performance.
+                    Stainless steel U profiles are known for their exceptional
+                    strength while remaining relatively lightweight. This
+                    characteristic allows them to support significant loads
+                    without adding excessive weight to structures. These
+                    profiles can withstand impacts and stresses, making them
+                    suitable for demanding applications.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
@@ -1394,10 +1403,13 @@ const page = () => {
                     3. Aesthetic Appeal
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
-                    With a sleek, polished finish, stainless steel U profiles
-                    add a modern and stylish look to any application. Their
-                    aesthetic appeal makes them perfect for both structural and
-                    decorative uses in architectural designs.
+                    The sleek and polished finish of stainless steel U profiles
+                    enhances the visual appeal of structures and products. They
+                    are often used in architectural designs where aesthetics are
+                    a priority. Available in different surface finishes (e.g.
+                    stain, mirror, mesh, hairline or strai ghline), these
+                    profiles can be customized to match specific design
+                    requirements.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
@@ -1405,11 +1417,11 @@ const page = () => {
                     4. Versatility
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
-                    Stainless steel U profiles are incredibly versatile,
-                    suitable for various applications ranging from framing and
-                    supports to machinery components. This adaptability makes
-                    them a popular choice in the steel industry, catering to
-                    diverse project needs.
+                    Providing support in buildings, bridges, and other
+                    structures. Framing: Used in the construction of walls,
+                    roofs, and other architectural elements. Employed in
+                    furniture design and architectural features for aesthetic
+                    purposes.
                   </td>
                 </tr>
               </tbody>
@@ -1422,36 +1434,39 @@ const page = () => {
         <div className="container mx-auto my-14 md:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
             <h2 className="text-2xl font-semibold text-[#335c98] poppins-regular mb-4">
-              Benefits of Stainless Steel T Profiles
+              Benefits of Stainless Steel U Profiles
             </h2>
             <ul className="space-y-6 text-justify ">
               <li className="text-base text-gray-500 poppins-regular">
                 <strong className=" text-[#335c98]">
                   1. Corrosion Resistance:
                 </strong>{" "}
-                Stainless steel U profiles resist rust and corrosion, making
-                them ideal for outdoor and industrial use while reducing
-                maintenance costs.
+                One of the standout features of stainless steel is its
+                resistance to corrosion. This property ensures that U profiles
+                maintain their integrity and appearance even in harsh
+                environments, such as coastal areas or industrial settings.
               </li>
               <li className="text-base text-gray-500 poppins-regular">
                 <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
-                Their exceptional strength allows them to withstand heavy loads
-                and harsh conditions, ensuring reliable performance in
-                construction and manufacturing.
+                These profiles offer excellent strength-to-weight ratios,
+                providing structural stability without adding excessive weight.
+                This makes them ideal for supporting structures and frames.
               </li>
               <li className="text-base text-gray-500  poppins-regular">
                 <strong className=" text-[#335c98]">
                   3. Aesthetic Appeal:
                 </strong>{" "}
-                With a sleek, polished finish, these profiles enhance the look
-                of any application, suitable for both structural and decorative
-                purposes.
+                Stainless steel U profiles can enhance the visual appeal of
+                structures. Their sleek and modern look makes them a preferred
+                choice for architectural applications where design is as
+                important as functionality
               </li>
               <li className="text-base text-gray-500  poppins-regular">
                 <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
-                Stainless steel U profiles are adaptable for various uses, from
-                framing and supports to machinery components, making them a
-                favored choice in the steel industry.
+                These profiles can be customized in various sizes and alloys,
+                allowing for flexibility in design and application. They are
+                used in construction, manufacturing, and even decorative
+                applications.
               </li>
             </ul>
           </div>

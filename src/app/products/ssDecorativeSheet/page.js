@@ -9,7 +9,7 @@ import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
 import LProfile from "../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../assets/RelatedProducts/fluted.webp";
 import customized from "../../assets/RelatedProducts/customized.webp";
-import invisibleGrill from "../../assets/product/invisiblegrill/square.webp";
+// import invisibleGrill from "../../assets/product/invisiblegrill/square.webp";
 import CProfile from "../../assets/RelatedProducts/CProfile.webp";
 import bg from "../../assets/product/profile/T_profile/bg.webp";
 import Umessurement from "../../assets/product/ssdecorativesheet/decorativeSheets.webp";
@@ -132,7 +132,7 @@ const page = () => {
     {
       title: "Fluted Panel",
       image: fluted,
-      link: "/products/profile/flutedPanel",
+      link: "/products/profile/ssFlutedPanelProfile",
     },
     {
       title: "C Profile",
@@ -144,11 +144,11 @@ const page = () => {
       image: customized,
       link: "/products/profile/customProfile",
     },
-    {
-      title: "Invisible Grill",
-      image: invisibleGrill,
-      link: "/products/ssInvisibleGrill",
-    },
+    // {
+    //   title: "Invisible Grill",
+    //   image: invisibleGrill,
+    //   link: "/products/ssInvisibleGrill",
+    // },
   ];
   const { ref: card1Ref, inView: card1InView } = useInView({
     triggerOnce: true, // Animates only once
@@ -174,21 +174,26 @@ const page = () => {
           alt="decorative sheet"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center md:pt-0 text-[#19355e] text-4xl md:text-[5rem]  poppins-regular">
+        <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
           Decorative Sheets
         </h1>
       </div>
 
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 nunito p-8">
+        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 nunito p-8">
           <p>
-            Discover our high-quality stainless steel decorative sheets, perfect
-            for enhancing interiors with elegance and durability. Our
-            corrosion-resistant steel panels are ideal for wall applications,
-            backsplashes, and custom furniture designs. Available in a variety
-            of finishes, including brushed and mirrored, these stainless steel
-            sheets offer both style and functionality. Elevate your space with
-            our premium decorative steel solutions today!
+            Discover our exquisite range of high-quality stainless steel
+            decorative sheets, designed to bring elegance and durability to your
+            interiors. Our corrosion-resistant steel panels are perfect for
+            various applications, including: Wall Applications: Transform your
+            walls with a sleek, modern look. Backsplashes: Add a stylish and
+            easy-to-clean surface in kitchens and bathrooms. Custom Furniture
+            Designs: Create unique pieces that stand out. Available in a variety
+            of finishes, including brushed and mirrored, our stainless steel
+            sheets combine style with functionality. Whether you're looking to
+            enhance a residential or commercial space, our decorative steel
+            solutions are the perfect choice. Transform your space today with
+            our premium stainless steel decorative sheets!
           </p>
         </div>
 
@@ -278,7 +283,7 @@ const page = () => {
                 </div>
 
                 {/* CTA Button with Neomorphism Style */}
-                <Link href="#">
+                <Link href="/ContactUs">
                   <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
                     GET A QUOTE
                   </button>
@@ -330,16 +335,16 @@ const page = () => {
                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
                   What is Stainless Steel Decorative Sheets?
                 </h2>
-                <p className="text-gray-500 text-sm md:text-[1.10rem] leading-relaxed nunito">
-                  Transform your interiors with stainless steel decorative
-                  sheets, perfect for both residential and commercial
-                  applications. Available in brushed, mirrored, and patterned
-                  finishes, these versatile panels enhance wall décor while
-                  offering durability and modern style. Resistant to corrosion
-                  and easy to maintain, they’re ideal for kitchen backsplashes,
-                  accent walls, and custom furniture. Discover the endless
-                  design possibilities with stainless steel sheets that merge
-                  functionality and elegance for a stunning look!
+                <p className="text-gray-500 text-xs md:text-[1rem] leading-relaxed nunito">
+                  Stainless steel decorative sheets are perfect for both
+                  residential and commercial applications. They offer a modern
+                  and sophisticated look that can elevate any interior design.
+                  Stainless steel decorative sheets are an excellent choice for
+                  anyone looking to enhance their space with a combination of
+                  style, durability, and ease of maintenance. Whether for a
+                  modern kitchen, a stylish office, or custom furniture, these
+                  sheets provide a sleek and contemporary solution that meets
+                  both aesthetic and practical needs.
                 </p>
               </div>
               <div className=" w-[28rem] lg:w-[55%] px-14">
@@ -358,17 +363,17 @@ const page = () => {
               <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
                 Properties of Stainless Steel Decorative Sheets
               </h2>
-              <p className="text-gray-500 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 nunito">
-                Stainless steel decorative sheets are premium panels designed
-                for stylish home and commercial wall applications. Known for
-                their durability, these sheets resist corrosion and stains,
-                making them ideal for high-traffic areas. Available in various
-                finishes like brushed, mirrored, and patterned, they add a
-                modern touch to any space. Perfect for accent walls, kitchen
-                backsplashes, and custom furniture, these decorative panels
-                offer endless design versatility. Enhance your interior with
-                stainless steel sheets that combine elegance and functionality
-                seamlessly!
+              <p className="text-gray-500 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 nunito">
+                Stainless steel decorative sheets are premium panels that serve
+                both aesthetic and functional purposes in home and commercial
+                environments. Stainless steel decorative sheets are an excellent
+                choice for enhancing interiors with a combination of elegance
+                and functionality. Their durability, variety of finishes, and
+                ease of maintenance make them ideal for both residential and
+                commercial applications. Whether you're looking to create a
+                stunning accent wall, a stylish kitchen backsplash, or custom
+                furniture, these decorative panels offer endless design
+                possibilities.
               </p>
             </div>
           </div>
@@ -442,29 +447,30 @@ const page = () => {
                 <strong className=" text-[#335c98]">
                   1. Corrosion Resistance:
                 </strong>{" "}
-                Stainless steel U profiles resist rust and corrosion, making
-                them ideal for outdoor and industrial use while reducing
-                maintenance costs.
+                Stainless steel is highly resistant to rust and corrosion,
+                making these sheets ideal for environments exposed to moisture,
+                such as kitchens and bathrooms.
               </li>
               <li className="text-base text-gray-500 poppins-regular">
-                <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
-                Their exceptional strength allows them to withstand heavy loads
-                and harsh conditions, ensuring reliable performance in
-                construction and manufacturing.
+                <strong className=" text-[#335c98]">2. Durability:</strong> They
+                can withstand wear and tear, making them suitable for
+                high-traffic areas without showing signs of damage.
               </li>
               <li className="text-base text-gray-500  poppins-regular">
                 <strong className=" text-[#335c98]">
                   3. Aesthetic Appeal:
                 </strong>{" "}
-                With a sleek, polished finish, these profiles enhance the look
-                of any application, suitable for both structural and decorative
-                purposes.
+                Available in brushed, mirrored, and patterned finishes, these
+                sheets can complement various design styles, from modern to
+                industrial. They can be cut and shaped to fit specific design
+                needs, allowing for unique applications in any space.
               </li>
               <li className="text-base text-gray-500  poppins-regular">
-                <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
-                Stainless steel U profiles are adaptable for various uses, from
-                framing and supports to machinery components, making them a
-                favored choice in the steel industry.
+                <strong className=" text-[#335c98]">4. Enhanced Safety:</strong>{" "}
+                Stainless steel is non-combustible, providing an added layer of
+                safety in case of fire. Unlike some other materials, stainless
+                steel does not release harmful chemicals, making it a safe
+                choice for indoor environments.
               </li>
             </ul>
           </div>
@@ -486,12 +492,16 @@ const page = () => {
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
-              <p className="text-gray-500 nunito">
-                Stainless steel decorative sheets elevate aesthetics and
-                functionality in architecture and construction. Available in
-                various finishes and patterns, they are perfect for cladding and
-                interiors. Their durability and corrosion resistance ensure
-                lasting beauty and performance.
+              <p className="text-gray-500 text-xs md:text-base nunito">
+                Stainless steel decorative sheets are widely used in
+                architectural and construction projects due to their unique
+                combination of aesthetic appeal, durability, and versatility.
+                Stainless steel decorative sheets play a vital role in various
+                architectural and construction applications, offering a blend of
+                beauty, functionality, and sustainability. Their versatility
+                allows for creative design solutions in both interior and
+                exterior settings, making them a preferred choice for modern
+                architecture.
               </p>
             </div>
 
@@ -504,11 +514,17 @@ const page = () => {
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Furniture and Shelving.
               </h2>
-              <p className="text-gray-500 nunito">
-                Stainless steel decorative sheets are ideal for modern furniture
-                and shelving, offering sleek designs that enhance any space.
-                Their durability and resistance to scratches and corrosion make
-                them perfect for stylish, long-lasting interiors.
+              <p className="text-gray-500 text-xs md:text-base nunito">
+                Stainless steel decorative sheets are increasingly popular in
+                furniture and shelving design due to their unique properties and
+                aesthetic appeal. Stainless steel decorative sheets are an
+                excellent choice for furniture and shelving design, offering a
+                blend of modern aesthetics, durability, and low maintenance.
+                Their versatility allows for a wide range of applications,
+                making them suitable for both residential and commercial
+                environments. By incorporating stainless steel into furniture
+                designs, you can achieve a stylish and functional look that
+                stands the test of time.
               </p>
             </div>
 
@@ -521,13 +537,17 @@ const page = () => {
               <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
                 Automotive and Marine Industry.
               </h2>
-              <p className="text-gray-500 nunito">
-                Stainless steel decorative sheets are widely used in the
-                automotive and marine industries for stylish wall designs and
-                interior finishes. Their lightweight yet durable properties
-                ensure both aesthetic appeal and resistance to harsh
-                environments, making them an ideal choice for enhancing vehicle
-                and boat interiors.
+              <p className="text-gray-500 text-xs md:text-base nunito">
+                Stainless steel decorative sheets are widely utilized in the
+                automotive and marine industries due to their unique properties
+                and advantages. Stainless steel decorative sheets offer numerous
+                benefits in the automotive and marine industries, including
+                corrosion resistance, durability, and aesthetic appeal. Proper
+                maintenance is essential to ensure longevity, and adherence to
+                regulations is crucial for safety and environmental compliance.
+                By leveraging the advantages of stainless steel, manufacturers
+                can create high-quality, attractive products that meet the
+                demands of these challenging environments.
               </p>
             </div>
           </div>

@@ -64,7 +64,7 @@ export default function Home() {
     {
       title: "Fluted Panel",
       image: fluted,
-      link: "/products/profile/flutedPanel",
+      link: "/products/profile/ssFlutedPanelProfile",
     },
     {
       title: "C Profile",
@@ -208,20 +208,27 @@ export default function Home() {
           alt="invisible grill"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center mt-28 md:pt-0 text-[#19355e] text-3xl md:text-[5rem] poppins-regular">
+        <h1 className="absolute inset-0 flex items-center justify-center mt-28 md:pt-0 text-[#19355e] text-5xl md:text-[5rem] poppins-regular">
           Invisible Grill
         </h1>
       </div>
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[18rem]">
-        <p className=" text-slate-500 lg:text-base text-justify  p-8">
-          Rajguru Steel Industry offers premium Invisible Grill solutions
-          designed to enhance safety without obstructing views. Ideal for
-          high-rise buildings and balconies, our invisible grills provide a
-          sleek, modern aesthetic with robust durability. Made from high-quality
-          materials, they ensure protection while maintaining an unobstructed
-          outlook. Additionally, we supply a range of accessories like bullet
-          hooks and invisible wire, further ensuring safety and convenience for
-          every installation.
+        <p className=" text-slate-500 text-xs lg:text-sm text-justify  p-8">
+          Rajguru Steel Industry specializes in premium invisible grill
+          solutions that enhance safety while maintaining unobstructed views,
+          making them ideal for high-rise buildings and balconies. The invisible
+          grills are designed to provide a contemporary look, seamlessly
+          integrating into the architecture of modern buildings without
+          obstructing views. Made from high-quality materials, these grills are
+          built to withstand the elements, ensuring long-lasting protection and
+          safety. The primary purpose of these invisible grills is to enhance
+          safety, particularly in high-rise settings where traditional grills
+          may not be suitable. Rajguru Steel Industry's invisible grill
+          solutions offer a perfect blend of safety, aesthetics, and durability,
+          making them an excellent choice for modern architectural needs. With a
+          range of accessories and a focus on quality, they provide
+          comprehensive solutions for enhancing safety in high-rise buildings
+          and balconies.
         </p>
         <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-full w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
@@ -317,6 +324,7 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto">
           <h2 className=" text-2xl md:text-3xl poppins-bold text-[#335c98] py-8 text-center">
             Benefits of Invisible Grills
+            <p className=" text-sm md:text-lg md:mx-24 py-2 text-[#335c98] nunito">Invisible grills are becoming increasingly popular in modern architecture due to their unique advantages. Here are some of the key benefits:</p>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -329,20 +337,23 @@ export default function Home() {
                 Invisible grills provide a robust barrier without obstructing
                 views, ensuring your home remains safe from intruders while
                 maintaining aesthetic appeal. Their strong stainless steel
-                construction deters potential break-ins effectively.
+                construction deters potential break-ins effectively. Invisible
+                grills enhance safety by preventing children and pets from
+                falling off balconies or windows. They provide a secure barrier
+                while maintaining an open feel.
               </p>
             </div>
 
             {/* Card 2 - Turnbuckle */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
               <h3 className="text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
-                Uninterrupted Views
+                Unobstructed Views
               </h3>
               <p className="text-gray-600 nunito text-[14px]">
-                Unlike traditional grills, invisible grills offer a clear view
-                of the outside, allowing natural light to flow in and
-                maintaining the beauty of your surroundings. This makes them
-                ideal for balconies and large windows.
+                One of the most significant advantages of invisible grills is
+                that they do not obstruct views. This feature is particularly
+                beneficial for high-rise buildings and balconies, allowing
+                residents to enjoy their surroundings without visual barriers.
               </p>
             </div>
 
@@ -368,7 +379,10 @@ export default function Home() {
                 Invisible grills can be tailored to fit any architectural style
                 and can be powder-coated in various colors. This customization
                 allows homeowners to choose a design that complements their
-                home’s exterior while ensuring safety.
+                home’s exterior while ensuring safety. Invisible grills can be
+                customized to fit various architectural styles and preferences.
+                This flexibility allows homeowners to choose designs that best
+                suit their needs.
               </p>
             </div>
 
@@ -387,23 +401,24 @@ export default function Home() {
             {/* Card 6 - End Cap & Anchors */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
               <h3 className="text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
-                Versatile Applications
+                Low Maintenance
               </h3>
               <p className="text-gray-600 nunito text-[14px]">
-                Invisible grills are suitable for various areas, including
-                balconies, staircases, and large windows. Their versatility
-                makes them a popular choice for both residential and commercial
-                properties looking to enhance safety without sacrificing
-                aesthetics.
+                These grills require minimal maintenance compared to traditional
+                metal grills, which can rust or corrode. Invisible grills can be
+                easily cleaned with a cloth, making them a practical choice for
+                busy households.
               </p>
             </div>
           </div>
 
           {/* Add button to interact */}
           <div className="flex justify-center mt-8">
+            <Link href="/ContactUs">
             <button className="mt-8 px-6 py-3 poppins-regular bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
               GET A QUOTE
             </button>
+            </Link>
           </div>
         </div>
       </main>

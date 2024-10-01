@@ -171,12 +171,12 @@ const page = () => {
         />
         <div className="absolute inset-0 bg-black opacity-25" />
         <h1 className="absolute inset-0 flex items-center justify-center pt-14  md:pt-0 text-[#335c98] text-5xl md:text-[5rem]  poppins-regular">
-          SS Fluted Panel
+          Fluted Panel
         </h1>
       </div>
 
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 dm-sans p-8">
+        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 dm-sans p-8">
           <p>
             Let Rajguru Steel Industry provide you with elegant decor of fluted
             stainless steel panels for your home. This can enhance your decor
@@ -272,9 +272,11 @@ const page = () => {
                 </div>
 
                 {/* CTA Button with Neomorphism Style */}
-                {/* <button className="mt-8 px-6 py-3 bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-    Order now!
-  </button> */}
+                <Link href="/ContactUs">
+                <button className="mt-8 px-6 py-3 bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
+                  GATE A QOUTE
+                </button>
+                </Link>
               </div>
             </div>
 
@@ -322,7 +324,7 @@ const page = () => {
                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
                   What is Stainless Steel Fluted Panel Profile?
                 </h2>
-                <p className="text-gray-500 text-sm md:text-[1.10rem] leading-relaxed nunito">
+                <p className="text-gray-500 text-xs md:text-[1rem] leading-relaxed nunito">
                   It is a modern feature wall panels function to enhance walls
                   in both residential and commercial spaces. With their vertical
                   grooves adding texture and depth to the look, these panels
@@ -347,7 +349,7 @@ const page = () => {
               <h2 className=" text-xl md:whitespace-normal md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
                 Properties of Stainless Steel Fluted Panel Profiles
               </h2>
-              <p className="text-gray-500 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 nunito">
+              <p className="text-gray-500 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 nunito">
                 A stainless steel fluted panel is extremely strong and resistant
                 to corrosion while requiring little maintenance; thus, it is the
                 ideal material for residential or commercial use. Its unique
@@ -498,7 +500,7 @@ const page = () => {
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
-              <p className="text-gray-500 nunito">
+              <p className="text-gray-500 text-xs md:text-base nunito">
                 Stainless steel fluted panels are ideal for architectural and
                 construction applications, providing a sleek and modern solution
                 for interior wall design. These panels enhance aesthetic appeal
@@ -518,7 +520,7 @@ const page = () => {
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Furniture and Shelving.
               </h2>
-              <p className="text-gray-500 nunito">
+              <p className="text-gray-500 text-xs md:text-base nunito">
                 Stainless steel fluted panels are an excellent choice for
                 furniture and shelving, adding a contemporary touch to interior
                 wall design. Their unique texture and sleek finish enhance the
@@ -538,7 +540,7 @@ const page = () => {
               <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
                 Automotive and Marine Industry.
               </h2>
-              <p className="text-gray-500 nunito">
+              <p className="text-gray-500 text-xs md:text-base nunito">
                 Stainless steel fluted panels are increasingly utilized in the
                 automotive and marine industry, offering a stylish and durable
                 solution for interior wall design. Their corrosion-resistant

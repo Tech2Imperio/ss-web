@@ -3,7 +3,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import wallImg from "../../../assets/product/profile/T_profile/wall.webp";
+// import wallImg from "../../../assets/product/profile/T_profile/wall.webp";
 // import upofile from "../../../assets/product/profile/U_profile/Uprofile.webp";
 import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";
 import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
@@ -132,7 +132,7 @@ const page = () => {
     {
       title: "Fluted Panel",
       image: fluted,
-      link: "/products/profile/flutedPanel",
+      link: "/products/profile/ssFlutedPanelProfile",
     },
     {
       title: "C Profile",
@@ -176,14 +176,20 @@ const page = () => {
       </div>
 
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-sm md:text-base text-slate-500 gap-4 dm-sans p-8">
+        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 dm-sans p-8">
           <p>
-            Explore the versatility of stainless steel L profiles from Rajgure
-            Steel Industries. Our L profiles are available in five vibrant
-            colors, making them perfect for enhancing wall corners and home
-            design. These durable profiles provide exceptional strength and
-            aesthetic appeal, making them ideal for applications ranging from
-            structural supports to stylish decorative elements.
+            Rajgure Steel Industries offers a versatile range of stainless steel
+            L profiles that are not only functional but also enhance the
+            aesthetic appeal of spaces. Corner Protection Profiles made from
+            premium stainless steel which will raise your spaces effortlessly.
+            Crafted for durability and style, these profiles and trims provide
+            seamless defense against daily wear. Uncover the elegance of our
+            L Corner Protection Profiles, where functionality meets
+            aesthetics perfectly. Redefine your corners with our premium
+            solutions, ensuring long-lasting protection while adding a touch of
+            sophistication to your surroundings. Choose quality, choose style –
+            opt for your corner protection solutions to transform your space
+            effortlessly.
           </p>
         </div>
 
@@ -294,7 +300,7 @@ const page = () => {
                   <span className="text-base">- W x H</span>
                 </h3>
                 <p className="text-lg text-gray-500 nunito">
-                10 x 10 | 12 x 12 | 15 x 15 | 20 x 20 | 25 x 25 | 30 x 30
+                  10 x 10 | 12 x 12 | 15 x 15 | 20 x 20 | 25 x 25 | 30 x 30
                 </p>
               </div>
 
@@ -472,7 +478,7 @@ const page = () => {
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
-              <p className="text-gray-500 nunito">
+              <p className="text-gray-500 text-xs md:text-base nunito">
                 T profiles are widely used in building facades, curtain walls,
                 glass railings, and structural supports. The combination of
                 strength and corrosion resistance ensures durability while
@@ -489,7 +495,7 @@ const page = () => {
               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
                 Furniture and Shelving.
               </h2>
-              <p className="text-gray-500 nunito">
+              <p className="text-gray-500 text-xs md:text-base nunito">
                 In interior design, T profiles are employed in furniture,
                 shelving, and display systems. The robust structure of stainless
                 steel ensures the ability to bear heavy loads while providing a
@@ -506,7 +512,7 @@ const page = () => {
               <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
                 Automotive and Marine Industry.
               </h2>
-              <p className="text-gray-500 nunito">
+              <p className="text-gray-500 text-xs md:text-base nunito">
                 Stainless steel T profiles are frequently used in car frames,
                 providing essential reinforcement while minimizing weight. In
                 marine applications, their corrosion resistance makes them ideal
