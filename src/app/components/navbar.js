@@ -25,7 +25,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/aboutus" },
+    { name: "About Us", href: "/AboutUs" },
     {
       name: "Products",
       href: "#",
@@ -139,12 +139,12 @@ export default function Navbar() {
       {isMobileView ? (
         <>
           <div className="flex justify-between items-center md:px-28 w-full bg-gray-950 opacity-85 z-50">
-            <Link href="/" className="px-2 py-2">
+            <Link href="/" className="px-2 py-1">
               <Image
                 priority
                 src={Logo}
                 alt="Logo"
-                className="h-[4rem] w-[4rem] cursor-pointer hover:scale-105"
+                className="h-[3.2rem] w-[3.8rem] cursor-pointer hover:scale-105"
               />
             </Link>
             <button
@@ -176,7 +176,7 @@ export default function Navbar() {
                     </Link>
                     <Link
                       onClick={toggleSidebar}
-                      href="/aboutus"
+                      href="/AboutUs"
                       className="p-3 text-xl flex items-center justify-center"
                     >
                       About Us
@@ -339,12 +339,12 @@ export default function Navbar() {
         </>
       ) : (
         <div className="sm:px-6 lg:px-28 w-full h-full hidden md:flex">
-          <Link href="/" className="py-4">
+          <Link href="/" className="py-2">
             <Image
               priority
               src={Logo}
               alt="Logo"
-              className="h-[4rem] w-[5rem] cursor-pointer transform transition-transform hover:scale-[1.15] duration-700"
+              className="h-[3rem] w-[3.5rem] cursor-pointer transform transition-transform hover:scale-[1.15] duration-700"
             />
           </Link>
           <div className="flex justify-evenly items-center w-full h-auto">
@@ -366,7 +366,7 @@ export default function Navbar() {
                     )}
                   </Link>
                   {item.subItems && hoveredItem === item.name && (
-                    <div className="absolute top-24 left-0 w-72 rounded-md shadow-lg bg-white text-gray-700 z-10">
+                    <div className="absolute top-[64px] left-0 w-72 rounded-md shadow-lg bg-white text-gray-700 z-10">
                       <div className="py-1" role="menu">
                         {item.subItems.map((subItem) => (
                           <div
@@ -389,7 +389,7 @@ export default function Navbar() {
                             {subItem.subItems &&
                               (hoveredSubItem === subItem.name ||
                                 hoveredItem === "Stainless Steel Profile") && (
-                                <div className="absolute left-full top-0 mt-0 w-56 rounded-md shadow-lg bg-gray-300 ring-1 ring-black ring-opacity-5">
+                                <div className="absolute left-full top-0 mt-0 w-60 rounded-md shadow-lg bg-gray-300 ring-1 ring-black ring-opacity-5">
                                   <div className="py-1" role="menu">
                                     {subItem.subItems.map((nestedSubItem) => (
                                       <Link

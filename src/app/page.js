@@ -146,7 +146,7 @@ function Section2() {
   }, []);
 
   return (
-    <section className="relative w-auto h-auto flex flex-col my-20 xl:flex-row xl:h-[100vh] xl:w-[100vw] xl:py-24 xl:my-0">
+    <section className="relative bg-gray-50 w-auto h-auto flex flex-col my-20 xl:flex-row xl:h-[100vh] xl:w-[100vw] xl:py-24 xl:my-0">
       <div className="flex flex-col items-center relative w-auto h-auto xl:w-full xl:h:full xl:flex-row xl:justify-between">
         <Image
           priority
@@ -230,7 +230,7 @@ function Section2() {
               </p>
               <button
                 type="submit"
-                className="flex justify-center gap-1 items-center text-sm text-gray-800 bg-gray-200 backdrop-blur-md lg:font-semibold isolation-auto border-gray-200 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-1 py-0.5 overflow-hidden border-2 rounded-full group"
+                className="flex justify-center gap-1 items-center text-sm text-gray-800 bg-gray-200 backdrop-blur-md lg:font-semibold isolation-auto border-gray-200 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-2 py-[0.55rem] overflow-hidden border-2 rounded-full group"
               >
                 View Products
                 <svg
@@ -267,14 +267,14 @@ function Section3() {
   }, []);
 
   return (
-    <section className="relative flex flex-col h-auto w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row">
-      <div className="relative h-auto w-auto flex flex-col justify-center items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row ">
+    <section className="relative flex flex-col h-[135vh] w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row">
+      <div className="relative h-full w-auto flex flex-col justify-around items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row ">
         <div className="h-auto w-auto flex justify-center xl:justify-start xl:items-start xl:h-[90%] xl:w-[35%]">
           <Image
             priority
             src={isMobileView ? Mobpreview : preview}
             alt="Modern room with large windows"
-            className="rounded-lg relative h-[40%] w-full xl:absolute xl:w-[45%] xl:h-[75%]"
+            className="rounded-lg relative h-[100%] w-full xl:absolute xl:w-[45%] xl:h-[75%]"
           />
         </div>
 
@@ -293,7 +293,7 @@ function Section3() {
               contemporary look.
             </p>
           </div>
-          <div className=" grid grid-cols-2 bg-white rounded-lg z-20 h-full w-full md:shadow-xl xl:h-[45%] xl:grid-cols-3 xl:w-[110%] p-2">
+          <div className=" grid grid-cols-2 bg-white rounded-lg z-20 h-full w-full md:shadow-xl xl:h-[45%] xl:grid-cols-3 xl:w-[110%]">
             {[
               {
                 name: "Inoxydable",
