@@ -73,8 +73,8 @@ export default function Navbar() {
         { name: "Queue Manager", href: "/products/ssQueueManager" },
       ],
     },
-    { name: "Blog", href: "/" },
-    { name: "Contact Us", href: "/contactUs" },
+    // { name: "Blog", href: "/" },
+    { name: "Contact Us", href: "/ContactUs" },
   ];
 
   useEffect(() => {
@@ -164,8 +164,8 @@ export default function Navbar() {
               {...sidebarAnimationOpen()}
               className="relative top-18 left-0 h-auto w-full bg-gray-950 opacity-85 text-white lg:h-full z-50"
             >
-              <div className="p-4 flex flex-col">
-                <div className="flex flex-col my-1">
+              <div className="px-4 flex flex-col">
+                <div className="flex flex-col ">
                   <ul className="flex justify-center flex-col gap-2 md:gap-12 cursor-pointer">
                     <Link
                       onClick={toggleSidebar}
@@ -200,7 +200,7 @@ export default function Navbar() {
                   {isProductsDropdownOpen && (
                     <motion.div
                       {...dropdownAnimationOpen()}
-                      className="relative bg-gray-950 opacity-85 flex flex-col items-center h-auto gap-4 px-5 w-full cursor-pointer py-2"
+                      className="relative bg-gray-950 opacity-85 flex flex-col items-center h-auto gap-4 px-5 w-full cursor-pointer"
                     >
                       <ul className="flex flex-col justify-around h-auto w-full">
                         <Link
@@ -313,16 +313,16 @@ export default function Navbar() {
                     </motion.div>
                   )}
 
-                  <Link
+                  {/* <Link
                     onClick={toggleSidebar}
                     href="/blog"
                     className="p-3 text-xl flex items-center justify-center"
                   >
                     Blog
-                  </Link>
+                  </Link> */}
                   <Link
                     onClick={toggleSidebar}
-                    href="/contactUs"
+                    href="/ContactUs"
                     className="p-3 text-xl flex items-center justify-center"
                   >
                     Contact Us

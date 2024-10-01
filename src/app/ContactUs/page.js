@@ -1,6 +1,7 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import preview from "../assets/home-swiper/contactus.webp";
 import Image from "next/image";
+import { FiYoutube } from "react-icons/fi";
 export default function ContactUs() {
   return (
     <section className="flex flex-col h-auto">
@@ -22,38 +23,43 @@ export default function ContactUs() {
         {/* Left Column */}
         <div className="bg-[#335c98] text-slate-300 p-8 md:w-1/3 flex flex-col justify-between h-auto">
           <div className="flex flex-col">
-            <h1 className="text-4xl font-bold mb-6">Write Us a Message</h1>
-            <p className="mb-6">
-              We’d love to hear from you! Whether you have questions, feedback,
-              or just want to say hello, feel free to reach out. Your thoughts
-              are important to us, and we’re here to help with anything you
-              need. Let’s keep the conversation going!
+            <h1 className="text-4xl mb-6 poppins-bold">Write Us a Message</h1>
+            <p className="mb-6 nunito">
+              We’d love to hear from you! Whether you have questions about our
+              stainless steel products, need a quotation, or just want to say
+              hello, feel free to reach out. Your thoughts are important to us,
+              and we’re here to help with anything you need. Let’s keep the
+              conversation going!
             </p>
           </div>
           <div className="flex space-x-4">
             <a
               href="#"
-              className="p-2 bg-white rounded-full text-[#335c98] hover:bg-gray-200"
+              className="relative p-2 bg-white rounded-full text-[#335c98] hover:text-white transition duration-300 group overflow-hidden"
             >
-              <FaFacebook size={20} />
+              <FaInstagram size={20} className="relative z-10" />
+              <span className="absolute inset-0 bg-pink-600 transform scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500"></span>
             </a>
             <a
               href="#"
-              className="p-2 bg-white rounded-full text-[#335c98] hover:bg-gray-200"
+              className="relative p-2 bg-white rounded-full text-[#335c98] hover:text-white transition duration-300 group overflow-hidden"
             >
-              <FaTwitter size={20} />
+              <FaFacebook size={20} className="relative z-10" />
+              <span className="absolute inset-0 bg-blue-700 transform scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500"></span>
             </a>
             <a
               href="#"
-              className="p-2 bg-white rounded-full text-[#335c98] hover:bg-gray-200"
+              className="relative p-2 bg-white rounded-full text-[#335c98] hover:text-white transition duration-300 group overflow-hidden"
             >
-              <FaInstagram size={20} />
+              <FaTwitter size={20} className="relative z-10" />
+              <span className="absolute inset-0 bg-black transform scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500"></span>
             </a>
             <a
               href="#"
-              className="p-2 bg-white rounded-full text-[#335c98] hover:bg-gray-200"
+              className="relative p-2 bg-white rounded-full text-[#335c98] hover:text-white transition duration-300 group overflow-hidden"
             >
-              <FaLinkedin size={20} />
+              <FiYoutube size={20} className="relative z-10" />
+              <span className="absolute inset-0 bg-red-600 transform scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500"></span>
             </a>
           </div>
         </div>
@@ -69,7 +75,7 @@ export default function ContactUs() {
               />
               <input
                 type="text"
-                placeholder="Full Name"
+                placeholder="Email"
                 className="w-3/4 h-10 p-3 border border-gray-300 rounded"
               />
             </div>
@@ -81,19 +87,14 @@ export default function ContactUs() {
               />
               <input
                 type="text"
-                placeholder="Full Name"
+                placeholder="Product Name"
                 className="w-3/4 h-10 p-3 border border-gray-300 rounded"
               />
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 w-2/3">
               <input
                 type="email"
-                placeholder="Email Address"
-                className="w-3/4 h-10 p-3 border border-gray-300 rounded"
-              />
-              <input
-                type="text"
-                placeholder="Full Name"
+                placeholder="Product Quantity"
                 className="w-3/4 h-10 p-3 border border-gray-300 rounded"
               />
             </div>

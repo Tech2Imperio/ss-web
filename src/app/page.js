@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Img1 from "./assets/home-swiper/image1.webp";
 import Img2 from "./assets/home-swiper/image2.webp";
 import Img3 from "./assets/home-swiper/image3.webp";
@@ -11,7 +11,7 @@ import Img6 from "./assets/home-swiper/image6.webp";
 import Img7 from "./assets/home-swiper/image7.webp";
 import Img8 from "./assets/home-swiper/image8.webp";
 import Img9 from "./assets/home-swiper/image9.webp";
-import section2 from "./assets/home-swiper/2-history.webp";
+import section2 from "./assets/home-swiper/section2.webp";
 import MobSection2 from "./assets/home-swiper/MobSection2.webp";
 import preview from "./assets/home-swiper/previewss.webp";
 import Mobpreview from "./assets/home-swiper/Mobpreview.webp";
@@ -23,6 +23,7 @@ import {
   FaFire,
   FaTools,
   FaExchangeAlt,
+  FaChevronDown,
 } from "react-icons/fa";
 
 const images = [Img1, Img2, Img3, Img4, Img5];
@@ -206,9 +207,9 @@ function Section2() {
             </div>
           </motion.div>
         ) : (
-          <div className="bg-gray-800 w-full h-auto relative py-4">
-            <div className="relative flex flex-col items-start justify-center p-8 md:p-auto gap-4 text-gray-300 text-lg text-start h-auto w-auto">
-              <h1 className="poppins-bold text-xl">
+          <div className="bg-gray-100 w-full h-auto relative py-4">
+            <div className="relative flex flex-col items-start justify-center p-8 md:p-auto gap-4  text-lg text-start h-auto w-auto">
+              <h1 className="poppins-bold text-xl text-[#335c98]">
                 Shaping the Future of Stainless Steel
               </h1>
               <p className="nunito text-xs text-justify">
@@ -229,17 +230,17 @@ function Section2() {
               </p>
               <button
                 type="submit"
-                className="flex justify-center gap-1 items-center shadow-xl text-sm text-gray-800 bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-gray-800 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-1 py-0.5 overflow-hidden border-2 rounded-full group"
+                className="flex justify-center gap-1 items-center text-sm text-gray-800 bg-gray-200 backdrop-blur-md lg:font-semibold isolation-auto border-gray-200 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-1 py-0.5 overflow-hidden border-2 rounded-full group"
               >
                 View Products
                 <svg
-                  className="w-4 h-4 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-0.5 rotate-45"
+                  className="w-4 h-4 justify-end group-hover:rotate-90 group-hover:bg-gray-200 text-gray-200 ease-linear duration-300 rounded-full border border-gray-200 group-hover:border-none p-0.5 rotate-45"
                   viewBox="0 0 16 19"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                    className="fill-gray-800 group-hover:fill-gray-800"
+                    className="fill-[#335c98] group-hover:fill-[#335c98]"
                   ></path>
                 </svg>
               </button>
@@ -266,8 +267,8 @@ function Section3() {
   }, []);
 
   return (
-    <section className="relative flex flex-col h-auto w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:my-20 xl:h-screen xl:flex-row">
-      <div className="relative h-auto w-auto flex flex-col justify-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row ">
+    <section className="relative flex flex-col h-auto w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row">
+      <div className="relative h-auto w-auto flex flex-col justify-center items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row ">
         <div className="h-auto w-auto flex justify-center xl:justify-start xl:items-start xl:h-[90%] xl:w-[35%]">
           <Image
             priority
@@ -321,7 +322,7 @@ function Section3() {
             ].map((type, index) => (
               <div
                 key={index}
-                className={`flex flex-col justify-center ${
+                className={`flex flex-col justify-center p-2 ${
                   index === 0 ? "lg:border-r-[1px] lg:border-b-[1px]" : ""
                 } ${index === 1 ? "lg:border-b-[1px]" : ""} ${
                   index === 2 ? "lg:border-l-[1px] lg:border-b-[1px]" : ""
@@ -343,10 +344,148 @@ function Section3() {
     </section>
   );
 }
+import sectionImg4 from "./assets/home-swiper/section4.webp";
+import { LuLightbulb, LuCog } from "react-icons/lu";
+import { GoZap } from "react-icons/go";
+import { useInView } from "react-intersection-observer";
 
 function Section4() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [activeFeature, setActiveFeature] = useState(0);
+
+  const features = [
+    {
+      icon: <LuLightbulb size={25} />,
+      title: "Innovative Designs",
+      description:
+        "We push the boundaries of stainless steel applications in modern architecture. Our team of expert designers and engineers work tirelessly to create cutting-edge solutions that blend form and function seamlessly. From sleek building facades to intricate interior elements, our innovative designs set new standards in the industry.",
+    },
+    {
+      icon: <GoZap size={25} />,
+      title: "Advanced Processing",
+      description:
+        "Utilizing state-of-the-art technology for precision manufacturing, we ensure every product meets the highest quality standards. Our advanced processing techniques include laser cutting, robotic welding, and computer-controlled finishing, allowing us to achieve unparalleled accuracy and consistency in our stainless steel products.",
+    },
+    {
+      icon: <LuCog size={25} />,
+      title: "Custom Solutions",
+      description:
+        "We pride ourselves on tailoring our products to meet specific client needs and industry standards. Our team works closely with architects, contractors, and end-users to develop bespoke stainless steel solutions. Whether it's a unique architectural feature or a specialized industrial component, we have the expertise to bring your vision to life.",
+    },
+  ];
+
+  const toggleFeature = (index) => {
+    setActiveFeature(activeFeature === index ? null : index);
+  };
+
   return (
-    <section className="relative w-auto h-auto lg:h-screen lg:w-screen"></section>
+    <section
+      ref={ref}
+      className="relative w-screen h-auto md:h-screen flex flex-col justify-center bg-gray-50 overflow-hidden"
+    >
+      <div className="container mx-auto px-4 md:px-6 flex flex-col justify-evenly items-center h-auto md:h-full my-12">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mb-8"
+        >
+          <h2 className="text-4xl md:text-5xl text-[#335c98] mb-4 poppins-bold">
+            Innovation & Technology
+          </h2>
+          <p className="text-xs md:text-lg text-gray-700 max-w-3xl mx-auto nunito">
+            We leverage cutting-edge technology and innovative processes to
+            produce high-quality stainless steel products that meet the evolving
+            needs of our customers.
+          </p>
+        </motion.div>
+        <div className="flex flex-col lg:flex-row items-stretch gap-10 h-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative w-full lg:w-1/2 flex-grow"
+          >
+            <div className="h-80 md:h-full relative rounded-xl overflow-hidden shadow-2xl">
+              <Image
+                src={sectionImg4}
+                alt="Innovation in stainless steel applications"
+                className="transform hover:scale-105 transition-transform duration-300 h-full"
+              />
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <h3 className="text-2xl mb-2 poppins-bold">
+                  Cutting-Edge Solutions
+                </h3>
+                <p className="text-sm md:text-base nunito md:w-2/3 text-justify">
+                  Explore how our innovative stainless steel products are
+                  shaping the future of architecture and design.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="w-full lg:w-1/2 flex-grow"
+          >
+            <div className="rounded-xl md:shadow-lg p-6 h-auto">
+              <h3 className="text-2xl text-[#335c98] mb-4 poppins-bold">
+                Our Technological Edge
+              </h3>
+              {features.map((feature, index) => (
+                <div key={index} className="mb-2">
+                  <button
+                    className={`flex items-center justify-between w-full p-4 rounded-lg text-left transition-colors duration-300 ${
+                      activeFeature === index
+                        ? "bg-blue-100"
+                        : "bg-blue-50 hover:bg-blue-100"
+                    }`}
+                    onClick={() => toggleFeature(index)}
+                    aria-expanded={activeFeature === index}
+                    aria-controls={`feature-content-${index}`}
+                  >
+                    <div className="flex items-center">
+                      <span className="w-6 h-6 text-gray-600 mr-3">
+                        {feature.icon}
+                      </span>
+                      <h4 className="poppins-semibold text-gray-600">
+                        {feature.title}
+                      </h4>
+                    </div>
+                    <FaChevronDown
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        activeFeature === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {activeFeature === index && (
+                      <motion.div
+                        id={`feature-content-${index}`}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="p-4 text-gray-600 nunito text-justify">
+                          {feature.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -356,6 +495,7 @@ function Home() {
       <Section1 />
       <Section2 />
       <Section3 />
+      <Section4 />
     </>
   );
 }

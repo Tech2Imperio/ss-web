@@ -1,9 +1,7 @@
 "use client";
 import Image from "next/image";
 import Logo from "../assets/logo/blueLogo.webp";
-import { FaInstagram } from "react-icons/fa";
-import { ImFacebook2 } from "react-icons/im";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 import { BsTelephone } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
@@ -64,7 +62,7 @@ export default function Footer() {
                 <BsTelephone className="mt-1 text-xl" />
                 <div className="flex flex-col gap-2">
                   <h6 className="poppins-regular">Telephone</h6>
-                  <p className="nunito text-sm">+91 85919 53385</p>
+                  <p className="nunito text-sm">+91 80489 64852</p>
                 </div>
               </div>
               <div className="flex align-middle gap-3">
@@ -113,19 +111,19 @@ export default function Footer() {
                     hoverColor: "hover:text-pink-600",
                   },
                   {
-                    icon: <ImFacebook2 />,
+                    icon: <FaFacebook />,
                     label: "Facebook",
                     hoverColor: "hover:text-blue-700",
                   },
                   {
-                    icon: <FaXTwitter />,
+                    icon: <FaTwitter />,
                     label: "Twitter",
                     hoverColor: "hover:text-black",
                   },
                   {
                     icon: <FiYoutube />,
                     label: "YouTube",
-                    hoverColor: "hover:text-red-700",
+                    hoverColor: "hover:text-red-600",
                   },
                 ].map(({ icon, label, hoverColor }, index) => (
                   <div className="relative group" key={index}>
@@ -143,7 +141,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex flex-col gap-4 w-[100%]">
-            <div className="flex w-[90%] flex-wrap xl:h-16 h-28">
+            <div className="flex w-[90%] flex-wrap xl:h-16 h-12">
               {isVisible &&
                 textArray.map((word, wordIndex) => (
                   <motion.div
@@ -154,7 +152,9 @@ export default function Footer() {
                     className="poppins-bold text-3xl xl:text-5xl text-[#335c98]"
                   >
                     {word}
-                    {word === " " && <span className="mx-3"></span>}
+                    {word === " " && (
+                      <span className="mx-[0.3rem] md:mx-3"></span>
+                    )}
                   </motion.div>
                 ))}
             </div>
