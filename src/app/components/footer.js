@@ -45,17 +45,17 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative bottom-0 left-0 right-0 flex flex-col justify-center items-start bg-gray-300 opacity-90 w-[100vw] h-auto z-40 pt-8">
-      <div className="flex flex-col px-4 xl:px-16 h-full w-full">
+    <footer className="relative bottom-0 left-0 right-0 flex flex-col justify-center items-center bg-gray-300 opacity-90 w-[100vw] h-auto z-40 pt-6">
+      <div className="flex flex-col justify-center px-4 xl:px-8 h-full xl:w-[80vw] w-[95vw]">
         <div className="flex justify-start items-start">
           <Image
             priority
             src={Logo}
             alt="Logo"
-            className="h-[5rem] w-[5rem] cursor-pointer"
+            className="h-[4rem] w-[4rem] cursor-pointer"
           />
         </div>
-        <div className="flex flex-col md:flex-row w-full h-full justify-between gap-8 py-6 xl:gap-0">
+        <div className="flex flex-col md:flex-row w-full h-full justify-between gap-8 py-3 xl:gap-0">
           <div className="flex flex-col justify-between gap-8 xl:gap-12 h-full w-full">
             <div className="text-[#335c98] text-lg flex flex-col justify-start gap-8 xl:gap-12 xl:flex-row">
               <div className="flex align-middle gap-3">
@@ -76,7 +76,7 @@ export default function Footer() {
                 <TfiLocationPin className="mt-1 text-xl" />
                 <div className="flex flex-col gap-2">
                   <h6 className="poppins-regular">Headquarters</h6>
-                  <p className="nunito text-sm w-[12.4rem]">
+                  <p className="flex flex-wrap nunito text-sm w-[12.4rem]">
                     Rajguru Steel Industries 92/94, <br />
                     Kika Street, Gulalwadi, Girgaon, Mumbai - 400004, <br />
                     Maharashtra, India
@@ -85,21 +85,6 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-col xl:flex-row w-[100%] xl:w-[85%] justify-start gap-8 xl:gap-12">
-              <div className="flex flex-col gap-6">
-                <h1 className="text-2xl font-bold text-[#335c98] poppins-semibold">
-                  Subscribe to our Newsletter
-                </h1>
-                <div className="flex flex-col gap-3 w-full xl:w-80">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="p-2 rounded"
-                  />
-                  <button className="bg-[#335c98] nunito text-white p-2 rounded hover:bg-white hover:text-[#335c98] transition duration-700">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
               <div
                 id="icons"
                 className="flex gap-4 text-[#335c98] text-3xl h-9"
@@ -139,9 +124,12 @@ export default function Footer() {
                 ))}
               </div>
             </div>
+            <p className="text-[#335c98] nunito hidden xl:flex">
+              © Rajguru Steel Industries. All Rights Reserved (Terms of Use)
+            </p>
           </div>
-          <div className="flex flex-col gap-4 w-[100%]">
-            <div className="flex w-[90%] flex-wrap xl:h-16 h-12">
+          <div className="flex flex-col justify-center items-center align-middle gap-4 w-[100%]">
+            <div className="flex w-full items-center justify-center flex-wrap xl:h-10 h-8">
               {isVisible &&
                 textArray.map((word, wordIndex) => (
                   <motion.div
@@ -149,7 +137,7 @@ export default function Footer() {
                     initial={{ opacity: 0, width: 0 }}
                     animate={{ opacity: 1, width: "auto" }}
                     transition={{ duration: 0.1, delay: wordIndex * 0.4 }}
-                    className="poppins-bold text-3xl xl:text-5xl text-[#335c98]"
+                    className="poppins-bold text-2xl xl:text-4xl text-[#335c98]"
                   >
                     {word}
                     {word === " " && (
@@ -163,7 +151,7 @@ export default function Footer() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-[40vh] xl:h-96"
+              className="w-full xl:w-2/3 h-[20vh] xl:h-60"
             ></iframe>
           </div>
         </div>
