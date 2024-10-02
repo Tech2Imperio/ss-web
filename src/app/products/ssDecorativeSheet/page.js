@@ -11,7 +11,7 @@ import fluted from "../../assets/RelatedProducts/fluted.webp";
 import customized from "../../assets/RelatedProducts/customized.webp";
 // import invisibleGrill from "../../assets/product/invisiblegrill/square.webp";
 import CProfile from "../../assets/RelatedProducts/CProfile.webp";
-import bg from "../../assets/product/profile/T_profile/bg.webp";
+import bg from "../../assets/product/ssdecorativesheet/bg.webp";
 import Umessurement from "../../assets/product/ssdecorativesheet/decorativeSheets.webp";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -169,7 +169,7 @@ const page = () => {
     <section className="relative">
       <div className="relative">
         <Image
-          className=" h-[22rem] md:h-[40rem] w-full object-cover"
+          className=" h-[22rem] md:h-[30rem] w-full object-cover"
           src={bg}
           alt="decorative sheet"
         />
