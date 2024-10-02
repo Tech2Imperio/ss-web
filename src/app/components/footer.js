@@ -46,7 +46,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bottom-0 left-0 right-0 flex flex-col justify-center items-center bg-gray-300 opacity-90 w-[100vw] h-auto z-40 pt-6">
-      <div className="flex flex-col justify-center px-4 xl:px-8 h-full xl:w-[80vw] w-[95vw]">
+      <div className="flex flex-col justify-center px-2 xl:px-8 h-full xl:w-[75vw] w-[95vw]">
         <div className="flex justify-start items-start">
           <Image
             priority
@@ -55,21 +55,25 @@ export default function Footer() {
             className="h-[4rem] w-[4rem] cursor-pointer"
           />
         </div>
-        <div className="flex flex-col md:flex-row w-full h-full justify-between gap-8 py-3 xl:gap-0">
-          <div className="flex flex-col justify-between gap-8 xl:gap-12 h-full w-full">
+        <div className="flex flex-col md:flex-row w-full h-full justify-between gap-4 py-3 xl:gap-0">
+          <div className="flex flex-col justify-between gap-4 md:gap-6 h-full w-full">
             <div className="text-[#335c98] text-lg flex flex-col justify-start gap-8 xl:gap-12 xl:flex-row">
               <div className="flex align-middle gap-3">
                 <BsTelephone className="mt-1 text-xl" />
                 <div className="flex flex-col gap-2">
                   <h6 className="poppins-regular">Telephone</h6>
-                  <p className="nunito text-sm">+91 80489 64852</p>
+                  <p className="nunito text-sm whitespace-nowrap">
+                    +91 80489 64852
+                  </p>
                 </div>
               </div>
               <div className="flex align-middle gap-3">
                 <FiMail className="mt-1 text-xl" />
                 <div className="flex flex-col gap-2">
                   <h6 className="poppins-regular">Email</h6>
-                  <p className="nunito text-sm">hello@imperiorailing.com</p>
+                  <p className="nunito text-sm whitespace-nowrap">
+                    hello@imperiorailing.com
+                  </p>
                 </div>
               </div>
               <div className="flex align-middle gap-3">
@@ -128,7 +132,7 @@ export default function Footer() {
               © Rajguru Steel Industries. All Rights Reserved (Terms of Use)
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center align-middle gap-4 w-[100%]">
+          <div className="flex flex-col md:justify-center md:items-center align-middle gap-4 w-[100%]">
             <div className="flex w-full items-center justify-center flex-wrap xl:h-10 h-8">
               {isVisible &&
                 textArray.map((word, wordIndex) => (
@@ -151,7 +155,7 @@ export default function Footer() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full xl:w-2/3 h-[20vh] xl:h-60"
+              className="w-auto xl:w-3/4 h-[20vh] xl:h-48"
             ></iframe>
           </div>
         </div>
