@@ -3,7 +3,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="relative w-full h-0 pt-[56.25%] pb-0 shadow-md overflow-hidden rounded-lg will-change-transform">
+    <div className="relative w-full h-0 pt-[56.25%] pb-0 shadow-md overflow-hidden will-change-transform">
       <iframe
         loading="lazy"
         className="absolute w-full h-full top-0 left-0 border-none p-0 m-0"
