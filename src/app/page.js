@@ -25,7 +25,10 @@ import {
   FaExchangeAlt,
   FaChevronDown,
 } from "react-icons/fa";
-
+import sectionImg4 from "./assets/home-swiper/section4.webp";
+import { LuLightbulb, LuCog } from "react-icons/lu";
+import { GoZap } from "react-icons/go";
+import { useInView } from "react-intersection-observer";
 const images = [Img1, Img2, Img3, Img4, Img5];
 const images2 = [Img6, Img7, Img8, Img9, Img6];
 
@@ -52,7 +55,7 @@ function Section1() {
   }, []);
 
   return (
-    <section className=" flex top-0 h-screen w-screen relative -z-10">
+    <section className=" flex top-0 h-screen w-screen relative -z-10 snap-start">
       <div className="relative w-full h-full overflow-hidden">
         {(isMobileView ? images2 : images).map(
           (image, index) =>
@@ -146,7 +149,7 @@ function Section2() {
   }, []);
 
   return (
-    <section className="relative bg-gray-50 w-auto h-auto flex flex-col my-20 xl:flex-row xl:h-[100vh] xl:w-[100vw] xl:py-24 xl:my-0">
+    <section className="relative bg-gray-50 w-auto h-auto flex flex-col my-20 xl:flex-row xl:h-[100vh] xl:w-[100vw] xl:py-24 xl:my-0 snap-start">
       <div className="flex flex-col items-center relative w-auto h-auto xl:w-full xl:h:full xl:flex-row xl:justify-between">
         <Image
           priority
@@ -154,59 +157,7 @@ function Section2() {
           alt="Section2Img"
           className="h-[65vh] w-full xl:w-[60%] xl:h-[100%] xl:left-0 xl:absolute"
         />
-        {isMobileView ? (
-          <motion.div
-            className="bg-gray-800 opacity-95 w-[50%] h-[80%]"
-            initial={{ x: "200%" }}
-            animate={{ x: "100%" }}
-            exit={{ x: "200%" }}
-            transition={{
-              duration: 1.1,
-              delay: 0.6,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 15,
-            }}
-          >
-            <div className="h-full flex flex-col items-start justify-center px-14 gap-[1.5rem] text-gray-300">
-              <h1 className="poppins-bold text-3xl text-start">
-                Shaping the Future of Stainless Steel
-              </h1>
-              <p className="nunito text-[14px] text-justify">
-                We have evolved into a multi-division, multi-product
-                conglomerate in the stainless steel industry.
-              </p>
-              <p className="nunito text-[14px] text-justify">
-                Our commitment to customer satisfaction and quality sets us
-                apart in this traditional field. We drive positive change with
-                stronger, eco-friendly stainless steel and high-performance
-                machinery, revolutionizing industries.
-              </p>
-              <p className="nunito text-[14px] text-justify">
-                Our passionate team and partners share our vision, empowering
-                success through innovation. Explore Our Products Discover our
-                stainless steel solutions designed to meet your needs. Visit our
-                product page to learn more.
-              </p>
-              <button
-                type="submit"
-                className="flex justify-center gap-1 items-center shadow-lg text-sm text-gray-800 bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-gray-800 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative xl:z-10 px-2 py-1 overflow-hidden border-2 rounded-full group"
-              >
-                View Products
-                <svg
-                  className="w-6 h-6 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
-                  viewBox="0 0 16 19"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                    className="fill-gray-800 group-hover:fill-gray-800"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </motion.div>
-        ) : (
+        {isMobileView === false ? (
           <div className="bg-gray-100 w-full h-auto relative py-4">
             <div className="relative flex flex-col items-start justify-center p-8 md:p-auto gap-4  text-lg text-start h-auto w-auto">
               <h1 className="poppins-bold text-xl text-[#335c98]">
@@ -246,6 +197,58 @@ function Section2() {
               </button>
             </div>
           </div>
+        ) : (
+          <motion.div
+            className="bg-gray-800 opacity-95 w-[50%] h-[80%]"
+            initial={{ x: "200%" }}
+            animate={{ x: "100%" }}
+            exit={{ x: "200%" }}
+            transition={{
+              duration: 1.1,
+              delay: 0.6,
+              repeat: Infinity,
+              repeatType: "loop",
+              repeatDelay: 15,
+            }}
+          >
+            <div className="h-full flex flex-col items-start justify-center px-14 gap-[1.5rem] text-gray-300">
+              <h2 className="poppins-bold text-3xl text-start">
+                Shaping the Future of Stainless Steel
+              </h2>
+              <p className="nunito text-[14px] text-justify">
+                We have evolved into a multi-division, multi-product
+                conglomerate in the stainless steel industry.
+              </p>
+              <p className="nunito text-[14px] text-justify">
+                Our commitment to customer satisfaction and quality sets us
+                apart in this traditional field. We drive positive change with
+                stronger, eco-friendly stainless steel and high-performance
+                machinery, revolutionizing industries.
+              </p>
+              <p className="nunito text-[14px] text-justify">
+                Our passionate team and partners share our vision, empowering
+                success through innovation. Explore Our Products Discover our
+                stainless steel solutions designed to meet your needs. Visit our
+                product page to learn more.
+              </p>
+              <button
+                type="submit"
+                className="flex justify-center gap-1 items-center shadow-lg text-sm text-gray-800 bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-gray-800 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative xl:z-10 px-2 py-1 overflow-hidden border-2 rounded-full group"
+              >
+                View Products
+                <svg
+                  className="w-6 h-6 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
+                  viewBox="0 0 16 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                    className="fill-gray-800 group-hover:fill-gray-800"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </motion.div>
         )}
       </div>
     </section>
@@ -267,7 +270,7 @@ function Section3() {
   }, []);
 
   return (
-    <section className="relative flex flex-col h-[135vh] w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row">
+    <section className="relative flex flex-col h-[135vh] w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row snap-start">
       <div className="relative h-full w-auto flex flex-col justify-around items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row ">
         <div className="h-auto w-auto flex justify-center xl:justify-start xl:items-start xl:h-[90%] xl:w-[35%]">
           <Image
@@ -293,7 +296,7 @@ function Section3() {
               contemporary look.
             </p>
           </div>
-          <div className=" grid grid-cols-2 bg-white rounded-lg z-20 h-full w-full md:shadow-xl xl:h-[45%] xl:grid-cols-3 xl:w-[110%]">
+          <div className=" grid grid-cols-2 bg-white rounded-lg z-20 h-full w-full md:shadow-xl xl:h-[45%] xl:grid-cols-3 xl:w-[110%] p-2">
             {[
               {
                 name: "Inoxydable",
@@ -344,10 +347,6 @@ function Section3() {
     </section>
   );
 }
-import sectionImg4 from "./assets/home-swiper/section4.webp";
-import { LuLightbulb, LuCog } from "react-icons/lu";
-import { GoZap } from "react-icons/go";
-import { useInView } from "react-intersection-observer";
 
 function Section4() {
   const [ref, inView] = useInView({
@@ -379,13 +378,13 @@ function Section4() {
   ];
 
   const toggleFeature = (index) => {
-    setActiveFeature(activeFeature === index ? null : index);
+    setActiveFeature(activeFeature === index ? index : index);
   };
 
   return (
     <section
       ref={ref}
-      className="relative w-screen h-auto md:h-screen flex flex-col justify-center bg-gray-50 overflow-hidden"
+      className="relative w-screen h-auto md:h-screen flex flex-col justify-center bg-gray-50 overflow-hidden snap-start"
     >
       <div className="container mx-auto px-4 md:px-6 flex flex-col justify-evenly items-center h-auto md:h-full my-12">
         <motion.div
@@ -491,12 +490,12 @@ function Section4() {
 
 function Home() {
   return (
-    <>
+    <div className="scroll-smooth snap-y overflow-y-scroll snap-mandatory h-[100vh] overflow-x-hidden">
       <Section1 />
       <Section2 />
       <Section3 />
       <Section4 />
-    </>
+    </div>
   );
 }
 
