@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Img1 from "./assets/home-swiper/image1.webp";
 import Img2 from "./assets/home-swiper/image2.webp";
@@ -29,6 +29,7 @@ import sectionImg4 from "./assets/home-swiper/section4.webp";
 import { LuLightbulb, LuCog } from "react-icons/lu";
 import { GoZap } from "react-icons/go";
 import { useInView } from "react-intersection-observer";
+import { FiCheckCircle } from "react-icons/fi";
 const images = [Img1, Img2, Img3, Img4, Img5];
 const images2 = [Img6, Img7, Img8, Img9, Img6];
 
@@ -52,7 +53,7 @@ function Section1() {
       clearInterval(interval);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMobileView]);
 
   return (
     <section className=" flex top-0 h-screen w-screen relative -z-10 snap-start">
@@ -66,7 +67,7 @@ function Section1() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.7,
                   repeat: Infinity,
                   repeatType: "loop",
                   repeatDelay: 5,
@@ -155,11 +156,11 @@ function Section2() {
           priority
           src={isMobileView ? section2 : MobSection2}
           alt="Section2Img"
-          className="h-[65vh] w-full xl:w-[60%] xl:h-[100%] xl:left-0 xl:absolute"
+          className="h-[50vh] w-full xl:w-[60%] xl:h-[100%] xl:absolute"
         />
         {isMobileView === false ? (
-          <div className="bg-gray-100 w-full h-auto relative py-4">
-            <div className="relative flex flex-col items-start justify-center p-8 md:p-auto gap-4  text-lg text-start h-auto w-auto">
+          <div className="bg-gray-100 w-full h-auto relative py-2">
+            <div className="relative flex flex-col items-start justify-center p-5 gap-4 text-lg text-start h-auto w-auto">
               <h1 className="poppins-bold text-xl text-[#335c98]">
                 Shaping the Future of Stainless Steel
               </h1>
@@ -206,9 +207,6 @@ function Section2() {
             transition={{
               duration: 1.1,
               delay: 0.6,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 15,
             }}
           >
             <div className="h-full flex flex-col items-start justify-center px-14 gap-[1.5rem] text-gray-300">
@@ -269,9 +267,17 @@ function Section3() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="relative flex flex-col h-[135vh] w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row snap-start">
-      <div className="relative h-full w-auto flex flex-col justify-around items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row ">
+    <section
+      ref={ref}
+      className="relative flex flex-col h-[135vh] w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row snap-start"
+    >
+      <div className="relative h-full w-auto flex flex-col justify-around items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row lg:mt-6">
         <div className="h-auto w-auto flex justify-center xl:justify-start xl:items-start xl:h-[90%] xl:w-[35%]">
           <Image
             priority
@@ -384,7 +390,7 @@ function Section4() {
   return (
     <section
       ref={ref}
-      className="relative w-screen h-auto md:h-screen flex flex-col justify-center bg-gray-50 overflow-hidden snap-start"
+      className="relative w-screen h-[150vh] md:h-screen flex flex-col justify-center bg-gray-50 overflow-hidden snap-start"
     >
       <div className="container mx-auto px-4 md:px-6 flex flex-col justify-evenly items-center h-auto md:h-full my-12">
         <motion.div
@@ -488,15 +494,291 @@ function Section4() {
   );
 }
 
-function Home() {
+function Section5() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="scroll-smooth snap-y overflow-y-scroll snap-mandatory h-[100vh] overflow-x-hidden">
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-    </div>
+    <section className="relative md:h-screen md:w-screen snap-start flex flex-col justify-center items-center overflow-hidden">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className="container mx-auto py-16 w-full h-full flex flex-col justify-center items-center"
+      >
+        <motion.h2
+          variants={itemVariants}
+          className="text-5xl text-center mb-6 text-[#335c98] poppins-bold"
+        >
+          A strong partner at your side
+        </motion.h2>
+        <motion.p
+          variants={itemVariants}
+          className="text-center text-gray-600 mb-10 max-w-2xl mx-auto text-base nunito"
+        >
+          As railing experts, we are at your side with first-class support for
+          the successful realisation of every project.
+        </motion.p>
+        <motion.div
+          variants={containerVariants}
+          className="container mx-auto flex flex-col md:flex-row w-[85%] gap-8"
+        >
+          {[
+            {
+              number: "01",
+              title: "For every project",
+              description:
+                "Solutions from private homes to stadiums, from individual components to complete solutions.",
+              link: "More details",
+            },
+            {
+              number: "02",
+              title: "Personalised advice",
+              description:
+                "Specialised consultants for every project clarify your questions from A-Z.",
+              link: "Contact",
+            },
+            {
+              number: "03",
+              title: "Wide availability",
+              description:
+                "Thousands of items available for immediate delivery - even to the construction site.",
+              link: "Webshop",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className={`flex-1 flex flex-col justify-between items-center gap-8 ${
+                index !== 2 ? "border-r border-gray-200" : ""
+              } p-6 h-full`}
+            >
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={
+                  inView
+                    ? { scale: 1, opacity: 0.1 }
+                    : { scale: 0.5, opacity: 0 }
+                }
+                transition={{ delay: 0.2 * index, duration: 0.5 }}
+                className="text-8xl font-bold text-gray-400"
+              >
+                {item.number}
+              </motion.div>
+              <h3 className="text-2xl text-[#335c98] poppins-semibold">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 text-center nunito">
+                {item.description}
+              </p>
+              <p className=" hover:text-blue-800 transition-colors duration-300 nunito cursor-pointer">
+                {item.link}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
+import { PiCircleDashedLight } from "react-icons/pi";
+import { TfiHome } from "react-icons/tfi";
+import { TbBulb } from "react-icons/tb";
+const solutions = [
+  {
+    icon: <TbBulb className="w-12 h-12" />,
+    title: "Customised solutions",
+    description:
+      "We take care of the preliminary work for you: from powder coating in the colour of your choice to prefabricated railing modules.",
+  },
+  {
+    icon: <TfiHome className="w-12 h-12" />,
+    title: "Maximum flexibility",
+    description:
+      "Thanks to the modular design of our systems, you can combine the components with each other in almost any way you like.",
+  },
+  {
+    icon: <PiCircleDashedLight className="w-12 h-12" />,
+    title: "Maximum efficiency",
+    description:
+      "Revolutionary products offer up to 80% time savings on the construction site, with high availability at the same time.",
+  },
+  {
+    icon: <FiCheckCircle className="w-12 h-12" />,
+    title: "100% safety",
+    description:
+      "Our systems and products are tested to the highest standards and certified in accordance with EN 1090-1.",
+  },
+];
+
+function Section6() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
+  const iconVariants = {
+    hidden: { scale: 0, rotate: -180 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
+    },
+  };
+
+  return (
+    <section className="flex flex-col items-center justify-center min-h-screen w-full bg-white py-16 snap-start">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className="flex flex-col items-center w-full max-w-7xl px-4 gap-8"
+      >
+        <motion.h2
+          variants={itemVariants}
+          className="text-4xl text-center mb-4 poppins-bold text-[#335c98]"
+        >
+          Stainless Steel Solutions for Every Project
+        </motion.h2>
+        <motion.p
+          variants={itemVariants}
+          className="text-center text-gray-600 max-w-2xl nunito"
+        >
+          With expertise, we specialize in providing innovative, customized, and
+          safe stainless steel solutions tailored to meet the unique needs of
+          every project.
+        </motion.p>
+        <motion.div
+          variants={containerVariants}
+          className="flex flex-wrap justify-center w-full -mx-4"
+        >
+          {solutions.map((solution, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="w-full sm:w-1/2 lg:w-1/4 p-4 "
+            >
+              <motion.div
+                className="flex flex-col items-center justify-start bg-gray-100 rounded-lg h-full w-full p-6 transition-all duration-300 hover:shadow-2xl hover:bg-gray-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <motion.div
+                  variants={iconVariants}
+                  className="text-primary-600"
+                >
+                  {solution.icon}
+                </motion.div>
+                <motion.h3
+                  className="text-xl poppins-semibold text-[#335c98] mt-4 mb-2 text-center"
+                  variants={itemVariants}
+                >
+                  {solution.title}
+                </motion.h3>
+                <motion.p
+                  className="text-xs text-gray-600 text-center nunito"
+                  variants={itemVariants}
+                >
+                  {solution.description}
+                </motion.p>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+    </section>
   );
 }
 
+function Home() {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e) => {
+      e.preventDefault();
+      const delta = Math.sign(e.deltaY);
+      container.scrollBy({
+        top: delta * window.innerHeight,
+        behavior: "smooth",
+      });
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="h-screen no-scrollbar snap-y snap-mandatory overflow-x-hidden"
+    >
+      <Section1 className="h-screen snap-start" />
+      <Section6 className="h-screen snap-start" />
+      <Section2 className="h-screen snap-start" />
+      <Section3 className="h-screen snap-start" />
+      <Section4 className="h-screen snap-start" />
+      <Section5 className="h-screen snap-start" />
+    </div>
+  );
+}
 export default Home;
