@@ -31,8 +31,16 @@ export default function Navbar() {
       href: "#",
       subItems: [
         {
+          name: "Glass Railing System",
+          href: "/products/GlassRailing",
+        },
+        {
+          name: "Stainless Steel Balustrade System",
+          href: "/products/BalustradeSystem",
+        },
+        {
           name: "Stainless Steel Glass Railing System",
-          href: "/products/ssGlassRailing",
+          href: "/products/ssGlassRailingSystem",
         },
         {
           name: "Stainless Steel Decorative Sheet",
@@ -205,7 +213,21 @@ export default function Navbar() {
                       <ul className="flex flex-col justify-around h-auto w-full">
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/ssGlassRailing"
+                          href="/products/GlassRailing"
+                          className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
+                        >
+                          Glass Railing System
+                        </Link>
+                        <Link
+                          onClick={toggleSidebar}
+                          href="/products/BalustradeSystem"
+                          className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
+                        >
+                          Stainless Steel Balustrade System
+                        </Link>
+                        <Link
+                          onClick={toggleSidebar}
+                          href="/products/ssGlassRailingSystem"
                           className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
                         >
                           Stainless Steel Glass Railing System

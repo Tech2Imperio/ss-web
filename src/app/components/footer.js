@@ -45,8 +45,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative bottom-0 left-0 right-0 flex flex-col justify-center items-center bg-gray-300 opacity-90 w-[100vw] h-auto z-40 pt-6">
-      <div className="flex flex-col justify-center px-2 xl:px-8 h-full xl:w-[75vw] w-[95vw]">
+    <footer className="relative bottom-0 left-0 right-0 flex flex-col justify-center items-center bg-gray-300 opacity-90 w-[100vw] xl:h-[45vh] z-40 pt-3">
+      <div className="flex flex-col justify-center px-2 xl:px-8 h-full xl:w-[80vw] w-[95vw]">
         <div className="flex justify-start items-start">
           <Image
             priority
@@ -56,7 +56,7 @@ export default function Footer() {
           />
         </div>
         <div className="flex flex-col md:flex-row w-full h-full justify-between gap-4 py-3 xl:gap-0">
-          <div className="flex flex-col justify-between gap-4 md:gap-6 h-full w-full">
+          <div className="flex flex-col justify-between gap-4 md:gap-3 h-full w-full">
             <div className="text-[#335c98] text-lg flex flex-col justify-start gap-8 xl:gap-12 xl:flex-row">
               <div className="flex align-middle gap-3">
                 <BsTelephone className="mt-1 text-xl" />
@@ -80,10 +80,9 @@ export default function Footer() {
                 <TfiLocationPin className="mt-1 text-xl" />
                 <div className="flex flex-col gap-2">
                   <h6 className="poppins-regular">Headquarters</h6>
-                  <p className="flex flex-wrap nunito text-sm w-[12.4rem]">
-                    Rajguru Steel Industries 92/94, <br />
-                    Kika Street, Gulalwadi, Girgaon, Mumbai - 400004, <br />
-                    Maharashtra, India
+                  <p className="flex flex-wrap nunito text-sm w-[14rem]">
+                    Rajguru Steel Industries 92/94, Kika Street, Gulalwadi,
+                    Girgaon, Mumbai - 400004, Maharashtra, India
                   </p>
                 </div>
               </div>
@@ -132,7 +131,7 @@ export default function Footer() {
               © Rajguru Steel Industries. All Rights Reserved (Terms of Use)
             </p>
           </div>
-          <div className="flex flex-col md:justify-center md:items-center align-middle gap-4 w-[100%]">
+          <div className="flex flex-col md:justify-center md:items-center align-middle gap-2 w-[100%]">
             <div className="flex w-full items-center justify-center flex-wrap xl:h-10 h-8">
               {isVisible &&
                 textArray.map((word, wordIndex) => (
@@ -152,10 +151,9 @@ export default function Footer() {
             </div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3773.395944531599!2d72.8223483752024!3d18.95811328222244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDU3JzI5LjIiTiA3MsKwNDknMjkuNyJF!5e0!3m2!1sen!2sin!4v1727513266722!5m2!1sen!2sin"
-              allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-auto xl:w-3/4 h-[20vh] xl:h-48"
+              className="w-auto h-[20vh] xl:w-3/4 xl:h-44"
             ></iframe>
           </div>
         </div>

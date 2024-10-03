@@ -3,13 +3,13 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="relative w-full h-0 pt-[56.25%] pb-0 shadow-md overflow-hidden will-change-transform">
+    <div className="relative container mx-auto w-screen h-screen">
       <iframe
         loading="lazy"
-        className="absolute w-full h-full top-0 left-0 border-none p-0 m-0"
+        className="absolute w-screen h-screen border-none"
         src="https://www.canva.com/design/DAGSaeFXYt4/seojg2_IxEtRRZTo7h-QdA/view?embed"
-        allowFullScreen
         allow="fullscreen"
+        allowFullScreen
       ></iframe>
     </div>
   );
