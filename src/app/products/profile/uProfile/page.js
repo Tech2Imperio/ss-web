@@ -994,7 +994,7 @@ import LProfile from "../../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../../assets/RelatedProducts/fluted.webp";
 import customized from "../../../assets/RelatedProducts/customized.webp";
 import CProfile from "../../../assets/RelatedProducts/CProfile.webp";
-import bg from "../../../assets/product/profile/T_profile/bg.webp";
+import bg from "../../../assets/product/profile/U_profile/bg.webp";
 import Umessurement from "../../../assets/product/profile/U_profile/Umessure.png";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -1147,13 +1147,14 @@ const page = () => {
     <section className=" relative">
       <div className="relative">
         <Image
-          className=" h-[22rem] md:h-[40rem] w-full object-cover"
+          className=" h-[22rem] md:h-[30rem] w-full object-cover"
           src={bg}
           alt="U Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center pt-14 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
-          U Profile
+        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-[#19355e] text-5xl md:text-[4rem] md:p-4  poppins-bold">
+          RAJGURU<br/>
+          <p className=" text-xs w-[20.8rem] md:w-[28rem] nunito pt-2 md:pt-4 ">Stainless Steel U Profile offers superior strength and durability, making it ideal for a variety of structural applications.</p>
         </h1>
       </div>
 

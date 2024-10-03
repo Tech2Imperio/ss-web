@@ -176,7 +176,7 @@ const page = () => {
       </div>
 
       <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 dm-sans p-8">
+        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 nunito p-8">
           <p>
             Rajgure Steel Industries offers a versatile range of stainless steel
             L profiles that are not only functional but also enhance the
@@ -279,9 +279,9 @@ const page = () => {
                 </div>
 
                 {/* CTA Button with Neomorphism Style */}
-                {/* <button className="mt-8 px-6 py-3 bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-    Order now!
-  </button> */}
+                <button className="mt-8 px-6 py-3 bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
+                    GATE A QOUATE
+                  </button>
               </div>
             </div>
 
