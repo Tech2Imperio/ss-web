@@ -10,6 +10,30 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [isHomePage, setIsHomePage] = useState(false);
+
+  useEffect(() => {
+    const checkHomePage = () => {
+      if (typeof window !== "undefined") {
+        setIsHomePage(window.location.pathname === "/");
+      }
+    };
+
+    checkHomePage();
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("popstate", checkHomePage);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("popstate", checkHomePage);
+      }
+    };
+  }, [typeof window !== "undefined" && window.location.pathname]);
+
+  // if (isHomePage) return null;
+
   const textArray = [
     "L",
     "e",
