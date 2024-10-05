@@ -71,7 +71,7 @@ const page = () => {
     { name: "Silver", hex: "#D5D5D7" },
     { name: "Gold", hex: "#E5B80B" },
     { name: "RoseGold", hex: "#DEA193" },
-    { name: "Champagne", hex: "#D4AF37" },
+    { name: "Champagne", hex: "#837033" },
     // Add more colors if needed
   ];
 
@@ -167,17 +167,18 @@ const page = () => {
         <Image
           className=" h-[22rem] md:h-[40rem] w-full object-cover"
           src={bg}
-          alt="T Profile"
+          alt="L Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center pt-14  md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
-          L Profile
+        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-[#19355e] text-5xl md:text-[4rem] md:p-4  poppins-bold">
+          RAJGURU<br/>
+          <p className=" text-xs w-[20.8rem] md:w-[28rem] nunito pt-2 md:pt-4 ">Stainless Steel L Profile offers superior strength and durability, making it ideal for a variety of structural applications.</p>
         </h1>
       </div>
 
-      <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 nunito p-8">
-          <p>
+      <div className=" flex flex-col overflow-hidden mx-auto container">
+        <div className=" flex justify-center ">
+          <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
             Rajgure Steel Industries offers a versatile range of stainless steel
             L profiles that are not only functional but also enhance the
             aesthetic appeal of spaces. Corner Protection Profiles made from
@@ -212,8 +213,8 @@ const page = () => {
                         className="rounded-lg shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105"
                         src={finishImages[selectedColor.name][finish.name]} // Dynamic image for each finish based on the selected color
                         alt={`${finish.name} - ${selectedColor.name}`}
-                        width={500} // Increased width for better visibility
-                        height={400} // Increased height for better visibility
+                        width={250} // Increased width for better visibility
+                        height={200} // Increased height for better visibility
                       />
                       {/* Finish Name below the image */}
                       <div className="text-center mt-2">
@@ -369,7 +370,7 @@ const page = () => {
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block">
+        <div className="container mx-auto my-14 hidden md:block p-4">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
@@ -467,7 +468,7 @@ const page = () => {
 
         {/* example phone colse  */}
 
-        <main className="flex flex-col justify-center text-justify gap-20 translate-y-14 ">
+        <main className="flex flex-col justify-center text-justify gap-20 m-4 ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div

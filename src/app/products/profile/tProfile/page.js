@@ -71,7 +71,7 @@ const page = () => {
     { name: "Silver", hex: "#D5D5D7" },
     { name: "Gold", hex: "#E5B80B" },
     { name: "RoseGold", hex: "#DEA193" },
-    { name: "Champagne", hex: "#D4AF37" },
+    { name: "Champagne", hex: "#837033" },
     // Add more colors if needed
   ];
 
@@ -176,9 +176,9 @@ const page = () => {
         </h1>
       </div>
 
-      <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 dm-sans p-8">
-          <p>
+      <div className=" flex flex-col overflow-hidden mx-auto container">
+        <div className=" flex justify-center">
+          <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
             Discover the wide range of stainless steel T profiles offered by
             Rajgure Steel Industries. Our T profiles are offered in vibrant
             seven different colors best suited to satisfy your home decor wish.
@@ -206,8 +206,8 @@ const page = () => {
                         className="rounded-lg shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105"
                         src={finishImages[selectedColor.name][finish.name]} // Dynamic image for each finish based on the selected color
                         alt={`${finish.name} - ${selectedColor.name}`}
-                        width={500} // Increased width for better visibility
-                        height={400} // Increased height for better visibility
+                        width={250} // Increased width for better visibility
+                        height={200} // Increased height for better visibility
                       />
                       {/* Finish Name below the image */}
                       <div className="text-center mt-2">
@@ -366,7 +366,7 @@ const page = () => {
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block">
+        <div className="container mx-auto my-14 hidden md:block p-4">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
@@ -464,7 +464,7 @@ const page = () => {
 
         {/* example phone colse  */}
 
-        <main className="flex flex-col justify-center text-justify gap-20 translate-y-14 ">
+        <main className="flex flex-col justify-center text-justify gap-20 m-4 ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div

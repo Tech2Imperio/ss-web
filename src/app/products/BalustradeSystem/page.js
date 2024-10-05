@@ -58,8 +58,8 @@ export default function Page() {
           </p>
         </h1>
       </div>
-      <main className="flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <p className="flex flex-col justify-center text-justify text-xs md:text-sm text-gray-500 gap-4 nunito p-4">
+      <main className="flex justify-center flex-col items-center container mx-auto">
+        <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
           Rajguru Steel Industry offers premium stainless steel balustrade
           railings, expertly designed for both aesthetics and safety. Our
           durable stainless steel and glass combinations provide a modern look,
@@ -71,59 +71,58 @@ export default function Page() {
           focus on innovation and craftsmanship, we ensure that our railings not
           only enhance your space but also meet the highest safety standards.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-4 h-full w-full my-auto mx-auto md:mb-14 relative ">
-          <div className="relative flex-grow hover:scale-105 transition-transform duration-700 md:h-[32rem] lg:h-[24.5rem]">
-            <Image
-              src={stairImg}
-              alt="Stairs Image"
-              className="object-cover h-[20rem] w-[21rem] mx-auto  md:h-[32rem] md:w-[22rem] md:mx-4 lg:mx-0 lg:h-[25rem] lg:w-full rounded-3xl"
-            />
-            <p className="absolute inset-0 flex items-end justify-center">
-              <span className="bg-slate-50 nunito text-base text-[#335c98] rounded-md w-32 flex justify-center h-8 items-center">
-                Stairs Railing
-              </span>
-            </p>
-          </div>
-          <div className="relative flex-grow hover:scale-105 transition-transform duration-700 md:h-[32rem] lg:h-[24.5rem]">
-            <Image
-              src={floorImg}
-              alt="Floor Image"
-              className="object-cover h-[20rem] w-[21rem] mx-auto  md:h-[32rem] md:w-[22rem] md:mx-4 lg:mx-0 lg:h-[25rem] lg:w-full rounded-3xl"
-            />
-            <p className="absolute inset-0 flex items-end justify-center">
-              <span className="bg-slate-50 nunito text-base text-[#335c98] rounded-md w-32 flex justify-center h-8 items-center">
-                Floor Railing
-              </span>
-            </p>
-          </div>
-          <div className="relative flex-grow hover:scale-105 transition-transform duration-700 md:h-[32rem] lg:h-[24.5rem]">
-            <Image
-              src={houseImg}
-              alt="House Balcony Image"
-              className="object-cover h-[20rem] w-[21rem] mx-auto  md:h-[32rem] md:w-[22rem] md:mx-4 lg:mx-0 lg:h-[25rem] lg:w-full rounded-3xl"
-            />
-            <p className="absolute inset-0 flex items-end justify-center">
-              <span className="bg-slate-50 nunito text-base text-[#335c98] rounded-md w-[12rem] flex justify-center h-8 items-center">
-                Home Balcony Railing
-              </span>
-            </p>
-          </div>
-          <div className="relative flex-grow hover:scale-105 transition-transform duration-700 md:h-[32rem] lg:h-[24.5rem]">
-            <Image
-              src={office}
-              alt="Office Balcony Image"
-              className="object-cover  h-[20rem] w-[21rem] mx-auto  md:h-[32rem] md:w-[22rem] md:mx-4 lg:mx-0 lg:h-[25rem] lg:w-full rounded-3xl"
-            />
-            <p className="absolute inset-0 flex items-end justify-center">
-              <span className="bg-slate-50 nunito text-base text-[#335c98] rounded-md w-[12rem] flex justify-center h-8 items-center">
-                Corporate Balcony Railing
-              </span>
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+          {[
+            {
+              img: stairImg,
+              alt: "Stairs Image",
+              label: "Stairs Railing",
+              description:
+                "Enhance safety and style with our beautifully designed stairs railings.",
+            },
+            {
+              img: floorImg,
+              alt: "Floor Image",
+              label: "Floor Railing",
+              description:
+                "Our floor railings provide both functionality and aesthetics for any space.",
+            },
+            {
+              img: houseImg,
+              alt: "House Balcony Image",
+              label: "Home Balcony Railing",
+              description:
+                "Transform your balcony into a stunning outdoor space with our railings.",
+            },
+            {
+              img: office,
+              alt: "Office Balcony Image",
+              label: "Corporate Balcony Railing",
+              description:
+                "Elevate your office aesthetics with our modern balcony railings.",
+            },
+          ].map(({ img, alt, label, description }) => (
+            <div
+              key={alt}
+              className="relative overflow-hidden group rounded-3xl"
+            >
+              <Image
+                src={img}
+                alt={alt}
+                className="object-cover h-[20rem] md:w-[17rem] md:h-[20rem] transition-transform duration-300 transform group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 p-4 text-white">
+                <h3 className="text-xl font-bold">{label}</h3>
+                <p className="text-sm">{description}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
         {/* Add button to interact */}
-      
-        <section className="wavo-column-gap-default elementor-section elementor-top-section mt-8 overflow-hidden">
+
+        <section className="wavo-column-gap-default elementor-section elementor-top-section mt-8 overflow-hidden mx-auto">
           <div className="elementor-container flex flex-col md:flex-row">
             <div className="elementor-column md:flex-1"></div>
             <section className="bg-gray-50 py-10">

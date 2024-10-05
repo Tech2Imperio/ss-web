@@ -185,7 +185,7 @@ export default function Navbar() {
                     <Link
                       onClick={toggleSidebar}
                       href="/AboutUs"
-                      className="p-3 text-xl flex items-center justify-center"
+                      className="p-3 text-xl flex items-center justify-center "
                     >
                       About Us
                     </Link>
@@ -380,7 +380,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="px-3 py-2 rounded-md text-xl font-medium hover:text-white flex items-center"
+                    className="px-3 py-2 rounded-md text-xl hover:text-white flex items-center"
                   >
                     {item.name}
                     {item.name === "Products" && (

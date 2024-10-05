@@ -175,7 +175,7 @@ export default function Home() {
     },
     {
       id: 5,
-      name: "Wire Roll",
+      name: "Wire Rope",
       image: Invisiblerope,
       specifications: {
         GradeField: "	304/316",
@@ -203,7 +203,7 @@ export default function Home() {
     <main className=" h-full w-full relative">
       <div className="relative">
         <Image
-          className="h-[22rem] md:h-[40rem] w-full object-cover"
+          className="h-[22rem] md:h-[30rem] w-full object-cover"
           src={bgImg}
           alt="invisible grill"
         />
@@ -212,8 +212,9 @@ export default function Home() {
           Invisible Grill
         </h1>
       </div>
-      <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[18rem]">
-        <p className=" text-slate-500 text-xs lg:text-sm text-justify  p-8">
+      <div className=" flex flex-col overflow-hidden mx-auto container">
+        <div className="flex justify-center">
+        <p className=" text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
           Rajguru Steel Industry specializes in premium invisible grill
           solutions that enhance safety while maintaining unobstructed views,
           making them ideal for high-rise buildings and balconies. The invisible
@@ -230,6 +231,7 @@ export default function Home() {
           comprehensive solutions for enhancing safety in high-rise buildings
           and balconies.
         </p>
+        </div>
         <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-full w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
             <h1 className="text-3xl font-semibold text-[#335c98] p-4">

@@ -71,7 +71,7 @@ const page = () => {
     { name: "Silver", hex: "#D5D5D7" },
     { name: "Gold", hex: "#E5B80B" },
     { name: "RoseGold", hex: "#DEA193" },
-    { name: "Champagne", hex: "#D4AF37" },
+    { name: "Champagne", hex: "#837033" },
     // Add more colors if needed
   ];
 
@@ -179,9 +179,9 @@ const page = () => {
         </h1>
       </div>
 
-      <div className=" flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <div className=" flex flex-col justify-center text-justify text-xs md:text-sm text-slate-500 gap-4 nunito p-8">
-          <p>
+      <div className=" flex flex-col overflow-hidden mx-auto container">
+        <div className="flex justify-center">
+          <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
             Discover our exquisite range of high-quality stainless steel
             decorative sheets, designed to bring elegance and durability to your
             interiors. Our corrosion-resistant steel panels are perfect for
@@ -480,7 +480,7 @@ const page = () => {
 
         <main
           ref={card1Ref}
-          className={`flex flex-col justify-center text-justify gap-20 translate-y-14 `}
+          className={`flex flex-col justify-center text-justify gap-20 m-4 `}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
