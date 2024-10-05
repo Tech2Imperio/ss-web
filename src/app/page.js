@@ -16,6 +16,8 @@ import MobSection2 from "./assets/home-swiper/MobSection2.webp";
 import preview from "./assets/home-swiper/previewss.webp";
 import Mobpreview from "./assets/home-swiper/Mobpreview.webp";
 import Image from "next/image";
+import Link from "next/link";
+
 import {
   FaShieldAlt,
   FaHammer,
@@ -555,28 +557,33 @@ function Section5() {
               title: "For every project",
               description:
                 "Solutions from private homes to stadiums, from individual components to complete solutions.",
-              link: "More details",
+              link_text: "More details",
+              link: "/AboutUs",
             },
             {
               number: "02",
               title: "Personalised advice",
               description:
                 "Specialised consultants for every project clarify your questions from A-Z.",
-              link: "Contact",
+              link_text: "Contact Us",
+              link: "/ContactUs",
             },
             {
               number: "03",
               title: "Wide availability",
               description:
                 "Thousands of items available for immediate delivery - even to the construction site.",
-              link: "Webshop",
+              link_text: "Get a Qoute",
+              link: "/ContactUs",
             },
           ].map((item, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               className={`flex-1 flex flex-col justify-between items-center gap-8 ${
-                index !== 2 ? "border-r border-gray-200" : ""
+                index !== 2
+                  ? "border-b-2 md:border-r-2 md:border-b-0 border-gray-200"
+                  : ""
               } p-6 h-full`}
             >
               <motion.div
@@ -597,9 +604,11 @@ function Section5() {
               <p className="text-gray-600 text-center nunito">
                 {item.description}
               </p>
-              <p className=" hover:text-blue-800 transition-colors duration-300 nunito cursor-pointer">
-                {item.link}
-              </p>
+              <Link href={item.link}>
+                <p className=" hover:text-blue-800 transition-colors duration-300 nunito cursor-pointer">
+                  {item.link_text}
+                </p>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -607,6 +616,7 @@ function Section5() {
     </section>
   );
 }
+
 import { PiCircleDashedLight } from "react-icons/pi";
 import { TfiHome } from "react-icons/tfi";
 import { TbBulb } from "react-icons/tb";
@@ -738,6 +748,11 @@ function Section6() {
               </motion.div>
             </motion.div>
           ))}
+          <Link href="/ContactUs">
+            <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
+              GET A QUOTE
+            </button>
+          </Link>
         </motion.div>
       </motion.div>
     </section>
@@ -745,39 +760,39 @@ function Section6() {
 }
 
 function Home() {
-  const containerRef = useRef(null);
+  // const containerRef = useRef(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+  // useEffect(() => {
+  //   const container = containerRef.current;
+  //   if (!container) return;
 
-    const handleWheel = (e) => {
-      e.preventDefault();
-      const delta = Math.sign(e.deltaY);
-      container.scrollBy({
-        top: delta * window.innerHeight,
-        behavior: "smooth",
-      });
-    };
+  //   const handleWheel = (e) => {
+  //     e.preventDefault();
+  //     const delta = Math.sign(e.deltaY);
+  //     container.scrollBy({
+  //       top: delta * window.innerHeight,
+  //       behavior: "smooth",
+  //     });
+  //   };
 
-    container.addEventListener("wheel", handleWheel, { passive: false });
+  //   container.addEventListener("wheel", handleWheel, { passive: false });
 
-    return () => {
-      container.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
+  //   return () => {
+  //     container.removeEventListener("wheel", handleWheel);
+  //   };
+  // }, []);
 
   return (
     <div
-      ref={containerRef}
-      className="h-screen no-scrollbar snap-y snap-mandatory overflow-x-hidden"
+    // ref={containerRef}
+    // className="h-screen no-scrollbar snap-y snap-mandatory overflow-x-hidden"
     >
-      <Section1 className="h-screen snap-start" />
-      <Section6 className="h-screen snap-start" />
-      <Section2 className="h-screen snap-start" />
-      <Section3 className="h-screen snap-start" />
-      <Section4 className="h-screen snap-start" />
-      <Section5 className="h-screen snap-start" />
+      <Section1 />
+      <Section6 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
     </div>
   );
 }
