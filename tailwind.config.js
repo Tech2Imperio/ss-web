@@ -13,13 +13,17 @@ module.exports = {
       },
       keyframes: {
         wave: {
-          '0%': { transform: 'translateY(50px) rotate(5deg)', opacity: 0 },
-          '50%': { transform: 'translateY(-20px) rotate(-3deg)', opacity: 0.5 },
-          '100%': { transform: 'translateY(0) rotate(0)', opacity: 1 },
+          "0%": { transform: "translateY(50px) rotate(5deg)", opacity: 0 },
+          "50%": { transform: "translateY(-20px) rotate(-3deg)", opacity: 0.5 },
+          "100%": { transform: "translateY(0) rotate(0)", opacity: 1 },
         },
       },
       animation: {
-        wave: 'wave 0.8s ease-out forwards',
+        wave: "wave 0.8s ease-out forwards",
+      },
+      textColor: {
+        primary: "#335c98",
+        secondary: "#6c7481",
       },
     },
   },
