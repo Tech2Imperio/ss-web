@@ -1,5 +1,10 @@
 "use client";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaChevronDown,
+} from "react-icons/fa";
 import preview from "../assets/home-swiper/contactus.webp";
 import Image from "next/image";
 import { FiMail, FiYoutube } from "react-icons/fi";
@@ -8,7 +13,7 @@ import { TfiLocationPin } from "react-icons/tfi";
 import { motion } from "framer-motion";
 import { useState } from "react";
 export default function ContactUs() {
-  const [expandedFaq, setExpandedFaq] = useState(null);
+  const [expandedFaq, setExpandedFaq] = useState(0);
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -20,15 +25,6 @@ export default function ContactUs() {
       transition: {
         staggerChildren: 0.2,
       },
-    },
-  };
-
-  const pulseAnimation = {
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "reverse",
     },
   };
 
@@ -47,29 +43,9 @@ export default function ContactUs() {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "John Doe",
-      company: "Tech Co",
-      content:
-        "Working with this team has been an absolute pleasure. Their expertise and dedication are unmatched.",
-    },
-    {
-      name: "Jane Smith",
-      company: "Design Studio",
-      content:
-        "The level of creativity and attention to detail they bring to each project is truly impressive.",
-    },
-    {
-      name: "Mike Johnson",
-      company: "StartUp Inc",
-      content:
-        "Their innovative solutions have helped us streamline our processes and boost productivity.",
-    },
-  ];
   return (
-    <section className="flex flex-col h-auto w-screen">
-      <div className="relative">
+    <main className="flex flex-col h-auto w-screen">
+      <section className="relative">
         <Image
           className=" h-[22rem] md:h-[34rem] w-screen object-cover"
           src={preview}
@@ -79,8 +55,8 @@ export default function ContactUs() {
         <h1 className="absolute inset-0 flex items-center justify-center pt-20  md:pt-0 text-[#335c98] text-5xl md:text-[5rem]  poppins-regular">
           Contact Us
         </h1>
-      </div>
-      <div className="container mx-auto">
+      </section>
+      <section className="container mx-auto">
         <div className="flex justify-center items-center w-full h-auto mt-8">
           <h2 className="text-5xl poppins-bold text-[#335c98]">Get A Quote</h2>
         </div>
@@ -175,7 +151,7 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* FAQ Section */}
       <motion.section
@@ -198,7 +174,7 @@ export default function ContactUs() {
                 <motion.button
                   className="w-full text-left p-4 focus:outline-none"
                   onClick={() =>
-                    setExpandedFaq(expandedFaq === index ? null : index)
+                    setExpandedFaq(expandedFaq === index ? index : index)
                   }
                 >
                   <div className="flex justify-between items-center">
@@ -207,7 +183,7 @@ export default function ContactUs() {
                       animate={{ rotate: expandedFaq === index ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      ▼
+                      <FaChevronDown />
                     </motion.span>
                   </div>
                 </motion.button>
@@ -227,7 +203,7 @@ export default function ContactUs() {
           </motion.div>
         </div>
       </motion.section>
-    </section>
+    </main>
   );
 }
 
