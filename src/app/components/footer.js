@@ -6,31 +6,31 @@ import { FiYoutube } from "react-icons/fi";
 import { BsTelephone } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import { TfiLocationPin } from "react-icons/tfi";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+// import { motion } from "framer-motion";
+// import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const [isHomePage, setIsHomePage] = useState(false);
+  // const [isHomePage, setIsHomePage] = useState(false);
 
-  useEffect(() => {
-    const checkHomePage = () => {
-      if (typeof window !== "undefined") {
-        setIsHomePage(window.location.pathname === "/");
-      }
-    };
+  // useEffect(() => {
+  //   const checkHomePage = () => {
+  //     if (typeof window !== "undefined") {
+  //       setIsHomePage(window.location.pathname === "/");
+  //     }
+  //   };
 
-    checkHomePage();
+  //   checkHomePage();
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("popstate", checkHomePage);
-    }
+  //   if (typeof window !== "undefined") {
+  //     window.addEventListener("popstate", checkHomePage);
+  //   }
 
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("popstate", checkHomePage);
-      }
-    };
-  }, [typeof window !== "undefined" && window.location.pathname]);
+  //   return () => {
+  //     if (typeof window !== "undefined") {
+  //       window.removeEventListener("popstate", checkHomePage);
+  //     }
+  //   };
+  // }, [typeof window !== "undefined" && window.location.pathname]);
 
   // if (isHomePage) return null;
 
@@ -70,7 +70,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bottom-0 left-0 right-0 flex flex-col justify-center items-center bg-gray-300 opacity-90 w-[100vw] z-40 ">
-      <div className="flex flex-col justify-center px-2 xl:px-8 xl:w-[80vw] w-[95vw] h-auto my-6">
+      <section className="flex flex-col justify-center px-2 xl:px-8 xl:w-[80vw] w-[95vw] h-auto my-2">
         <div className="flex justify-start items-start">
           <Image
             priority
@@ -182,7 +182,7 @@ export default function Footer() {
             ></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </footer>
   );
 }

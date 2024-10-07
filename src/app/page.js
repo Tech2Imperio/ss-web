@@ -26,6 +26,8 @@ import {
   FaTools,
   FaExchangeAlt,
   FaChevronDown,
+  FaChevronRight,
+  FaChevronLeft,
 } from "react-icons/fa";
 import sectionImg4 from "./assets/home-swiper/section4.webp";
 import { LuLightbulb, LuCog } from "react-icons/lu";
@@ -140,6 +142,11 @@ function Section1() {
 function Section2() {
   const [isMobileView, setMobileView] = useState(false);
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   useEffect(() => {
     const handleResize = () => {
       setMobileView(window.innerWidth >= 1025);
@@ -152,7 +159,10 @@ function Section2() {
   }, []);
 
   return (
-    <section className="relative bg-gray-50 w-auto h-auto flex flex-col my-20 xl:flex-row xl:h-[100vh] xl:w-[100vw] xl:py-24 xl:my-0 snap-start">
+    <section
+      ref={ref}
+      className="relative bg-gray-50 w-auto h-auto flex flex-col my-8 xl:flex-row xl:h-[100vh] xl:w-[100vw] xl:py-24 xl:my-0 snap-start z-0"
+    >
       <div className="flex flex-col items-center relative w-auto h-auto xl:w-full xl:h:full xl:flex-row xl:justify-between">
         <Image
           priority
@@ -202,16 +212,16 @@ function Section2() {
           </div>
         ) : (
           <motion.div
-            className="bg-gray-800 opacity-95 w-[50%] h-[80%]"
+            className="bg-gray-300 opacity-90 w-[50%] h-[80%]"
             initial={{ x: "200%" }}
-            animate={{ x: "100%" }}
+            animate={inView ? { x: "100%" } : {}}
             exit={{ x: "200%" }}
             transition={{
               duration: 1.1,
               delay: 0.6,
             }}
           >
-            <div className="h-full flex flex-col items-start justify-center px-14 gap-[1.5rem] text-gray-300">
+            <div className="h-full flex flex-col items-start justify-center px-14 gap-[1.5rem] text-[#335c98]">
               <h2 className="poppins-bold text-3xl text-start">
                 Shaping the Future of Stainless Steel
               </h2>
@@ -233,7 +243,7 @@ function Section2() {
               </p>
               <button
                 type="submit"
-                className="flex justify-center gap-1 items-center shadow-lg text-sm text-gray-800 bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-gray-800 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative xl:z-10 px-2 py-1 overflow-hidden border-2 rounded-full group"
+                className="flex justify-center gap-1 items-center shadow-lg text-sm text-[#335c98] bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative xl:z-10 px-2 py-1 overflow-hidden border-2 rounded-full group"
               >
                 View Products
                 <svg
@@ -243,7 +253,7 @@ function Section2() {
                 >
                   <path
                     d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                    className="fill-gray-800 group-hover:fill-gray-800"
+                    className="fill-[#335c98] group-hover:fill-[#335c98]"
                   ></path>
                 </svg>
               </button>
@@ -260,7 +270,7 @@ function Section3() {
 
   useEffect(() => {
     const handleResize = () => {
-      setMobileView(window.innerWidth <= 1025);
+      setMobileView(window.innerWidth < 1025);
     };
 
     window.addEventListener("resize", handleResize);
@@ -274,12 +284,35 @@ function Section3() {
     threshold: 0.1,
   });
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
-    <section
+    <motion.section
       ref={ref}
-      className="relative flex flex-col h-[135vh] w-full align-middle gap-2 p-2 z-0 xl:px-[18rem] xl:h-screen xl:flex-row snap-start"
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={containerVariants}
+      className="relative w-full h-auto gap-2 p-2 xl:px-[18rem] xl:h-screen xl:flex-row snap-start z-0"
     >
-      <div className="relative h-full w-auto flex flex-col justify-around items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row lg:mt-6">
+      <div className="relative h-auto w-auto flex flex-col justify-around items-center gap-4 xl:h-full xl:w-full xl:px-8 xl:gap-28 xl:flex-row lg:mt-6">
         <div className="h-auto w-auto flex justify-center xl:justify-start xl:items-start xl:h-[90%] xl:w-[35%]">
           <Image
             priority
@@ -290,11 +323,14 @@ function Section3() {
         </div>
 
         <div className="flex flex-col justify-between items-end h-[85%] w-full xl:w-[50%]">
-          <div className="space-y-2 flex flex-col px-4 xl:ml-16">
-            <div className=" bg-gray-300 text-[#335c98] px-4 py-2 rounded w-36 text-center poppins-bold whitespace-nowrap">
+          <motion.div
+            variants={itemVariants}
+            className="space-y-2 flex flex-col px-4 xl:ml-16"
+          >
+            <div className="bg-gray-300 text-[#335c98] px-4 py-2 rounded w-36 text-center poppins-bold whitespace-nowrap">
               Product Quality
             </div>
-            <h2 className="text-4xl  text-[#335c98] poppins-bold">
+            <h2 className="text-4xl text-[#335c98] poppins-bold">
               Explore Premium Stainless Steel Products
             </h2>
             <p className="text-gray-800 text-justify">
@@ -303,36 +339,25 @@ function Section3() {
               Perfect for any setting, they offer both resilience and a sleek,
               contemporary look.
             </p>
-          </div>
-          <div className=" grid grid-cols-2 bg-white rounded-lg z-20 h-full w-full md:shadow-xl xl:h-[45%] xl:grid-cols-3 xl:w-[110%] p-2">
+          </motion.div>
+          <motion.div
+            variants={itemVariants}
+            className="grid grid-cols-2 bg-white rounded-lg z-0 w-full md:shadow-xl xl:h-[45%] xl:grid-cols-3 xl:w-[110%] p-2"
+          >
             {[
-              {
-                name: "Inoxydable",
-                icon: <FaShieldAlt className=" w-8 h-8" />,
-              },
-              {
-                name: "Robustness",
-                icon: <FaHammer className=" w-8 h-8" />,
-              },
-              {
-                name: "Elegance",
-                icon: <FaGem className=" w-8 h-8" />,
-              },
-              {
-                name: "Thermal",
-                icon: <FaFire className=" w-8 h-8" />,
-              },
-              {
-                name: "Convenience",
-                icon: <FaTools className=" w-8 h-8" />,
-              },
+              { name: "Inoxydable", icon: <FaShieldAlt className="w-8 h-8" /> },
+              { name: "Robustness", icon: <FaHammer className="w-8 h-8" /> },
+              { name: "Elegance", icon: <FaGem className="w-8 h-8" /> },
+              { name: "Thermal", icon: <FaFire className="w-8 h-8" /> },
+              { name: "Convenience", icon: <FaTools className="w-8 h-8" /> },
               {
                 name: "Adaptability",
-                icon: <FaExchangeAlt className=" w-8 h-8" />,
+                icon: <FaExchangeAlt className="w-8 h-8" />,
               },
             ].map((type, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={itemVariants}
                 className={`flex flex-col justify-center p-2 ${
                   index === 0 ? "lg:border-r-[1px] lg:border-b-[1px]" : ""
                 } ${index === 1 ? "lg:border-b-[1px]" : ""} ${
@@ -342,17 +367,17 @@ function Section3() {
                 }`}
               >
                 <div className="group flex flex-col items-center text-lg cursor-pointer transition duration-700 hover:scale-110 gap-4">
-                  <p className="group-hover:transform group-hover:scale-x-[-1] transition duration-700 text-gray-600">
+                  <p className="group-hover:transform group-hover:scale-x-[-1] transition duration-700 text-slate-500">
                     {type.icon}
                   </p>
                   <p className="text-[#335c98] poppins-medium">{type.name}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -392,9 +417,9 @@ function Section4() {
   return (
     <section
       ref={ref}
-      className="relative w-screen h-[150vh] md:h-screen flex flex-col justify-center bg-gray-50 overflow-hidden snap-start"
+      className="relative md:w-screen md:h-[100vh] snap-start bg-gray-50 z-0"
     >
-      <div className="container mx-auto px-4 md:px-6 flex flex-col justify-evenly items-center h-auto md:h-full my-12">
+      <div className="container mx-auto px-4 md:px-10 flex flex-col justify-center items-center h-auto md:h-full py-12 relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -457,10 +482,10 @@ function Section4() {
                     aria-controls={`feature-content-${index}`}
                   >
                     <div className="flex items-center">
-                      <span className="w-6 h-6 text-gray-600 mr-3">
+                      <span className="w-6 h-6 text-slate-500 mr-3">
                         {feature.icon}
                       </span>
-                      <h4 className="poppins-semibold text-gray-600">
+                      <h4 className="poppins-semibold text-slate-500">
                         {feature.title}
                       </h4>
                     </div>
@@ -480,7 +505,7 @@ function Section4() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <p className="p-4 text-gray-600 nunito text-justify">
+                        <p className="p-4 text-slate-500 nunito text-justify">
                           {feature.description}
                         </p>
                       </motion.div>
@@ -495,6 +520,133 @@ function Section4() {
     </section>
   );
 }
+
+import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
+import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
+import CarouselImg4 from "./assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
+import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stainBlack.png";
+import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
+import CarouselImg7 from "./assets/product/profile/flutedPanel/flutedImg.webp";
+
+const Carousel = () => {
+  const Carouselimages = [
+    {
+      src: CarouselImg1,
+      name: "Stainless Steel Balustrade",
+      description: "A sturdy railing system for various applications.",
+      link: "/products/BalustradeSystem",
+    },
+    {
+      src: CarouselImg2,
+      name: "Invisible Grill",
+      description: "A seamless grill solution for safety and style.",
+      link: "/products/ssInvisibleGrill",
+    },
+    {
+      src: CarouselImg4,
+      name: "T Profile",
+      description: "A versatile profile for modern designs.",
+      link: "/products/profile/tProfile",
+    },
+    {
+      src: CarouselImg5,
+      name: "U Profile",
+      description: "Perfect for structural support and aesthetics.",
+      link: "/products/profile/uProfile",
+    },
+    {
+      src: CarouselImg6,
+      name: "L Profile",
+      description: "Ideal for corner fittings and enhancements.",
+      link: "/products/profile/lProfile",
+    },
+    {
+      src: CarouselImg7,
+      name: "Fluted Panel",
+      description: "Elegant paneling for enhanced visual appeal.",
+      link: "/products/profile/ssFlutedPanelProfile",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const slideVariants = {
+    hiddenRight: { x: "100%", opacity: 0 },
+    hiddenLeft: { x: "-100%", opacity: 0 },
+    visible: { x: "0", opacity: 1, transition: { duration: 1 } },
+  };
+
+  const handleNext = () => {
+    setDirection("right");
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 1 === Carouselimages.length ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrevious = () => {
+    setDirection("left");
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 1 < 0 ? Carouselimages.length - 1 : prevIndex - 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        handleNext();
+      }
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [isHovered, currentIndex]);
+
+  return (
+    <div className="relative overflow-hidden rounded-xl shadow-lg border-gray-300">
+      <motion.div
+        key={currentIndex}
+        initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
+        animate="visible"
+        variants={slideVariants}
+        className="flex flex-col"
+      >
+        <motion.img
+          src={Carouselimages[currentIndex].src.src}
+          alt={Carouselimages[currentIndex].name}
+          className="h-72 w-full object-cover rounded-t-xl -z-10"
+        />
+      </motion.div>
+      <div className="p-4 flex flex-col rounded-b-xl rounded-t-xl bg-white z-0">
+        <h5 className="mb-2 text-xl font-semibold text-gray-900">
+          {Carouselimages[currentIndex].name}
+        </h5>
+        <p className="text-base font-light text-gray-600">
+          {Carouselimages[currentIndex].description}
+        </p>
+      </div>
+
+      <div className="absolute inset-y-0 flex items-center justify-between px-4 w-full">
+        <motion.div
+          className="bg-[#335c98] text-white p-2 rounded-full cursor-pointer"
+          onClick={handlePrevious}
+        >
+          <FaChevronLeft />
+        </motion.div>
+        <motion.div
+          className="bg-[#335c98] text-white p-2 rounded-full cursor-pointer"
+          onClick={handleNext}
+        >
+          <FaChevronRight />
+        </motion.div>
+      </div>
+      <Link href={Carouselimages[currentIndex].link}>
+        <button className="relative ml-4 mb-6 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
+          Know More
+        </button>
+      </Link>
+    </div>
+  );
+};
 
 function Section5() {
   const [ref, inView] = useInView({
@@ -526,93 +678,82 @@ function Section5() {
   };
 
   return (
-    <section className="relative md:h-screen md:w-screen snap-start flex flex-col justify-center items-center overflow-hidden">
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="container mx-auto py-16 w-full h-full flex flex-col justify-center items-center"
-      >
-        <motion.h2
-          variants={itemVariants}
-          className="text-5xl text-center mb-6 text-[#335c98] poppins-bold"
-        >
-          A strong partner at your side
-        </motion.h2>
-        <motion.p
-          variants={itemVariants}
-          className="text-center text-gray-600 mb-10 max-w-2xl mx-auto text-base nunito"
-        >
-          As railing experts, we are at your side with first-class support for
-          the successful realisation of every project.
-        </motion.p>
+    <section className="relative md:h-screen md:w-screen snap-start flex flex-col justify-center overflow-hidden">
+      <div className="container mx-auto w-[80%]">
         <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="container mx-auto flex flex-col md:flex-row w-[85%] gap-8"
+          className=" h-full flex flex-col md:flex-row justify-evenly items-center gap-6 "
         >
-          {[
-            {
-              number: "01",
-              title: "For every project",
-              description:
-                "Solutions from private homes to stadiums, from individual components to complete solutions.",
-              link_text: "More details",
-              link: "/AboutUs",
-            },
-            {
-              number: "02",
-              title: "Personalised advice",
-              description:
-                "Specialised consultants for every project clarify your questions from A-Z.",
-              link_text: "Contact Us",
-              link: "/ContactUs",
-            },
-            {
-              number: "03",
-              title: "Wide availability",
-              description:
-                "Thousands of items available for immediate delivery - even to the construction site.",
-              link_text: "Get a Qoute",
-              link: "/ContactUs",
-            },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className={`flex-1 flex flex-col justify-between items-center gap-8 ${
-                index !== 2
-                  ? "border-b-2 md:border-r-2 md:border-b-0 border-gray-200"
-                  : ""
-              } p-6 h-full`}
-            >
-              <motion.div
-                initial={{ scale: 0.5, opacity: 0 }}
-                animate={
-                  inView
-                    ? { scale: 1, opacity: 0.1 }
-                    : { scale: 0.5, opacity: 0 }
-                }
-                transition={{ delay: 0.2 * index, duration: 0.5 }}
-                className="text-8xl font-bold text-gray-400"
+          {/* Left Column: Carousel and Header Text */}
+          <div className="flex flex-col w-full md:w-[40%] gap-6">
+            <div className="flex flex-col gap-4">
+              <motion.h2
+                variants={itemVariants}
+                className="text-4xl md:text-5xl text-[#335c98] poppins-bold text-center whitespace-nowrap"
               >
-                {item.number}
-              </motion.div>
-              <h3 className="text-2xl text-[#335c98] poppins-semibold">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-center nunito">
-                {item.description}
-              </p>
-              <Link href={item.link}>
-                <p className=" hover:text-blue-800 transition-colors duration-300 nunito cursor-pointer">
-                  {item.link_text}
+                A strong partner at <br />
+                your side
+              </motion.h2>
+              <motion.p
+                variants={itemVariants}
+                className="text-center text-slate-500 text-sm nunito"
+              >
+                As railing experts, we are at your side with first-class support
+                for the successful realization of every project.
+              </motion.p>
+            </div>
+            <Carousel />
+          </div>
+
+          {/* Right Column: Innovation & Technology List */}
+          <motion.div
+            variants={containerVariants}
+            className="flex flex-col w-full md:w-[30%]"
+          >
+            {[
+              {
+                number: "01",
+                title: "For every project",
+                description:
+                  "Solutions from private homes to stadiums, from individual components to complete solutions.",
+              },
+              {
+                number: "02",
+                title: "Personalised advice",
+                description:
+                  "Specialised consultants for every project clarify your questions from A-Z.",
+              },
+              {
+                number: "03",
+                title: "Wide availability",
+                description:
+                  "Thousands of items available for immediate delivery - even to the construction site.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className={`flex flex-col justify-between items-center hover:shadow-lg transition duration-500 gap-4 ${
+                  index !== 2 ? "border-b-2" : ""
+                } border-gray-200 p-4 h-full`}
+              >
+                <p className="text-6xl font-bold text-slate-200 text-opacity-45">
+                  {item.number}
                 </p>
-              </Link>
-            </motion.div>
-          ))}
+                <h3 className="text-2xl text-[#335c98] poppins-semibold">
+                  {item.title}
+                </h3>
+                <p className="text-slate-500 text-center nunito text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
@@ -690,7 +831,7 @@ function Section6() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen w-full bg-white py-16 snap-start">
+    <section className="flex flex-col items-center justify-center min-h-screen w-full py-16 snap-start bg-gray-50">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -706,7 +847,7 @@ function Section6() {
         </motion.h2>
         <motion.p
           variants={itemVariants}
-          className="text-center text-gray-600 max-w-2xl nunito"
+          className="text-center text-slate-500 max-w-2xl nunito"
         >
           With expertise, we specialize in providing innovative, customized, and
           safe stainless steel solutions tailored to meet the unique needs of
@@ -723,7 +864,7 @@ function Section6() {
               className="w-full sm:w-1/2 lg:w-1/4 p-4 "
             >
               <motion.div
-                className="flex flex-col items-center justify-start bg-gray-100 rounded-lg h-full w-full p-6 transition-all duration-300 hover:shadow-2xl hover:bg-gray-200"
+                className="flex flex-col items-center justify-start bg-gray-100 rounded-lg h-full w-full p-6 transition-all duration-300 hover:shadow-2xl hover:bg-gray-200 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -740,7 +881,7 @@ function Section6() {
                   {solution.title}
                 </motion.h3>
                 <motion.p
-                  className="text-xs text-gray-600 text-center nunito"
+                  className="text-xs text-slate-500 text-center nunito"
                   variants={itemVariants}
                 >
                   {solution.description}
@@ -788,11 +929,11 @@ function Home() {
     // className="h-screen no-scrollbar snap-y snap-mandatory overflow-x-hidden"
     >
       <Section1 />
-      <Section6 />
-      <Section2 />
-      <Section3 />
       <Section4 />
+      <Section3 />
+      <Section2 />
       <Section5 />
+      <Section6 />
     </div>
   );
 }
