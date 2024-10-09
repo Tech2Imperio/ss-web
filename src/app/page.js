@@ -177,37 +177,30 @@ function Section2() {
                 Shaping the Future of Stainless Steel
               </h1>
               <p className="nunito text-xs text-justify">
-                We have evolved into a multi-division, multi-product
-                conglomerate in the stainless steel industry.
+                "We are a premier multi-division conglomerate in the stainless
+                steel industry, dedicated to ensuring customer satisfaction and
+                delivering high-quality products. Our commitment to eco-friendly
+                stainless steel and advanced machinery fosters positive change
+                and innovation across various sectors. With the support of our
+                dedicated team and partners, we empower success through
+                cutting-edge solutions.
               </p>
+              <p className="nunito text-xl text-justify">Get in Touch</p>
               <p className="nunito text-xs text-justify">
-                Our commitment to customer satisfaction and quality sets us
-                apart in this traditional field. We drive positive change with
-                stronger, eco-friendly stainless steel and high-performance
-                machinery, revolutionizing industries.
+                "Ready to elevate your projects with our innovative stainless
+                steel solutions? Contact us today to discuss your needs and
+                discover how we can assist you in achieving your goals. We look
+                forward to partnering with you!"
               </p>
-              <p className="nunito text-xs text-justify">
-                Our passionate team and partners share our vision, empowering
-                success through innovation. Explore Our Products Discover our
-                stainless steel solutions designed to meet your needs. Visit our
-                product page to learn more.
-              </p>
-              <button
-                type="submit"
-                className="flex justify-center gap-1 items-center text-sm text-gray-800 bg-gray-200 backdrop-blur-md lg:font-semibold isolation-auto border-gray-200 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-2 py-[0.55rem] overflow-hidden border-2 rounded-full group"
-              >
-                View Products
-                <svg
-                  className="w-4 h-4 justify-end group-hover:rotate-90 group-hover:bg-gray-200 text-gray-200 ease-linear duration-300 rounded-full border border-gray-200 group-hover:border-none p-0.5 rotate-45"
-                  viewBox="0 0 16 19"
-                  xmlns="http://www.w3.org/2000/svg"
+              <Link href="/ContactUs">
+                <button
+                  type="submit"
+                  className="flex justify-center gap-1 items-center shadow-lg text-sm text-[#335c98] bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative xl:z-10 px-2 py-1 overflow-hidden border-2 rounded-full group"
                 >
-                  <path
-                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                    className="fill-[#335c98] group-hover:fill-[#335c98]"
-                  ></path>
-                </svg>
-              </button>
+                  Contact Us
+                  <HiArrowUpRight className="w-6 h-6 justify-end group-hover:rotate-45 group-hover:bg-gray-50 text-black ease-linear duration-500 rounded-full border border-gray-700 group-hover:border-none p-1" />
+                </button>
+              </Link>
             </div>
           </div>
         ) : (
@@ -221,42 +214,37 @@ function Section2() {
               delay: 0.6,
             }}
           >
-            <div className="h-full flex flex-col items-start justify-center px-14 gap-[1.5rem] text-[#335c98]">
+            <div className="h-full flex flex-col items-start justify-center px-14 gap-[1rem] text-[#335c98]">
               <h2 className="poppins-bold text-3xl text-start">
                 Shaping the Future of Stainless Steel
               </h2>
               <p className="nunito text-[14px] text-justify">
-                We have evolved into a multi-division, multi-product
-                conglomerate in the stainless steel industry.
+                "We are a premier multi-division conglomerate in the stainless
+                steel industry, dedicated to ensuring customer satisfaction and
+                delivering high-quality products. Our commitment to eco-friendly
+                stainless steel and advanced machinery fosters positive change
+                and innovation across various sectors. With the support of our
+                dedicated team and partners, we empower success through
+                cutting-edge solutions.
+              </p>
+              <p className="poppins-semibold text-xl text-justify">
+                Get in Touch
               </p>
               <p className="nunito text-[14px] text-justify">
-                Our commitment to customer satisfaction and quality sets us
-                apart in this traditional field. We drive positive change with
-                stronger, eco-friendly stainless steel and high-performance
-                machinery, revolutionizing industries.
+                "Ready to elevate your projects with our innovative stainless
+                steel solutions? Contact us today to discuss your needs and
+                discover how we can assist you in achieving your goals. We look
+                forward to partnering with you!"
               </p>
-              <p className="nunito text-[14px] text-justify">
-                Our passionate team and partners share our vision, empowering
-                success through innovation. Explore Our Products Discover our
-                stainless steel solutions designed to meet your needs. Visit our
-                product page to learn more.
-              </p>
-              <button
-                type="submit"
-                className="flex justify-center gap-1 items-center shadow-lg text-sm text-[#335c98] bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative xl:z-10 px-2 py-1 overflow-hidden border-2 rounded-full group"
-              >
-                View Products
-                <svg
-                  className="w-6 h-6 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 rotate-45"
-                  viewBox="0 0 16 19"
-                  xmlns="http://www.w3.org/2000/svg"
+              <Link href="/ContactUs">
+                <button
+                  type="submit"
+                  className="flex justify-center gap-1 items-center shadow-lg text-sm text-[#335c98] bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#335c98] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative xl:z-10 px-2 py-1 overflow-hidden border-2 rounded-full group"
                 >
-                  <path
-                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                    className="fill-[#335c98] group-hover:fill-[#335c98]"
-                  ></path>
-                </svg>
-              </button>
+                  Contact Us
+                  <HiArrowUpRight className="w-6 h-6 justify-end group-hover:rotate-45 group-hover:bg-gray-50 text-black ease-linear duration-500 rounded-full border border-gray-700 group-hover:border-none p-1" />
+                </button>
+              </Link>
             </div>
           </motion.div>
         )}
@@ -597,7 +585,7 @@ const Carousel = () => {
       if (!isHovered) {
         handleNext();
       }
-    }, 7000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [isHovered, currentIndex]);
 
@@ -761,6 +749,7 @@ function Section5() {
 import { PiCircleDashedLight } from "react-icons/pi";
 import { TfiHome } from "react-icons/tfi";
 import { TbBulb } from "react-icons/tb";
+import { HiArrowUpRight } from "react-icons/hi2";
 const solutions = [
   {
     icon: <TbBulb className="w-12 h-12" />,
