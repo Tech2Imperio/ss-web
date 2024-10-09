@@ -90,15 +90,14 @@ body {
   font-style: normal;
 }
 
-/* public/fonts/DIN-Regular.css */
-@font-face {
-  font-family: "DIN Regular";
-  src: url("/fonts/DIN-Regular.ttf") format("truetype");
-  font-weight: normal;
+
+.din-regular-font {
+  font-family: "DIN Regular", sans-serif;
+  font-weight: 700;
   font-style: normal;
 }
 
-.din-regular-font {
+.din-normal-font {
   font-family: "DIN Regular", sans-serif;
   font-weight: 700;
   font-style: normal;
