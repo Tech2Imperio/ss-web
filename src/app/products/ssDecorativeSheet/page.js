@@ -20,6 +20,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { FadeDown } from "../../components/utility/animation.jsx";
+import { motion } from "framer-motion";
 
 // Black finishes
 import MirrorImg from "../../assets/product/ssdecorativesheet/finishes/black/mirrorBlack.png";
@@ -174,14 +176,31 @@ const page = () => {
           alt="decorative sheet"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
+        {/* <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
           Decorative Sheets
-        </h1>
+        </h1> */}
+        <motion.div
+          variants={FadeDown(0.001)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
+        >
+          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+            Stainless Steel Decorative Sheets
+          </h1>
+          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
+            "Explore our premium stainless steel decorative sheets, perfect for
+            enhancing walls in both home and commercial spaces. Available in
+            various finishes, our corrosion-resistant sheets combine style and
+            durability for stunning interior designs."
+          </p>
+        </motion.div>
       </div>
 
       <div className=" flex flex-col overflow-hidden mx-auto container">
         <div className="flex justify-center">
-          <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
+          {/* <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
             Discover our exquisite range of high-quality stainless steel
             decorative sheets, designed to bring elegance and durability to your
             interiors. Our corrosion-resistant steel panels are perfect for
@@ -194,7 +213,7 @@ const page = () => {
             enhance a residential or commercial space, our decorative steel
             solutions are the perfect choice. Transform your space today with
             our premium stainless steel decorative sheets!
-          </p>
+          </p> */}
         </div>
 
         {/* new model open */}
@@ -284,8 +303,14 @@ const page = () => {
 
                 {/* CTA Button with Neomorphism Style */}
                 <Link href="/ContactUs">
-                  <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-                    GET A QUOTE
+                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                    {/* Background circles */}
+                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
+                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
+                    {/* Button text */}
+                    <span className="relative z-10 group-hover:text-white raleway">
+                      GET A QUOTE
+                    </span>
                   </button>
                 </Link>
               </div>
@@ -552,6 +577,25 @@ const page = () => {
             </div>
           </div>
         </main>
+
+        <div className="flex justify-center flex-col m-4">
+          <h3 className=" text-3xl md:text-4xl text-primary poppins-regular">
+            Why Choose Stainless Steel Decorative Sheets?
+          </h3>
+          <p className="text-base lg:text-base text-secondary text-justify w-[100%] p-4">
+            Rajguru Steel Industries offers high-quality stainless steel
+            decorative sheets that elevate your interiors with elegance and
+            durability. Our corrosion-resistant panels are ideal for various
+            applications, including wall coverings, stylish backsplashes, and
+            custom furniture designs. With finishes like brushed and mirrored,
+            our sheets not only provide a sleek, modern look but also ensure
+            easy maintenance. Perfect for both residential and commercial
+            spaces, our stainless steel decorative solutions combine style and
+            functionality, making them the ideal choice for transforming any
+            environment.
+          </p>
+        </div>
+        {/* swiper */}
         <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">

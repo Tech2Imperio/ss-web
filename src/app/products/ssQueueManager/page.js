@@ -45,19 +45,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaStar,
-  FaTruck,
-  FaCheck,
-  FaInfoCircle,
-  FaTools,
-  FaComments,
-  FaBox,
-} from "react-icons/fa";
+import { FaTruck, FaCheck, FaInfoCircle } from "react-icons/fa";
 import React from "react";
 import bg from "../../assets/product/queueManager/bg.webp";
 import main from "../../assets/product/queueManager/productImg/main.webp";
 import Link from "next/link";
+import { FadeDown } from "../../components/utility/animation.jsx";
+// import { motion } from "framer-motion";
 import ropeImg from "../../assets/product/queueManager/productImg/rope.webp";
 import wallMount from "../../assets/product/queueManager/productImg/wallmount.webp";
 import signFrame from "../../assets/product/queueManager/productImg/signframe.webp";
@@ -101,7 +95,7 @@ export default function StainlessSteelQueueManager() {
           alt="U Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4 md:pt-0 text-[#4776bd] text-5xl md:text-[4rem] md:p-4 poppins-bold">
+        {/* <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4 md:pt-0 text-[#4776bd] text-5xl md:text-[4rem] md:p-4 poppins-bold">
           RAJGURU
           <br />
           <p className=" text-xs md:text-base w-[18rem] md:w-[45rem] nunito pt-2 md:pt-4 text-gray-300">
@@ -111,19 +105,36 @@ export default function StainlessSteelQueueManager() {
             enhancing customer flow in various settings such as retail stores,
             events, and restaurants.
           </p>
-        </h1>
+        </h1> */}
+        <motion.div
+          variants={FadeDown(0.001)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
+        >
+          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+            Stainless Steel Queue Manager
+          </h1>
+          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
+            "Rajguru Steel Industries offers durable stainless steel crowd
+            control solutions ideal for hospitals, airports, and public spaces.
+            Our barriers ensure safety and organization while enhancing
+            aesthetic appeal."
+          </p>
+        </motion.div>
       </div>
 
       <main className="flex flex-col overflow-hidden mx-auto container">
         <div className=" flex flex-col justify-center text-justify text-sm md:text-sm text-slate-500 gap-4 nunito p-8">
-          <p>
+          {/* <p>
             Rajguru Steel Industries offers a remarkable range of stainless
             steel U profiles that combine aesthetic appeal with exceptional
             durability. Stainless steel U profiles are suitable for a variety of
             uses, including structural reinforcements, decorative accents, and
             architectural elements. Their versatility makes them ideal for both
             residential and commercial projects.
-          </p>
+          </p> */}
         </div>
 
         {/* Hero Section */}
@@ -149,7 +160,7 @@ export default function StainlessSteelQueueManager() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="md:w-1/2 mt-4 md:mt-0 md:ml-8"
             >
-              <h2 className="text-4xl poppins-bold mb-4 text-[#335c98]">
+              <h2 className="text-3xl md:text-4xl poppins-bold mb-4 text-[#335c98]">
                 Premium Crowd Control Solution
               </h2>
               <p className="text-gray-500 mb-4 nunito flex text-justify">
@@ -159,18 +170,16 @@ export default function StainlessSteelQueueManager() {
                 manager ensures smooth traffic flow and enhances customer
                 experience.
               </p>
-              {/* <div className="flex items-center mb-4">
-                <FaStar className="text-yellow-400 mr-1" />
-                <FaStar className="text-yellow-400 mr-1" />
-                <FaStar className="text-yellow-400 mr-1" />
-                <FaStar className="text-yellow-400 mr-1" />
-                <FaStar className="text-yellow-400 mr-1" />
-                <span className="ml-2 text-gray-600">(4.9/5 based on 120 reviews)</span>
-              </div> */}
               {/* CTA Button with Neomorphism Style */}
               <Link href="/ContactUs">
-                <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-                  GET A QUOTE
+                <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                  {/* Background circles */}
+                  <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
+                  <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
+                  {/* Button text */}
+                  <span className="relative z-10 group-hover:text-white raleway">
+                    GET A QUOTE
+                  </span>
                 </button>
               </Link>
             </motion.div>

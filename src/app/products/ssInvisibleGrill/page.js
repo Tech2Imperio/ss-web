@@ -24,6 +24,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { FadeDown } from "../../components/utility/animation.jsx";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const items = [img1, img2, img3];
@@ -207,32 +209,27 @@ export default function Home() {
           src={bgImg}
           alt="invisible grill"
         />
-        <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center mt-28 md:pt-0 text-[#19355e] text-5xl md:text-[5rem] poppins-regular">
-          Invisible Grill
-        </h1>
+        <div className="absolute inset-0 bg-black opacity-45" />
+        <motion.div
+          variants={FadeDown(0.001)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
+        >
+          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+            Stainless Steel Invisible Grill
+          </h1>
+          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg  md:w-[48rem] text-justify raleway mb-12 ">
+            "Rajguru Steel Industry offers premium invisible grills that enhance
+            safety and aesthetics for homes and balconies. Our durable stainless
+            steel solutions provide unobstructed views while ensuring
+            long-lasting protection, making them ideal for modern architecture."
+          </p>
+        </motion.div>
       </div>
       <div className=" flex flex-col overflow-hidden mx-auto container">
-        <div className="flex justify-center">
-        <p className=" text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
-          Rajguru Steel Industry specializes in premium invisible grill
-          solutions that enhance safety while maintaining unobstructed views,
-          making them ideal for high-rise buildings and balconies. The invisible
-          grills are designed to provide a contemporary look, seamlessly
-          integrating into the architecture of modern buildings without
-          obstructing views. Made from high-quality materials, these grills are
-          built to withstand the elements, ensuring long-lasting protection and
-          safety. The primary purpose of these invisible grills is to enhance
-          safety, particularly in high-rise settings where traditional grills
-          may not be suitable. Rajguru Steel Industry's invisible grill
-          solutions offer a perfect blend of safety, aesthetics, and durability,
-          making them an excellent choice for modern architectural needs. With a
-          range of accessories and a focus on quality, they provide
-          comprehensive solutions for enhancing safety in high-rise buildings
-          and balconies.
-        </p>
-        </div>
-        <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-full w-full bg-gray-50">
+        <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-scrren md:h-[80vh] md:mt-9 w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
             <h1 className="text-3xl font-semibold text-[#335c98] p-4">
               Invisible Grill
@@ -326,7 +323,11 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto">
           <h2 className=" text-2xl md:text-3xl poppins-bold text-[#335c98] py-8 text-center">
             Benefits of Invisible Grills
-            <p className=" text-sm md:text-lg md:mx-24 py-2 text-[#335c98] nunito">Invisible grills are becoming increasingly popular in modern architecture due to their unique advantages. Here are some of the key benefits:</p>
+            <p className=" text-sm md:text-lg md:mx-24 py-2 text-[#335c98] nunito">
+              Invisible grills are becoming increasingly popular in modern
+              architecture due to their unique advantages. Here are some of the
+              key benefits:
+            </p>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -417,13 +418,43 @@ export default function Home() {
           {/* Add button to interact */}
           <div className="flex justify-center mt-8">
             <Link href="/ContactUs">
-            <button className="mt-8 px-6 py-3 poppins-regular bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-              GET A QUOTE
-            </button>
+              <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                {/* Background circles */}
+                <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
+                <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
+                {/* Button text */}
+                <span className="relative z-10 group-hover:text-white raleway">
+                  GET A QUOTE
+                </span>
+              </button>
             </Link>
           </div>
         </div>
+        <div className="flex justify-center flex-col mt-8">
+          <h3 className=" text-3xl md:text-4xl text-primary poppins-regular">
+            Why Choose Invisible Grills ?
+          </h3>
+          <p className="  raleway text-xs lg:text-base text-justify w-auto p-2 text-secondary">
+            Rajguru Steel Industry specializes in premium invisible grill
+            solutions that enhance safety while maintaining unobstructed views,
+            making them ideal for high-rise buildings and balconies. The
+            invisible grills are designed to provide a contemporary look,
+            seamlessly integrating into the architecture of modern buildings
+            without obstructing views. Made from high-quality materials, these
+            grills are built to withstand the elements, ensuring long-lasting
+            protection and safety. The primary purpose of these invisible grills
+            is to enhance safety, particularly in high-rise settings where
+            traditional grills may not be suitable. Rajguru Steel Industry's
+            invisible grill solutions offer a perfect blend of safety,
+            aesthetics, and durability, making them an excellent choice for
+            modern architectural needs. With a range of accessories and a focus
+            on quality, they provide comprehensive solutions for enhancing
+            safety in high-rise buildings and balconies.
+          </p>
+        </div>
       </main>
+
+      {/* swiper */}
       <div className="w-full py-20 fade-in mt-20">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">

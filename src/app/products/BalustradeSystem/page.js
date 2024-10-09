@@ -6,16 +6,10 @@ import floorImg from "../../assets/product/balustrade/Images/floorGlass.webp";
 import houseImg from "../../assets/product/balustrade/Images/building.webp";
 import office from "../../assets/product/balustrade/Images/office balcony.webp";
 import Balustrade from "../../assets/product/balustrade/main.webp";
+import { FadeDown, FadeUp } from "../../components/utility/animation.jsx";
+import { motion } from "framer-motion";
 import Link from "next/link";
-
-// application production
-// import Residential from "../../assets/product/balustrade/applicationProduction/co-working.webp";
-// import Bungalows from "../../assets/product/balustrade/applicationProduction/bungalow.webp";
-// import Offices from "../../assets/product/balustrade/applicationProduction/office-building.webp";
-// import Restaurants from "../../assets/product/balustrade/applicationProduction/restaurant.webp";
-// import Staircase from "../../assets/product/balustrade/applicationProduction/stairs.webp";
-// import Balcony from "../../assets/product/balustrade/applicationProduction/antique-balcony.webp";
-// import Terrace from "../../assets/product/balustrade/applicationProduction/terrace.webp";
+import main2 from "../../assets/product/balustrade/main2.webp";
 import Image from "next/image";
 
 // const ImageBox = ({ imageSrc, title }) => (
@@ -46,31 +40,27 @@ export default function Page() {
           height={600}
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4 md:pt-0 text-[#335c98] text-5xl md:text-[4rem] md:p-4 poppins-bold">
-          RAJGURU
-          <br />
-          <p className="text-xs w-[18rem] md:w-[70rem] nunito pt-2 md:pt-4 text-gray-300">
-            Sleek and durable, stainless steel balustrade railing blends modern
-            aesthetics with lasting strength, ideal for both indoor and outdoor
-            spaces. Its minimalist design ensures safety and stability while
-            enhancing balconies, staircases, and terraces in contemporary
-            settings..
+        <motion.div
+          variants={FadeDown(0.001)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
+        >
+          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+            Stainless Steel Balustrade Systems
+          </h1>
+          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
+            "Rajguru Steel Industry offers premium stainless steel balustrade
+            railings that combine style and safety, perfect for residential and
+            commercial spaces in Mumbai, Delhi, Bangalore, etc."
           </p>
-        </h1>
+        </motion.div>
       </div>
       <main className="flex justify-center flex-col items-center container mx-auto">
-        <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
-          Rajguru Steel Industry offers premium stainless steel balustrade
-          railings, expertly designed for both aesthetics and safety. Our
-          durable stainless steel and glass combinations provide a modern look,
-          perfect for residential and commercial spaces in Mumbai, Delhi,
-          Bangalore, and across India. Enjoy reliable quality and all-India
-          delivery service with Rajguru Steel's trusted solutions for your
-          railing needs. If you are looking for stylish and safe railing
-          solutions, Rajguru Steel Industry could be an excellent choice. With a
-          focus on innovation and craftsmanship, we ensure that our railings not
-          only enhance your space but also meet the highest safety standards.
-        </p>
+        {/* <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
+        With a focus on innovation and craftsmanship, our railings enhance your space while meeting high safety standards. Enjoy reliable quality and all-India delivery with Rajguru Steel’s trusted solutions.
+        </p> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
           {[
             {
@@ -102,7 +92,11 @@ export default function Page() {
                 "Elevate your office aesthetics with our modern balcony railings.",
             },
           ].map(({ img, alt, label, description }) => (
-            <div
+            <motion.div
+              variants={FadeUp(0.001)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
               key={alt}
               className="relative overflow-hidden group rounded-3xl"
             >
@@ -113,10 +107,10 @@ export default function Page() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 p-4 text-white">
-                <h3 className="text-xl font-bold">{label}</h3>
-                <p className="text-sm">{description}</p>
+                <h3 className="text-xl poppins-semibold">{label}</h3>
+                <p className="text-sm raleway text-gray-300">{description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -130,14 +124,41 @@ export default function Page() {
                 <h2 className="text-3xl poppins-bold text-center text-[#335c98] mb-8">
                   Balustrade Railing Specifications
                 </h2>
-                <div className="flex justify-center mb-6">
+                <motion.div
+                  variants={FadeUp(0.001)}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="flex flex-col gap-5 md:flex-row justify-center mb-6"
+                >
                   <Image
                     src={Balustrade}
                     alt="Balustrade Railing"
-                    width={600}
+                    width={500}
                     height={400}
                     className="rounded-lg shadow-lg"
                   />
+                  <Image
+                    src={main2}
+                    alt="Balustrade Railing"
+                    width={500}
+                    height={200}
+                    className="rounded-lg shadow-lg"
+                  />
+                </motion.div>
+
+                <div className=" flex justify-center">
+                  <Link href="/ContactUs">
+                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      {/* Background circles */}
+                      <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
+                      <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
+                      {/* Button text */}
+                      <span className="relative z-10 group-hover:text-white raleway">
+                        GET A QUOTE
+                      </span>
+                    </button>
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

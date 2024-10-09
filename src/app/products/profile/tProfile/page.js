@@ -20,6 +20,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { FadeDown } from "../../../components/utility/animation.jsx";
+import { motion } from "framer-motion";
 
 // Black finishes
 import MirrorImg from "../../../assets/product/profile/T_profile/finishes/black/mirrorBlack.png";
@@ -169,26 +171,39 @@ const page = () => {
           src={bg}
           alt="T Profile"
         />
-        <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-[#19355e] text-5xl md:text-[4rem] md:p-4  poppins-bold">
-          RAJGURU<br/>
-          <p className=" text-xs w-[20.8rem] md:w-[28rem] nunito pt-2 md:pt-4 ">Stainless Steel T Profile offers superior strength and durability, making it ideal for a variety of structural applications.</p>
-        </h1>
+        <div className="absolute inset-0 bg-black opacity-55" />
+        <motion.div
+          variants={FadeDown(0.01)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4"
+        >
+          <h1 className="text-3xl md:text-5xl text-white opacity-90 font-semibold mb-6 tracking-tight">
+            Stainless Steel T Profile
+          </h1>
+          <p className="text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify mb-12">
+            "Transform your space with our stainless steel T profiles, perfect
+            for decorative home and commercial walls. These stylish, durable
+            profiles resist rust and corrosion, making them ideal for any
+            interior design project. Upgrade your decor today!"
+          </p>
+        </motion.div>
       </div>
 
       <div className=" flex flex-col overflow-hidden mx-auto container">
-        <div className=" flex justify-center">
+        {/* <div className=" flex justify-center">
           <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
             Discover the wide range of stainless steel T profiles offered by
-            Rajgure Steel Industries. Our T profiles are offered in vibrant
-            seven different colors best suited to satisfy your home decor wish.
-            The profiles being durable and strong can be used for structural
-            support and decoration.
+            Rajgure Steel Industries. Our T profiles are offered in vibrant five
+            different colors best suited to satisfy your home decor wish. The
+            profiles being durable and strong can be used for structural support
+            and decoration.
           </p>
-        </div>
+        </div> */}
 
         {/* new model open */}
-        <section className="min-h-screen bg-gray-50 py-10">
+        <section className="min-h-screen bg-gray-50 py-10 mt-8">
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
@@ -274,8 +289,14 @@ const page = () => {
 
                 {/* CTA Button with Neomorphism Style */}
                 <Link href="/ContactUs">
-                  <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-                    GET A QUOTE
+                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                    {/* Background circles */}
+                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
+                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
+                    {/* Button text */}
+                    <span className="relative z-10 group-hover:text-white raleway">
+                      GET A QUOTE
+                    </span>
                   </button>
                 </Link>
               </div>
@@ -304,10 +325,10 @@ const page = () => {
               {/* Dimensional Chart */}
               <div className="relative">
                 <Image
-                  className="rounded-lg shadow-lg bg-gray-700"
+                  className="rounded-lg shadow-lg md:ml-40 lg:ml-0 xl:ml-40 bg-gray-700"
                   src={messurement}
                   alt="dimensional chart"
-                  width={450}
+                  width={350}
                   height={250}
                 />
               </div>
@@ -321,7 +342,7 @@ const page = () => {
 
           {/* What is Section */}
           <div className="w-full py-4 md:py-20 fade-in">
-            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center text-justify">
+            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20 text-justify">
               <div className="lg:w-1/2 p-6">
                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
                   What is Stainless Steel T Profile?
@@ -332,7 +353,7 @@ const page = () => {
                   versatility in construction and architecture.
                 </p>
               </div>
-              <div className=" w-[28rem] lg:w-[55%] px-14">
+              <div className=" w-[21rem] md:w-[38rem] lg:w-[50%] md:pl-14">
                 <Image
                   className="rounded-lg  transition-transform duration-300 hover:scale-105"
                   src={Tprofile}

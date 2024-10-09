@@ -176,7 +176,11 @@ import Link from "next/link";
 import hangingHook from "../../assets/product/sswirerope/accessoris/hangingHook.webp";
 import cableWire from "../../assets/product/sswirerope/accessoris/WireRope.webp";
 import thimble from "../../assets/product/sswirerope/accessoris/thimble.webp";
-import { FadeDown } from "../../components/utility/animation.jsx";
+import {
+  FadeDown,
+  FadeLeft,
+  FadeRight,
+} from "../../components/utility/animation.jsx";
 import { motion } from "framer-motion";
 export default function Page() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -193,7 +197,7 @@ export default function Page() {
   return (
     <div className="relative  ">
       {/* Hero Section */}
-      <section className="relative h-[25rem] w-full">
+      <section className="relative h-[25rem] md:h-[30rem] w-full">
         <Image
           className="h-full w-full object-cover"
           src={bg}
@@ -201,18 +205,18 @@ export default function Page() {
           layout="fill"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-55" />
+        <div className="absolute inset-0 bg-black bg-opacity-45" />
         <motion.div
           variants={FadeDown(0.01)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="absolute inset-0 pl-2 md:pl-8 mt-36 "
+          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
         >
-          <h1 className=" text-4xl md:text-5xl text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+          <h1 className=" text-3xl md:text-5xl text-white opacity-90 poppins-semibold mb-6 tracking-tight">
             Stainless Steel Wire Rope
           </h1>
-          <p className=" text-yellow-400 opacity-85 text-sm w-auto  md:text-base md:w-[52rem] raleway mb-12 ">
+          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
             "Discover our premium stainless steel wire rope, designed for
             exceptional strength and corrosion resistance in rigging and
             lifting. Ideal for industrial and marine applications, it guarantees
@@ -229,7 +233,13 @@ export default function Page() {
               Wire Rope
             </h2> */}
             <div className="flex flex-col lg:flex-row items-center gap-28">
-              <div className="w-full lg:w-[39%] relative">
+              <motion.div
+                variants={FadeRight(0.01)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="w-full lg:w-[39%] relative"
+              >
                 <div className="relative w-full h-[300px] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src={images[currentImageIndex]}
@@ -239,8 +249,14 @@ export default function Page() {
                     className="transition-opacity duration-500"
                   />
                 </div>
-              </div>
-              <div className="w-full lg:w-1/2">
+              </motion.div>
+              <motion.div
+                variants={FadeLeft(0.01)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="w-full lg:w-1/2"
+              >
                 <h3 className="text-4xl poppins-semibold text-[#335c98] mb-4">
                   Premium Stainless Steel Wire Rope
                 </h3>
@@ -265,7 +281,7 @@ export default function Page() {
                     Versatile sizing and configurations
                   </li>
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -381,7 +397,7 @@ export default function Page() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-xl h-[33rem] w-auto md:h-[35rem] md:w-[22rem] shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
+                  className="bg-gray-50 rounded-xl h-[33rem] w-auto md:h-[36rem] md:w-[22rem] shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="relative h-[10rem] md:h-[10rem] w-auto">
                     <Image
@@ -418,8 +434,14 @@ export default function Page() {
 
         <div className=" flex justify-center">
           <Link href="/ContactUs">
-            <button className="mt-4 px-6 py-4 bg-[#335c98] raleway text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-              GET A QUOTE
+            <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+              {/* Background circles */}
+              <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
+              <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
+              {/* Button text */}
+              <span className="relative z-10 group-hover:text-white raleway">
+                GET A QUOTE
+              </span>
             </button>
           </Link>
         </div>
