@@ -1,5 +1,5 @@
 "use client";
-
+import section2Img from "./Partnership.webp";
 import { useState, useEffect, useRef } from "react";
 import {
   AnimatePresence,
@@ -15,6 +15,7 @@ import { HiOutlineUsers } from "react-icons/hi2";
 import { FaAward, FaRegStar, FaStar } from "react-icons/fa";
 import { FcCheckmark } from "react-icons/fc";
 import OurStory from "./ourstory.webp";
+import Link from "next/link";
 // const fadeInUp = {
 //   hidden: { opacity: 0, y: 50 },
 //   visible: {
@@ -56,6 +57,49 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+const staggerChildren = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const features = [
+  {
+    title: "Wide Assortment of Products",
+    description:
+      "Explore our extensive range of stainless steel products tailored for diverse industrial applications.",
+  },
+  {
+    title: "Quality Assurance",
+    description:
+      "Experience unmatched quality assurance with our stainless steel products, ensuring durability and performance.",
+  },
+  {
+    title: "On-Time Delivery",
+    description:
+      "Rely on our commitment to on-time delivery, ensuring your stainless steel products arrive exactly when needed.",
+  },
+  {
+    title: "Sound Infrastructure",
+    description:
+      "Our advanced infrastructure enables efficient production and distribution of high-quality stainless steel products.",
+  },
+  {
+    title: "Highly Experienced Workforce",
+    description:
+      "Leverage the expertise of our highly experienced workforce for exceptional support in your stainless steel projects.",
+  },
+  {
+    title: "Customizable Products",
+    description:
+      "Enjoy the flexibility of customizable stainless steel products designed to meet your specific project requirements.",
+  },
+];
+
 const Section = ({ children, className = "" }) => {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -81,11 +125,11 @@ const Section = ({ children, className = "" }) => {
 };
 
 export default function Page() {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  // const controls = useAnimation();
+  // const [ref, inView] = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.1,
+  // });
 
   const { scrollYProgress } = useScroll();
 
@@ -206,63 +250,61 @@ export default function Page() {
         </video>
       </div>
 
-      <div className="relative bg-gray-100 overflow-hidden flex flex-col items-center w-screen">
+      <main className="relative bg-gray-100 overflow-hidden flex flex-col items-center w-screen">
         <div className="container mx-auto px-4 flex flex-col my-10">
           <Section>
-            <div className="container mx-auto px-4">
-              <motion.h1
-                className="text-5xl my-4 text-center poppins-bold text-[#335c98]"
-                variants={fadeInUp}
-              >
-                About Us
-              </motion.h1>
-              <div className="flex flex-col md:flex-row justify-around gap-4 md:gap-0">
-                <motion.div className="md:w-1/2 " variants={fadeInUp}>
-                  <div className="flex mb-4 ">
-                    {tabs.map((tab, index) => (
-                      <motion.button
-                        key={index}
-                        className={`px-4 py-2 nunito ${
-                          index === 0 ? "rounded-l-md" : ""
-                        } ${
-                          index === 2 ? "rounded-r-md" : ""
-                        } border whitespace-nowrap ${
-                          activeTab === index
-                            ? "bg-[#335c98] text-white"
-                            : "bg-gray-100 text-[#335c98] "
-                        } `}
-                        onClick={() => setActiveTab(index)}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {tab.title}
-                      </motion.button>
-                    ))}
-                  </div>
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeTab}
-                      className="bg-gray-100 p-4 md:p-10 rounded-lg shadow-lg"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.3 }}
+            <motion.h1
+              className="text-5xl my-6 text-center poppins-bold text-[#335c98]"
+              variants={fadeInUp}
+            >
+              About Us
+            </motion.h1>
+            <div className="flex flex-col-reverse md:flex-row justify-around gap-4 md:gap-0">
+              <motion.div className="md:w-1/2" variants={fadeInUp}>
+                <div className="flex mb-4 ">
+                  {tabs.map((tab, index) => (
+                    <motion.button
+                      key={index}
+                      className={`px-4 py-2 nunito ${
+                        index === 0 ? "rounded-l-md" : ""
+                      } ${
+                        index === 2 ? "rounded-r-md" : ""
+                      } border whitespace-nowrap ${
+                        activeTab === index
+                          ? "bg-[#335c98] text-white"
+                          : "bg-gray-100 text-[#335c98] "
+                      } `}
+                      onClick={() => setActiveTab(index)}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <p className="nunito text-justify text-slate-500 text-xs md:text-base">
-                        {tabs[activeTab].content}
-                      </p>
-                    </motion.div>
-                  </AnimatePresence>
-                </motion.div>
-                <motion.div variants={fadeInUp}>
-                  <Image
-                    src={OurStory}
-                    alt="Rajguru Steel Industries Factory"
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-lg"
-                  />
-                </motion.div>
-              </div>
+                      {tab.title}
+                    </motion.button>
+                  ))}
+                </div>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTab}
+                    className="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg md:w-[95%]"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <p className="nunito text-justify text-slate-500 text-xs md:text-base">
+                      {tabs[activeTab].content}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+              <motion.div variants={fadeInUp}>
+                <Image
+                  src={OurStory}
+                  alt="Rajguru Steel Industries Factory"
+                  width={500}
+                  height={400}
+                  className="rounded-lg shadow-lg"
+                />
+              </motion.div>
             </div>
           </Section>
           {/* <motion.div
@@ -381,62 +423,61 @@ export default function Page() {
 
           {/* <div className="flex flex-col md:flex-row w-full h-full justify-around items-center gap-8 md:gap-0"> */}
           <Section>
-            <div className="container mx-auto px-4">
+            <motion.div
+              className="flex flex-col lg:flex-row items-start justify-evenly h-full gap-4 md:gap-0"
+              // variants={fadeInUp}
+              // initial="hidden"
+              // animate={inView ? "visible" : "hidden"}
+            >
               <motion.div
-                className=" rounded-xl py-4 md:px-8 md:py-6 flex flex-col items-center justify-center h-auto shadow-xl gap-6"
-                variants={fadeInUp}
-                initial="hidden"
-                animate="visible"
+                className="w-full md:h-full lg:w-[40%]"
+                variants={scaleIn}
               >
-                <h2 className="text-3xl font-semibold text-center text-[#335c98] poppins-bold">
-                  Why Choose Rajguru Steel?
-                </h2>
-                <p className="nunito text-slate-500 text-justify md:text-center px-5 text-xs ">
-                  At Rajguru Steel Industries, we have established ourselves as
-                  one of the recognized organizations in the manufacturing and
-                  supplying of a wide array of Stainless Steel Architectural
-                  Products. Our commitment to excellence has earned us a
-                  reputation for unmatched quality and reliable performance,
-                  making us the preferred choice for numerous industries. Our
-                  products are in high demand across various sectors due to
-                  their superior durability, aesthetic appeal, and
-                  functionality. We offer a diverse range of specifications to
-                  cater to the unique needs of our valued customers, ensuring
-                  that they find the perfect solution for their architectural
-                  requirements.
-                </p>
-                <motion.ul
-                  className="list-none grid md:grid-cols-2 gap-3 md:gap-8 xl:ml-20"
-                  variants={scaleIn}
+                <Image
+                  src={section2Img}
+                  alt="Partnership and Dealership"
+                  className="rounded-xl shadow-lg md:w-full md:h-full"
+                />
+                {/* <Link href="/ContactUs">
+                    <button className="mt-4 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
+                      GET A QUOTE
+                    </button>
+                  </Link> */}
+              </motion.div>
+              <div className="w-full lg:w-[45%] flex flex-col  md:gap-3">
+                <motion.h2
+                  className="text-2xl poppins-semibold text-center lg:text-left text-[#335c98] pl-2"
+                  variants={fadeInUp}
                 >
-                  {[
-                    "Wide assortment of products",
-                    "Quality assurance",
-                    "On time delivery",
-                    "Sound infrastructure",
-                    "Highly experienced workforce",
-                    "Customizable Products",
-                  ].map((item, index) => (
-                    <motion.li
+                  Why Choose Rajguru Steel?
+                </motion.h2>
+                <motion.div
+                  className="grid grid-cols-2 md:gap-[1.75rem] "
+                  variants={staggerChildren}
+                >
+                  {features.map((feature, index) => (
+                    <motion.div
                       key={index}
-                      className="flex items-center gap-2"
+                      className="hover:shadow-xl rounded-lg md:p-4 p-3 transition duration-500 flex flex-col gap-2"
                       variants={fadeInUp}
                     >
-                      <FcCheckmark />
-                      <p className="text-slate-500 whitespace-nowrap nunito">
-                        {item}
+                      <h3 className="text-base poppins-semibold text-[#335c98] ">
+                        {feature.title}
+                      </h3>
+                      <p className="text-slate-500 text-sm nunito md:text-justify">
+                        {feature.description}
                       </p>
-                    </motion.li>
+                    </motion.div>
                   ))}
-                </motion.ul>
-              </motion.div>
-            </div>
+                </motion.div>
+              </div>
+            </motion.div>
           </Section>
 
           <Section>
-            <div className="container mx-auto px-4">
+            <div className="w-[95%] mx-auto px-8">
               <motion.h2
-                className="text-3xl poppins-bold py-8 text-center text-[#335c98]"
+                className="text-3xl poppins-bold mb-8 text-center text-[#335c98]"
                 variants={fadeInUp}
               >
                 Customer Testimonials
@@ -447,17 +488,19 @@ export default function Page() {
                     key={index}
                     className=" p-6 rounded-lg border-2"
                     whileHover={{
-                      y: -10,
+                      y: -6,
                       boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
                     }}
                   >
                     <h3 className="text-lg poppins-semibold mb-2 text-[#335c98]">
                       {testimonial.name}
                     </h3>
-                    <p className="text-sm text-slate-500 mb-2">
+                    <p className="text-sm text-slate-500 mb-2 nunito">
                       {testimonial.location}
                     </p>
-                    <p className="mb-2 text-slate-500">{testimonial.product}</p>
+                    <p className="mb-2 text-slate-500 nunito">
+                      {testimonial.product}
+                    </p>
                     <div className="flex">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <motion.div
@@ -526,7 +569,7 @@ export default function Page() {
             transition: { type: "spring", damping: 10 },
           }}
         />
-      </div>
+      </main>
     </section>
   );
 }
