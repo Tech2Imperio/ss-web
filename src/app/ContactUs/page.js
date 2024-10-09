@@ -621,17 +621,17 @@ export default function ContactUs() {
         initial="hidden"
         animate="visible"
         variants={staggerChildren}
-        className="py-10 px-4 max-w-6xl mx-auto flex flex-col  md:flex-row gap-6 md:gap-24 items-center"
+        className="py-10 max-w-7xl mx-auto flex flex-col h-full md:flex-row gap-6 items-center"
       >
         {/* Contact Form */}
         <motion.div
           variants={fadeInFromLeft}
-          className="flex-1 bg-gray-100 w-full p-8 rounded-xl"
+          className=" bg-gray-100 w-[95%] p-8 rounded-xl flex flex-col h-auto md:h-[75vh] justify-around"
         >
-          <h2 className="text-3xl poppins-semibold mb-8 text-center text-primary">
+          <h2 className="text-3xl poppins-semibold text-center text-primary">
             Get a Quote
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-2">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 ">
             {[
               { name: "name", label: "Name", type: "text" },
               { name: "email", label: "Email", type: "email" },
@@ -669,7 +669,7 @@ export default function ContactUs() {
             ))}
             <motion.button
               type="submit"
-              className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50"
+              className="w-44 mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50"
             >
               Send Message
             </motion.button>
@@ -677,7 +677,10 @@ export default function ContactUs() {
         </motion.div>
 
         {/* Contact Details */}
-        <motion.div variants={fadeInFromRight} className="flex-1 space-y-4">
+        <motion.div
+          variants={fadeInFromRight}
+          className="w-[95%] space-y-6 bg-gray-100 rounded-xl p-8 h-auto md:h-[75vh] flex flex-col justify-evenly"
+        >
           {[
             {
               title: "Address",
@@ -685,14 +688,14 @@ export default function ContactUs() {
                 "Rajguru Steel Industries 92/94, Kika Street, Gulalwadi, Girgaon, Mumbai - 400004, Maharashtra, India",
             },
             { title: "Phone", content: "+91 80489 64852" },
-            { title: "Email", content: "contact@example.com" },
+            { title: "Email", content: "info@rajgurusteel.co.in" },
           ].map((item, index) => (
             <motion.div
               key={index}
-              className=" p-4 rounded-lg hover:shadow-md hover:shadow-[#335c98] transition duration-500"
+              className=" p-8 rounded-xl hover:shadow-lg hover:shadow-[#335c98] transition duration-500 flex flex-col gap-2 bg-gray-50"
               variants={fadeInUp}
             >
-              <h3 className="poppins-semibold text-primary text-xl flex flex-col gap-4">
+              <h3 className="poppins-semibold text-primary text-lg ">
                 {item.title}
               </h3>
               <p className="nunito text-secondary text-sm">{item.content}</p>
