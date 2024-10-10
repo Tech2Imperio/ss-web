@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation"; 
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import { handrails } from "../../data/handrails"; // Ensure correct path
 
@@ -9,7 +9,7 @@ export default function HandrailDetailPage() {
   console.log("Handrail from URL:", handrailBase); // Debugging
 
   // Find the handrail by matching URL param with the correct ID in the data
-  const selectedHandrailBase = handrails.find((h) => h.id === handrailBase); 
+  const selectedHandrailBase = handrails.find((h) => h.id === handrailBase);
   console.log("Selected Handrail:", selectedHandrailBase); // Debugging
 
   const [activeColor, setActiveColor] = useState(
@@ -28,7 +28,9 @@ export default function HandrailDetailPage() {
 
   return (
     <section className="relative">
-      <h1 className="text-5xl text-[#335c98] poppins-regular p-4">{selectedHandrailBase.name}</h1>
+      <h1 className="text-5xl text-[#335c98] din-regular p-4">
+        {selectedHandrailBase.name}
+      </h1>
 
       {/* Active Color Display */}
       <div className="relative w-full h-96">

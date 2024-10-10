@@ -170,25 +170,25 @@ const page = () => {
           alt="fluted Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-[#19355e] text-5xl md:text-[4rem] md:p-4  poppins-bold">
+        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-white text-5xl md:text-[4rem] md:p-4  din-bold">
           RAJGURU
           <br />
-          <p className=" text-base w-[20.8rem] md:w-[32rem] nunito pt-2 md:pt-4  ">
+          <p className=" text-base w-[20.8rem] md:w-[32rem] din-regular pt-2 md:pt-4  text-gray-200 ">
             Stainless Steel U Profile offers superior strength and durability,
             making it ideal for a variety of structural applications.
           </p>
         </h1>
       </div>
 
-      <div className=" flex flex-col overflow-hidden mx-auto container">
+      <div className=" flex flex-col overflow-hidden mx-auto container mt-14">
         <div className=" flex justify-center">
-          <p className=" text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
+          {/* <p className=" text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
             Let Rajguru Steel Industry provide you with elegant decor of fluted
             stainless steel panels for your home. This can enhance your decor
             ideas for the wall in a modern way by the mix of strength and
             elegance. With assorted finishes and colors to choose from, easily
             create stunning interiors with great options for any space.
-          </p>
+          </p> */}
         </div>
 
         {/* new model open */}
@@ -199,7 +199,7 @@ const page = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
-                <h2 className="text-3xl poppins-regular text-[#335c98] mb-6">
+                <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
 
@@ -227,7 +227,7 @@ const page = () => {
               {/* Color Preview Section */}
               <div className="flex flex-col items-center lg:items-center lg:mt-52 space-y-14">
                 {/* Title with Gradient */}
-                <h2 className="text-2xl lg:text-4xl poppins-regular text-transparent bg-clip-text bg-gradient-to-r from-[#335c98] to-[#6a8bb1]">
+                <h2 className="text-2xl lg:text-4xl din-regular text-primary din-semibold">
                   Select a Color
                 </h2>
 
@@ -250,26 +250,26 @@ const page = () => {
                 {/* Color Details with Glassmorphism Effect */}
                 <div className="w-full max-w-md rounded-2xl backdrop-blur-lg bg-white/30 p-6 shadow-lg transition-transform duration-500 hover:scale-105">
                   <div className="bg-gradient-to-r from-[#335c98] to-[#4b6fa6] text-white text-center py-4 rounded-t-2xl">
-                    <h3 className="text-xl  tracking-wider poppins-regular">
+                    <h3 className="text-xl  tracking-wider din-regular">
                       Specifications
                     </h3>
                   </div>
                   <div className="p-6 space-y-4 bg-white/80 rounded-b-2xl shadow-inner">
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">
+                      <span className="text-[#335c98] din-regular">
                         Selected Color
                       </span>
-                      <span className="text-gray-700 nunito">
+                      <span className="text-gray-700 din-regular">
                         {selectedColor.name}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">Thickness</span>
-                      <span className="text-gray-700 nunito">0.6 ~ 2.0 mm</span>
+                      <span className="text-[#335c98] din-regular">Thickness</span>
+                      <span className="text-gray-700 din-regular">0.6 ~ 2.0 mm</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">Size</span>
-                      <span className="text-gray-700 nunito">
+                      <span className="text-[#335c98] din-regular">Size</span>
+                      <span className="text-gray-700 din-regular">
                         T6 to T50 & more
                       </span>
                     </div>
@@ -278,34 +278,38 @@ const page = () => {
 
                 {/* CTA Button with Neomorphism Style */}
                 <Link href="/ContactUs">
-                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                    {/* Background circles */}
-                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
-                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
-                    {/* Button text */}
-                    <span className="relative z-10 group-hover:text-white raleway">
-                      GET A QUOTE
-                    </span>
-                  </button>
-                </Link>
+                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      {/* Colored background */}
+                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                      {/* Top-left to bottom-right diagonal animation */}
+                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      </span>
+
+                      {/* Button text */}
+                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                        GET A QUOTE
+                      </span>
+                    </button>
+                  </Link>
               </div>
             </div>
 
             {/* Finishes and Sizes Section */}
             <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="text-left space-y-6">
-                <h3 className="text-xl poppins-regular text-[#335c98]">
-                  Finishes
-                </h3>
-                <p className="text-lg text-gray-500 nunito">
+                <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
+                <p className="text-lg text-gray-600 din-regular">
                   Mirror | Hairline | Mesh | Straightline | Stain
                 </p>
 
-                <h3 className="text-xl poppins-regular text-[#335c98]">
+                <h3 className="text-xl din-semibold text-[#335c98]">
                   Sizes <sub className="text-sm">mm</sub>{" "}
                   <span className="text-base">- W x H</span>
                 </h3>
-                <p className="text-lg text-gray-500 nunito">
+                <p className="text-lg text-gray-600 din-regular">
                   10 x 10 | 12 x 12 | 15 x 15 | 20 x 20 | 25 x 25 | 30 x 30
                 </p>
               </div>
@@ -332,10 +336,10 @@ const page = () => {
           <div className="w-full py-4 md:py-20 fade-in">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20 text-justify">
               <div className="lg:w-1/2 p-6">
-                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
+                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-semibold">
                   What is Stainless Steel Fluted Panel Profile?
                 </h2>
-                <p className="text-gray-500 text-xs md:text-[1rem] leading-relaxed nunito">
+                <p className="text-gray-600 text-xs md:text-[1rem] leading-relaxed din-regular">
                   It is a modern feature wall panels function to enhance walls
                   in both residential and commercial spaces. With their vertical
                   grooves adding texture and depth to the look, these panels
@@ -357,10 +361,10 @@ const page = () => {
           {/* Properties Section */}
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className=" text-xl md:whitespace-normal md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
+              <h2 className=" text-xl md:whitespace-normal md:text-[27px]  text-[#335c98] mb-6 din-semibold">
                 Properties of Stainless Steel Fluted Panel Profiles
               </h2>
-              <p className="text-gray-500 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 nunito">
+              <p className="text-gray-600 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 din-regular">
                 A stainless steel fluted panel is extremely strong and resistant
                 to corrosion while requiring little maintenance; thus, it is the
                 ideal material for residential or commercial use. Its unique
@@ -377,22 +381,22 @@ const page = () => {
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block p-4 ">
+        <div className="container mx-auto my-14 hidden md:block p-14 ">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
-                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] poppins-regular">
+                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-semibold">
                     Benefits of Stainless Steel Fluted Panel Profiles
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     1. Corrosion Resistance
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Stainless steel fluted panel profiles offer great
                     versatility with maximum corrosion resistance ensuring their
                     usage for many years in a wide variety of environments, from
@@ -402,10 +406,10 @@ const page = () => {
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     2. Durability
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     These panels are designed to stand up to heavy wear, making
                     for a robust and reliable solution for both residential and
                     commercial applications. Their strength allows them to look
@@ -415,10 +419,10 @@ const page = () => {
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     3. Aesthetic Appeal
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     heir unique fluted shape helps create a stunning feature on
                     any interior or exterior wall, bringing a contemporary look
                     and feel to any project. The way these panels catch and
@@ -429,10 +433,10 @@ const page = () => {
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     4. Versatility
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     stainless steel fluted panels supply unlimited uses for
                     equally business and household settings, perfect for a
                     design-forward wall creation. Whether utilized for
@@ -452,11 +456,11 @@ const page = () => {
         {/* example phone */}
         <div className="container mx-auto my-14 md:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] poppins-regular mb-4">
-              Benefits of Stainless Steel T Profiles
+            <h2 className="text-2xl font-semibold text-[#335c98] din-semibold mb-4">
+              Benefits of Stainless Steel Fluted Panel Profiles
             </h2>
             <ul className="space-y-6 text-justify ">
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">
                   1. Corrosion Resistance:
                 </strong>{" "}
@@ -466,14 +470,14 @@ const page = () => {
                 greater modern usage and with slick aesthetics lending to almost
                 any functional and decorative assignment
               </li>
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
                 These panels provide a durable solution against the rigors of a
                 residential and commercial environment; strong enough to remain
                 looking good and stable for use within the high-traffic and
                 raucous environments, they honor the mettle of their use.
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">
                   3. Aesthetic Appeal:
                 </strong>{" "}
@@ -483,7 +487,7 @@ const page = () => {
                 just the right way to enhance patterns and colors-perfect for
                 high-end surfaces behind pieces of furniture or works of art.
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
                 Stainless steel rippled panels provide virtually endless
                 applications in the commercial and residential spatial
@@ -509,10 +513,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl din-semibold text-[#335c98] din-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 Stainless steel fluted panels are ideal for architectural and
                 construction applications, providing a sleek and modern solution
                 for interior wall design. These panels enhance aesthetic appeal
@@ -529,10 +533,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl text-[#335c98] din-semibold mb-4 text-center">
                 Furniture and Shelving.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 Stainless steel fluted panels are an excellent choice for
                 furniture and shelving, adding a contemporary touch to interior
                 wall design. Their unique texture and sleek finish enhance the
@@ -549,10 +553,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-300" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
+              <h2 className="text-xl  text-center text-[#335c98] din-semibold mb-4">
                 Automotive and Marine Industry.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 Stainless steel fluted panels are increasingly utilized in the
                 automotive and marine industry, offering a stylish and durable
                 solution for interior wall design. Their corrosion-resistant
@@ -566,7 +570,7 @@ const page = () => {
         </main>
         <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">
+            <h2 className="text-[29px]  text-[#335c98] mb-16 din-semibold">
               Other Products
             </h2>
             <Swiper
@@ -592,7 +596,7 @@ const page = () => {
                         height={250}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
-                      <h3 className="mt-4 text-xl font-semibold text-[#335c98] arimo">
+                      <h3 className="mt-4 text-xl  text-[#335c98] din-regular">
                         {product.title}
                       </h3>
                     </Link>

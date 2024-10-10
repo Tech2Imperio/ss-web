@@ -112,7 +112,7 @@ function Section1() {
               repeatType: "loop",
               repeatDelay: 6,
             }}
-            className="text-[2rem] sm:text-[3rem] md:text-[3.3rem] lg:text-[3.5rem] xl:text-[3.8rem] whitespace-nowrap poppins-bold"
+            className="text-[2rem] sm:text-[3rem] md:text-[3.3rem] lg:text-[3.5rem] xl:text-[3.8rem] whitespace-nowrap din-bold"
           >
             Crafted for Trust, <br />
             Built for Strength
@@ -173,7 +173,7 @@ function Section2() {
         {isMobileView === false ? (
           <div className="bg-gray-100 w-full h-auto relative py-2">
             <div className="relative flex flex-col items-start justify-center p-5 gap-4 text-lg text-start h-auto w-auto">
-              <h1 className="poppins-bold text-xl text-[#335c98]">
+              <h1 className="din-bold text-xl text-[#335c98]">
                 Shaping the Future of Stainless Steel
               </h1>
               <p className="nunito text-xs text-justify">
@@ -215,7 +215,7 @@ function Section2() {
             }}
           >
             <div className="h-full flex flex-col items-start justify-center px-14 gap-[1rem] text-[#335c98]">
-              <h2 className="poppins-bold text-3xl text-start">
+              <h2 className="din-bold text-3xl text-start">
                 Shaping the Future of Stainless Steel
               </h2>
               <p className="nunito text-[14px] text-justify">
@@ -227,9 +227,7 @@ function Section2() {
                 dedicated team and partners, we empower success through
                 cutting-edge solutions.
               </p>
-              <p className="poppins-semibold text-xl text-justify">
-                Get in Touch
-              </p>
+              <p className="din-semibold text-xl text-justify">Get in Touch</p>
               <p className="nunito text-[14px] text-justify">
                 "Ready to elevate your projects with our innovative stainless
                 steel solutions? Contact us today to discuss your needs and
@@ -315,10 +313,10 @@ function Section3() {
             variants={itemVariants}
             className="space-y-2 flex flex-col px-4 xl:ml-16"
           >
-            <div className="bg-gray-300 text-[#335c98] px-4 py-2 rounded w-36 text-center poppins-bold whitespace-nowrap">
+            <div className="bg-gray-300 text-[#335c98] px-4 py-2 rounded w-36 text-center din-bold whitespace-nowrap">
               Product Quality
             </div>
-            <h2 className="text-4xl text-[#335c98] poppins-bold">
+            <h2 className="text-4xl text-[#335c98] din-bold">
               Explore Premium Stainless Steel Products
             </h2>
             <p className="text-gray-800 text-justify">
@@ -358,7 +356,7 @@ function Section3() {
                   <p className="group-hover:transform group-hover:scale-x-[-1] transition duration-700 text-slate-500">
                     {type.icon}
                   </p>
-                  <p className="text-[#335c98] poppins-medium">{type.name}</p>
+                  <p className="text-[#335c98] din-medium">{type.name}</p>
                 </div>
               </motion.div>
             ))}
@@ -414,7 +412,7 @@ function Section4() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl text-[#335c98] mb-4 poppins-bold">
+          <h2 className="text-4xl md:text-5xl text-[#335c98] mb-4 din-bold">
             Innovation & Technology
           </h2>
           <p className="text-xs md:text-lg text-gray-700 max-w-3xl mx-auto nunito">
@@ -437,7 +435,7 @@ function Section4() {
                 className="transform hover:scale-105 transition-transform duration-300 h-full"
               />
               <div className="absolute bottom-4 left-4 right-4 text-white">
-                <h3 className="text-2xl mb-2 poppins-bold">
+                <h3 className="text-2xl mb-2 din-bold">
                   Cutting-Edge Solutions
                 </h3>
                 <p className="text-sm md:text-base nunito md:w-2/3 text-justify">
@@ -454,7 +452,7 @@ function Section4() {
             className="w-full lg:w-1/2 flex-grow"
           >
             <div className="rounded-xl md:shadow-lg p-6 h-auto">
-              <h3 className="text-2xl text-[#335c98] mb-4 poppins-bold">
+              <h3 className="text-2xl text-[#335c98] mb-4 din-bold">
                 Our Technological Edge
               </h3>
               {features.map((feature, index) => (
@@ -473,7 +471,7 @@ function Section4() {
                       <span className="w-6 h-6 text-slate-500 mr-3">
                         {feature.icon}
                       </span>
-                      <h4 className="poppins-semibold text-slate-500">
+                      <h4 className="din-semibold text-slate-500">
                         {feature.title}
                       </h4>
                     </div>
@@ -680,7 +678,7 @@ function Section5() {
             <div className="flex flex-col gap-4">
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl md:text-5xl text-[#335c98] poppins-bold text-center whitespace-nowrap"
+                className="text-4xl md:text-5xl text-[#335c98] din-bold text-center whitespace-nowrap"
               >
                 A strong partner at <br />
                 your side
@@ -731,7 +729,7 @@ function Section5() {
                 <p className="text-6xl font-bold text-slate-200 text-opacity-45">
                   {item.number}
                 </p>
-                <h3 className="text-2xl text-[#335c98] poppins-semibold">
+                <h3 className="text-2xl text-[#335c98] din-semibold">
                   {item.title}
                 </h3>
                 <p className="text-slate-500 text-center nunito text-sm">
@@ -830,7 +828,7 @@ function Section6() {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl text-center mb-4 poppins-bold text-[#335c98]"
+          className="text-4xl text-center mb-4 din-bold text-[#335c98]"
         >
           Stainless Steel Solutions for Every Project
         </motion.h2>
@@ -864,7 +862,7 @@ function Section6() {
                   {solution.icon}
                 </motion.div>
                 <motion.h3
-                  className="text-xl poppins-semibold text-[#335c98] mt-4 mb-2 text-center"
+                  className="text-xl din-semibold text-[#335c98] mt-4 mb-2 text-center"
                   variants={itemVariants}
                 >
                   {solution.title}

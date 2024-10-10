@@ -176,7 +176,7 @@ const page = () => {
           alt="decorative sheet"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        {/* <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  poppins-regular">
+        {/* <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  din-regular">
           Decorative Sheets
         </h1> */}
         <motion.div
@@ -186,10 +186,10 @@ const page = () => {
           viewport={{ once: true }}
           className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
         >
-          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 din-bold mb-6 tracking-tight">
             Stainless Steel Decorative Sheets
           </h1>
-          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
+          <p className=" text-gray-200 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
             "Explore our premium stainless steel decorative sheets, perfect for
             enhancing walls in both home and commercial spaces. Available in
             various finishes, our corrosion-resistant sheets combine style and
@@ -224,7 +224,7 @@ const page = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
-                <h2 className="text-3xl poppins-regular text-[#335c98] mb-6">
+                <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
 
@@ -252,7 +252,7 @@ const page = () => {
               {/* Color Preview Section */}
               <div className="flex flex-col items-center lg:items-center lg:mt-52 space-y-14">
                 {/* Title with Gradient */}
-                <h2 className="text-2xl lg:text-4xl poppins-regular text-transparent bg-clip-text bg-gradient-to-r from-[#335c98] to-[#6a8bb1]">
+                <h2 className="text-2xl din-semibold lg:text-4xl text-primary">
                   Select a Color
                 </h2>
 
@@ -275,26 +275,26 @@ const page = () => {
                 {/* Color Details with Glassmorphism Effect */}
                 <div className="w-full max-w-md rounded-2xl backdrop-blur-lg bg-white/30 p-6 shadow-lg transition-transform duration-500 hover:scale-105">
                   <div className="bg-gradient-to-r from-[#335c98] to-[#4b6fa6] text-white text-center py-4 rounded-t-2xl">
-                    <h3 className="text-xl  tracking-wider poppins-regular">
+                    <h3 className="text-xl  tracking-wider din-medium">
                       Specifications
                     </h3>
                   </div>
                   <div className="p-6 space-y-4 bg-white/80 rounded-b-2xl shadow-inner">
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">
+                      <span className="text-[#335c98] din-regular">
                         Selected Color
                       </span>
-                      <span className="text-gray-700 nunito">
+                      <span className="text-gray-700 din-regular">
                         {selectedColor.name}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">Thickness</span>
-                      <span className="text-gray-700 nunito">0.6 ~ 2.0 mm</span>
+                      <span className="text-[#335c98] din-regular">Thickness</span>
+                      <span className="text-gray-700 din-regular">0.6 ~ 2.0 mm</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">Size</span>
-                      <span className="text-gray-700 nunito">
+                      <span className="text-[#335c98] din-regular">Size</span>
+                      <span className="text-gray-700 din-regular">
                         T6 to T50 & more
                       </span>
                     </div>
@@ -303,34 +303,38 @@ const page = () => {
 
                 {/* CTA Button with Neomorphism Style */}
                 <Link href="/ContactUs">
-                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                    {/* Background circles */}
-                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
-                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
-                    {/* Button text */}
-                    <span className="relative z-10 group-hover:text-white raleway">
-                      GET A QUOTE
-                    </span>
-                  </button>
-                </Link>
+                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      {/* Colored background */}
+                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                      {/* Top-left to bottom-right diagonal animation */}
+                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      </span>
+
+                      {/* Button text */}
+                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                        GET A QUOTE
+                      </span>
+                    </button>
+                  </Link>
               </div>
             </div>
 
             {/* Finishes and Sizes Section */}
             <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="text-left space-y-6">
-                <h3 className="text-xl poppins-regular text-[#335c98]">
-                  Finishes
-                </h3>
-                <p className="text-lg text-gray-500 nunito">
+                <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
+                <p className="text-lg text-gray-600  din-regular">
                   Mirror | Hairline | Mesh | Straightline | Stain
                 </p>
 
-                <h3 className="text-xl poppins-regular text-[#335c98]">
+                <h3 className="text-xl din-semibold text-[#335c98]">
                   Sizes <sub className="text-sm">mm</sub>{" "}
                   <span className="text-base">- W x H</span>
                 </h3>
-                <p className="text-lg text-gray-500 nunito">
+                <p className="text-lg text-gray-600 din-regular">
                   10 x 3 x 10 | 10 x 5 x 10 | 10 x 8 x 10
                 </p>
               </div>
@@ -357,10 +361,10 @@ const page = () => {
           <div className="w-full py-4 md:py-20 fade-in">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center text-justify">
               <div className="lg:w-1/2 p-6">
-                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
+                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-semibold">
                   What is Stainless Steel Decorative Sheets?
                 </h2>
-                <p className="text-gray-500 text-xs md:text-[1rem] leading-relaxed nunito">
+                <p className="text-gray-600 text-xs md:text-[1rem] leading-relaxed din-regular">
                   Stainless steel decorative sheets are perfect for both
                   residential and commercial applications. They offer a modern
                   and sophisticated look that can elevate any interior design.
@@ -385,10 +389,10 @@ const page = () => {
           {/* Properties Section */}
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
+              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 din-semibold">
                 Properties of Stainless Steel Decorative Sheets
               </h2>
-              <p className="text-gray-500 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 nunito">
+              <p className="text-gray-600 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 din-regular">
                 Stainless steel decorative sheets are premium panels that serve
                 both aesthetic and functional purposes in home and commercial
                 environments. Stainless steel decorative sheets are an excellent
@@ -409,47 +413,47 @@ const page = () => {
             <table className="min-w-full bg-white rounded-lg">
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
-                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] poppins-regular">
+                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-semibold">
                     Benefits of Stainless Steel Decorative Sheets
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     1. Corrosion Resistance
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Stainless steel decorative sheets are highly resistant to
                     corrosion, ensuring long-lasting beauty in kitchens,
                     bathrooms, and other moisture-prone areas.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     2. Durability
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Designed to withstand wear and tear, these decorative panels
                     are perfect for both residential and commercial spaces,
                     providing a robust solution for high-traffic environments..
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     3. Aesthetic Appeal
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Available in stunning finishes like brushed and mirrored,
                     stainless steel sheets enhance the visual impact of any
                     wall, making them a chic choice for modern interiors..
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     4. Versatility
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Ideal for a range of applications, from accent walls to
                     kitchen backsplashes, stainless steel decorative sheets
                     offer endless design possibilities for any home or business.
@@ -464,11 +468,11 @@ const page = () => {
         {/* example phone */}
         <div className="container mx-auto my-14 md:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] poppins-regular mb-4">
+            <h2 className="text-2xl font-semibold text-[#335c98] din-regular mb-4">
               Benefits of Stainless Steel T Profiles
             </h2>
             <ul className="space-y-6 text-justify ">
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">
                   1. Corrosion Resistance:
                 </strong>{" "}
@@ -476,12 +480,12 @@ const page = () => {
                 making these sheets ideal for environments exposed to moisture,
                 such as kitchens and bathrooms.
               </li>
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">2. Durability:</strong> They
                 can withstand wear and tear, making them suitable for
                 high-traffic areas without showing signs of damage.
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">
                   3. Aesthetic Appeal:
                 </strong>{" "}
@@ -490,7 +494,7 @@ const page = () => {
                 industrial. They can be cut and shaped to fit specific design
                 needs, allowing for unique applications in any space.
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">4. Enhanced Safety:</strong>{" "}
                 Stainless steel is non-combustible, providing an added layer of
                 safety in case of fire. Unlike some other materials, stainless
@@ -514,10 +518,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                ${card1InView ? "animate-wave delay-100" : "opacity-0"} `}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] din-semibold mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 Stainless steel decorative sheets are widely used in
                 architectural and construction projects due to their unique
                 combination of aesthetic appeal, durability, and versatility.
@@ -536,10 +540,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                ${card1InView ? "animate-wave delay-500" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] din-semibold mb-4 text-center">
                 Furniture and Shelving.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 Stainless steel decorative sheets are increasingly popular in
                 furniture and shelving design due to their unique properties and
                 aesthetic appeal. Stainless steel decorative sheets are an
@@ -559,10 +563,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                ${card1InView ? "animate-wave delay-700" : "opacity-0"} `}
             >
-              <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
+              <h2 className="text-xl font-semibold text-center text-[#335c98] din-semibold mb-4">
                 Automotive and Marine Industry.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 Stainless steel decorative sheets are widely utilized in the
                 automotive and marine industries due to their unique properties
                 and advantages. Stainless steel decorative sheets offer numerous
@@ -579,7 +583,7 @@ const page = () => {
         </main>
 
         <div className="flex justify-center flex-col m-4">
-          <h3 className=" text-3xl md:text-4xl text-primary poppins-regular">
+          <h3 className=" text-3xl md:text-4xl text-primary din-semibold">
             Why Choose Stainless Steel Decorative Sheets?
           </h3>
           <p className="text-base lg:text-base text-secondary text-justify w-[100%] p-4">
@@ -598,7 +602,7 @@ const page = () => {
         {/* swiper */}
         <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">
+            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-semibold">
               Other Products
             </h2>
             <Swiper
@@ -624,7 +628,7 @@ const page = () => {
                         height={250}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
-                      <h3 className="mt-4 text-xl font-semibold text-[#335c98] arimo">
+                      <h3 className="mt-4 text-xl din-medium text-[#335c98] ">
                         {product.title}
                       </h3>
                     </Link>

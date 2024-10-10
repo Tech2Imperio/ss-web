@@ -217,10 +217,10 @@ export default function Home() {
           viewport={{ once: true }}
           className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
         >
-          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 din-bold mb-6 tracking-tight">
             Stainless Steel Invisible Grill
           </h1>
-          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg  md:w-[48rem] text-justify raleway mb-12 ">
+          <p className=" text-gray-200 text-opacity-90 text-[0.850rem] w-auto md:text-lg din-regular  md:w-[48rem] text-justify mb-12 ">
             "Rajguru Steel Industry offers premium invisible grills that enhance
             safety and aesthetics for homes and balconies. Our durable stainless
             steel solutions provide unobstructed views while ensuring
@@ -231,7 +231,7 @@ export default function Home() {
       <div className=" flex flex-col overflow-hidden mx-auto container">
         <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-scrren md:h-[80vh] md:mt-9 w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
-            <h1 className="text-3xl font-semibold text-[#335c98] p-4">
+            <h1 className="text-3xl din-semibold text-[#335c98] p-4">
               Invisible Grill
             </h1>
             <div className="overflow-hidden rounded-3xl h-[25rem] w-[20rem] md:h-[42rem] md:w-[28rem] lg:h-[45rem] lg:w-[28rem] xl:h-[35rem] xl:w-[24rem] border border-gray-300 relative">
@@ -256,7 +256,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col -mt-28 md:-mt-14 lg:-mt-0">
-            <h2 className="text-3xl font-semibold text-[#335c98] flex justify-center">
+            <h2 className="text-3xl din-semibold text-[#335c98] flex justify-center">
               Accessories
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 justify-center items-center list-none -mx-4 transition-transform duration-300">
@@ -268,7 +268,7 @@ export default function Home() {
                   >
                     <Image src={accessory.image} alt={accessory.name} />
                   </li>
-                  <p className="text-center text-gray-700 font-medium">
+                  <p className="text-center text-gray-600 din-regular">
                     {accessory.name}
                   </p>
                 </div>
@@ -279,16 +279,16 @@ export default function Home() {
           {selectedAccessory && (
             <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
               <div className="bg-white rounded-lg p-6 w-11/12 md:w-1/2 lg:w-1/3 transition-transform duration-500">
-                <h3 className="text-xl poppins-bold text-[#335c98] mb-4">
+                <h3 className="text-xl din-bold text-[#335c98] mb-4">
                   {selectedAccessory.name} Specifications
                 </h3>
                 <table className="min-w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-gray-200">
-                      <th className="border border-gray-300 p-2 text-left poppins-semibold text-[#335c98]">
+                      <th className="border border-gray-300 p-2 text-left din-semibold text-[#335c98]">
                         Specification
                       </th>
-                      <th className="border border-gray-300 p-2 text-left poppins-semibold text-[#335c98]">
+                      <th className="border border-gray-300 p-2 text-left din-semibold text-[#335c98]">
                         Details
                       </th>
                     </tr>
@@ -297,10 +297,10 @@ export default function Home() {
                     {Object.entries(selectedAccessory.specifications).map(
                       ([key, value], index) => (
                         <tr key={index} className="hover:bg-gray-100">
-                          <td className="border border-gray-300 p-2 nunito text-[#335c98]">
+                          <td className="border border-gray-300 p-2 din-regular text-[#335c98]">
                             {key.replace(/([A-Z])/g, " $1")}
                           </td>
-                          <td className="border border-gray-300 p-2 nunito text-[#335c98]">
+                          <td className="border border-gray-300 p-2 din-regular text-[#335c98]">
                             {value}
                           </td>
                         </tr>
@@ -309,7 +309,7 @@ export default function Home() {
                   </tbody>
                 </table>
                 <button
-                  className="mt-8 px-6 py-3 poppins-regular bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50"
+                  className="mt-8 px-6 py-3 din-regular bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50"
                   onClick={() => setSelectedAccessory(null)}
                 >
                   Close
@@ -321,9 +321,9 @@ export default function Home() {
       </div>
       <main className="flex flex-col overflow-hidden w-full h-full xl:px-[18rem] p-4 md:p-6 lg:p-8">
         <div className="max-w-screen-xl mx-auto">
-          <h2 className=" text-2xl md:text-3xl poppins-bold text-[#335c98] py-8 text-center">
+          <h2 className=" text-2xl md:text-3xl din-semibold text-[#335c98] py-8 text-center">
             Benefits of Invisible Grills
-            <p className=" text-sm md:text-lg md:mx-24 py-2 text-[#335c98] nunito">
+            <p className=" text-sm md:text-lg md:mx-24 py-2 text-gray-600 din-regular">
               Invisible grills are becoming increasingly popular in modern
               architecture due to their unique advantages. Here are some of the
               key benefits:
@@ -333,10 +333,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 - Invisible Wire */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
-              <h3 className=" text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
+              <h3 className=" text-2xl din-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
                 Enhanced Safety and Security
               </h3>
-              <p className="text-gray-600 nunito text-[14px]">
+              <p className="text-gray-600 din-regular text-[16px]">
                 Invisible grills provide a robust barrier without obstructing
                 views, ensuring your home remains safe from intruders while
                 maintaining aesthetic appeal. Their strong stainless steel
@@ -349,10 +349,10 @@ export default function Home() {
 
             {/* Card 2 - Turnbuckle */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
-              <h3 className="text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
+              <h3 className="text-2xl din-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
                 Unobstructed Views
               </h3>
-              <p className="text-gray-600 nunito text-[14px]">
+              <p className="text-gray-600 din-regular text-[16px]">
                 One of the most significant advantages of invisible grills is
                 that they do not obstruct views. This feature is particularly
                 beneficial for high-rise buildings and balconies, allowing
@@ -362,10 +362,10 @@ export default function Home() {
 
             {/* Card 3 - Bullet Hooks */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
-              <h3 className="text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
+              <h3 className="text-2xl din-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
                 Durability and Longevity
               </h3>
-              <p className="text-gray-600 nunito text-[14px]">
+              <p className="text-gray-600 din-regular text-[16px]">
                 Made from high-quality stainless steel, invisible grills are
                 rust-proof and designed to withstand various weather conditions.
                 This durability ensures that they require minimal maintenance
@@ -375,10 +375,10 @@ export default function Home() {
 
             {/* Card 4 - Mounting Brackets */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
-              <h3 className="text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
+              <h3 className="text-2xl din-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
                 Customizable Design
               </h3>
-              <p className="text-gray-600 nunito text-[14px]">
+              <p className="text-gray-600 din-regular text-[16px]">
                 Invisible grills can be tailored to fit any architectural style
                 and can be powder-coated in various colors. This customization
                 allows homeowners to choose a design that complements their
@@ -391,10 +391,10 @@ export default function Home() {
 
             {/* Card 5 - End Cap & Anchors */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
-              <h3 className="text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
+              <h3 className="text-2xl din-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
                 Easy Installation
               </h3>
-              <p className="text-gray-600 nunito text-[14px]">
+              <p className="text-gray-600 din-regular text-[16px]">
                 The installation process for invisible grills is straightforward
                 and non-invasive, minimizing disruption to your home.
                 Professional installers can quickly set them up, making it a
@@ -403,10 +403,10 @@ export default function Home() {
             </div>
             {/* Card 6 - End Cap & Anchors */}
             <div className="bg-white shadow-lg rounded-xl p-6 transition-transform duration-500 hover:scale-105 cursor-pointer group">
-              <h3 className="text-2xl poppins-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
+              <h3 className="text-2xl din-medium text-[#335c98] mb-4 relative after:absolute after:bg-[#335c98] after:h-[2px] after:w-0 after:bottom-0 after:left-0 after:transition-all after:duration-500 group-hover:after:w-full">
                 Low Maintenance
               </h3>
-              <p className="text-gray-600 nunito text-[14px]">
+              <p className="text-gray-600 din-regular text-[16px]">
                 These grills require minimal maintenance compared to traditional
                 metal grills, which can rust or corrode. Invisible grills can be
                 easily cleaned with a cloth, making them a practical choice for
@@ -417,24 +417,30 @@ export default function Home() {
 
           {/* Add button to interact */}
           <div className="flex justify-center mt-8">
-            <Link href="/ContactUs">
-              <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                {/* Background circles */}
-                <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
-                <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
-                {/* Button text */}
-                <span className="relative z-10 group-hover:text-white raleway">
-                  GET A QUOTE
-                </span>
-              </button>
-            </Link>
+          <Link href="/ContactUs">
+                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      {/* Colored background */}
+                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                      {/* Top-left to bottom-right diagonal animation */}
+                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      </span>
+
+                      {/* Button text */}
+                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                        GET A QUOTE
+                      </span>
+                    </button>
+                  </Link>
           </div>
         </div>
         <div className="flex justify-center flex-col mt-8">
-          <h3 className=" text-3xl md:text-4xl text-primary poppins-regular">
-            Why Choose Invisible Grills ?
+          <h3 className=" text-3xl md:text-4xl text-primary din-semibold">
+            Why Choose Invisible Grill ?
           </h3>
-          <p className="  raleway text-xs lg:text-base text-justify w-auto p-2 text-secondary">
+          <p className="  din-regular text-xs lg:text-base text-justify w-auto p-2 text-secondary">
             Rajguru Steel Industry specializes in premium invisible grill
             solutions that enhance safety while maintaining unobstructed views,
             making them ideal for high-rise buildings and balconies. The
@@ -457,7 +463,7 @@ export default function Home() {
       {/* swiper */}
       <div className="w-full py-20 fade-in mt-20">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">
+          <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-regular">
             Other Products
           </h2>
           <Swiper

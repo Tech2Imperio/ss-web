@@ -52,13 +52,13 @@
 //           alt="T Profile"
 //         />
 //         <div className="absolute inset-0 bg-black opacity-55" />
-//         <h1 className="absolute inset-0 flex items-center justify-center pt-20  md:pt-0 text-[#335c98] text-5xl md:text-[5rem]  poppins-regular">
+//         <h1 className="absolute inset-0 flex items-center justify-center pt-20  md:pt-0 text-[#335c98] text-5xl md:text-[5rem]  din-regular">
 //           Contact Us
 //         </h1>
 //       </section>
 //       <section className="container mx-auto">
 //         <div className="flex justify-center items-center w-full h-auto mt-8">
-//           <h2 className="text-5xl poppins-bold text-[#335c98]">Get A Quote</h2>
+//           <h2 className="text-5xl din-bold text-[#335c98]">Get A Quote</h2>
 //         </div>
 
 //         <div className="flex flex-col md:flex-row justify-center items-center w-full">
@@ -103,21 +103,21 @@
 //               <div className="flex align-middle gap-3">
 //                 <BsTelephone className="mt-1 text-xl" />
 //                 <div className="flex flex-col gap-2">
-//                   <h6 className="poppins-regular">Telephone</h6>
+//                   <h6 className="din-regular">Telephone</h6>
 //                   <p className="nunito text-sm">+91 80489 64852</p>
 //                 </div>
 //               </div>
 //               <div className="flex align-middle gap-3">
 //                 <FiMail className="mt-1 text-xl" />
 //                 <div className="flex flex-col gap-2">
-//                   <h6 className="poppins-regular">Email</h6>
+//                   <h6 className="din-regular">Email</h6>
 //                   <p className="nunito text-sm">hello@imperiorailing.com</p>
 //                 </div>
 //               </div>
 //               <div className="flex align-middle gap-3">
 //                 <TfiLocationPin className="mt-1 text-xl" />
 //                 <div className="flex flex-col gap-2">
-//                   <h6 className="poppins-regular">Headquarters</h6>
+//                   <h6 className="din-regular">Headquarters</h6>
 //                   <p className="flex flex-wrap nunito text-sm w-[12.4rem]">
 //                     Rajguru Steel Industries 92/94, <br />
 //                     Kika Street, Gulalwadi, Girgaon, Mumbai - 400004, <br />
@@ -128,7 +128,7 @@
 
 //               {/* Social Media Links */}
 //               <div className="flex flex-col gap-2">
-//                 <p className="poppins-semibold text-xl">Follow Us</p>
+//                 <p className="din-semibold text-xl">Follow Us</p>
 //                 <ul className="flex gap-2">
 //                   <li className="relative p-2 bg-white rounded-full text-[#335c98] hover:text-white transition duration-300 group overflow-hidden">
 //                     <FaInstagram size={20} className="relative z-10" />
@@ -591,7 +591,7 @@ export default function ContactUs() {
         className="relative"
       >
         <div className="absolute top-[40%] z-10 pl-6">
-          <h1 className="text-2xl md:text-5xl poppins-bold text-primary">
+          <h1 className="text-2xl md:text-5xl din-bold text-primary">
             CONTACT US
           </h1>
           <p className="text-sm md:text-xl nunito">
@@ -628,7 +628,7 @@ export default function ContactUs() {
           variants={fadeInFromLeft}
           className=" bg-gray-100 w-[95%] p-8 rounded-xl flex flex-col h-auto md:h-[75vh] justify-around"
         >
-          <h2 className="text-3xl poppins-semibold text-center text-primary">
+          <h2 className="text-3xl din-semibold text-center text-primary">
             Get a Quote
           </h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-6 ">
@@ -640,7 +640,7 @@ export default function ContactUs() {
               <motion.div key={field.name} variants={fadeInUp}>
                 <label
                   htmlFor={field.name}
-                  className="block mb-2 font-medium text-primary poppins-regular"
+                  className="block mb-2 font-medium text-primary din-regular"
                 >
                   {field.label}
                 </label>
@@ -695,7 +695,7 @@ export default function ContactUs() {
               className=" p-8 rounded-xl hover:shadow-lg hover:shadow-[#335c98] transition duration-500 flex flex-col gap-2 bg-gray-50"
               variants={fadeInUp}
             >
-              <h3 className="poppins-semibold text-primary text-lg ">
+              <h3 className="din-semibold text-primary text-lg ">
                 {item.title}
               </h3>
               <p className="nunito text-secondary text-sm">{item.content}</p>
@@ -712,7 +712,7 @@ export default function ContactUs() {
         className="py-16 px-4 bg-gray-50"
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl poppins-semibold mb-8 text-center text-primary">
+          <h2 className="text-2xl md:text-3xl din-semibold mb-8 text-center text-primary">
             Frequently Asked Questions
           </h2>
           <motion.div className="space-y-4">
@@ -729,7 +729,7 @@ export default function ContactUs() {
                   }
                 >
                   <div className="flex justify-between items-center">
-                    <span className="poppins-medium">{faq.question}</span>
+                    <span className="din-medium">{faq.question}</span>
                     <motion.span
                       animate={{ rotate: expandedFaq === index ? 180 : 0 }}
                       transition={{ duration: 0.3 }}

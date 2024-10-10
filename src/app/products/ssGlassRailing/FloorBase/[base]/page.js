@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation"; 
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import { bases } from "../../data/base"; // Import base data
 
@@ -9,7 +9,7 @@ export default function BaseDetailPage() {
   console.log("Base from URL:", base); // Debugging to check if the correct base ID is captured
 
   // Find the base by matching URL param with the correct ID in the data
-  const selectedBase = bases.find((b) => b.id === base); 
+  const selectedBase = bases.find((b) => b.id === base);
   console.log("Selected Base:", selectedBase); // Debugging to check if the correct base is selected
 
   const [activeColor, setActiveColor] = useState(
@@ -28,7 +28,9 @@ export default function BaseDetailPage() {
 
   return (
     <section className="relative">
-      <h1 className="text-5xl text-[#335c98] poppins-regular p-4">{selectedBase.name}</h1>
+      <h1 className="text-5xl text-[#335c98] din-regular p-4">
+        {selectedBase.name}
+      </h1>
 
       {/* Active Color Display */}
       <div className="relative w-full h-96">

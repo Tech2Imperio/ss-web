@@ -47,7 +47,7 @@ export default function Page() {
           viewport={{ once: true }}
           className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
         >
-          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 din-semibold mb-6 tracking-tight">
             Stainless Steel Balustrade Systems
           </h1>
           <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
@@ -107,7 +107,7 @@ export default function Page() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 p-4 text-white">
-                <h3 className="text-xl poppins-semibold">{label}</h3>
+                <h3 className="text-xl din-semibold">{label}</h3>
                 <p className="text-sm raleway text-gray-300">{description}</p>
               </div>
             </motion.div>
@@ -121,7 +121,7 @@ export default function Page() {
             <div className="elementor-column md:flex-1"></div>
             <section className="bg-gray-50 py-10">
               <div className="container mx-auto px-6">
-                <h2 className="text-3xl poppins-bold text-center text-[#335c98] mb-8">
+                <h2 className="text-3xl din-bold text-center text-[#335c98] mb-8">
                   Balustrade Railing Specifications
                 </h2>
                 <motion.div
@@ -147,14 +147,20 @@ export default function Page() {
                   />
                 </motion.div>
 
-                <div className=" flex justify-center">
+                <div className="flex justify-center">
                   <Link href="/ContactUs">
-                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                      {/* Background circles */}
-                      <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
-                      <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
+                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      {/* Colored background */}
+                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                      {/* Top-left to bottom-right diagonal animation */}
+                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      </span>
+
                       {/* Button text */}
-                      <span className="relative z-10 group-hover:text-white raleway">
+                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
                         GET A QUOTE
                       </span>
                     </button>
@@ -163,24 +169,24 @@ export default function Page() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl poppins-semibold text-[#335c98] mb-4">
+                    <h3 className="text-xl din-semibold text-[#335c98] mb-4">
                       Material
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Frame:{" "}
                         </b>{" "}
                         Stainless Steel (Grade 304 or 316)
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Infill:{" "}
                         </b>{" "}
                         Tempered Glass (10mm or 12mm thick)
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Finish:{" "}
                         </b>{" "}
                         Polished, brushed, or powder-coated
@@ -189,30 +195,30 @@ export default function Page() {
                   </div>
 
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl poppins-semibold text-[#335c98] mb-4">
+                    <h3 className="text-xl din-semibold text-[#335c98] mb-4">
                       Dimensions
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Height:{" "}
                         </b>{" "}
                         36 inches (914 mm) standard; custom heights available
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Top Rail Width:{" "}
                         </b>{" "}
                         1.5 inches (38 mm) minimum
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Post Size:
                         </b>{" "}
                         2 inches x 2 inches (50 mm x 50 mm)
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Glass Panel Size:{" "}
                         </b>{" "}
                         Typically 3 to 5 feet in width
@@ -221,24 +227,24 @@ export default function Page() {
                   </div>
 
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl poppins-semibold text-[#335c98] mb-4">
+                    <h3 className="text-xl din-semibold text-[#335c98] mb-4">
                       Safety Standards
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Load Capacity:{" "}
                         </b>{" "}
                         Must withstand a horizontal load of 200 lbs
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Height Requirements:{" "}
                         </b>{" "}
                         Minimum of 36 inches above walking surface
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Glass Safety:{" "}
                         </b>{" "}
                         Meets safety glazing standards (ASTM C1048)
@@ -247,24 +253,24 @@ export default function Page() {
                   </div>
 
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl poppins-semibold text-[#335c98] mb-4">
+                    <h3 className="text-xl din-semibold text-[#335c98] mb-4">
                       Design Options
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Post Design:{" "}
                         </b>{" "}
                         Square or round with decorative caps
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Infill Options:{" "}
                         </b>{" "}
                         Glass, horizontal cables, or vertical bars
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Color Options:{" "}
                         </b>{" "}
                         Custom finishes available
@@ -273,24 +279,24 @@ export default function Page() {
                   </div>
 
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl poppins-semibold text-[#335c98] mb-4">
+                    <h3 className="text-xl din-semibold text-[#335c98] mb-4">
                       Installation Details
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Mounting:{" "}
                         </b>{" "}
                         Top-mounted or side-mounted options
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Surface Types:{" "}
                         </b>{" "}
                         Suitable for concrete, wood, and metal
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Hardware:{" "}
                         </b>{" "}
                         Stainless steel fasteners and brackets
@@ -299,18 +305,18 @@ export default function Page() {
                   </div>
 
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl poppins-semibold text-[#335c98] mb-4">
+                    <h3 className="text-xl din-semibold text-[#335c98] mb-4">
                       Maintenance
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Cleaning:{" "}
                         </b>{" "}
                         Regular cleaning with mild soap and water
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Inspection:{" "}
                         </b>{" "}
                         Periodic integrity checks
@@ -319,25 +325,25 @@ export default function Page() {
                   </div>
 
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl poppins-semibold text-[#335c98] mb-4">
+                    <h3 className="text-xl din-semibold text-[#335c98] mb-4">
                       Applications
                     </h3>
                     <ul className="list-none list-inside  text-gray-700">
                       <li className=" text-gray-500 nunito">
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Residential:{" "}
                         </b>{" "}
                         Balconies, staircases
                       </li>
                       <li className=" text-gray-500 nunito">
-                        <b className="text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className="text-[#335c98] din-medium text-[1.125rem]">
                           Commercial:{" "}
                         </b>{" "}
                         Office buildings, restaurants
                       </li>
                       <li className=" text-gray-500 nunito">
                         {" "}
-                        <b className=" text-[#335c98] poppins-medium text-[1.125rem]">
+                        <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Public Spaces:{" "}
                         </b>{" "}
                         Parks, community centers

@@ -380,7 +380,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="px-3 py-2 rounded-md text-base hover:text-white flex items-center poppins-regular"
+                    className="px-3 py-2 rounded-md text-base hover:text-white flex items-center din-regular"
                   >
                     {item.name}
                     {item.name === "Products" && (

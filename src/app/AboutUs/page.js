@@ -254,7 +254,7 @@ export default function Page() {
         <div className="container mx-auto px-4 flex flex-col my-10">
           <Section>
             <motion.h1
-              className="text-5xl my-6 text-center poppins-bold text-[#335c98]"
+              className="text-5xl my-6 text-center din-bold text-[#335c98]"
               variants={fadeInUp}
             >
               About Us
@@ -314,7 +314,7 @@ export default function Page() {
             animate={controls}
           >
             <motion.div variants={fadeInLeft} className="space-y-6 lg:w-3/4">
-              <h2 className="text-3xl poppins-semibold text-[#335c98]">
+              <h2 className="text-3xl din-semibold text-[#335c98]">
                 About Us
               </h2>
               <p className="text-slate-500 leading-relaxed nunito text-sm text-justify">
@@ -361,7 +361,7 @@ export default function Page() {
             initial="hidden"
             animate={controls}
           >
-            <h2 className="text-3xl font-semibold py-3 poppins-bold text-[#335c98]">
+            <h2 className="text-3xl font-semibold py-3 din-bold text-[#335c98]">
               Our Mission
             </h2>
             <p className="text-slate-500 max-w-5xl mx-auto leading-relaxed nunito">
@@ -410,7 +410,7 @@ export default function Page() {
               >
                 <div className="flex flex-col items-center text-center gap-2">
                   {item.icon}
-                  <h3 className="text-xl poppins-regular mb-2 text-[#335c98]">
+                  <h3 className="text-xl din-regular mb-2 text-[#335c98]">
                     {item.title}
                   </h3>
                   <p className="text-slate-500 text-sm nunito">
@@ -446,7 +446,7 @@ export default function Page() {
               </motion.div>
               <div className="w-full lg:w-[45%] flex flex-col  md:gap-3">
                 <motion.h2
-                  className="text-2xl poppins-semibold text-center lg:text-left text-[#335c98] pl-2"
+                  className="text-2xl din-semibold text-center lg:text-left text-[#335c98] pl-2"
                   variants={fadeInUp}
                 >
                   Why Choose Rajguru Steel?
@@ -461,7 +461,7 @@ export default function Page() {
                       className="hover:shadow-xl rounded-lg md:p-4 p-3 transition duration-500 flex flex-col gap-2"
                       variants={fadeInUp}
                     >
-                      <h3 className="text-base poppins-semibold text-[#335c98] ">
+                      <h3 className="text-base din-semibold text-[#335c98] ">
                         {feature.title}
                       </h3>
                       <p className="text-slate-500 text-sm nunito md:text-justify">
@@ -477,7 +477,7 @@ export default function Page() {
           <Section>
             <div className="w-[95%] mx-auto px-8">
               <motion.h2
-                className="text-3xl poppins-bold mb-8 text-center text-[#335c98]"
+                className="text-3xl din-bold mb-8 text-center text-[#335c98]"
                 variants={fadeInUp}
               >
                 Customer Testimonials
@@ -492,7 +492,7 @@ export default function Page() {
                       boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
                     }}
                   >
-                    <h3 className="text-lg poppins-semibold mb-2 text-[#335c98]">
+                    <h3 className="text-lg din-semibold mb-2 text-[#335c98]">
                       {testimonial.name}
                     </h3>
                     <p className="text-sm text-slate-500 mb-2 nunito">
@@ -541,7 +541,7 @@ export default function Page() {
               initial="hidden"
               animate={controls}
             >
-              <h2 className="text-3xl poppins-semibold text-[#335c98]">
+              <h2 className="text-3xl din-semibold text-[#335c98]">
                 Ready to Work with Us?
               </h2>
               <p className="text-slate-500 text-sm nunito">

@@ -1,168 +1,3 @@
-// import React from "react";
-// import Image from "next/image";
-// import bg from "../../assets/product/sswirerope/bg.webp";
-// import outdoorImg from "../../assets/product/sswirerope/product/outdoorrope.webp";
-// import StairImg from "../../assets/product/sswirerope/product/stairs.webp";
-// import BalconyImg from "../../assets/product/sswirerope/product/ssrailing.jpg";
-// // import accessory1 from "../../assets/product/accessories/accessory1.webp"; // Replace with actual paths
-// // import accessory2 from "../../assets/product/accessories/accessory2.webp"; // Replace with actual paths
-// // import accessory3 from "../../assets/product/accessories/accessory3.webp"; // Replace with actual paths
-
-// export default function Page() {
-//   return (
-//     <div>
-//       {/* Hero Section */}
-//       <section className="relative h-[30rem] w-full">
-//         <Image
-//           className="h-[30rem] w-full object-cover"
-//           src={bg}
-//           alt="Wire Rope Profile"
-//           layout="fill"
-//         />
-//         <div className="absolute inset-0 bg-black opacity-40" />
-//         <h1 className="absolute inset-0 flex flex-col items-start justify-center pl-5 md:pl-10 text-white text-5xl md:text-[5rem] font-extrabold">
-//           RAJGURU
-//           <span className="text-xs md:text-lg pt-2">
-//             Stainless Steel U Profile for Structural Excellence
-//           </span>
-//         </h1>
-//       </section>
-
-//       {/* Product Overview with Carousel */}
-//       <section className="bg-white py-16">
-//         <div className="container mx-auto flex flex-col items-center">
-//           <h2 className="text-4xl font-bold mb-6">Product Overview</h2>
-//           <div className="relative w-full max-w-xl">
-//             <Image
-//               src={outdoorImg}
-//               alt="Outdoor Applications"
-//               className="rounded-lg shadow-xl"
-//               width={800}
-//               height={400}
-//             />
-//             {/* Add more images in a carousel as needed */}
-//           </div>
-//           <p className="text-gray-700 text-center mt-4 max-w-2xl">
-//             Experience unparalleled strength and durability with our premium stainless steel wire rope, expertly crafted for outdoor use in compounds and various rigging applications.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Applications & Use Cases Section */}
-//       <section className="py-16 bg-gray-50">
-//         <h2 className="text-center text-4xl font-bold mb-8">Applications & Use Cases</h2>
-//         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-//           <div className="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
-//             <Image
-//               src={outdoorImg}
-//               alt="Outdoor Applications"
-//               className="rounded-lg mb-4"
-//               width={300}
-//               height={200}
-//             />
-//             <h3 className="text-xl font-semibold">Outdoor Structures</h3>
-//             <p className="text-gray-600">Perfect for supporting various outdoor installations, ensuring strength and stability.</p>
-//           </div>
-//           <div className="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
-//             <Image
-//               src={StairImg}
-//               alt="Stair Applications"
-//               className="rounded-lg mb-4"
-//               width={300}
-//               height={200}
-//             />
-//             <h3 className="text-xl font-semibold">Staircases</h3>
-//             <p className="text-gray-600">Ideal for creating secure railings and stair supports that last.</p>
-//           </div>
-//           <div className="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
-//             <Image
-//               src={BalconyImg}
-//               alt="Balcony Applications"
-//               className="rounded-lg mb-4"
-//               width={300}
-//               height={200}
-//             />
-//             <h3 className="text-xl font-semibold">Balcony Railings</h3>
-//             <p className="text-gray-600">Ensures safety while adding a stylish look to your balconies.</p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Accessories Section */}
-//       <section className="py-16 bg-gray-50">
-//         <h2 className="text-center text-4xl font-bold mb-8">Related Accessories</h2>
-//         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-//           <div className="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
-//             <Image
-//               src=""
-//               alt=""
-//               className="rounded-lg mb-4"
-//               width={300}
-//               height={200}
-//             />
-//             <h3 className="text-xl font-semibold">Accessory 1</h3>
-//             <p className="text-gray-600">Description of accessory 1.</p>
-//           </div>
-//           <div className="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
-//             <Image
-//               src=""
-//               alt=""
-//               className="rounded-lg mb-4"
-//               width={300}
-//               height={200}
-//             />
-//             <h3 className="text-xl font-semibold">Accessory 2</h3>
-//             <p className="text-gray-600">Description of accessory 2.</p>
-//           </div>
-//           <div className="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
-//             <Image
-//               src=""
-//               alt=""
-//               className="rounded-lg mb-4"
-//               width={300}
-//               height={200}
-//             />
-//             <h3 className="text-xl font-semibold">Accessory 3</h3>
-//             <p className="text-gray-600">Description of accessory 3.</p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Maintenance Tips Section */}
-//       <section className="py-16 bg-white">
-//         <h2 className="text-center text-4xl font-bold mb-8">Maintenance Tips</h2>
-//         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-//           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-//             <h3 className="text-xl font-semibold mb-4">Regular Inspections</h3>
-//             <p className="text-gray-600">
-//               Check for wear and tear regularly to ensure safety and longevity.
-//             </p>
-//           </div>
-//           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-//             <h3 className="text-xl font-semibold mb-4">Clean the Rope</h3>
-//             <p className="text-gray-600">
-//               Clean the stainless steel wire rope periodically to prevent corrosion.
-//             </p>
-//           </div>
-//           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-//             <h3 className="text-xl font-semibold mb-4">Lubrication</h3>
-//             <p className="text-gray-600">
-//               Apply a suitable lubricant to maintain flexibility and protect against rust.
-//             </p>
-//           </div>
-//           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-//             <h3 className="text-xl font-semibold mb-4">Proper Storage</h3>
-//             <p className="text-gray-600">
-//               Store the wire rope in a dry place to avoid exposure to moisture.
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-
-//     </div>
-//   );
-// }
-
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -213,10 +48,10 @@ export default function Page() {
           viewport={{ once: true }}
           className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
         >
-          <h1 className=" text-3xl md:text-5xl text-white opacity-90 poppins-semibold mb-6 tracking-tight">
+          <h1 className=" text-3xl md:text-5xl text-white opacity-90 din-bold mb-6 tracking-tight">
             Stainless Steel Wire Rope
           </h1>
-          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
+          <p className=" text-gray-200 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify din-regular mb-12 ">
             "Discover our premium stainless steel wire rope, designed for
             exceptional strength and corrosion resistance in rigging and
             lifting. Ideal for industrial and marine applications, it guarantees
@@ -229,7 +64,7 @@ export default function Page() {
         {/* Product Overview with Image Slider */}
         <section className=" bg-white container mx-auto md:p-28">
           <div className=" px-6">
-            {/* <h2 className="text-4xl pt-10 poppins-semibold text-[#335c98] mb-12 md:mb-16 md:pt-0 text-center">
+            {/* <h2 className="text-4xl pt-10 din-semibold text-[#335c98] mb-12 md:mb-16 md:pt-0 text-center">
               Wire Rope
             </h2> */}
             <div className="flex flex-col lg:flex-row items-center gap-28">
@@ -257,10 +92,10 @@ export default function Page() {
                 viewport={{ once: true }}
                 className="w-full lg:w-1/2"
               >
-                <h3 className="text-4xl poppins-semibold text-[#335c98] mb-4">
+                <h3 className="text-4xl din-semibold text-[#335c98] mb-4">
                   Premium Stainless Steel Wire Rope
                 </h3>
-                <p className="text-secondary mb-8 text-sm leading-relaxed raleway text-justify">
+                <p className="text-secondary mb-8 text-sm leading-relaxed din-regular text-justify">
                   Experience unparalleled strength and durability with our
                   premium stainless steel wire rope. Expertly crafted for
                   outdoor use in compounds and various rigging applications, our
@@ -268,19 +103,38 @@ export default function Page() {
                   reliability.
                 </p>
                 <ul className="space-y-4">
-                  <li className="flex items-center text-[1.15rem] raleway text-[#335c98]">
+                  <li className="flex items-center text-[1.15rem] din-regular text-[#335c98]">
                     <FaCheck className="w-6 h-5 mr-3 text-green-500 strok" />
                     Superior corrosion resistance
                   </li>
-                  <li className="flex items-center text-[1.15rem] raleway text-[#335c98]">
+                  <li className="flex items-center text-[1.15rem] din-regular text-[#335c98]">
                     <FaCheck className="w-6 h-5 mr-3 text-green-500" />
                     Effortless installation and maintenance
                   </li>
-                  <li className="flex items-center text-[1.15rem] raleway text-[#335c98]">
+                  <li className="flex items-center text-[1.15rem] din-regular text-[#335c98]">
                     <FaCheck className="w-6 h-5 mr-3 text-green-500 " />
                     Versatile sizing and configurations
                   </li>
                 </ul>
+                <div className=" flex justify-start mt-4">
+                  <Link href="/ContactUs">
+                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      {/* Colored background */}
+                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                      {/* Top-left to bottom-right diagonal animation */}
+                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      </span>
+
+                      {/* Button text */}
+                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                        GET A QUOTE
+                      </span>
+                    </button>
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -289,7 +143,7 @@ export default function Page() {
         {/* Applications & Use Cases Section */}
         <section className=" bg-gray-100 p-20 container mx-auto">
           <div className="container mx-auto">
-            <h2 className=" text-3xl md:text-5xl poppins-semibold text-[#335c98] mb-10 md:mb-16 text-center">
+            <h2 className=" text-3xl md:text-5xl din-semibold text-[#335c98] mb-10 md:mb-16 text-center">
               Applications & Use Cases
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -332,10 +186,10 @@ export default function Page() {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-2xl poppins-regular text-[#335c98] mb-3">
+                    <h3 className="text-2xl din-regular text-[#335c98] mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-500 raleway text-base">
+                    <p className="text-gray-500 din-regular text-base">
                       {item.description}
                     </p>
                   </div>
@@ -348,7 +202,7 @@ export default function Page() {
         {/* Accessories Section */}
         <section className="py-24 bg-white mx-auto container">
           <div className="container mx-auto md:px-[12rem]">
-            <h2 className="text-5xl poppins-semibold text-[#335c98] mb-16 text-center">
+            <h2 className="text-5xl din-semibold text-[#335c98] mb-16 text-center">
               Accessories
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -408,13 +262,13 @@ export default function Page() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-2xl poppins-regular text-[#335c98] mb-3">
+                    <h3 className="text-2xl din-regular text-[#335c98] mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-500 raleway text-xs md:text-base mb-4">
+                    <p className="text-gray-500 din-regular text-xs md:text-base mb-4">
                       {item.description}
                     </p>
-                    <h4 className=" poppins-medium text-[#335c98] mb-2">
+                    <h4 className=" din-medium text-[#335c98] mb-2">
                       Specifications:
                     </h4>
                     <ul className="list-disc list-inside text-sm text-secondary">
@@ -432,24 +286,10 @@ export default function Page() {
           </div>
         </section>
 
-        <div className=" flex justify-center">
-          <Link href="/ContactUs">
-            <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-              {/* Background circles */}
-              <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
-              <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
-              {/* Button text */}
-              <span className="relative z-10 group-hover:text-white raleway">
-                GET A QUOTE
-              </span>
-            </button>
-          </Link>
-        </div>
-
         {/* Maintenance Tips Section */}
         <section className="py-24 bg-gray-100 mt-14 container mx-auto">
           <div className="container mx-auto px-6">
-            <h2 className="text-5xl poppins-semibold text-primary mb-16 text-center">
+            <h2 className="text-5xl din-semibold text-primary mb-16 text-center">
               Maintenance Tips
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -479,10 +319,10 @@ export default function Page() {
                   key={index}
                   className="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 hover:shadow-xl"
                 >
-                  <h3 className="text-2xl poppins-medium text-primary mb-4">
+                  <h3 className="text-2xl din-medium text-primary mb-4">
                     {tip.title}
                   </h3>
-                  <p className="text-sm text-secondary raleway leading-relaxed">
+                  <p className="text-sm text-secondary din-regular leading-relaxed">
                     {tip.description}
                   </p>
                 </div>
@@ -494,18 +334,30 @@ export default function Page() {
         {/* Call to Action Section */}
         <section className="py-24  text-white">
           <div className="container mx-auto px-6 text-center">
-            <h2 className=" text-base md:text-5xl poppins-semibold text-primary mb-8">
+            <h2 className=" text-base md:text-5xl din-semibold text-primary mb-8">
               Ready to Elevate Your Project?
             </h2>
-            <p className="text-xl text-secondary raleway mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary din-regular mb-12 max-w-3xl mx-auto">
               Discover the unmatched strength and versatility of Rajguru
               Stainless Steel Wire Rope. Let us help you bring your vision to
               life.
             </p>
             <div className=" flex justify-center">
               <Link href="/ContactUs">
-                <button className="mt-4 px-6 py-4 bg-[#335c98] raleway text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-                  GET A QUOTE
+                <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#1d1d1d] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                  {/* Colored background */}
+                  <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                  {/* Top-left to bottom-right diagonal animation */}
+                  <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                    <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                    <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  </span>
+
+                  {/* Button text */}
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-700 ease-in-out raleway">
+                    GET A QUOTE
+                  </span>
                 </button>
               </Link>
             </div>

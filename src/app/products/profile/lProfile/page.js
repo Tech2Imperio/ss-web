@@ -170,19 +170,19 @@ const page = () => {
           alt="L Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-[#19355e] text-5xl md:text-[4rem] md:p-4  poppins-bold">
+        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-[#19355e] text-5xl md:text-[4rem] md:p-4  din-bold">
           RAJGURU
           <br />
-          <p className=" text-xs w-[20.8rem] md:w-[28rem] nunito pt-2 md:pt-4 ">
+          <p className=" text-xs w-[20.8rem] md:w-[28rem] din-regular pt-2 md:pt-4 text-gray-200">
             Stainless Steel L Profile offers superior strength and durability,
             making it ideal for a variety of structural applications.
           </p>
         </h1>
       </div>
 
-      <div className=" flex flex-col overflow-hidden mx-auto container">
+      <div className=" flex flex-col overflow-hidden mx-auto container mt-14">
         <div className=" flex justify-center ">
-          <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
+          {/* <p className="text- text-xs lg:text-sm text-justify w-[80%] p-4">
             Rajgure Steel Industries offers a versatile range of stainless steel
             L profiles that are not only functional but also enhance the
             aesthetic appeal of spaces. Corner Protection Profiles made from
@@ -195,7 +195,7 @@ const page = () => {
             sophistication to your surroundings. Choose quality, choose style –
             opt for your corner protection solutions to transform your space
             effortlessly.
-          </p>
+          </p> */}
         </div>
 
         {/* new model open */}
@@ -206,7 +206,7 @@ const page = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
-                <h2 className="text-3xl poppins-regular text-[#335c98] mb-6">
+                <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
 
@@ -234,7 +234,7 @@ const page = () => {
               {/* Color Preview Section */}
               <div className="flex flex-col items-center lg:items-center lg:mt-52 space-y-14">
                 {/* Title with Gradient */}
-                <h2 className="text-2xl lg:text-4xl poppins-regular text-transparent bg-clip-text bg-gradient-to-r from-[#335c98] to-[#6a8bb1]">
+                <h2 className="text-2xl lg:text-4xl din-semibold text-primary">
                   Select a Color
                 </h2>
 
@@ -257,26 +257,26 @@ const page = () => {
                 {/* Color Details with Glassmorphism Effect */}
                 <div className="w-full max-w-md rounded-2xl backdrop-blur-lg bg-white/30 p-6 shadow-lg transition-transform duration-500 hover:scale-105">
                   <div className="bg-gradient-to-r from-[#335c98] to-[#4b6fa6] text-white text-center py-4 rounded-t-2xl">
-                    <h3 className="text-xl  tracking-wider poppins-regular">
+                    <h3 className="text-xl  tracking-wider din-regular">
                       Specifications
                     </h3>
                   </div>
                   <div className="p-6 space-y-4 bg-white/80 rounded-b-2xl shadow-inner">
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">
+                      <span className="text-[#335c98] din-regular">
                         Selected Color
                       </span>
-                      <span className="text-gray-700 nunito">
+                      <span className="text-gray-700 din-regular">
                         {selectedColor.name}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">Thickness</span>
-                      <span className="text-gray-700 nunito">0.6 ~ 2.0 mm</span>
+                      <span className="text-[#335c98] din-regular">Thickness</span>
+                      <span className="text-gray-700 din-regular">0.6 ~ 2.0 mm</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] nunito">Size</span>
-                      <span className="text-gray-700 nunito">
+                      <span className="text-[#335c98] din-regular">Size</span>
+                      <span className="text-gray-700 din-regular">
                         T6 to T50 & more
                       </span>
                     </div>
@@ -285,34 +285,38 @@ const page = () => {
 
                 {/* CTA Button with Neomorphism Style */}
                 <Link href="/ContactUs">
-                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                    {/* Background circles */}
-                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
-                    <span className="absolute w-12 h-12 transition-all duration-1000 ease-in-out bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
-                    {/* Button text */}
-                    <span className="relative z-10 group-hover:text-white raleway">
-                      GET A QUOTE
-                    </span>
-                  </button>
-                </Link>
+                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      {/* Colored background */}
+                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                      {/* Top-left to bottom-right diagonal animation */}
+                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      </span>
+
+                      {/* Button text */}
+                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                        GET A QUOTE
+                      </span>
+                    </button>
+                  </Link>
               </div>
             </div>
 
             {/* Finishes and Sizes Section */}
             <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="text-left space-y-6">
-                <h3 className="text-xl poppins-regular text-[#335c98]">
-                  Finishes
-                </h3>
-                <p className="text-lg text-gray-500 nunito">
+                <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
+                <p className="text-lg text-gray-600 din-regular">
                   Mirror | Hairline | Mesh | Straightline | Stain
                 </p>
 
-                <h3 className="text-xl poppins-regular text-[#335c98]">
+                <h3 className="text-xl din-semibold text-[#335c98]">
                   Sizes <sub className="text-sm">mm</sub>{" "}
                   <span className="text-base">- W x H</span>
                 </h3>
-                <p className="text-lg text-gray-500 nunito">
+                <p className="text-lg text-gray-600 din-regular">
                   10 x 10 | 12 x 12 | 15 x 15 | 20 x 20 | 25 x 25 | 30 x 30
                 </p>
               </div>
@@ -339,10 +343,10 @@ const page = () => {
           <div className="w-full py-4 md:py-20 fade-in">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20 text-justify">
               <div className="lg:w-1/2 p-6">
-                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
+                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-semibold">
                   What is Stainless Steel T Profile?
                 </h2>
-                <p className="text-gray-500 text-sm md:text-[1.10rem] leading-relaxed nunito">
+                <p className="text-gray-600 text-sm md:text-[1.10rem] leading-relaxed din-regular">
                   A Stainless Steel T Profile is a metal profile characterized
                   by a "T"-shaped cross-section, offering superior strength and
                   versatility in construction and architecture.
@@ -361,10 +365,10 @@ const page = () => {
           {/* Properties Section */}
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
+              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 din-semibold">
                 Properties of Stainless Steel T Profiles
               </h2>
-              <p className="text-gray-500 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 nunito">
+              <p className="text-gray-600 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 din-regular">
                 At Rajguru Steel Industry, we manufacture stainless steel T
                 profiles using high-quality austenitic stainless steel, known
                 for its exceptional durability and corrosion resistance. These
@@ -387,47 +391,47 @@ const page = () => {
             <table className="min-w-full bg-white rounded-lg">
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
-                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] poppins-regular">
+                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-semibold">
                     Benefits of Stainless Steel T Profiles
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     1. Corrosion Resistance
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Stainless steel T profiles are highly resistant to rust and
                     corrosion, ideal for environments with exposure to moisture,
                     chemicals, or harsh weather conditions.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     2. Durability
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Known for their strength and long lifespan, stainless steel
                     T profiles can last over 100 years, making them a
                     maintenance-free solution for various projects.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     3. Aesthetic Appeal
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     With their sleek, modern look and minimal upkeep, stainless
                     steel T profiles enhance the aesthetics of commercial and
                     residential structures.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     4. Versatility
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 nunito">
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
                     Whether for architectural designs or automotive
                     reinforcement, stainless steel T profiles are easy to
                     fabricate and fit various applications.
@@ -442,11 +446,11 @@ const page = () => {
         {/* example phone */}
         <div className="container mx-auto my-14 md:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] poppins-regular mb-4">
+            <h2 className="text-2xl font-semibold text-[#335c98] din-regular mb-4">
               Benefits of Stainless Steel T Profiles
             </h2>
             <ul className="space-y-6 text-justify ">
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-600 din-regular">
                 <strong className=" text-[#335c98]">
                   1. Corrosion Resistance:
                 </strong>{" "}
@@ -454,13 +458,13 @@ const page = () => {
                 corrosion, ideal for environments with exposure to moisture,
                 chemicals, or harsh weather conditions.
               </li>
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-600 din-regular">
                 <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
                 Known for their strength and long lifespan, stainless steel T
                 profiles can last over 100 years, making them a maintenance-free
                 solution for various projects.
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-600  din-regular">
                 <strong className=" text-[#335c98]">
                   3. Aesthetic Appeal:
                 </strong>{" "}
@@ -468,7 +472,7 @@ const page = () => {
                 steel T profiles enhance the aesthetics of commercial and
                 residential structures.
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-600  din-regular">
                 <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
                 Whether for architectural designs or automotive reinforcement,
                 stainless steel T profiles are easy to fabricate and fit various
@@ -488,10 +492,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl  text-[#335c98] din-semibold mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 T profiles are widely used in building facades, curtain walls,
                 glass railings, and structural supports. The combination of
                 strength and corrosion resistance ensures durability while
@@ -505,10 +509,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] din-regular mb-4 text-center">
                 Furniture and Shelving.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 In interior design, T profiles are employed in furniture,
                 shelving, and display systems. The robust structure of stainless
                 steel ensures the ability to bear heavy loads while providing a
@@ -522,10 +526,10 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
+              <h2 className="text-xl font-semibold text-center text-[#335c98] din-semibold mb-4">
                 Automotive and Marine Industry.
               </h2>
-              <p className="text-gray-500 text-xs md:text-base nunito">
+              <p className="text-gray-600 text-xs md:text-base din-regular">
                 Stainless steel T profiles are frequently used in car frames,
                 providing essential reinforcement while minimizing weight. In
                 marine applications, their corrosion resistance makes them ideal
@@ -537,7 +541,7 @@ const page = () => {
         </main>
         <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">
+            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-semibold">
               Other Products
             </h2>
             <Swiper
@@ -563,7 +567,7 @@ const page = () => {
                         height={250}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
-                      <h3 className="mt-4 text-xl font-semibold text-[#335c98] arimo">
+                      <h3 className="mt-4 text-xl  text-[#335c98] din-regular">
                         {product.title}
                       </h3>
                     </Link>

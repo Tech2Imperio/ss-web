@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { useRouter } from "next/navigation"; // Correct import for the new app directory
 import Image from "next/image";
@@ -13,7 +13,7 @@ export default function SsGlassRailingPage() {
     // Navigate to dynamic route for the selected base
     router.push(`/products/ssGlassRailing/FloorBase/${base.id}`);
   };
-  
+
   const handleHandrailClick = (handrail) => {
     // Navigate to dynamic route for the selected handrail
     router.push(`/products/ssGlassRailing/HandrailBase/${handrail.id}`);
@@ -29,14 +29,14 @@ export default function SsGlassRailingPage() {
           alt="decorative sheet"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem] poppins-regular">
+        <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem] din-regular">
           Decorative Sheets
         </h1>
       </div>
 
       {/* Base Panel */}
       <div className="flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <h1 className="text-5xl text-[#335c98] poppins-regular p-4">Base</h1>
+        <h1 className="text-5xl text-[#335c98] din-regular p-4">Base</h1>
         <div className="mx-auto gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 md:mx-16 lg:mx-14 lg:gap-14 mb-6">
           {bases.map((base) => (
             <div
@@ -55,7 +55,7 @@ export default function SsGlassRailingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-[#335c98] font-normal py-2 text-sm poppins-regular">
+              <h3 className="text-[#335c98] font-normal py-2 text-sm din-regular">
                 {base.name}
               </h3>
             </div>
@@ -65,7 +65,7 @@ export default function SsGlassRailingPage() {
 
       {/* Handrail Panel */}
       <div className="flex flex-col overflow-hidden w-full h-full xl:px-[20rem]">
-        <h1 className="text-5xl text-[#335c98] poppins-regular p-4">Handrail</h1>
+        <h1 className="text-5xl text-[#335c98] din-regular p-4">Handrail</h1>
         <div className="mx-auto gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 md:mx-16 lg:mx-14 lg:gap-14 mb-6">
           {handrails.map((handrail) => (
             <div
@@ -84,7 +84,7 @@ export default function SsGlassRailingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-[#335c98] font-normal py-2 text-sm poppins-regular">
+              <h3 className="text-[#335c98] font-normal py-2 text-sm din-regular">
                 {handrail.name}
               </h3>
             </div>

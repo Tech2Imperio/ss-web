@@ -588,7 +588,7 @@
 //           src={bg}
 //           alt="U Profile"
 //         />
-//         <h1 className="absolute inset-0 flex items-center justify-center pt-24 md:pt-0 text-[#335c98] text-5xl md:text-[5rem] font-bold poppins-regular">
+//         <h1 className="absolute inset-0 flex items-center justify-center pt-24 md:pt-0 text-[#335c98] text-5xl md:text-[5rem] font-bold din-regular">
 //           U Profile
 //         </h1>
 //       </div>
@@ -726,7 +726,7 @@
 //           <div className="w-full py-4 md:py-20 fade-in">
 //             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center text-justify">
 //               <div className="lg:w-1/2 p-6">
-//                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
+//                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-regular">
 //                   What is Stainless Steel U Profile?
 //                 </h2>
 //                 <p className="text-gray-500 text-sm md:text-[1.10rem] leading-relaxed nunito">
@@ -755,7 +755,7 @@
 //           {/* Properties Section */}
 //           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
 //             <div className="max-w-6xl mx-auto text-center">
-//               <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
+//               <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 din-regular">
 //                 Properties of Stainless Steel U Profiles
 //               </h2>
 //               <p className="text-gray-500 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 nunito">
@@ -780,14 +780,14 @@
 //             <table className="min-w-full bg-white rounded-lg">
 //               <thead>
 //                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
-//                   <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] poppins-regular">
+//                   <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-regular">
 //                     Benefits of Stainless Steel U Profiles
 //                   </th>
 //                 </tr>
 //               </thead>
 //               <tbody>
 //                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-//                   <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+//                   <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
 //                     1. Corrosion Resistance
 //                   </td>
 //                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -799,7 +799,7 @@
 //                   </td>
 //                 </tr>
 //                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-//                   <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+//                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
 //                     2. Durability
 //                   </td>
 //                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -811,7 +811,7 @@
 //                   </td>
 //                 </tr>
 //                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-//                   <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+//                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
 //                     3. Aesthetic Appeal
 //                   </td>
 //                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -822,7 +822,7 @@
 //                   </td>
 //                 </tr>
 //                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-//                   <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+//                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
 //                     4. Versatility
 //                   </td>
 //                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -842,11 +842,11 @@
 //         {/* example phone */}
 //         <div className="container mx-auto my-14 md:hidden">
 //           <div className="p-6 bg-white rounded-lg shadow-lg">
-//             <h2 className="text-2xl font-semibold text-[#335c98] poppins-regular mb-4">
+//             <h2 className="text-2xl font-semibold text-[#335c98] din-regular mb-4">
 //               Benefits of Stainless Steel U Profiles
 //             </h2>
 //             <ul className="space-y-6 text-justify ">
-//               <li className="text-base text-gray-500 poppins-regular">
+//               <li className="text-base text-gray-500 din-regular">
 //                 <strong className=" text-[#335c98]">
 //                   1. Corrosion Resistance:
 //                 </strong>{" "}
@@ -854,13 +854,13 @@
 //                 them ideal for outdoor and industrial use while reducing
 //                 maintenance costs.
 //               </li>
-//               <li className="text-base text-gray-500 poppins-regular">
+//               <li className="text-base text-gray-500 din-regular">
 //                 <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
 //                 Their exceptional strength allows them to withstand heavy loads
 //                 and harsh conditions, ensuring reliable performance in
 //                 construction and manufacturing.
 //               </li>
-//               <li className="text-base text-gray-500  poppins-regular">
+//               <li className="text-base text-gray-500  din-regular">
 //                 <strong className=" text-[#335c98]">
 //                   3. Aesthetic Appeal:
 //                 </strong>{" "}
@@ -868,7 +868,7 @@
 //                 of any application, suitable for both structural and decorative
 //                 purposes..
 //               </li>
-//               <li className="text-base text-gray-500  poppins-regular">
+//               <li className="text-base text-gray-500  din-regular">
 //                 <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
 //                 Stainless steel U profiles are adaptable for various uses, from
 //                 framing and supports to machinery components, making them a
@@ -888,7 +888,7 @@
 //               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200
 //                 ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
 //             >
-//               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+//               <h2 className="text-xl font-semibold text-[#335c98] din-regular mb-4 text-center">
 //                 Architectural and Construction Applications.
 //               </h2>
 //               <p className="text-gray-500 nunito">
@@ -906,7 +906,7 @@
 //               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200
 //                 ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
 //             >
-//               <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+//               <h2 className="text-xl font-semibold text-[#335c98] din-regular mb-4 text-center">
 //                 Furniture and Shelving.
 //               </h2>
 //               <p className="text-gray-500 nunito">
@@ -924,7 +924,7 @@
 //               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200
 //                 ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
 //             >
-//               <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
+//               <h2 className="text-xl font-semibold text-center text-[#335c98] din-regular mb-4">
 //                 Automotive and Marine Industry.
 //               </h2>
 //               <p className="text-gray-500 nunito">
@@ -939,7 +939,7 @@
 //         </main>
 //         <div className="w-full py-20 fade-in mt-20">
 //           <div className="max-w-6xl mx-auto text-center">
-//             <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">
+//             <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-regular">
 //               Other Products
 //             </h2>
 //             <Swiper
@@ -1199,7 +1199,7 @@ const page = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
-                <h2 className="text-3xl poppins-regular text-[#335c98] mb-6">
+                <h2 className="text-3xl din-regular text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
 
@@ -1234,7 +1234,7 @@ const page = () => {
               {/* Color Preview Section */}
               <div className="flex flex-col items-center lg:items-center lg:mt-52 space-y-14">
                 {/* Title with Gradient */}
-                <h2 className="text-2xl lg:text-4xl poppins-regular text-transparent bg-clip-text bg-gradient-to-r from-[#335c98] to-[#6a8bb1]">
+                <h2 className="text-2xl lg:text-4xl din-regular text-transparent bg-clip-text bg-gradient-to-r from-[#335c98] to-[#6a8bb1]">
                   Select a Color
                 </h2>
 
@@ -1257,7 +1257,7 @@ const page = () => {
                 {/* Color Details with Glassmorphism Effect */}
                 <div className="w-full max-w-md rounded-2xl backdrop-blur-lg bg-white/30 p-6 shadow-lg transition-transform duration-500 hover:scale-105">
                   <div className="bg-gradient-to-r from-[#335c98] to-[#4b6fa6] text-white text-center py-4 rounded-t-2xl">
-                    <h3 className="text-xl  tracking-wider poppins-regular">
+                    <h3 className="text-xl  tracking-wider din-regular">
                       Specifications
                     </h3>
                   </div>
@@ -1301,14 +1301,12 @@ const page = () => {
             {/* Finishes and Sizes Section */}
             <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="text-left space-y-6">
-                <h3 className="text-xl poppins-regular text-[#335c98]">
-                  Finishes
-                </h3>
+                <h3 className="text-xl din-regular text-[#335c98]">Finishes</h3>
                 <p className="text-lg text-gray-500 nunito">
                   Mirror | Hairline | Mesh | Straightline | Stain
                 </p>
 
-                <h3 className="text-xl poppins-regular text-[#335c98]">
+                <h3 className="text-xl din-regular text-[#335c98]">
                   Sizes <sub className="text-sm">mm</sub>{" "}
                   <span className="text-base">- W x H</span>
                 </h3>
@@ -1339,7 +1337,7 @@ const page = () => {
           <div className="w-full py-4 md:py-20 fade-in">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20  text-justify">
               <div className="lg:w-1/2 p-6">
-                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 poppins-regular">
+                <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-regular">
                   What is Stainless Steel U Profile?
                 </h2>
                 <p className="text-gray-500 text-xs md:text-[0.850rem] leading-relaxed nunito">
@@ -1371,7 +1369,7 @@ const page = () => {
           {/* Properties Section */}
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 poppins-regular">
+              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 din-regular">
                 Properties of Stainless Steel U Profiles
               </h2>
               <p className="text-gray-500 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 nunito">
@@ -1395,14 +1393,14 @@ const page = () => {
             <table className="min-w-full bg-white rounded-lg">
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
-                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] poppins-regular">
+                  <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-regular">
                     Benefits of Stainless Steel U Profiles
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     1. Corrosion Resistance
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -1416,7 +1414,7 @@ const page = () => {
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     2. Durability
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -1429,7 +1427,7 @@ const page = () => {
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     3. Aesthetic Appeal
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -1443,7 +1441,7 @@ const page = () => {
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
-                  <td className="py-6 px-6 text-2xl text-[#335c98] poppins-regular whitespace-nowrap">
+                  <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     4. Versatility
                   </td>
                   <td className="py-6 px-6 text-base text-gray-500 nunito">
@@ -1463,11 +1461,11 @@ const page = () => {
         {/* example phone */}
         <div className="container mx-auto my-14 md:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] poppins-regular mb-4">
+            <h2 className="text-2xl font-semibold text-[#335c98] din-regular mb-4">
               Benefits of Stainless Steel U Profiles
             </h2>
             <ul className="space-y-6 text-justify ">
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">
                   1. Corrosion Resistance:
                 </strong>{" "}
@@ -1476,13 +1474,13 @@ const page = () => {
                 maintain their integrity and appearance even in harsh
                 environments, such as coastal areas or industrial settings.
               </li>
-              <li className="text-base text-gray-500 poppins-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
                 These profiles offer excellent strength-to-weight ratios,
                 providing structural stability without adding excessive weight.
                 This makes them ideal for supporting structures and frames.
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">
                   3. Aesthetic Appeal:
                 </strong>{" "}
@@ -1491,7 +1489,7 @@ const page = () => {
                 choice for architectural applications where design is as
                 important as functionality
               </li>
-              <li className="text-base text-gray-500  poppins-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
                 These profiles can be customized in various sizes and alloys,
                 allowing for flexibility in design and application. They are
@@ -1512,7 +1510,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] din-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-500 nunito">
@@ -1530,7 +1528,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] poppins-regular mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] din-regular mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-500 nunito">
@@ -1548,7 +1546,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-center text-[#335c98] poppins-regular mb-4">
+              <h2 className="text-xl font-semibold text-center text-[#335c98] din-regular mb-4">
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-500 nunito">
@@ -1563,7 +1561,7 @@ const page = () => {
         </main>
         <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 poppins-regular">
+            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-regular">
               Other Products
             </h2>
             <Swiper

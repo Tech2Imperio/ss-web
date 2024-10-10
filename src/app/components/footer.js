@@ -85,14 +85,14 @@ import Logo from "../assets/logo/blueLogo.webp";
   <div className="flex align-middle gap-3">
     <BsTelephone className="text-xl" />
     <div className="flex flex-col gap-2">
-      <h6 className="poppins-regular text-sm">Telephone</h6>
+      <h6 className="din-regular text-sm">Telephone</h6>
       <p className="nunito text-xs whitespace-nowrap">+91 80489 64852</p>
     </div>
   </div>
   <div className="flex align-middle gap-3">
     <FiMail className="text-xl" />
     <div className="flex flex-col gap-2">
-      <h6 className="poppins-regular text-sm">Email</h6>
+      <h6 className="din-regular text-sm">Email</h6>
       <p className="nunito text-xs whitespace-nowrap">
         hello@imperiorailing.com
       </p>
@@ -101,7 +101,7 @@ import Logo from "../assets/logo/blueLogo.webp";
   <div className="flex align-middle gap-3">
     <TfiLocationPin className="text-xl" />
     <div className="flex flex-col gap-2">
-      <h6 className="poppins-regular text-sm">Headquarters</h6>
+      <h6 className="din-regular text-sm">Headquarters</h6>
       <p className="flex flex-wrap nunito text-xs w-[14rem]">
         Rajguru Steel Industries 92/94, Kika Street, Gulalwadi, Girgaon, Mumbai
         - 400004, Maharashtra, India
@@ -150,7 +150,7 @@ import Logo from "../assets/logo/blueLogo.webp";
 //     //         </p>
 //     //       </div>
 //     //       <div className="flex flex-col gap-4 w-[100%]">
-//     //         <div className="flex w-full flex-wrap text-3xl poppins-semibold text-[#335c98]">
+//     //         <div className="flex w-full flex-wrap text-3xl din-semibold text-[#335c98]">
 //     //           {/* {isVisible &&
 //     //             textArray.map((word, wordIndex) => (
 //     //               <motion.div
@@ -158,7 +158,7 @@ import Logo from "../assets/logo/blueLogo.webp";
 //     //                 initial={{ opacity: 0, width: 0 }}
 //     //                 animate={{ opacity: 1, width: "auto" }}
 //     //                 transition={{ duration: 0.1, delay: wordIndex * 0.4 }}
-//     //                 className="poppins-bold text-2xl xl:text-3xl text-[#335c98]"
+//     //                 className="din-bold text-2xl xl:text-3xl text-[#335c98]"
 //     //               >
 //     //                 {word}
 //     //                 {word === " " && (
@@ -267,9 +267,7 @@ const Footer = () => {
               </div>
 
               <div className="hidden md:flex md:flex-col md:gap-2">
-                <h3 className="text-xl poppins-semibold text-primary">
-                  Follow Us
-                </h3>
+                <h3 className="text-xl din-semibold text-primary">Follow Us</h3>
                 <div
                   id="icons"
                   className="flex gap-4 text-primary text-3xl h-9"
@@ -312,7 +310,7 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col w-full items-start gap-4 ">
-              <h2 className="text-3xl poppins-bold text-primary">
+              <h2 className="text-3xl din-bold text-primary">
                 Let's Get In Touch
               </h2>
 
@@ -325,9 +323,7 @@ const Footer = () => {
             </div>
 
             <div className="md:hidden flex flex-col gap-2">
-              <h3 className="text-xl poppins-semibold text-primary">
-                Follow Us
-              </h3>
+              <h3 className="text-xl din-semibold text-primary">Follow Us</h3>
               <div
                 id="icons"
                 className="flex gap-4 text-[#335c98] text-3xl h-9"
@@ -372,7 +368,7 @@ const Footer = () => {
             <div className="flex align-middle gap-3">
               <BsTelephone className="text-xl mt-1" />
               <div className="flex flex-col gap-2">
-                <h6 className="poppins-semibold text-base">Telephone</h6>
+                <h6 className="din-semibold text-base">Telephone</h6>
                 <p className="nunito text-xs whitespace-nowrap">
                   +91 80489 64852
                 </p>
@@ -381,7 +377,7 @@ const Footer = () => {
             <div className="flex align-middle gap-3">
               <FiMail className="text-xl mt-1" />
               <div className="flex flex-col gap-2">
-                <h6 className="poppins-semibold text-base">Email</h6>
+                <h6 className="din-semibold text-base">Email</h6>
                 <p className="nunito text-xs whitespace-nowrap">
                   info@rajgurusteel.co.in
                 </p>
@@ -390,7 +386,7 @@ const Footer = () => {
             <div className="flex align-middle gap-3">
               <TfiLocationPin className="text-xl mt-1" />
               <div className="flex flex-col gap-2">
-                <h6 className="poppins-semibold text-base">Headquarters</h6>
+                <h6 className="din-semibold text-base">Headquarters</h6>
                 <p className="flex flex-wrap nunito text-xs w-[14rem]">
                   Rajguru Steel Industries 92/94, Kika Street, Gulalwadi,
                   Girgaon, Mumbai - 400004, Maharashtra, India
