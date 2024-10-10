@@ -9,39 +9,10 @@ import {
 } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import { LuBuilding2 } from "react-icons/lu";
-import { TbTargetArrow } from "react-icons/tb";
-import { HiOutlineUsers } from "react-icons/hi2";
-import { FaAward, FaRegStar, FaStar } from "react-icons/fa";
-import { FcCheckmark } from "react-icons/fc";
 import OurStory from "./ourstory.webp";
 import Link from "next/link";
-// const fadeInUp = {
-//   hidden: { opacity: 0, y: 50 },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { duration: 0.8, ease: "easeInOut" },
-//   },
-// };
-
-// const fadeInLeft = {
-//   hidden: { opacity: 0, x: -100 },
-//   visible: {
-//     opacity: 1,
-//     x: 0,
-//     transition: { duration: 0.8, ease: "easeInOut" },
-//   },
-// };
-
-// const fadeInRight = {
-//   hidden: { opacity: 0, x: 100 },
-//   visible: {
-//     opacity: 1,
-//     x: 0,
-//     transition: { duration: 0.8, ease: "easeInOut" },
-//   },
-// };
+import AboutBanner from "./aboutbanner.webp";
+import { FaStar } from "react-icons/fa";
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -100,7 +71,82 @@ const features = [
   },
 ];
 
-const Section = ({ children, className = "" }) => {
+const tabs = [
+  {
+    title: "Our Vision",
+    content:
+      "To be the leading provider of stainless steel architectural products, recognized for our commitment to quality, innovation, and sustainability. We aim to exceed customer expectations by delivering exceptional products that enhance their projects while fostering a culture of continuous improvement and growth. Our vision is to create a sustainable future by integrating eco-friendly practices into our operations and contributing positively to the communities we serve.",
+  },
+  {
+    title: "Our Mission",
+    content:
+      "Our mission is to manufacture and supply a diverse range of stainless steel architectural products that meet the highest standards of quality and innovation. We are dedicated to ensuring customer satisfaction by understanding their needs and delivering tailored solutions. We strive for sustainable growth by investing in our people, embracing new technologies, and maintaining a strong commitment to environmental responsibility. Through collaboration and excellence, we aim to build lasting relationships with our customers and stakeholders.",
+  },
+];
+
+const reviews = [
+  {
+    name: "Praveen Thota",
+    location: "Nirmal, Telangana",
+    product: "Jindal Stainless Steel Pipes",
+    rating: 5,
+  },
+  {
+    name: "Lokesh Narpathma Lodha",
+    location: "Nagpur, Maharashtra",
+    product: "ERW Steel Pipes",
+    rating: 5,
+  },
+  {
+    name: "Prashant Sutar",
+    location: "Kolhapur, Maharashtra",
+    product: "Railing Fittings",
+    rating: 5,
+  },
+  {
+    name: "Sumit Sherawat",
+    location: "Jaipur, Rajasthan",
+    product: "Air Pistol",
+    rating: 5,
+    date: "22-May-23",
+  },
+  {
+    name: "A Akbar Basha",
+    location: "Tirupattur, Tamil Nadu",
+    rating: 5,
+    date: "13-December-21",
+  },
+  {
+    name: "Ashok Choudhary",
+    location: "Hyderabad, Telangana",
+    product: "Metal Chain",
+    rating: 5,
+    date: "04-December-20",
+  },
+  {
+    name: "Uday",
+    location: "Faizabad, Uttar Pradesh",
+    product: "Stainless Steel Spider Fitting",
+    rating: 5,
+    date: "28-November-20",
+  },
+  {
+    name: "K KARTIK PAUL",
+    location: "Gobardanga, West Bengal",
+    product: "Stainless Steel Railings",
+    rating: 5,
+    date: "02-October-20",
+  },
+  {
+    name: "Amol Diwanale",
+    location: "Telhara, Maharashtra",
+    product: "Tempered Glass Railing",
+    rating: 5,
+    date: "17-August-20",
+  },
+];
+
+export default function Page() {
   const controls = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref);
@@ -111,116 +157,8 @@ const Section = ({ children, className = "" }) => {
     }
   }, [controls, inView]);
 
-  return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={fadeInUp}
-      className={`py-10 ${className}`}
-    >
-      {children}
-    </motion.section>
-  );
-};
-
-export default function Page() {
-  // const controls = useAnimation();
-  // const [ref, inView] = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.1,
-  // });
-
   const { scrollYProgress } = useScroll();
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     controls.start("visible");
-  //   }
-  // }, [controls, inView]);
-
   const [activeTab, setActiveTab] = useState(0);
-
-  const tabs = [
-    {
-      title: "Our Story",
-      content:
-        "Rajguru Steel Industries, established in 2004, is a private limited company dedicated to providing unmatched quality in stainless steel architectural products, including slot tubes and pipes. We have earned the trust of our customers by offering quality-approved products at competitive prices. Our skilled team, including R&D professionals and quality controllers, collaborates to meet client needs and stays updated through regular training. With a robust distribution network, we ensure timely delivery. Guided by our mentor, Mr. Kishore Jain, we are committed to further growth and excellence in the industry.",
-    },
-    {
-      title: "Our Vision",
-      content:
-        "To be the leading provider of stainless steel architectural products, recognized for our commitment to quality, innovation, and sustainability. We aim to exceed customer expectations by delivering exceptional products that enhance their projects while fostering a culture of continuous improvement and growth. Our vision is to create a sustainable future by integrating eco-friendly practices into our operations and contributing positively to the communities we serve.",
-    },
-    {
-      title: "Our Mission",
-      content:
-        "Our mission is to manufacture and supply a diverse range of stainless steel architectural products that meet the highest standards of quality and innovation. We are dedicated to ensuring customer satisfaction by understanding their needs and delivering tailored solutions. We strive for sustainable growth by investing in our people, embracing new technologies, and maintaining a strong commitment to environmental responsibility. Through collaboration and excellence, we aim to build lasting relationships with our customers and stakeholders.",
-    },
-  ];
-
-  const reviews = [
-    {
-      name: "Praveen Thota",
-      location: "Nirmal, Telangana",
-      product: "Jindal Stainless Steel Pipes",
-      rating: 5,
-    },
-    {
-      name: "Lokesh Narpathma Lodha",
-      location: "Nagpur, Maharashtra",
-      product: "ERW Steel Pipes",
-      rating: 5,
-    },
-    {
-      name: "Prashant Sutar",
-      location: "Kolhapur, Maharashtra",
-      product: "Railing Fittings",
-      rating: 5,
-    },
-    {
-      name: "Sumit Sherawat",
-      location: "Jaipur, Rajasthan",
-      product: "Air Pistol",
-      rating: 5,
-      date: "22-May-23",
-    },
-    {
-      name: "A Akbar Basha",
-      location: "Tirupattur, Tamil Nadu",
-      rating: 5,
-      date: "13-December-21",
-    },
-    {
-      name: "Ashok Choudhary",
-      location: "Hyderabad, Telangana",
-      product: "Metal Chain",
-      rating: 5,
-      date: "04-December-20",
-    },
-    {
-      name: "Uday",
-      location: "Faizabad, Uttar Pradesh",
-      product: "Stainless Steel Spider Fitting",
-      rating: 5,
-      date: "28-November-20",
-    },
-    {
-      name: "K KARTIK PAUL",
-      location: "Gobardanga, West Bengal",
-      product: "Stainless Steel Railings",
-      rating: 5,
-      date: "02-October-20",
-    },
-    {
-      name: "Amol Diwanale",
-      location: "Telhara, Maharashtra",
-      product: "Tempered Glass Railing",
-      rating: 5,
-      date: "17-August-20",
-    },
-  ];
-
   const [visibleCount, setVisibleCount] = useState(3);
   const [allVisible, setAllVisible] = useState(false);
 
@@ -237,19 +175,48 @@ export default function Page() {
   };
 
   return (
-    <section className="w-screen">
-      <div className="relative w-full h-0 pt-[56.25%] overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full border-none"
-          autoPlay
-          loop
-          muted
+    <section className="w-screen ">
+      <div
+        id="aboutus-hero-banner"
+        className="flex flex-col items-center justify-center lg::gap-10"
+      >
+        <motion.div
+          variants={fadeInUp}
+          className="relative w-full overflow-hidden"
         >
-          <source src="/video/aboutus.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+          <Image
+            src={AboutBanner}
+            alt="About us Banner Img"
+            height="auto"
+            width="auto"
+            className="relative object-fill md:object-cover w-full h-[45vh] md:h-auto"
+          />
+        </motion.div>
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={fadeInUp}
+          className="relative lg:absolute lg:z-40 flex flex-col justify-center w-full lg:max-w-3xl mx-auto lg:bottom-14 items-center bg-gray-200 lg:shadow-xl lg:shadow-[#335c98] lg:rounded-2xl px-6 lg:px-20 py-8"
+        >
+          <motion.h1
+            className="text-4xl my-2 text-center poppins-bold text-[#335c98]"
+            variants={fadeInUp}
+          >
+            About Us
+          </motion.h1>
+          <motion.p
+            variants={fadeInUp}
+            className="text-center text-secondary nunito text-xs md:text-sm"
+          >
+            Rajguru Steel Industries, established in 2004, offers premium
+            stainless steel architectural products, including slot tubes and
+            pipes, with a focus on quality and competitive pricing. Led by Mr.
+            Kishore Jain, our expert team ensures timely delivery and continuous
+            growth in the stainless steel industry.
+          </motion.p>
 
+<<<<<<< HEAD
       <main className="relative bg-gray-100 overflow-hidden flex flex-col items-center w-screen">
         <div className="container mx-auto px-4 flex flex-col my-10">
           <Section>
@@ -259,6 +226,49 @@ export default function Page() {
             >
               About Us
             </motion.h1>
+=======
+          <motion.h3
+            className="text-4xl my-4 text-center poppins-bold text-[#335c98]"
+            variants={fadeInUp}
+          >
+            Why Rajguru?
+          </motion.h3>
+          <motion.p
+            variants={fadeInUp}
+            className="text-center text-secondary nunito text-xs md:text-sm"
+          >
+            Choose Rajguru Stainless Steel for unmatched quality in stainless
+            steel architectural products, backed by years of industry
+            experience. Our commitment to competitive pricing and timely
+            delivery ensures you receive the best value for your projects.
+          </motion.p>
+
+          <div className=" flex justify-center mt-4">
+            <Link href="/ContactUs">
+              <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-white border border-[#335c98] rounded-md uppercase transition-all duration-700 cursor-pointer group z-10">
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
+                <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out poppins-semibold">
+                  GET A QUOTE
+                </span>
+              </button>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+      <main className="relative bg-gray-100 overflow-hidden flex flex-col items-center w-screen xl:pt-10">
+        <div className="container mx-auto px-4 flex flex-col md:my-10">
+          <motion.section
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInUp}
+            className="py-8"
+          >
+>>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
             <div className="flex flex-col-reverse md:flex-row justify-around gap-4 md:gap-0">
               <motion.div className="md:w-1/2" variants={fadeInUp}>
                 <div className="flex mb-4 ">
@@ -268,7 +278,7 @@ export default function Page() {
                       className={`px-4 py-2 nunito ${
                         index === 0 ? "rounded-l-md" : ""
                       } ${
-                        index === 2 ? "rounded-r-md" : ""
+                        index === 1 ? "rounded-r-md" : ""
                       } border whitespace-nowrap ${
                         activeTab === index
                           ? "bg-[#335c98] text-white"
@@ -306,13 +316,15 @@ export default function Page() {
                 />
               </motion.div>
             </div>
-          </Section>
-          {/* <motion.div
-            className="flex flex-col md:flex-row gap-12 items-center justify-between md:px-8"
+          </motion.section>
+
+          <motion.section
             ref={ref}
             initial="hidden"
             animate={controls}
+            variants={fadeInUp}
           >
+<<<<<<< HEAD
             <motion.div variants={fadeInLeft} className="space-y-6 lg:w-3/4">
               <h2 className="text-3xl din-semibold text-[#335c98]">
                 About Us
@@ -423,11 +435,13 @@ export default function Page() {
 
           {/* <div className="flex flex-col md:flex-row w-full h-full justify-around items-center gap-8 md:gap-0"> */}
           <Section>
+=======
+>>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
             <motion.div
               className="flex flex-col lg:flex-row items-start justify-evenly h-full gap-4 md:gap-0"
-              // variants={fadeInUp}
-              // initial="hidden"
-              // animate={inView ? "visible" : "hidden"}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
             >
               <motion.div
                 className="w-full md:h-full lg:w-[40%]"
@@ -438,18 +452,13 @@ export default function Page() {
                   alt="Partnership and Dealership"
                   className="rounded-xl shadow-lg md:w-full md:h-full"
                 />
-                {/* <Link href="/ContactUs">
-                    <button className="mt-4 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-                      GET A QUOTE
-                    </button>
-                  </Link> */}
               </motion.div>
               <div className="w-full lg:w-[45%] flex flex-col  md:gap-3">
                 <motion.h2
                   className="text-2xl din-semibold text-center lg:text-left text-[#335c98] pl-2"
                   variants={fadeInUp}
                 >
-                  Why Choose Rajguru Steel?
+                  What Rajguru Steel Offers?
                 </motion.h2>
                 <motion.div
                   className="grid grid-cols-2 md:gap-[1.75rem] "
@@ -461,7 +470,11 @@ export default function Page() {
                       className="hover:shadow-xl rounded-lg md:p-4 p-3 transition duration-500 flex flex-col gap-2"
                       variants={fadeInUp}
                     >
+<<<<<<< HEAD
                       <h3 className="text-base din-semibold text-[#335c98] ">
+=======
+                      <h3 className="text-lg poppins-bold text-[#335c98] ">
+>>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
                         {feature.title}
                       </h3>
                       <p className="text-slate-500 text-sm nunito md:text-justify">
@@ -472,9 +485,15 @@ export default function Page() {
                 </motion.div>
               </div>
             </motion.div>
-          </Section>
+          </motion.section>
 
-          <Section>
+          <motion.section
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInUp}
+            className="py-8"
+          >
             <div className="w-[95%] mx-auto px-8">
               <motion.h2
                 className="text-3xl din-bold mb-8 text-center text-[#335c98]"
@@ -517,12 +536,20 @@ export default function Page() {
                 ))}
               </div>
               {visibleCount < reviews.length && !allVisible && (
-                <button
-                  onClick={loadMore}
-                  className="mt-6 py-2 px-4 bg-[#335c98] text-slate-200 rounded hover:bg-blue-700 transition duration-500"
-                >
-                  View More
-                </button>
+                <div className=" flex mt-6" onClick={loadMore}>
+                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-white border border-[#335c98] rounded-md uppercase transition-all duration-700 cursor-pointer group z-10">
+                    <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                    <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                      <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                    </span>
+
+                    {/* Button text */}
+                    <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out poppins-semibold">
+                      View More
+                    </span>
+                  </button>
+                </div>
               )}
               {allVisible && (
                 <button
@@ -533,6 +560,7 @@ export default function Page() {
                 </button>
               )}
             </div>
+<<<<<<< HEAD
           </Section>
 
           {/* <motion.div
@@ -560,6 +588,9 @@ export default function Page() {
               </motion.button>
             </motion.div> */}
           {/* </div> */}
+=======
+          </motion.section>
+>>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
         </div>
 
         <motion.div
