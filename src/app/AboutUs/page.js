@@ -216,17 +216,6 @@ export default function Page() {
             growth in the stainless steel industry.
           </motion.p>
 
-<<<<<<< HEAD
-      <main className="relative bg-gray-100 overflow-hidden flex flex-col items-center w-screen">
-        <div className="container mx-auto px-4 flex flex-col my-10">
-          <Section>
-            <motion.h1
-              className="text-5xl my-6 text-center din-bold text-[#335c98]"
-              variants={fadeInUp}
-            >
-              About Us
-            </motion.h1>
-=======
           <motion.h3
             className="text-4xl my-4 text-center poppins-bold text-[#335c98]"
             variants={fadeInUp}
@@ -268,7 +257,6 @@ export default function Page() {
             variants={fadeInUp}
             className="py-8"
           >
->>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
             <div className="flex flex-col-reverse md:flex-row justify-around gap-4 md:gap-0">
               <motion.div className="md:w-1/2" variants={fadeInUp}>
                 <div className="flex mb-4 ">
@@ -324,119 +312,6 @@ export default function Page() {
             animate={controls}
             variants={fadeInUp}
           >
-<<<<<<< HEAD
-            <motion.div variants={fadeInLeft} className="space-y-6 lg:w-3/4">
-              <h2 className="text-3xl din-semibold text-[#335c98]">
-                About Us
-              </h2>
-              <p className="text-slate-500 leading-relaxed nunito text-sm text-justify">
-                Founded in 2004, Rajguru Steel Industries is a privately owned
-                company specializing in Stainless Steel Architectural Products.
-                Our commitment to quality has earned us the trust of a diverse
-                customer base, making us a preferred choice for reliable and
-                budget-friendly stainless steel solutions.
-              </p>
-              <p className="text-slate-500 leading-relaxed nunito text-sm text-justify">
-                At Rajguru Steel Industries, we take pride in our talented team
-                dedicated to delivering quality products. Comprising
-                professionals from research and development, sales, production,
-                marketing, quality control, and logistics, we work
-                collaboratively to achieve our goals. We provide regular
-                training to keep our team updated on market trends, and our
-                extensive distribution network ensures timely product delivery
-                to our clients.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={fadeInRight}
-              className="relative h-96 w-full lg:w-3/4 rounded-xl overflow-hidden shadow-2xl"
-            >
-              <Image
-                src={OurStory}
-                alt="Rajguru Steel Industries Factory"
-                layout="fill"
-                objectFit="cover"
-              />
-              <motion.div
-                className="absolute inset-0 bg-blue-600 mix-blend-overlay"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.3 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-              />
-            </motion.div>
-          </motion.div> */}
-
-          {/* <motion.div
-            className="text-center"
-            variants={scaleIn}
-            initial="hidden"
-            animate={controls}
-          >
-            <h2 className="text-3xl font-semibold py-3 din-bold text-[#335c98]">
-              Our Mission
-            </h2>
-            <p className="text-slate-500 max-w-5xl mx-auto leading-relaxed nunito">
-              At Rajguru Steel Industries, our mission is to provide superior
-              stainless steel solutions that enhance the quality, durability,
-              and sustainability of our clients' products and projects. We are
-              dedicated to fostering innovation and promoting environmental
-              responsibility within our industry, ensuring that our offerings
-              not only meet the highest standards but also contribute positively
-              to the environment.
-            </p>
-          </motion.div> */}
-
-          {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 py-4">
-            {[
-              {
-                icon: <LuBuilding2 className="w-10 h-10 text-[#335c98]" />,
-                title: "State-of-the-art Facilities",
-                description:
-                  "Modern manufacturing plants equipped with the latest technology",
-              },
-              {
-                icon: <HiOutlineUsers className="w-10 h-10 text-[#335c98]" />,
-                title: "Expert Team",
-                description:
-                  "Skilled professionals with years of industry experience",
-              },
-              {
-                icon: <TbTargetArrow className="w-10 h-10 text-[#335c98]" />,
-                title: "Quality Focus",
-                description:
-                  "Rigorous quality control measures at every stage of production",
-              },
-              {
-                icon: <FaAward className="w-10 h-10 text-[#335c98]" />,
-                title: "Industry Recognition",
-                description:
-                  "Multiple awards for innovation and sustainability",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out hover:shadow-xl"
-                whileHover={{ y: -15, transition: { duration: 0.3 } }}
-              >
-                <div className="flex flex-col items-center text-center gap-2">
-                  {item.icon}
-                  <h3 className="text-xl din-regular mb-2 text-[#335c98]">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm nunito">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div> */}
-
-          {/* <div className="flex flex-col md:flex-row w-full h-full justify-around items-center gap-8 md:gap-0"> */}
-          <Section>
-=======
->>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
             <motion.div
               className="flex flex-col lg:flex-row items-start justify-evenly h-full gap-4 md:gap-0"
               variants={fadeInUp}
@@ -470,11 +345,7 @@ export default function Page() {
                       className="hover:shadow-xl rounded-lg md:p-4 p-3 transition duration-500 flex flex-col gap-2"
                       variants={fadeInUp}
                     >
-<<<<<<< HEAD
-                      <h3 className="text-base din-semibold text-[#335c98] ">
-=======
                       <h3 className="text-lg poppins-bold text-[#335c98] ">
->>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
                         {feature.title}
                       </h3>
                       <p className="text-slate-500 text-sm nunito md:text-justify">
@@ -560,37 +431,7 @@ export default function Page() {
                 </button>
               )}
             </div>
-<<<<<<< HEAD
-          </Section>
-
-          {/* <motion.div
-              className="bg-gray-50 text-center flex flex-col justify-center items-center gap-6 shadow-lg rounded-lg p-10"
-              variants={fadeInUp}
-              initial="hidden"
-              animate={controls}
-            >
-              <h2 className="text-3xl din-semibold text-[#335c98]">
-                Ready to Work with Us?
-              </h2>
-              <p className="text-slate-500 text-sm nunito">
-                Let's discuss how Rajguru Steel Industries can meet your
-                stainless steel needs.
-              </p>
-              <motion.button
-                className="bg-[#335c98] text-white py-3 px-8 rounded-full nunito whitespace-nowrap"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 0 15px rgba(0,0,0,0.2)",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact Us
-              </motion.button>
-            </motion.div> */}
-          {/* </div> */}
-=======
           </motion.section>
->>>>>>> 86a2d3bc2ac57ecf54ce57fae5acd5ed326d8775
         </div>
 
         <motion.div
