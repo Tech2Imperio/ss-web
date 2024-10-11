@@ -346,70 +346,69 @@ export default function Component() {
         </div>
       </section> */}
       <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
-  <AnimatePresence initial={true}>
-    <motion.div
-      key={`bg-${currentSlide}`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="absolute inset-0"
-    >
-      <Image
-        src={heroSlides[currentSlide].image}
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        className="opacity-50"
-      />
-    </motion.div>
-  </AnimatePresence>
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
 
-  <div className="relative z-10 h-full">
-    <AnimatePresence initial={true}>
-      <motion.div
-        key={`content-${currentSlide}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
-      >
-        {/* Left Side Text */}
-        <motion.div
-          variants={FadeRight(0.3)}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col justify-center items-start p-4  md:pr-14"
-        >
-          <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
-            {heroSlides[currentSlide].title}
-          </h1>
-          <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
-            {heroSlides[currentSlide].description}
-          </p>
-        </motion.div>
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
 
-        {/* Right Side Image */}
-        <motion.div
-          variants={FadeLeft(0.3)}
-          initial="hidden"
-          animate="visible"
-          className="relative h-[20rem] w-full  md:w-full  md:h-[32rem] flex  md:mt-24 ml-0 md:ml-24"
-        >
-          <Image
-            src={heroSlides[nextSlide].image}
-            alt={heroSlides[nextSlide].title}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg shadow-xl"
-          />
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  </div>
-</section>
-
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[20rem] w-full  md:w-full  md:h-[32rem] flex  md:mt-24 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
 
       <main className=" container overflow-hidden mx-auto">
         {/* Products Section */}

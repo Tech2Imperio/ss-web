@@ -10,8 +10,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="relative bottom-0 left-0 right-0 w-screen bg-gray-300 h-full">
-      <main className="max-w-[75rem] mx-auto flex flex-col md:flex-row justify-center h-full">
-        <section className="flex flex-col border-r-[1px] border-l-[1px] flex-grow md:w-1/3">
+      <main className="max-w-[85rem] mx-auto flex flex-col md:flex-row justify-center h-full">
+        <section className="flex flex-col border-r-2 border-l-2 flex-grow md:w-1/3">
           <div className="flex items-center px-8 pt-12 py-6 gap-2">
             <Image
               priority
@@ -21,11 +21,11 @@ const Footer = () => {
             />
           </div>
 
-          <div className="text-[#335c98] text-lg flex flex-col justify-between gap-4 w-full border-t-[1px] px-8 py-6">
+          <div className="text-[#335c98] text-lg flex flex-col justify-between gap-4 w-full border-t-2 px-8 py-6">
             <div className="flex gap-3">
               <MdLocationPin className="h-10 w-10" />
               <div className="flex flex-col gap-2">
-                <h6 className="poppins-semibold text-base">Headquarters</h6>
+                <h6 className="din-semibold text-base">Headquarters</h6>
                 <p className="nunito text-xs">
                   Rajguru Steel Industries 92/94, Kika Street, Gulalwadi,
                   Girgaon, Mumbai - 400004, Maharashtra, India
@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="flex gap-3">
               <BsTelephone className="h-5 w-5 mt-1" />
               <div className="flex flex-col gap-2">
-                <h6 className="poppins-semibold text-base">Telephone</h6>
+                <h6 className="din-semibold text-base">Telephone</h6>
                 <p className="nunito text-xs whitespace-nowrap">
                   +91 80489 64852
                 </p>
@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="flex gap-3">
               <FiMail className="h-5 w-5 mt-1" />
               <div className="flex flex-col gap-2">
-                <h6 className="poppins-semibold text-base">Email</h6>
+                <h6 className="din-semibold text-base">Email</h6>
                 <p className="nunito text-xs whitespace-nowrap">
                   info@rajgurusteel.co.in
                 </p>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </section>
 
-        <section className="flex flex-col justify-between border-t-[1px] md:border-r-[1px] flex-grow md:w-1/3">
+        <section className="flex flex-col justify-between border-t-2 md:border-r-2 flex-grow md:w-1/3">
           <div className="flex flex-col w-full h-full gap-4 px-8 pt-4 md:pt-12 pb-6">
             <h2 className="text-3xl din-bold text-primary">Find US</h2>
             <iframe
@@ -63,29 +63,32 @@ const Footer = () => {
               className="w-full md:w-auto md:h-48"
             ></iframe>
           </div>
-          <div className="hidden md:flex text-center text-sm text-primary nunito border-t-[1px] px-8 py-6 w-full whitespace-normal xl:whitespace-nowrap">
+          <div className="hidden md:flex text-center text-sm text-primary nunito border-t-2 px-8 py-6 w-full whitespace-normal xl:whitespace-nowrap">
             © Rajguru Steel Industries. All Rights Reserved.
           </div>
         </section>
 
-        <section className="flex flex-col justify-between flex-grow md:w-1/3 border-t-[1px] md:border-r-[1px]">
+        <section className="flex flex-col justify-between flex-grow md:w-1/3 border-t-2 md:border-r-2">
           <div className="flex flex-col gap-6 px-8 pt-4 md:pt-12 pb-6">
-            <h3 className="text-lg font-semibold text-primary">
+            <h3 className="text-lg din-semibold text-primary">
               Would like to talk about your future project?
             </h3>
             <Link href="/ContactUs">
-              <button className="relative inline-flex items-center justify-center overflow-hidden px-4 py-2 text-black border border-[#1d1d1d] bg-transparent rounded-md font-nunito text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                <span className="absolute w-12 h-12 transition-all duration-1000 bg-[#335c98] rounded-full -top-8 -left-8 scale-0 group-hover:scale-[10]"></span>
-                <span className="absolute w-12 h-12 transition-all duration-1000 bg-[#335c98] rounded-full -bottom-8 -right-8 scale-0 group-hover:scale-[10]"></span>
-                <span className="relative z-10 group-hover:text-white raleway flex gap-2">
+              <button className="relative inline-flex items-center justify-center overflow-hidden px-4 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold flex gap-2">
                   GET A QUOTE <BsArrowRight className="h-4 w-4 mt-[0.10rem]" />
                 </span>
               </button>
             </Link>
           </div>
 
-          <div className="flex flex-col gap-2 px-8 pt-4 md:py-6 border-t-[1px]">
-            <h3 className="text-xl poppins-semibold text-primary">Follow Us</h3>
+          <div className="flex flex-col gap-2 px-8 pt-4 md:py-6 border-t-2">
+            <h3 className="text-xl din-semibold text-primary">Follow Us</h3>
             <div id="icons" className="flex gap-4 text-primary text-3xl h-9">
               {[
                 {

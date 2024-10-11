@@ -389,7 +389,7 @@ export default function Navbar() {
                   </Link>
                   {item.subItems && hoveredItem === item.name && (
                     <div className="absolute top-[64px] left-0 w-72 rounded-md shadow-lg bg-white text-gray-700 z-10">
-                      <div className="py-1" role="menu">
+                      <div className="py-1 din-medium" role="menu">
                         {item.subItems.map((subItem) => (
                           <div
                             key={subItem.name}
@@ -401,7 +401,7 @@ export default function Navbar() {
                           >
                             <Link
                               href={subItem.href}
-                              className=" px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700 flex items-center"
+                              className=" px-4 py-2 text-md whitespace-nowrap hover:bg-gray-100 text-gray-700 flex items-center din-medium"
                             >
                               {subItem.name}
                               {subItem.name === "Stainless Steel Profile" && (
@@ -417,7 +417,7 @@ export default function Navbar() {
                                       <Link
                                         key={nestedSubItem.name}
                                         href={nestedSubItem.href}
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 din-medium"
                                       >
                                         {nestedSubItem.name}
                                       </Link>

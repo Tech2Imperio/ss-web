@@ -591,7 +591,7 @@ export default function ContactUs() {
         className="relative"
       >
         <div className="absolute top-[45%] z-10 text-center w-full">
-          <h1 className="text-2xl md:text-5xl poppins-bold text-primary">
+          <h1 className="text-2xl md:text-5xl din-bold text-primary">
             CONTACT US
           </h1>
           <p className="text-sm md:text-xl nunito text-secondary">
@@ -673,19 +673,14 @@ export default function ContactUs() {
               </motion.div>
             ))}
             <motion.div type="submit" className=" flex mt-4">
-              <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-white border border-[#335c98] rounded-md uppercase transition-all duration-700 cursor-pointer group z-10">
-                {/* Colored background */}
+              <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 text-white border border-[#335c98] rounded-md transition-all duration-700 cursor-pointer group z-10">
                 <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
-
-                {/* Top-left to bottom-right diagonal animation */}
                 <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
                   <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
                   <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
                 </span>
-
-                {/* Button text */}
-                <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out poppins-semibold">
-                  GET A QUOTE
+                <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out din-semibold">
+                  Submit
                 </span>
               </button>
             </motion.div>
@@ -695,7 +690,7 @@ export default function ContactUs() {
         {/* Contact Details */}
         <motion.div
           variants={fadeInFromRight}
-          className="bg-gray-100 w-full rounded-xl p-8 h-full flex flex-col justify-between gap-[2.83rem]" // Use h-full
+          className="bg-gray-100 w-full rounded-xl p-8 h-full flex flex-col justify-between gap-[2.83rem]"
         >
           {[
             {
@@ -711,7 +706,7 @@ export default function ContactUs() {
               className="p-8 rounded-xl hover:shadow-lg hover:shadow-[#335c98] transition duration-500 flex flex-col gap-2 bg-gray-50"
               variants={fadeInUp}
             >
-              <h3 className="poppins-semibold text-primary text-lg">
+              <h3 className="din-semibold text-primary text-lg">
                 {item.title}
               </h3>
               <p className="nunito text-secondary text-sm">{item.content}</p>
