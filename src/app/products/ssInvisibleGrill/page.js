@@ -16,10 +16,12 @@ import LProfile from "../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../assets/RelatedProducts/fluted.webp";
 import TProfile from "../../assets/product/profile/T_profile/wall.webp";
 import customized from "../../assets/RelatedProducts/customized.webp";
-import CProfile from "../../assets/RelatedProducts/CProfile.webp";
+import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
+// import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
+import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
 import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -69,19 +71,29 @@ export default function Home() {
       link: "/products/profile/ssFlutedPanelProfile",
     },
     {
-      title: "C Profile",
-      image: CProfile,
-      link: "/products/profile/cProfile",
+      title: "SS Balustrade",
+      image: SSbalustrade,
+      link: "/products/BalustradeSystem",
     },
+    // {
+    //   title: "Invisible Grill",
+    //   image: invisibleGril,
+    //   link: "/products/ssInvisibleGrill",
+    // },
     {
       title: "Decorative Sheet",
       image: DecorativeSheet,
       link: "/products/ssDecorativeSheet",
     },
     {
+      title: "Queue Manager",
+      image: queuemanager,
+      link: "/products/ssQueueManager",
+    },
+    {
       title: "Custom Profile",
       image: customized,
-      link: "/products/profile/customProfile",
+      link: "/products/profile/ssCustomProfile",
     },
   ];
 
@@ -229,12 +241,12 @@ export default function Home() {
         </motion.div>
       </div>
       <div className=" flex flex-col overflow-hidden mx-auto container">
-        <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-scrren md:h-[80vh] md:mt-9 w-full bg-gray-50">
+        <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-scrren md:h-[90vh] md:mt-9 w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
             <h1 className="text-3xl din-semibold text-[#335c98] p-4">
               Invisible Grill
             </h1>
-            <div className="overflow-hidden rounded-3xl h-[25rem] w-[20rem] md:h-[42rem] md:w-[28rem] lg:h-[45rem] lg:w-[28rem] xl:h-[35rem] xl:w-[24rem] border border-gray-300 relative">
+            <div className="overflow-hidden rounded-3xl h-[25rem] w-[20rem] md:h-[42rem] md:w-[28rem] lg:h-[45rem] lg:w-[28rem] xl:h-[35rem] xl:w-[24rem] xl:mb-8 border border-gray-300 relative">
               {items.map((item, index) => (
                 <div
                   key={index}
@@ -319,7 +331,7 @@ export default function Home() {
           )}
         </section>
       </div>
-      <main className="flex flex-col overflow-hidden w-full h-full xl:px-[18rem] p-4 md:p-6 lg:p-8">
+      <main className="flex flex-col overflow-hidden w-full h-full xl:px-[1rem] p-4 md:p-6 lg:p-8">
         <div className="max-w-screen-xl mx-auto">
           <h2 className=" text-2xl md:text-3xl din-semibold text-[#335c98] py-8 text-center">
             Benefits of Invisible Grills
@@ -417,30 +429,30 @@ export default function Home() {
 
           {/* Add button to interact */}
           <div className="flex justify-center mt-8">
-          <Link href="/ContactUs">
-                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                      {/* Colored background */}
-                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+            <Link href="/ContactUs">
+              <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                {/* Colored background */}
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
 
-                      {/* Top-left to bottom-right diagonal animation */}
-                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
-                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                      </span>
+                {/* Top-left to bottom-right diagonal animation */}
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
 
-                      {/* Button text */}
-                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
-                        GET A QUOTE
-                      </span>
-                    </button>
-                  </Link>
+                {/* Button text */}
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                  GET A QUOTE
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
-        <div className="flex justify-center flex-col mt-8">
-          <h3 className=" text-3xl md:text-4xl text-primary din-semibold">
+        <div className="flex justify-center flex-col mt-8 md:px-36">
+          <h3 className=" text-3xl mx-auto md:text-4xl text-primary din-semibold">
             Why Choose Invisible Grill ?
           </h3>
-          <p className="  din-regular text-xs lg:text-base text-justify w-auto p-2 text-secondary">
+          <p className=" din-regular text-xs lg:text-base text-justify w-auto p-2 text-gray-600  ">
             Rajguru Steel Industry specializes in premium invisible grill
             solutions that enhance safety while maintaining unobstructed views,
             making them ideal for high-rise buildings and balconies. The
@@ -461,16 +473,20 @@ export default function Home() {
       </main>
 
       {/* swiper */}
-      <div className="w-full py-20 fade-in mt-20">
+      <div className="w-full py-20 fade-in ">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-regular">
+          <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
             Other Products
           </h2>
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+            modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
             spaceBetween={15}
             slidesPerView={1}
-            navigation
+            loop
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
             scrollbar={{ draggable: true }}
             breakpoints={{
               640: { slidesPerView: -1 },
@@ -485,11 +501,11 @@ export default function Home() {
                     <Image
                       src={product.image}
                       alt={product.title}
-                      width={220}
-                      height={250}
+                      width={150}
+                      height={150}
                       className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                     />
-                    <h3 className="mt-4 text-xl font-semibold text-[#335c98] arimo">
+                    <h3 className="mt-4 text-xl text-[#335c98] din-regular">
                       {product.title}
                     </h3>
                   </Link>

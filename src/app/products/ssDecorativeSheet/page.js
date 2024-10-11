@@ -5,23 +5,28 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import wallImg from "../../assets/product/profile/T_profile/wall.webp";
 import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
-// import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
+import UProfile from "../../assets/RelatedProducts/UProfile.webp";
+import TProfile from "../../assets/product/profile/T_profile/wall.webp";
+import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
 import LProfile from "../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../assets/RelatedProducts/fluted.webp";
 import customized from "../../assets/RelatedProducts/customized.webp";
-// import invisibleGrill from "../../assets/product/invisiblegrill/square.webp";
-import CProfile from "../../assets/RelatedProducts/CProfile.webp";
+import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
+import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
 import bg from "../../assets/product/ssdecorativesheet/bg.webp";
 import Umessurement from "../../assets/product/ssdecorativesheet/decorativeSheets.webp";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
+import { Autoplay, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import { FadeDown } from "../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
+import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
+import { motion, AnimatePresence } from "framer-motion";
+import LivingImg from "../../assets/product/ssdecorativesheet/hero/hall.webp";
+import HallImg from "../../assets/product/ssdecorativesheet/hero/hall2.webp";
+import bedroom from "../../assets/product/ssdecorativesheet/hero/bedroom.webp";
 
 // Black finishes
 import MirrorImg from "../../assets/product/ssdecorativesheet/finishes/black/mirrorBlack.png";
@@ -57,6 +62,28 @@ import HairlineImgC from "../../assets/product/ssdecorativesheet/finishes/champa
 import StainImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/stainChampagne.png";
 import StraightlineImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/straightlineChampagne.png";
 import MeshImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/meshChampagne.png";
+
+
+const heroSlides = [
+  {
+    image: LivingImg,
+    title: "Elegant Stainless Steel Balustrade Railing",
+    description:
+      "Elevate your space with our elegant stainless steel balustrade railings, combining modern aesthetics with unmatched durability.",
+  },
+  {
+    image: HallImg,
+    title: "Customizable Glass Balustrade Railing Solutions",
+    description:
+      "Create a unique look with our customizable glass balustrade railings, tailored to fit your style and enhance any architectural design.",
+  },
+  {
+    image: bedroom,
+    title: "Durable Outdoor Balustrade Railing Systems",
+    description:
+      "Invest in our durable outdoor balustrade railing systems, designed to withstand the elements while providing safety and style for your outdoor spaces.",
+  },
+];
 
 const page = () => {
   const finishes = [
@@ -122,8 +149,13 @@ const page = () => {
 
   const relatedProducts = [
     {
+      title: "U Profile",
+      image: UProfile,
+      link: "/products/profile/uProfile",
+    },
+    {
       title: "T Profile",
-      image: wallImg,
+      image: TProfile,
       link: "/products/profile/tProfile",
     },
     {
@@ -137,91 +169,124 @@ const page = () => {
       link: "/products/profile/ssFlutedPanelProfile",
     },
     {
-      title: "C Profile",
-      image: CProfile,
-      link: "/products/profile/cProfile",
+      title: "SS Balustrade",
+      image: SSbalustrade,
+      link: "/products/BalustradeSystem",
+    },
+    {
+      title: "Invisible Grill",
+      image: invisibleGril,
+      link: "/products/ssInvisibleGrill",
+    },
+    // {
+    //   title: "Decorative Sheet",
+    //   image: DecorativeSheet,
+    //   link: "/products/ssDecorativeSheet",
+    // },
+    {
+      title: "Queue Manager",
+      image: queuemanager,
+      link: "/products/ssQueueManager",
     },
     {
       title: "Custom Profile",
       image: customized,
-      link: "/products/profile/customProfile",
+      link: "/products/profile/ssCustomProfile",
     },
-    // {
-    //   title: "Invisible Grill",
-    //   image: invisibleGrill,
-    //   link: "/products/ssInvisibleGrill",
-    // },
   ];
   const { ref: card1Ref, inView: card1InView } = useInView({
     triggerOnce: true, // Animates only once
     threshold: 0.1, // 10% of the card needs to be visible to trigger the animation
   });
 
-  // const { ref: card2Ref, inView: card2InView } = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.1,
-  // });
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // const { ref: card3Ref, inView: card3InView } = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.1,
-  // });
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative">
-      <div className="relative">
-        <Image
-          className=" h-[22rem] md:h-[30rem] w-full object-cover"
-          src={bg}
-          alt="decorative sheet"
-        />
-        <div className="absolute inset-0 bg-black opacity-25" />
-        {/* <h1 className="absolute inset-0 flex items-center justify-center mx-32 pt-14 md:mx-0 md:pt-0 text-[#19355e] text-5xl md:text-[5rem]  din-regular">
-          Decorative Sheets
-        </h1> */}
-        <motion.div
-          variants={FadeDown(0.001)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
-        >
-          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 din-bold mb-6 tracking-tight">
-            Stainless Steel Decorative Sheets
-          </h1>
-          <p className=" text-gray-200 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
-            "Explore our premium stainless steel decorative sheets, perfect for
-            enhancing walls in both home and commercial spaces. Available in
-            various finishes, our corrosion-resistant sheets combine style and
-            durability for stunning interior designs."
-          </p>
-        </motion.div>
-      </div>
+            <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
 
       <div className=" flex flex-col overflow-hidden mx-auto container">
-        <div className="flex justify-center">
-          {/* <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
-            Discover our exquisite range of high-quality stainless steel
-            decorative sheets, designed to bring elegance and durability to your
-            interiors. Our corrosion-resistant steel panels are perfect for
-            various applications, including: Wall Applications: Transform your
-            walls with a sleek, modern look. Backsplashes: Add a stylish and
-            easy-to-clean surface in kitchens and bathrooms. Custom Furniture
-            Designs: Create unique pieces that stand out. Available in a variety
-            of finishes, including brushed and mirrored, our stainless steel
-            sheets combine style with functionality. Whether you're looking to
-            enhance a residential or commercial space, our decorative steel
-            solutions are the perfect choice. Transform your space today with
-            our premium stainless steel decorative sheets!
-          </p> */}
-        </div>
-
         {/* new model open */}
         <section className="min-h-screen bg-gray-50 py-10">
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 px-14">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
@@ -235,8 +300,8 @@ const page = () => {
                         className="rounded-lg shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105"
                         src={finishImages[selectedColor.name][finish.name]} // Dynamic image for each finish based on the selected color
                         alt={`${finish.name} - ${selectedColor.name}`}
-                        width={500} // Increased width for better visibility
-                        height={400} // Increased height for better visibility
+                        width={200} // Increased width for better visibility
+                        height={200} // Increased height for better visibility
                       />
                       {/* Finish Name below the image */}
                       <div className="text-center mt-2">
@@ -289,8 +354,12 @@ const page = () => {
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] din-regular">Thickness</span>
-                      <span className="text-gray-700 din-regular">0.6 ~ 2.0 mm</span>
+                      <span className="text-[#335c98] din-regular">
+                        Thickness
+                      </span>
+                      <span className="text-gray-700 din-regular">
+                        0.6 ~ 2.0 mm
+                      </span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-[#335c98] din-regular">Size</span>
@@ -303,29 +372,31 @@ const page = () => {
 
                 {/* CTA Button with Neomorphism Style */}
                 <Link href="/ContactUs">
-                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                      {/* Colored background */}
-                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                    {/* Colored background */}
+                    <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
 
-                      {/* Top-left to bottom-right diagonal animation */}
-                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
-                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                      </span>
+                    {/* Top-left to bottom-right diagonal animation */}
+                    <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                      <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                    </span>
 
-                      {/* Button text */}
-                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
-                        GET A QUOTE
-                      </span>
-                    </button>
-                  </Link>
+                    {/* Button text */}
+                    <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                      GET A QUOTE
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
               <div className="text-left space-y-6">
-                <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
+                <h3 className="text-xl din-semibold text-[#335c98]">
+                  Finishes
+                </h3>
                 <p className="text-lg text-gray-600  din-regular">
                   Mirror | Hairline | Mesh | Straightline | Stain
                 </p>
@@ -342,7 +413,7 @@ const page = () => {
               {/* Dimensional Chart */}
               <div className="relative">
                 <Image
-                  className="rounded-lg shadow-lg bg-gray-700"
+                  className="rounded-lg shadow-lg md:ml-40 lg:ml-0 xl:ml-[6rem] bg-gray-700"
                   src={Umessurement}
                   alt="dimensional chart"
                   width={450}
@@ -376,11 +447,11 @@ const page = () => {
                   both aesthetic and practical needs.
                 </p>
               </div>
-              <div className=" w-[28rem] lg:w-[55%] px-14">
+              <div className=" w-[21rem] md:w-[38rem] lg:w-[50%] md:pl-14">
                 <Image
                   className="rounded-lg  transition-transform duration-300 hover:scale-105"
                   src={allFinishes}
-                  alt="Stainless Steel T Profile"
+                  alt="Stainless Steel decorative sheet Profile"
                 />
               </div>
             </div>
@@ -408,7 +479,7 @@ const page = () => {
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block">
+        <div className="container mx-auto my-14 hidden md:block px-14">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
@@ -509,7 +580,7 @@ const page = () => {
 
         <main
           ref={card1Ref}
-          className={`flex flex-col justify-center text-justify gap-20 m-4 `}
+          className={`flex flex-col justify-center text-justify gap-20 m-4 px-14 `}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
@@ -518,7 +589,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                ${card1InView ? "animate-wave delay-100" : "opacity-0"} `}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] din-semibold mb-4 text-center">
+              <h2 className="text-xl text-[#335c98] din-semibold mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
@@ -540,7 +611,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                ${card1InView ? "animate-wave delay-500" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] din-semibold mb-4 text-center">
+              <h2 className="text-xl text-[#335c98] din-semibold mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
@@ -563,7 +634,7 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                ${card1InView ? "animate-wave delay-700" : "opacity-0"} `}
             >
-              <h2 className="text-xl font-semibold text-center text-[#335c98] din-semibold mb-4">
+              <h2 className="text-xl text-center text-[#335c98] din-semibold mb-4">
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
@@ -582,8 +653,8 @@ const page = () => {
           </div>
         </main>
 
-        <div className="flex justify-center flex-col m-4">
-          <h3 className=" text-3xl md:text-4xl text-primary din-semibold">
+        <div className="flex justify-center flex-col m-4 px-36">
+          <h3 className=" text-3xl mx-auto md:text-4xl text-primary din-semibold">
             Why Choose Stainless Steel Decorative Sheets?
           </h3>
           <p className="text-base lg:text-base text-secondary text-justify w-[100%] p-4">
@@ -600,16 +671,20 @@ const page = () => {
           </p>
         </div>
         {/* swiper */}
-        <div className="w-full py-20 fade-in mt-20">
+        <div className="w-full py-20 fade-in ">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-semibold">
+            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
               Other Products
             </h2>
             <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
               spaceBetween={15}
               slidesPerView={1}
-              navigation
+              loop
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
               scrollbar={{ draggable: true }}
               breakpoints={{
                 640: { slidesPerView: -1 },
@@ -624,11 +699,11 @@ const page = () => {
                       <Image
                         src={product.image}
                         alt={product.title}
-                        width={220}
-                        height={250}
+                        width={150}
+                        height={150}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
-                      <h3 className="mt-4 text-xl din-medium text-[#335c98] ">
+                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
                         {product.title}
                       </h3>
                     </Link>
@@ -638,6 +713,7 @@ const page = () => {
             </Swiper>
           </div>
         </div>
+        {/* swiper close */}
       </div>
     </section>
   );

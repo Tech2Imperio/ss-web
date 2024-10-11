@@ -1,16 +1,32 @@
 "use client";
-import React from "react";
+import React,{useState, useEffect} from "react";
 import bg from "../../assets/product/balustrade/bg.webp";
 import stairImg from "../../assets/product/balustrade/Images/stairsGlass.webp";
 import floorImg from "../../assets/product/balustrade/Images/floorGlass.webp";
 import houseImg from "../../assets/product/balustrade/Images/building.webp";
 import office from "../../assets/product/balustrade/Images/office balcony.webp";
 import Balustrade from "../../assets/product/balustrade/main.webp";
-import { FadeDown, FadeUp } from "../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
+import { FadeRight,FadeLeft, FadeUp } from "../../components/utility/animation.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import main2 from "../../assets/product/balustrade/main2.webp";
 import Image from "next/image";
+import UProfile from "../../assets/RelatedProducts/UProfile.webp";
+import LProfile from "../../assets/RelatedProducts/LProfile.webp";
+import fluted from "../../assets/RelatedProducts/fluted.webp";
+import TProfile from "../../assets/product/profile/T_profile/wall.webp";
+import customized from "../../assets/RelatedProducts/customized.webp";
+// import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
+import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
+import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
+import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import buildingImg from "../../assets/product/balustrade/hero/balconyImg.webp";
+import stairsImg from "../../assets/product/balustrade/hero/floor.webp";
 
 // const ImageBox = ({ imageSrc, title }) => (
 //   <div className="flex flex-col items-center transition-transform transform hover:scale-105">
@@ -28,35 +44,158 @@ import Image from "next/image";
 //   </div>
 // );
 
+
+const heroSlides = [
+  {
+    image: bg,
+    title: "Elegant Stainless Steel Balustrade Railing",
+    description:
+      "Elevate your space with our elegant stainless steel balustrade railings, combining modern aesthetics with unmatched durability.",
+  },
+  {
+    image: buildingImg,
+    title: "Customizable Glass Balustrade Railing Solutions",
+    description:
+      "Create a unique look with our customizable glass balustrade railings, tailored to fit your style and enhance any architectural design.",
+  },
+  {
+    image: stairsImg,
+    title: "Durable Outdoor Balustrade Railing Systems",
+    description:
+      "Invest in our durable outdoor balustrade railing systems, designed to withstand the elements while providing safety and style for your outdoor spaces.",
+  },
+];
+
+
 export default function Page() {
+  const relatedProducts = [
+    {
+      title: "U Profile",
+      image: UProfile,
+      link: "/products/profile/uProfile",
+    },
+    {
+      title: "T Profile",
+      image: TProfile,
+      link: "/products/profile/tProfile",
+    },
+    {
+      title: "L Profile",
+      image: LProfile,
+      link: "/products/profile/lProfile",
+    },
+    {
+      title: "Fluted Panel",
+      image: fluted,
+      link: "/products/profile/ssFlutedPanelProfile",
+    },
+    // {
+    //   title: "SS Balustrade",
+    //   image: SSbalustrade,
+    //   link: "/products/BalustradeSystem",
+    // },
+    {
+      title: "Invisible Grill",
+      image: invisibleGril,
+      link: "/products/ssInvisibleGrill",
+    },
+    {
+      title: "Decorative Sheet",
+      image: DecorativeSheet,
+      link: "/products/ssDecorativeSheet",
+    },
+    {
+      title: "Queue Manager",
+      image: queuemanager,
+      link: "/products/ssQueueManager",
+    },
+    {
+      title: "Custom Profile",
+      image: customized,
+      link: "/products/profile/ssCustomProfile",
+    },
+  ];
+
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative">
-      <div className="relative">
-        <Image
-          className="h-[22rem] md:h-[30rem] w-full object-cover"
-          src={bg}
-          alt="U Profile"
-          width={1920}
-          height={600}
-        />
-        <div className="absolute inset-0 bg-black opacity-25" />
-        <motion.div
-          variants={FadeDown(0.001)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
-        >
-          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 din-semibold mb-6 tracking-tight">
-            Stainless Steel Balustrade Systems
-          </h1>
-          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
-            "Rajguru Steel Industry offers premium stainless steel balustrade
-            railings that combine style and safety, perfect for residential and
-            commercial spaces in Mumbai, Delhi, Bangalore, etc."
-          </p>
-        </motion.div>
-      </div>
+       <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
       <main className="flex justify-center flex-col items-center container mx-auto">
         {/* <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
         With a focus on innovation and craftsmanship, our railings enhance your space while meeting high safety standards. Enjoy reliable quality and all-India delivery with Rajguru Steel’s trusted solutions.
@@ -103,11 +242,11 @@ export default function Page() {
               <Image
                 src={img}
                 alt={alt}
-                className="object-cover h-[20rem] md:w-[17rem] md:h-[20rem] transition-transform duration-300 transform group-hover:scale-110"
+                className="object-cover h-[17rem] w-[17rem] mx-auto md:w-[17rem] md:h-[20rem] transition-transform duration-300 transform group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 p-4 text-white">
-                <h3 className="text-xl din-semibold">{label}</h3>
+                <h3 className="text-xl whitespace-nowrap md:whitespace-normal din-semibold">{label}</h3>
                 <p className="text-sm raleway text-gray-300">{description}</p>
               </div>
             </motion.div>
@@ -129,19 +268,19 @@ export default function Page() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="flex flex-col gap-5 md:flex-row justify-center mb-6"
+                  className="flex flex-col gap-14 md:flex-row justify-center mb-6"
                 >
                   <Image
                     src={Balustrade}
                     alt="Balustrade Railing"
-                    width={500}
-                    height={400}
+                    width={400}
+                    height={300}
                     className="rounded-lg shadow-lg"
                   />
                   <Image
                     src={main2}
                     alt="Balustrade Railing"
-                    width={500}
+                    width={400}
                     height={200}
                     className="rounded-lg shadow-lg"
                   />
@@ -354,6 +493,50 @@ export default function Page() {
               </div>
             </section>
           </div>
+          {/* swiper */}
+          <div className="w-full py-20 fade-in ">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
+                Other Products
+              </h2>
+              <Swiper
+                modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+                spaceBetween={15}
+                slidesPerView={1}
+                loop
+                autoplay={{
+                  delay: 1500,
+                  disableOnInteraction: false,
+                }}
+                scrollbar={{ draggable: true }}
+                breakpoints={{
+                  640: { slidesPerView: -1 },
+                  768: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                }}
+              >
+                {relatedProducts.map((product, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="flex flex-col items-center cursor-pointer">
+                      <Link href={product.link} passHref>
+                        <Image
+                          src={product.image}
+                          alt={product.title}
+                          width={150}
+                          height={150}
+                          className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
+                        />
+                        <h3 className="mt-4 text-xl text-[#335c98] din-regular">
+                          {product.title}
+                        </h3>
+                      </Link>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+          {/* swiper close */}
         </section>
       </main>
     </section>

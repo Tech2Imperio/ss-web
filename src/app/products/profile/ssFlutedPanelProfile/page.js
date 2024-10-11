@@ -10,12 +10,16 @@ import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
 import TProfile from "../../../assets/product/profile/T_profile/wall.webp";
 import LProfile from "../../../assets/RelatedProducts/LProfile.webp";
 import customized from "../../../assets/RelatedProducts/customized.webp";
-import CProfile from "../../../assets/RelatedProducts/CProfile.webp";
+import SSbalustrade from "../../../assets/RelatedProducts/SSbalustrade.webp";
+import invisibleGril from "../../../assets/RelatedProducts/invisibleGril.webp";
+import DecorativeSheet from "../../../assets/RelatedProducts/decorativesheet.webp";
+
+import queuemanager from "../../../assets/RelatedProducts/queuemanager.webp";
 import bg from "../../../assets/product/profile/flutedPanel/bg.webp";
 import messurement from "../../../assets/product/profile/L_profile/messurement.png";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -135,9 +139,24 @@ const page = () => {
       link: "/products/profile/lProfile",
     },
     {
-      title: "C Profile",
-      image: CProfile,
-      link: "/products/profile/cProfile",
+      title: "SS Balustrade",
+      image: SSbalustrade,
+      link: "/products/BalustradeSystem",
+    },
+    {
+      title: "Decorative Sheet",
+      image: DecorativeSheet,
+      link: "/products/ssDecorativeSheet",
+    },
+    {
+      title: "Invisible Grill",
+      image: invisibleGril,
+      link: "/products/ssInvisibleGrill",
+    },
+    {
+      title: "Queue Manager",
+      image: queuemanager,
+      link: "/products/ssQueueManager",
     },
     {
       title: "Custom Profile",
@@ -198,7 +217,7 @@ const page = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
               {/* Finishes Section */}
-              <div className="flex flex-col items-center lg:items-start">
+              <div className="flex flex-col items-center lg:items-start px-14">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
@@ -210,7 +229,7 @@ const page = () => {
                         className="rounded-lg shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105"
                         src={finishImages[selectedColor.name][finish.name]} // Dynamic image for each finish based on the selected color
                         alt={`${finish.name} - ${selectedColor.name}`}
-                        width={250} // Increased width for better visibility
+                        width={200} // Increased width for better visibility
                         height={200} // Increased height for better visibility
                       />
                       {/* Finish Name below the image */}
@@ -298,7 +317,7 @@ const page = () => {
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
               <div className="text-left space-y-6">
                 <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
                 <p className="text-lg text-gray-600 din-regular">
@@ -381,7 +400,7 @@ const page = () => {
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block p-14 ">
+        <div className="container mx-auto my-14 hidden md:block p-14 px-14 ">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
@@ -504,7 +523,7 @@ const page = () => {
 
         <main
           ref={card1Ref}
-          className="flex flex-col justify-center text-justify gap-20 m-4 "
+          className="flex flex-col justify-center text-justify gap-20 m-4 px-14 "
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
@@ -570,14 +589,18 @@ const page = () => {
         </main>
         <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[29px]  text-[#335c98] mb-16 din-semibold">
+            <h2 className="text-[35px]  text-[#335c98] mb-16 din-semibold">
               Other Products
             </h2>
             <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
               spaceBetween={15}
               slidesPerView={1}
-              navigation
+              loop
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
               scrollbar={{ draggable: true }}
               breakpoints={{
                 640: { slidesPerView: -1 },
@@ -592,8 +615,8 @@ const page = () => {
                       <Image
                         src={product.image}
                         alt={product.title}
-                        width={220}
-                        height={250}
+                        width={150}
+                        height={150}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
                       <h3 className="mt-4 text-xl  text-[#335c98] din-regular">

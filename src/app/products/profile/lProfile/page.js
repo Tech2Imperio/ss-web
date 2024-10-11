@@ -9,17 +9,22 @@ import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";
 import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
 import TProfile from "../../../assets/product/profile/T_profile/wall.webp";
 import fluted from "../../../assets/RelatedProducts/fluted.webp";
+import DecorativeSheet from "../../../assets/RelatedProducts/decorativesheet.webp";
 import customized from "../../../assets/RelatedProducts/customized.webp";
-import CProfile from "../../../assets/RelatedProducts/CProfile.webp";
+import SSbalustrade from "../../../assets/RelatedProducts/SSbalustrade.webp";
+import invisibleGril from "../../../assets/RelatedProducts/invisibleGril.webp";
+import queuemanager from "../../../assets/RelatedProducts/queuemanager.webp";
 import bg from "../../../assets/product/profile/T_profile/bg.webp";
 import messurement from "../../../assets/product/profile/L_profile/messurement.png";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { FadeUp } from "../../../components/utility/animation.jsx";
+import { motion } from "framer-motion";
 
 // Black finishes
 import MirrorImg from "../../../assets/product/profile/L_profile/finishes/black/mirrorBlack.png";
@@ -135,9 +140,24 @@ const page = () => {
       link: "/products/profile/ssFlutedPanelProfile",
     },
     {
-      title: "C Profile",
-      image: CProfile,
-      link: "/products/profile/cProfile",
+      title: "SS Balustrade",
+      image: SSbalustrade,
+      link: "/products/BalustradeSystem",
+    },
+    {
+      title: "Decorative Sheet",
+      image: DecorativeSheet,
+      link: "/products/ssDecorativeSheet",
+    },
+    {
+      title: "Invisible Grill",
+      image: invisibleGril,
+      link: "/products/ssInvisibleGrill",
+    },
+    {
+      title: "Queue Manager",
+      image: queuemanager,
+      link: "/products/ssQueueManager",
     },
     {
       title: "Custom Profile",
@@ -203,21 +223,26 @@ const page = () => {
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 px-14">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
 
-                <div className="grid grid-cols-2 lg:grid-cols-2 gap-6">
+                <motion.div
+                 variants={FadeUp(0.01)}
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true }}
+                 className="grid grid-cols-2 lg:grid-cols-2 gap-6 ">
                   {finishes.map((finish) => (
                     <div key={finish.name} className="relative">
                       <Image
                         className="rounded-lg shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105"
                         src={finishImages[selectedColor.name][finish.name]} // Dynamic image for each finish based on the selected color
                         alt={`${finish.name} - ${selectedColor.name}`}
-                        width={250} // Increased width for better visibility
+                        width={200} // Increased width for better visibility
                         height={200} // Increased height for better visibility
                       />
                       {/* Finish Name below the image */}
@@ -228,7 +253,7 @@ const page = () => {
                       </div>
                     </div>
                   ))}
-                </div>
+                </motion.div>
               </div>
 
               {/* Color Preview Section */}
@@ -271,8 +296,12 @@ const page = () => {
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#335c98] din-regular">Thickness</span>
-                      <span className="text-gray-700 din-regular">0.6 ~ 2.0 mm</span>
+                      <span className="text-[#335c98] din-regular">
+                        Thickness
+                      </span>
+                      <span className="text-gray-700 din-regular">
+                        0.6 ~ 2.0 mm
+                      </span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-[#335c98] din-regular">Size</span>
@@ -285,29 +314,31 @@ const page = () => {
 
                 {/* CTA Button with Neomorphism Style */}
                 <Link href="/ContactUs">
-                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                      {/* Colored background */}
-                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                    {/* Colored background */}
+                    <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
 
-                      {/* Top-left to bottom-right diagonal animation */}
-                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
-                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                      </span>
+                    {/* Top-left to bottom-right diagonal animation */}
+                    <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                      <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                    </span>
 
-                      {/* Button text */}
-                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
-                        GET A QUOTE
-                      </span>
-                    </button>
-                  </Link>
+                    {/* Button text */}
+                    <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                      GET A QUOTE
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
               <div className="text-left space-y-6">
-                <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
+                <h3 className="text-xl din-semibold text-[#335c98]">
+                  Finishes
+                </h3>
                 <p className="text-lg text-gray-600 din-regular">
                   Mirror | Hairline | Mesh | Straightline | Stain
                 </p>
@@ -344,12 +375,18 @@ const page = () => {
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20 text-justify">
               <div className="lg:w-1/2 p-6">
                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-semibold">
-                  What is Stainless Steel T Profile?
+                  What is Stainless Steel L Profile?
                 </h2>
                 <p className="text-gray-600 text-sm md:text-[1.10rem] leading-relaxed din-regular">
-                  A Stainless Steel T Profile is a metal profile characterized
-                  by a "T"-shaped cross-section, offering superior strength and
-                  versatility in construction and architecture.
+                  A stainless steel L profile is a structural component with an
+                  L-shaped cross-section, widely used in construction and
+                  manufacturing. Known for their corrosion resistance and
+                  durability, these profiles are ideal for wall decoration and
+                  commercial wall design. Their strength makes them suitable for
+                  load-bearing applications, while their sleek appearance
+                  enhances modern aesthetics. Easy to fabricate and install,
+                  stainless steel L profiles are a versatile choice for various
+                  architectural projects.
                 </p>
               </div>
               <div className=" w-[21rem] md:w-[38rem] lg:w-[50%] md:pl-14">
@@ -366,21 +403,23 @@ const page = () => {
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
               <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 din-semibold">
-                Properties of Stainless Steel T Profiles
+                Properties of Stainless Steel L Profiles
               </h2>
               <p className="text-gray-600 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 din-regular">
-                At Rajguru Steel Industry, we manufacture stainless steel T
-                profiles using high-quality austenitic stainless steel, known
-                for its exceptional durability and corrosion resistance. These
-                profiles contain significant levels of chromium and nickel,
-                ensuring protection against rust, while the addition of
-                molybdenum enhances resistance to pitting and crevice corrosion
-                in harsh, chloride-rich environments. Austenitic stainless steel
-                also offers impressive mechanical properties like high tensile
-                and yield strength, making it perfect for both industrial and
-                architectural uses. Our stainless steel T profiles are available
-                in a variety of sizes and thicknesses to accommodate different
-                project requirements
+                Stainless steel L profiles from Rajgure Steel Industry in Mumbai
+                are an excellent choice for enhancing wall decoration and
+                commercial wall design. Known for their corrosion resistance,
+                these profiles ensure durability and longevity, making them
+                perfect for corner wall installations. Their strength and
+                stability provide reliable support for various structural
+                applications, while their sleek appearance adds a modern touch
+                to any space. Easy to fabricate and install, these profiles
+                allow for efficient project execution and customization. With
+                outstanding load-bearing capabilities, they serve both
+                decorative and functional purposes. Rajgure Steel Industry's
+                stainless steel L profiles combine aesthetic appeal with robust
+                performance, making them a valuable asset in contemporary
+                architectural projects.
               </p>
             </div>
           </div>
@@ -399,22 +438,27 @@ const page = () => {
               <tbody>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    1. Corrosion Resistance
+                    1. Durability and Strength
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    Stainless steel T profiles are highly resistant to rust and
-                    corrosion, ideal for environments with exposure to moisture,
-                    chemicals, or harsh weather conditions.
+                    Stainless steel L profiles are known for their exceptional
+                    durability and strength, capable of withstanding heavy loads
+                    without compromising structural integrity. Their resistance
+                    to corrosion ensures longevity, making them ideal for both
+                    indoor and outdoor applications.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    2. Durability
+                    2. Versatile Applications
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    Known for their strength and long lifespan, stainless steel
-                    T profiles can last over 100 years, making them a
-                    maintenance-free solution for various projects.
+                    The versatility of stainless steel L profiles allows them to
+                    be utilized in a wide range of applications, from
+                    architectural designs to automotive reinforcement. This
+                    adaptability makes them suitable for various industries,
+                    enhancing their functionality and appeal across multiple
+                    sectors.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
@@ -422,19 +466,23 @@ const page = () => {
                     3. Aesthetic Appeal
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    With their sleek, modern look and minimal upkeep, stainless
-                    steel T profiles enhance the aesthetics of commercial and
-                    residential structures.
+                    Featuring a sleek and polished finish, stainless steel L
+                    profiles contribute a modern and sophisticated look to any
+                    design. Their aesthetic appeal makes them a favored choice
+                    for contemporary architecture and interior design projects,
+                    elevating the overall visual impact.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    4. Versatility
+                    4. Easy Installation
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    Whether for architectural designs or automotive
-                    reinforcement, stainless steel T profiles are easy to
-                    fabricate and fit various applications.
+                    Stainless steel L profiles are easy to fabricate and
+                    install, streamlining the construction process. This ease of
+                    use not only reduces labor costs and time but also allows
+                    for quick project completion, making them a practical choice
+                    for builders and designers alike.
                   </td>
                 </tr>
               </tbody>
@@ -452,31 +500,39 @@ const page = () => {
             <ul className="space-y-6 text-justify ">
               <li className="text-base text-gray-600 din-regular">
                 <strong className=" text-[#335c98]">
-                  1. Corrosion Resistance:
+                  1. Durability and Strength:
                 </strong>{" "}
-                Stainless steel T profiles are highly resistant to rust and
-                corrosion, ideal for environments with exposure to moisture,
-                chemicals, or harsh weather conditions.
+                Stainless steel L profiles are renowned for their exceptional
+                durability and strength. They can withstand heavy loads and
+                resist corrosion, making them ideal for both indoor and outdoor
+                applications.
               </li>
               <li className="text-base text-gray-600 din-regular">
-                <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
-                Known for their strength and long lifespan, stainless steel T
-                profiles can last over 100 years, making them a maintenance-free
-                solution for various projects.
+                <strong className=" text-[#335c98]">
+                  2. Versatile Applications:
+                </strong>{" "}
+                The versatility of stainless steel L profiles allows them to be
+                used in a wide range of applications, from architectural designs
+                to automotive reinforcement. Their adaptability makes them
+                suitable for various industries, enhancing their utility.
               </li>
               <li className="text-base text-gray-600  din-regular">
                 <strong className=" text-[#335c98]">
                   3. Aesthetic Appeal:
                 </strong>{" "}
-                With their sleek, modern look and minimal upkeep, stainless
-                steel T profiles enhance the aesthetics of commercial and
-                residential structures.
+                With a sleek and polished finish, stainless steel L profiles add
+                a modern touch to any design. Their aesthetic appeal makes them
+                a popular choice for contemporary architecture and interior
+                design projects.
               </li>
               <li className="text-base text-gray-600  din-regular">
-                <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
-                Whether for architectural designs or automotive reinforcement,
-                stainless steel T profiles are easy to fabricate and fit various
-                applications.
+                <strong className=" text-[#335c98]">
+                  4. Easy Installation:
+                </strong>{" "}
+                Stainless steel L profiles are easy to fabricate and install,
+                allowing for quick and efficient project completion. This ease
+                of use reduces labor costs and time, making them a practical
+                choice for builders and designers.
               </li>
             </ul>
           </div>
@@ -496,10 +552,12 @@ const page = () => {
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                T profiles are widely used in building facades, curtain walls,
-                glass railings, and structural supports. The combination of
-                strength and corrosion resistance ensures durability while
-                maintaining an aesthetically pleasing design.
+                L profiles are integral components in architectural and
+                construction applications, known for their strength,
+                versatility, and aesthetic appeal. Their unique L-shaped
+                cross-section provides a robust framework that is essential for
+                various structural and decorative purposes, making them a
+                preferred choice among architects and builders.
               </p>
             </div>
 
@@ -509,14 +567,17 @@ const page = () => {
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] din-regular mb-4 text-center">
+              <h2 className="text-xl font-semibold text-[#335c98] din-semibold mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                In interior design, T profiles are employed in furniture,
-                shelving, and display systems. The robust structure of stainless
-                steel ensures the ability to bear heavy loads while providing a
-                sleek, polished look to furniture pieces.
+                L profiles are characterized by their distinct L shape, which
+                allows for seamless integration into a wide range of furniture
+                designs. This profile can be used to create clean lines and
+                modern silhouettes, making it ideal for contemporary interiors.
+                The sleek design of L profiles complements various materials,
+                including wood, glass, and metal, enabling designers to achieve
+                a cohesive look that enhances the overall decor of a space.
               </p>
             </div>
 
@@ -530,25 +591,32 @@ const page = () => {
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                Stainless steel T profiles are frequently used in car frames,
-                providing essential reinforcement while minimizing weight. In
-                marine applications, their corrosion resistance makes them ideal
-                for use in boat manufacturing, where exposure to saltwater is
-                common.
+                Stainless steel L profiles are integral components in both the
+                automotive and marine industries, offering a unique combination
+                of strength, durability, and aesthetic appeal. In automotive
+                applications, these profiles are commonly utilized in car
+                frames, providing essential reinforcement while significantly
+                minimizing overall weight. This lightweight characteristic is
+                crucial for enhancing fuel efficiency and performance in modern
+                vehicles.
               </p>
             </div>
           </div>
         </main>
         <div className="w-full py-20 fade-in mt-20">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[29px] font-bold text-[#335c98] mb-16 din-semibold">
+            <h2 className="text-[35px]  text-[#335c98] mb-16 din-semibold">
               Other Products
             </h2>
             <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+              modules={[Pagination, Scrollbar, A11y, Autoplay]} // Include the required Swiper modules
               spaceBetween={15}
               slidesPerView={1}
-              navigation
+              loop
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
               scrollbar={{ draggable: true }}
               breakpoints={{
                 640: { slidesPerView: -1 },
@@ -563,11 +631,11 @@ const page = () => {
                       <Image
                         src={product.image}
                         alt={product.title}
-                        width={220}
-                        height={250}
+                        width={150}
+                        height={150}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
-                      <h3 className="mt-4 text-xl  text-[#335c98] din-regular">
+                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
                         {product.title}
                       </h3>
                     </Link>

@@ -50,11 +50,33 @@ import React from "react";
 import bg from "../../assets/product/queueManager/bg.webp";
 import main from "../../assets/product/queueManager/productImg/main.webp";
 import Link from "next/link";
-import { FadeDown } from "../../components/utility/animation.jsx";
+import { FadeDown, FadeUp } from "../../components/utility/animation.jsx";
 // import { motion } from "framer-motion";
 import ropeImg from "../../assets/product/queueManager/productImg/rope.webp";
 import wallMount from "../../assets/product/queueManager/productImg/wallmount.webp";
 import signFrame from "../../assets/product/queueManager/productImg/signframe.webp";
+import UProfile from "../../assets/RelatedProducts/UProfile.webp";
+import LProfile from "../../assets/RelatedProducts/LProfile.webp";
+import fluted from "../../assets/RelatedProducts/fluted.webp";
+import TProfile from "../../assets/product/profile/T_profile/wall.webp";
+import customized from "../../assets/RelatedProducts/customized.webp";
+import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
+import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
+// import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
+import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { FaRuler, FaWeight, FaPalette, FaBox } from "react-icons/fa";
+
+const Card = ({ children }) => (
+  <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+    {children}
+  </div>
+);
+
 export default function StainlessSteelQueueManager() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
@@ -79,10 +101,95 @@ export default function StainlessSteelQueueManager() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.5 },
   };
+  const relatedProducts = [
+    {
+      title: "U Profile",
+      image: UProfile,
+      link: "/products/profile/uProfile",
+    },
+    {
+      title: "T Profile",
+      image: TProfile,
+      link: "/products/profile/tProfile",
+    },
+    {
+      title: "L Profile",
+      image: LProfile,
+      link: "/products/profile/lProfile",
+    },
+    {
+      title: "Fluted Panel",
+      image: fluted,
+      link: "/products/profile/ssFlutedPanelProfile",
+    },
+    {
+      title: "SS Balustrade",
+      image: SSbalustrade,
+      link: "/products/BalustradeSystem",
+    },
+    {
+      title: "Invisible Grill",
+      image: invisibleGril,
+      link: "/products/ssInvisibleGrill",
+    },
+    {
+      title: "Decorative Sheet",
+      image: DecorativeSheet,
+      link: "/products/ssDecorativeSheet",
+    },
+    // {
+    //   title: "Queue Manager",
+    //   image: queuemanager,
+    //   link: "/products/ssQueueManager",
+    // },
+    {
+      title: "Custom Profile",
+      image: customized,
+      link: "/products/profile/ssCustomProfile",
+    },
+  ];
+
+  const specs = [
+    {
+      icon: <FaBox className="w-6 h-6" />,
+      title: "Material",
+      value: "Stainless Steel",
+    },
+    {
+      icon: <FaRuler className="w-6 h-6" />,
+      title: "Post Height",
+      value: "36 inches (91.5 cm)",
+    },
+    {
+      icon: <FaRuler className="w-6 h-6" />,
+      title: "Base Diameter",
+      value: "13 inches (33 cm)",
+    },
+    {
+      icon: <FaRuler className="w-6 h-6" />,
+      title: "Belt Length",
+      value: "6.5 feet (2 meters)",
+    },
+    {
+      icon: <FaPalette className="w-6 h-6" />,
+      title: "Belt Color",
+      value: "Black / Red / Blue",
+    },
+    {
+      icon: <FaWeight className="w-6 h-6" />,
+      title: "Weight",
+      value: "24 lbs (10.9 kg)",
+    },
+    {
+      icon: <FaPalette className="w-6 h-6" />,
+      title: "Finishes Colors",
+      value: "Silver / Champagne",
+    },
+  ];
 
   return (
     <motion.div
-      className="flex flex-col min-h-screen bg-gray-100"
+      className="flex flex-col min-h-screen"
       initial="initial"
       animate="animate"
       exit="exit"
@@ -95,17 +202,6 @@ export default function StainlessSteelQueueManager() {
           alt="U Profile"
         />
         <div className="absolute inset-0 bg-black opacity-25" />
-        {/* <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4 md:pt-0 text-[#4776bd] text-5xl md:text-[4rem] md:p-4 din-bold">
-          RAJGURU
-          <br />
-          <p className=" text-xs md:text-base w-[18rem] md:w-[45rem] din-regular pt-2 md:pt-4 text-gray-300">
-            Elevate your space with a premium stainless steel queue manager,
-            which is not only durable but also adds an elegant touch to any
-            environment. These queue managers are ideal for crowd control and
-            enhancing customer flow in various settings such as retail stores,
-            events, and restaurants.
-          </p>
-        </h1> */}
         <motion.div
           variants={FadeDown(0.001)}
           initial="hidden"
@@ -125,7 +221,7 @@ export default function StainlessSteelQueueManager() {
         </motion.div>
       </div>
 
-      <main className="flex flex-col overflow-hidden mx-auto container">
+      <main className="flex flex-col overflow-hidden mx-auto container ">
         <div className=" flex flex-col justify-center text-justify text-sm md:text-sm text-slate-500 gap-4 din-regular p-8">
           {/* <p>
             Rajguru Steel Industries offers a remarkable range of stainless
@@ -138,7 +234,7 @@ export default function StainlessSteelQueueManager() {
         </div>
 
         {/* Hero Section */}
-        <section className="mb-12 p-8">
+        <section className="mb-12 p-8 px-14 ">
           <div className="flex flex-col md:flex-row items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -172,100 +268,55 @@ export default function StainlessSteelQueueManager() {
               </p>
               {/* CTA Button with Neomorphism Style */}
               <Link href="/ContactUs">
-                    <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                      {/* Colored background */}
-                      <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                  {/* Colored background */}
+                  <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
 
-                      {/* Top-left to bottom-right diagonal animation */}
-                      <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
-                        <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                        <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                      </span>
+                  {/* Top-left to bottom-right diagonal animation */}
+                  <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                    <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                    <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  </span>
 
-                      {/* Button text */}
-                      <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
-                        GET A QUOTE
-                      </span>
-                    </button>
-                  </Link>
+                  {/* Button text */}
+                  <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                    GET A QUOTE
+                  </span>
+                </button>
+              </Link>
             </motion.div>
           </div>
         </section>
 
         {/* Specifications Section */}
-        <section className="mb-12 p-8">
-          <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
+        <motion.section 
+         variants={FadeUp(0.001)}
+         initial="hidden"
+         whileInView="visible"
+         viewport={{ once: true }}
+        className="mb-12 p-8 px-4 md:px-14">
+          <h2 className="text-3xl font-semibold text-[#335c98] mb-6">
             Specifications
           </h2>
-          <motion.div
-            variants={fadeInUp}
-            className="bg-white p-4 rounded-lg shadow-md"
-          >
-            <table className="w-full">
-              <tbody>
-                <tr>
-                  <td className=" text-lg din-regular text-[#335c98] pr-4 py-2">
-                    Material:
-                  </td>
-                  <td className=" din-regular text-gray-500">
-                    Stainless Steel
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-lg din-regular text-[#335c98] pr-4 py-2">
-                    Post Height:
-                  </td>
-                  <td className=" din-regular text-gray-500">
-                    36 inches (91.5 cm)
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-lg din-regular text-[#335c98] pr-4 py-2">
-                    Base Diameter:
-                  </td>
-                  <td className=" din-regular text-gray-500">
-                    13 inches (33 cm)
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-lg din-regular text-[#335c98] pr-4 py-2">
-                    Belt Length:
-                  </td>
-                  <td className=" din-regular text-gray-500">
-                    6.5 feet (2 meters)
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-lg din-regular text-[#335c98] pr-4 py-2">
-                    Belt Color:
-                  </td>
-                  <td className=" din-regular text-gray-500">
-                    Black / Red / Blue
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-lg din-regular text-[#335c98] pr-4 py-2">
-                    Weight:
-                  </td>
-                  <td className=" din-regular text-gray-500">
-                    24 lbs (10.9 kg)
-                  </td>
-                </tr>
-                <tr>
-                  <td className="text-lg din-regular text-[#335c98] pr-4 py-2">
-                    Finishes Colors:
-                  </td>
-                  <td className=" din-regular text-gray-500">
-                    Silver / Champagne
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </motion.div>
-        </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {specs.map((spec, index) => (
+              <Card key={index}>
+                <div className="flex items-center space-x-4">
+                  <div className="text-[#335c98]">{spec.icon}</div>
+                  <div>
+                    <h3 className="text-lg font-medium text-[#335c98]">
+                      {spec.title}
+                    </h3>
+                    <p className="text-gray-600">{spec.value}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </motion.section>
 
         {/* Applications Section */}
-        <section className="mb-12 p-8">
+        <section className="mb-12 p-8 px-14">
           <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
             Ideal Applications
           </h2>
@@ -286,8 +337,10 @@ export default function StainlessSteelQueueManager() {
         </section>
 
         {/* Accessories Section */}
-        <section className="mb-12 p-8">
-          <h2 className="text-3xl din-semibold text-[#335c98] mb-6">Accessories</h2>
+        <section className="mb-12 p-8 px-14">
+          <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
+            Accessories
+          </h2>
           <motion.div
             variants={fadeInUp}
             className="bg-white p-6 rounded-lg shadow-md"
@@ -560,7 +613,7 @@ export default function StainlessSteelQueueManager() {
           </motion.div>
         </section>
         {/* Features Section */}
-        <section className="mb-12 p-8">
+        <section className="mb-12 p-8 px-14">
           <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
             Key Features
           </h2>
@@ -594,14 +647,16 @@ export default function StainlessSteelQueueManager() {
                 <h3 className="text-xl din-medium text-[#335c98] mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 din-regular">{feature.description}</p>
+                <p className="text-gray-600 din-regular">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </section>
 
         {/* Maintenance Guide Section */}
-        <section className="mb-12 p-8">
+        <section className="mb-12 p-8 px-14">
           <h2 className="text-3xl din-bold text-[#335c98] mb-6">
             Maintenance Guide
           </h2>
@@ -678,6 +733,50 @@ export default function StainlessSteelQueueManager() {
             ))}
           </motion.div>
         </section> */}
+        {/* swiper */}
+        <div className="w-full py-20 fade-in ">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
+              Other Products
+            </h2>
+            <Swiper
+              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+              spaceBetween={15}
+              slidesPerView={1}
+              loop
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: { slidesPerView: -1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              {relatedProducts.map((product, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex flex-col items-center cursor-pointer">
+                    <Link href={product.link} passHref>
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={150}
+                        height={150}
+                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
+                      />
+                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
+                        {product.title}
+                      </h3>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+        {/* swiper close */}
       </main>
     </motion.div>
   );

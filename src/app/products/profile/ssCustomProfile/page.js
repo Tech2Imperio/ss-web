@@ -5,61 +5,65 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import wallImg from "../../../assets/product/profile/T_profile/wall.webp";
 // import upofile from "../../../assets/product/profile/U_profile/Uprofile.webp";
-import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";
+import flutedImg from "../../../assets/product/profile/flutedPanel/flutedImg.webp";
 import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
+import TProfile from "../../../assets/product/profile/T_profile/wall.webp";
 import LProfile from "../../../assets/RelatedProducts/LProfile.webp";
-import fluted from "../../../assets/RelatedProducts/fluted.webp";
 import customized from "../../../assets/RelatedProducts/customized.webp";
 import SSbalustrade from "../../../assets/RelatedProducts/SSbalustrade.webp";
-import DecorativeSheet from "../../../assets/RelatedProducts/decorativesheet.webp";
 import invisibleGril from "../../../assets/RelatedProducts/invisibleGril.webp";
+import fluted from "../../../assets/RelatedProducts/fluted.webp";
+import DecorativeSheet from "../../../assets/RelatedProducts/decorativesheet.webp";
 import queuemanager from "../../../assets/RelatedProducts/queuemanager.webp";
-import bg from "../../../assets/product/profile/T_profile/bg.webp";
-import messurement from "../../../assets/product/profile/T_profile/TENG.png";
+import bg from "../../../assets/product/profile/flutedPanel/bg.webp";
+import messurement from "../../../assets/product/profile/L_profile/messurement.png";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
+import {
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules"; // Import Swiper modules
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import { FadeDown } from "../../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
 
 // Black finishes
-import MirrorImg from "../../../assets/product/profile/T_profile/finishes/black/mirrorBlack.png";
-import HairlineImg from "../../../assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
-import StainImg from "../../../assets/product/profile/T_profile/finishes/black/stainBlack.png";
-import StraightlineImg from "../../../assets/product/profile/T_profile/finishes/black/straightlineBlack.png";
-import MeshImg from "../../../assets/product/profile/T_profile/finishes/black/meshBlack.png";
+import MirrorImg from "../../../assets/product/profile/L_profile/finishes/black/mirrorBlack.png";
+import HairlineImg from "../../../assets/product/profile/L_profile/finishes/black/hairlineBlack.png";
+import StainImg from "../../../assets/product/profile/L_profile/finishes/black/stainBlack.png";
+import StraightlineImg from "../../../assets/product/profile/L_profile/finishes/black/straightlineBlack.png";
+import MeshImg from "../../../assets/product/profile/L_profile/finishes/black/meshBlack.png";
 
 //Silver finishes
-import MirrorImgS from "../../../assets/product/profile/T_profile/finishes/silver/mirrorSilver.png";
-import HairlineImgS from "../../../assets/product/profile/T_profile/finishes/silver/hairlineSilver.png";
-import StainImgS from "../../../assets/product/profile/T_profile/finishes/silver/stainSilver.png";
-import StraightlineImgS from "../../../assets/product/profile/T_profile/finishes/silver/straightlineSilver.png";
-import MeshImgS from "../../../assets/product/profile/T_profile/finishes/silver/meshSilver.png";
+import MirrorImgS from "../../../assets/product/profile/L_profile/finishes/silver/mirrorSilver.png";
+import HairlineImgS from "../../../assets/product/profile/L_profile/finishes/silver/hairlineSilver.png";
+import StainImgS from "../../../assets/product/profile/L_profile/finishes/silver/stainSilver.png";
+import StraightlineImgS from "../../../assets/product/profile/L_profile/finishes/silver/straightlineSilver.png";
+import MeshImgS from "../../../assets/product/profile/L_profile/finishes/silver/meshSilver.png";
 
 //Gold finishes
-import MirrorImgG from "../../../assets/product/profile/T_profile/finishes/gold/mirrorGold.png";
-import HairlineImgG from "../../../assets/product/profile/T_profile/finishes/gold/hairlineGold.png";
-import StainImgG from "../../../assets/product/profile/T_profile/finishes/gold/stainGold.png";
-import StraightlineImgG from "../../../assets/product/profile/T_profile/finishes/gold/straightlineGold.png";
-import MeshImgG from "../../../assets/product/profile/T_profile/finishes/gold/meshGold.png";
+import MirrorImgG from "../../../assets/product/profile/L_profile/finishes/gold/mirrorGold.png";
+import HairlineImgG from "../../../assets/product/profile/L_profile/finishes/gold/hairlineGold.png";
+import StainImgG from "../../../assets/product/profile/L_profile/finishes/gold/stainGold.png";
+import StraightlineImgG from "../../../assets/product/profile/L_profile/finishes/gold/straightlineGold.png";
+import MeshImgG from "../../../assets/product/profile/L_profile/finishes/gold/meshGold.png";
 
 //RoseGold finishes
-import MirrorImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/mirrorroseGold.png";
-import HairlineImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/hairlineroseGold.png";
-import StainImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/stainroseGold.png";
-import StraightlineImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/straightlineroseGold.png";
-import MeshImgR from "../../../assets/product/profile/T_profile/finishes/rosegold/meshroseGold.png";
+import MirrorImgR from "../../../assets/product/profile/L_profile/finishes/rosegold/mirrorroseGold.png";
+import HairlineImgR from "../../../assets/product/profile/L_profile/finishes/rosegold/hairlineroseGold.png";
+import StainImgR from "../../../assets/product/profile/L_profile/finishes/rosegold/stainroseGold.png";
+import StraightlineImgR from "../../../assets/product/profile/L_profile/finishes/rosegold/straightlineroseGold.png";
+import MeshImgR from "../../../assets/product/profile/L_profile/finishes/rosegold/meshroseGold.png";
 
-//RoseGold finishes
-import MirrorImgC from "../../../assets/product/profile/T_profile/finishes/champagne/mirrorChampagne.png";
-import HairlineImgC from "../../../assets/product/profile/T_profile/finishes/champagne/hairlineChampagne.png";
-import StainImgC from "../../../assets/product/profile/T_profile/finishes/champagne/stainChampagne.png";
-import StraightlineImgC from "../../../assets/product/profile/T_profile/finishes/champagne/straightlineChampagne.png";
-import MeshImgC from "../../../assets/product/profile/T_profile/finishes/champagne/meshChampagne.png";
+//champgane finishes
+import MirrorImgC from "../../../assets/product/profile/L_profile/finishes/champagne/mirrorChampagne.png";
+import HairlineImgC from "../../../assets/product/profile/L_profile/finishes/champagne/hairlineChampagne.png";
+import StainImgC from "../../../assets/product/profile/L_profile/finishes/champagne/stainChampagne.png";
+import StraightlineImgC from "../../../assets/product/profile/L_profile/finishes/champagne/straightlineChampagne.png";
+import MeshImgC from "../../../assets/product/profile/L_profile/finishes/champagne/meshChampagne.png";
 
 const page = () => {
   const finishes = [
@@ -130,15 +134,20 @@ const page = () => {
       link: "/products/profile/uProfile",
     },
     {
+      title: "T Profile",
+      image: TProfile,
+      link: "/products/profile/tProfile",
+    },
+    {
       title: "L Profile",
       image: LProfile,
       link: "/products/profile/lProfile",
     },
     {
-      title: "Fluted Panel",
-      image: fluted,
-      link: "/products/profile/ssFlutedPanelProfile",
-    },
+        title: "Fluted Panel",
+        image: fluted,
+        link: "/products/profile/ssFlutedPanelProfile",
+      },
     {
       title: "SS Balustrade",
       image: SSbalustrade,
@@ -150,10 +159,10 @@ const page = () => {
       link: "/products/ssInvisibleGrill",
     },
     {
-      title: "Decorative Sheet",
-      image: DecorativeSheet,
-      link: "/products/ssDecorativeSheet",
-    },
+        title: "Decorative Sheet",
+        image: DecorativeSheet,
+        link: "/products/ssDecorativeSheet",
+      },
     {
       title: "Queue Manager",
       image: queuemanager,
@@ -171,15 +180,15 @@ const page = () => {
     threshold: 0.1, // 10% of the card needs to be visible to trigger the animation
   });
 
-  const { ref: card2Ref, inView: card2InView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  //   const { ref: card2Ref, inView: card2InView } = useInView({
+  //     triggerOnce: true,
+  //     threshold: 0.1,
+  //   });
 
-  const { ref: card3Ref, inView: card3InView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  //   const { ref: card3Ref, inView: card3InView } = useInView({
+  //     triggerOnce: true,
+  //     threshold: 0.1,
+  //   });
 
   return (
     <section className=" relative ">
@@ -187,47 +196,38 @@ const page = () => {
         <Image
           className=" h-[22rem] md:h-[30rem] w-full object-cover"
           src={bg}
-          alt="T Profile"
+          alt="fluted Profile"
         />
-        <div className="absolute inset-0 bg-black opacity-55" />
-        <motion.div
-          variants={FadeDown(0.01)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4"
-        >
-          <h1 className="text-3xl md:text-5xl text-white opacity-90 font-semibold mb-6 tracking-tight">
-            Stainless Steel T Profile
-          </h1>
-          <p className="text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify mb-12">
-            "Transform your space with our stainless steel T profiles, perfect
-            for decorative home and commercial walls. These stylish, durable
-            profiles resist rust and corrosion, making them ideal for any
-            interior design project. Upgrade your decor today!"
+        <div className="absolute inset-0 bg-black opacity-25" />
+        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-white text-5xl md:text-[4rem] md:p-4  din-bold">
+          RAJGURU
+          <br />
+          <p className=" text-base w-[20.8rem] md:w-[32rem] din-regular pt-2 md:pt-4  text-gray-200 ">
+            Stainless Steel U Profile offers superior strength and durability,
+            making it ideal for a variety of structural applications.
           </p>
-        </motion.div>
+        </h1>
       </div>
 
-      <div className=" flex flex-col overflow-hidden mx-auto container">
-        {/* <div className=" flex justify-center">
-          <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
-            Discover the wide range of stainless steel T profiles offered by
-            Rajgure Steel Industries. Our T profiles are offered in vibrant five
-            different colors best suited to satisfy your home decor wish. The
-            profiles being durable and strong can be used for structural support
-            and decoration.
-          </p>
-        </div> */}
+      <div className=" flex flex-col overflow-hidden mx-auto container mt-14">
+        <div className=" flex justify-center">
+          {/* <p className=" text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
+            Let Rajguru Steel Industry provide you with elegant decor of fluted
+            stainless steel panels for your home. This can enhance your decor
+            ideas for the wall in a modern way by the mix of strength and
+            elegance. With assorted finishes and colors to choose from, easily
+            create stunning interiors with great options for any space.
+          </p> */}
+        </div>
 
         {/* new model open */}
-        <section className="min-h-screen bg-gray-50 py-10 mt-8">
+        <section className="min-h-screen bg-gray-50 py-10">
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 px-14">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
               {/* Finishes Section */}
-              <div className="flex flex-col items-center lg:items-start">
+              <div className="flex flex-col items-center lg:items-start px-14">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
@@ -256,7 +256,7 @@ const page = () => {
               {/* Color Preview Section */}
               <div className="flex flex-col items-center lg:items-center lg:mt-52 space-y-14">
                 {/* Title with Gradient */}
-                <h2 className="text-2xl lg:text-4xl din-semibold text-primary">
+                <h2 className="text-2xl lg:text-4xl din-regular text-primary din-semibold">
                   Select a Color
                 </h2>
 
@@ -333,7 +333,9 @@ const page = () => {
             {/* Finishes and Sizes Section */}
             <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
               <div className="text-left space-y-6">
-                <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
+                <h3 className="text-xl din-semibold text-[#335c98]">
+                  Finishes
+                </h3>
                 <p className="text-lg text-gray-600 din-regular">
                   Mirror | Hairline | Mesh | Straightline | Stain
                 </p>
@@ -343,8 +345,7 @@ const page = () => {
                   <span className="text-base">- W x H</span>
                 </h3>
                 <p className="text-lg text-gray-600 din-regular">
-                  6 x 6 | 8 x 5 | 10 x 5 | 12 x 5 | 15 x 5 | 18 x 5 | 20 x 5 |
-                  25 x 5
+                  10 x 10 | 12 x 12 | 15 x 15 | 20 x 20 | 25 x 25 | 30 x 30
                 </p>
               </div>
 
@@ -371,28 +372,25 @@ const page = () => {
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20 text-justify">
               <div className="lg:w-1/2 p-6">
                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-semibold">
-                  What is Stainless Steel T Profile?
+                  What is Stainless Steel Customized Profile?
                 </h2>
                 <p className="text-gray-600 text-xs md:text-[1rem] leading-relaxed din-regular">
-                  A Stainless Steel T Profile is a metal profile with a
-                  distinctive "T"-shaped cross-section, known for its
-                  exceptional strength and versatility in construction and
-                  architecture. Renowned for their corrosion resistance, these
-                  profiles are ideal for both indoor and outdoor applications.
-                  Their robust design allows for effective load-bearing
-                  capabilities, making them suitable for support beams,
-                  frameworks, and decorative elements. With a sleek appearance,
-                  stainless steel T profiles enhance modern aesthetics and are
-                  popular in commercial wall design and interior architecture.
-                  Easy to fabricate and install, they combine functionality with
-                  style, making them essential in contemporary building
-                  projects.
+                  A stainless steel customized profile is an essential component
+                  for modern wall design, offering tailored solutions that
+                  enhance both functionality and aesthetics. These profiles are
+                  ideal for creating unique architectural features, providing
+                  superior corrosion resistance and durability for indoor and
+                  outdoor applications. With their versatile shapes and sizes,
+                  customized profiles streamline the construction process while
+                  ensuring a sleek, contemporary look. Perfect for commercial
+                  and residential projects, they combine style and strength,
+                  making them a popular choice in interior architecture.
                 </p>
               </div>
-              <div className=" w-[21rem] md:w-[38rem] lg:w-[50%] md:pl-14">
+              <div className="w-[21rem] md:w-[38rem] lg:w-[50%] md:pl-14">
                 <Image
                   className="rounded-lg  transition-transform duration-300 hover:scale-105"
-                  src={Tprofile}
+                  src={flutedImg}
                   alt="Stainless Steel T Profile"
                 />
               </div>
@@ -402,34 +400,39 @@ const page = () => {
           {/* Properties Section */}
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 din-semibold">
-                Properties of Stainless Steel T Profiles
+              <h2 className=" text-xl md:whitespace-normal md:text-[27px]  text-[#335c98] mb-6 din-semibold">
+                Properties of Stainless Steel Customized Profile
               </h2>
               <p className="text-gray-600 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 din-regular">
-                At Rajguru Steel Industry, we manufacture stainless steel T
-                profiles using high-quality austenitic stainless steel, known
-                for its exceptional durability and corrosion resistance. These
-                profiles contain significant levels of chromium and nickel,
-                ensuring protection against rust, while the addition of
-                molybdenum enhances resistance to pitting and crevice corrosion
-                in harsh, chloride-rich environments. Austenitic stainless steel
-                also offers impressive mechanical properties like high tensile
-                and yield strength, making it perfect for both industrial and
-                architectural uses. Our stainless steel T profiles are available
-                in a variety of sizes and thicknesses to accommodate different
-                project requirements
+                Stainless steel customized profiles from Rajgur Steel Industry,
+                Mumbai, offer exceptional properties that make them ideal for
+                wall decoration and architectural applications. These profiles
+                are renowned for their corrosion resistance, ensuring longevity
+                and durability in both indoor and outdoor environments. Their
+                strength and versatility allow for unique designs, enabling
+                architects and designers to create stunning interior and
+                exterior features. With a variety of shapes and sizes available,
+                these customized profiles can enhance the aesthetic appeal of
+                any space while providing structural support. The sleek finish
+                of stainless steel adds a modern touch, making it a popular
+                choice for commercial and residential projects. Additionally,
+                the ease of fabrication and installation streamlines the
+                construction process, making Rajgur Steel Industry a go-to
+                source for high-quality stainless steel solutions. Elevate your
+                wall design with customized stainless steel profiles that
+                combine style, strength, and functionality.
               </p>
             </div>
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block  px-14">
+        <div className="container mx-auto my-14 hidden md:block p-14 px-14 ">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
                   <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-semibold">
-                    Benefits of Stainless Steel T Profiles
+                    Benefits of Stainless Steel Customized Profile
                   </th>
                 </tr>
               </thead>
@@ -438,40 +441,48 @@ const page = () => {
                   <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     1. Corrosion Resistance
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 din-regular">
-                    Stainless steel T profiles are highly resistant to rust and
-                    corrosion, ideal for environments with exposure to moisture,
-                    chemicals, or harsh weather conditions.
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
+                    One of the standout features of stainless steel is its
+                    ability to resist rust and corrosion. This property makes
+                    customized profiles suitable for outdoor use, ensuring
+                    long-lasting performance in various environmental
+                    conditions.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
                     2. Durability
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 din-regular">
-                    Known for their strength and long lifespan, stainless steel
-                    T profiles can last over 100 years, making them a
-                    maintenance-free solution for various projects.
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
+                    Stainless steel customized profiles are known for their
+                    exceptional strength and resistance to wear and tear. This
+                    durability ensures that structures maintain their integrity
+                    over time, making them ideal for both commercial and
+                    residential applications.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    3. Aesthetic Appeal
+                    3. Versatile Design Options
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 din-regular">
-                    With their sleek, modern look and minimal upkeep, stainless
-                    steel T profiles enhance the aesthetics of commercial and
-                    residential structures.
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
+                    Customized profiles can be tailored to meet specific design
+                    requirements, allowing for unique shapes and sizes. This
+                    versatility enables architects and designers to create
+                    innovative wall decorations and structural elements that
+                    enhance the aesthetic appeal of any project.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    4. Versatility
+                    4. Cost-Effective Solutions
                   </td>
-                  <td className="py-6 px-6 text-base text-gray-500 din-regular">
-                    Whether for architectural designs or automotive
-                    reinforcement, stainless steel T profiles are easy to
-                    fabricate and fit various applications.
+                  <td className="py-6 px-6 text-base text-gray-600 din-regular">
+                    By utilizing stainless steel customized profiles, businesses
+                    can reduce material waste and improve efficiency in
+                    construction. The long lifespan and low maintenance
+                    requirements of stainless steel also contribute to overall
+                    cost savings in the long run.
                   </td>
                 </tr>
               </tbody>
@@ -481,39 +492,41 @@ const page = () => {
 
         {/* example */}
         {/* example phone */}
-        <div className="container mx-auto my-14 md:hidden ">
+        <div className="container mx-auto my-14 md:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] din-regular mb-4">
-              Benefits of Stainless Steel T Profiles
+            <h2 className="text-2xl font-semibold text-[#335c98] din-semibold mb-4">
+              Benefits of Stainless Steel Customized Profile
             </h2>
             <ul className="space-y-6 text-justify ">
-              <li className="text-base text-gray-5600 din-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">
                   1. Corrosion Resistance:
                 </strong>{" "}
-                Stainless steel T profiles are highly resistant to rust and
-                corrosion, ideal for environments with exposure to moisture,
-                chemicals, or harsh weather conditions.
+                Their inherent resistance to rust and corrosion makes these
+                profiles ideal for outdoor use, maintaining structural integrity
+                in various environments.
               </li>
-              <li className="text-base text-gray-600 din-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
-                Known for their strength and long lifespan, stainless steel T
-                profiles can last over 100 years, making them a maintenance-free
-                solution for various projects.
+                Stainless steel customized profiles offer exceptional strength,
+                ensuring long-lasting performance in both commercial and
+                residential applications.
               </li>
-              <li className="text-base text-gray-600  din-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">
-                  3. Aesthetic Appeal:
+                  3. Versatile Design Options:
                 </strong>{" "}
-                With their sleek, modern look and minimal upkeep, stainless
-                steel T profiles enhance the aesthetics of commercial and
-                residential structures.
+                Tailored to meet specific design needs, customized profiles
+                allow for unique shapes that enhance the aesthetic appeal of
+                wall decorations and architectural features.
               </li>
-              <li className="text-base text-gray-600  din-regular">
-                <strong className=" text-[#335c98]">4. Versatility:</strong>{" "}
-                Whether for architectural designs or automotive reinforcement,
-                stainless steel T profiles are easy to fabricate and fit various
-                applications.
+              <li className="text-base text-gray-500  din-regular">
+                <strong className=" text-[#335c98]">
+                  4. Cost-Effective Solutions:
+                </strong>{" "}
+                Utilizing stainless steel profiles reduces material waste and
+                improves construction efficiency, leading to significant
+                long-term cost savings.
               </li>
             </ul>
           </div>
@@ -521,57 +534,68 @@ const page = () => {
 
         {/* example phone colse  */}
 
-        <main className="flex flex-col justify-center text-justify gap-20  px-14 ">
+        <main
+          ref={card1Ref}
+          className="flex flex-col justify-center text-justify gap-20 m-4 px-14 "
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div
-              ref={card1Ref}
+              //   ref={card1Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
             >
-              <h2 className="text-xl  text-[#335c98] din-semibold mb-4 text-center">
+              <h2 className="text-xl din-semibold text-[#335c98] din-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                T profiles are widely used in building facades, curtain walls,
-                glass railings, and structural supports. The combination of
-                strength and corrosion resistance ensures durability while
-                maintaining an aesthetically pleasing design.
+                Customized stainless steel profiles are essential in
+                architectural and construction projects, providing strength and
+                versatility for structural elements. Their corrosion resistance
+                and durability make them ideal for both interior and exterior
+                applications, enhancing the aesthetic appeal of buildings. By
+                incorporating these profiles, architects can achieve innovative
+                designs while ensuring compliance with industry standards.
               </p>
             </div>
 
             {/* Card 2 */}
             <div
-              ref={card2Ref}
+              //   ref={card2Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
+                ${card1InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
-              <h2 className="text-xl  text-[#335c98] din-semibold mb-4 text-center">
+              <h2 className="text-xl text-[#335c98] din-semibold mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                In interior design, T profiles are employed in furniture,
-                shelving, and display systems. The robust structure of stainless
-                steel ensures the ability to bear heavy loads while providing a
-                sleek, polished look to furniture pieces.
+                In the furniture industry, customized stainless steel profiles
+                offer sleek and modern solutions for shelving and structural
+                support. Their strength and stylish finish make them perfect for
+                contemporary furniture designs, providing both functionality and
+                aesthetic appeal. Utilizing these profiles allows manufacturers
+                to create durable, long-lasting pieces that stand out in any
+                space.
               </p>
             </div>
 
             {/* Card 3 */}
             <div
-              ref={card3Ref}
+              //   ref={card3Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
+                ${card1InView ? "animate-wave delay-300" : "opacity-0"}`}
             >
-              <h2 className="text-xl text-center text-[#335c98] din-semibold mb-4">
+              <h2 className="text-xl  text-center text-[#335c98] din-semibold mb-4">
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                Stainless steel T profiles are frequently used in car frames,
-                providing essential reinforcement while minimizing weight. In
-                marine applications, their corrosion resistance makes them ideal
-                for use in boat manufacturing, where exposure to saltwater is
-                common.
+                Customized stainless steel profiles play a crucial role in the
+                automotive and marine industries, where strength and corrosion
+                resistance are paramount. These profiles are used in various
+                applications, from structural components to decorative elements,
+                ensuring reliability in harsh environments. By leveraging the
+                benefits of stainless steel, manufacturers can enhance the
+                performance and longevity of their products.
               </p>
             </div>
           </div>
@@ -608,7 +632,7 @@ const page = () => {
                         height={150}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
-                      <h3 className="mt-4 text-xl  text-[#335c98] din-regular ">
+                      <h3 className="mt-4 text-xl  text-[#335c98] din-regular">
                         {product.title}
                       </h3>
                     </Link>

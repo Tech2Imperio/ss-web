@@ -7,6 +7,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 
+import UProfile from "../../assets/RelatedProducts/UProfile.webp";
+import LProfile from "../../assets/RelatedProducts/LProfile.webp";
+import fluted from "../../assets/RelatedProducts/fluted.webp";
+import TProfile from "../../assets/product/profile/T_profile/wall.webp";
+import customized from "../../assets/RelatedProducts/customized.webp";
+import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
+import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
+import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
+import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 // Assuming these imports are available in your project
 import bg from "../../assets/product/glassrailingSystems/bg.webp";
 import A50 from "../../assets/product/glassrailingSystems/products/IMPERIO-A50-BLACK.webp";
@@ -220,7 +235,7 @@ const features = [
 const heroSlides = [
   {
     image: penthuseImg,
-    title: "Elegant Glass Railings",
+    title: "Elegant Glass Railings Systems",
     description:
       "Elevate your decor with our modern glass railings, combining style and safety for a sleek, decorative touch in any design.",
   },
@@ -232,7 +247,7 @@ const heroSlides = [
   },
   {
     image: stairsImg,
-    title: "Customizable Designs",
+    title: "Customizable Glass Railings Systems",
     description:
       "Create your perfect look with our customizable glass railings, featuring modern designs that enhance any space while ensuring safety and style.",
   },
@@ -278,6 +293,54 @@ export default function Component() {
       },
     },
   };
+
+  const relatedProducts = [
+    {
+      title: "U Profile",
+      image: UProfile,
+      link: "/products/profile/uProfile",
+    },
+    {
+      title: "T Profile",
+      image: TProfile,
+      link: "/products/profile/tProfile",
+    },
+    {
+      title: "L Profile",
+      image: LProfile,
+      link: "/products/profile/lProfile",
+    },
+    {
+      title: "Fluted Panel",
+      image: fluted,
+      link: "/products/profile/ssFlutedPanelProfile",
+    },
+    {
+      title: "SS Balustrade",
+      image: SSbalustrade,
+      link: "/products/BalustradeSystem",
+    },
+    {
+      title: "Invisible Grill",
+      image: invisibleGril,
+      link: "/products/ssInvisibleGrill",
+    },
+    {
+      title: "Decorative Sheet",
+      image: DecorativeSheet,
+      link: "/products/ssDecorativeSheet",
+    },
+    {
+      title: "Queue Manager",
+      image: queuemanager,
+      link: "/products/ssQueueManager",
+    },
+    {
+      title: "Custom Profile",
+      image: customized,
+      link: "/products/profile/ssCustomProfile",
+    },
+  ];
 
   return (
     <div className=" min-h-screen">
@@ -346,77 +409,76 @@ export default function Component() {
         </div>
       </section> */}
       <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
-  <AnimatePresence initial={true}>
-    <motion.div
-      key={`bg-${currentSlide}`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="absolute inset-0"
-    >
-      <Image
-        src={heroSlides[currentSlide].image}
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        className="opacity-50"
-      />
-    </motion.div>
-  </AnimatePresence>
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
 
-  <div className="relative z-10 h-full">
-    <AnimatePresence initial={true}>
-      <motion.div
-        key={`content-${currentSlide}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
-      >
-        {/* Left Side Text */}
-        <motion.div
-          variants={FadeRight(0.3)}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col justify-center items-start p-4  md:pr-14"
-        >
-          <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
-            {heroSlides[currentSlide].title}
-          </h1>
-          <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
-            {heroSlides[currentSlide].description}
-          </p>
-        </motion.div>
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
 
-        {/* Right Side Image */}
-        <motion.div
-          variants={FadeLeft(0.3)}
-          initial="hidden"
-          animate="visible"
-          className="relative h-[20rem] w-full  md:w-full  md:h-[32rem] flex  md:mt-24 ml-0 md:ml-24"
-        >
-          <Image
-            src={heroSlides[nextSlide].image}
-            alt={heroSlides[nextSlide].title}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg shadow-xl"
-          />
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  </div>
-</section>
-
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
 
       <main className=" container overflow-hidden mx-auto">
         {/* Products Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <h2 className=" text-3xl md:text-5xl din-semibold text-primary mb-8 text-center">
-              Our Products
+              Glass Railing Systems
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {products.map((product) => (
@@ -585,6 +647,51 @@ export default function Component() {
             </motion.div>
           </div>
         </motion.section>
+        {/* FAQ close */}
+        {/* swiper */}
+        <div className="w-full py-20 fade-in ">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
+              Other Products
+            </h2>
+            <Swiper
+              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+              spaceBetween={15}
+              slidesPerView={1}
+              loop
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: { slidesPerView: -1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              {relatedProducts.map((product, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex flex-col items-center cursor-pointer">
+                    <Link href={product.link} passHref>
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={150}
+                        height={150}
+                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
+                      />
+                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
+                        {product.title}
+                      </h3>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+        {/* swiper close */}
       </main>
     </div>
   );
