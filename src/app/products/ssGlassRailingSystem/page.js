@@ -167,7 +167,7 @@ export default function Page() {
           className="py-20"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
               Elevate Your Space with Stainless Steel Glass Railing Systems
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -179,16 +179,16 @@ export default function Page() {
                 />
               </motion.div>
               <motion.div variants={fadeInUp}>
-                <h3 className="text-2xl font-semibold mb-4">
+                <h3 className="text-2xl din-semibold mb-4 text-primary">
                   Unparalleled Elegance and Safety
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-secondary mb-6 nunito">
                   Our stainless steel glass railing systems combine modern
                   aesthetics with robust engineering to provide a seamless blend
                   of style and security. Perfect for both indoor and outdoor
                   applications, these systems offer:
                 </p>
-                <ul className="list-disc list-inside text-gray-600 mb-6">
+                <ul className="list-disc list-inside text-secondary mb-6 nunito">
                   <li>Unobstructed views and enhanced spatial perception</li>
                   <li>
                     Durability and corrosion resistance for long-lasting beauty
@@ -223,7 +223,7 @@ export default function Page() {
           className="py-20"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
               Key Features
             </h2>
             <motion.div
@@ -258,14 +258,14 @@ export default function Page() {
               ].map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-md text-center"
+                  className="bg-gray-200 p-6 rounded-lg hover:shadow-2xl text-center"
                   variants={fadeInUp}
                 >
-                  <feature.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-                  <h3 className="text-xl font-semibold mb-2">
+                  <feature.icon className="w-8 h-8 mx-auto mb-4 text-primary" />
+                  <h3 className="text-xl din-semibold mb-2 text-primary">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-secondary nunito">{feature.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -281,18 +281,18 @@ export default function Page() {
           className="py-10"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-bold mb-12 text-center text-primary">
               Premium Accessories
             </h2>
-            <p className="text-xl text-gray-600 text-center mb-12">
+            <p className="text-xl text-secondary text-center mb-12 din-medium">
               Explore our range of high-quality accessories designed to
               complement your glass railing system.
             </p>
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-10">
               {accessories.map((accessory, index) => (
                 <motion.div
                   key={index}
-                  className="relative overflow-hidden bg-white rounded-lg shadow-lg mb-4"
+                  className="relative overflow-hidden bg-white rounded-lg shadow-lg mb-8"
                   onMouseEnter={() => setHoveredAccessory(index)}
                   onMouseLeave={() => setHoveredAccessory(null)}
                 >
@@ -338,10 +338,13 @@ export default function Page() {
           className="py-20"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
               Installation Process
             </h2>
-            <motion.div className="grid grid-cols-3" variants={staggerChildren}>
+            <motion.div
+              className="grid md:grid-cols-3 grid-cols-2 gap-3 "
+              variants={staggerChildren}
+            >
               {[
                 {
                   title: "Site Measurement",
@@ -386,18 +389,20 @@ export default function Page() {
               ].map((step, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start mb-8"
+                  className="flex items-start mb-8 hover:shadow-lg rounded-lg p-4 transition duration-300"
                   variants={fadeInUp}
                 >
-                  <FaCheckCircle className="w-6 h-6 text-green-500 mr-4 flex-shrink-0 mt-1" />
+                  <FaCheckCircle className="w-6 h-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
+                    <h3 className="text-xl din-semibold mb-2 text-primary">
+                      {step.title}
+                    </h3>
+                    <p className="text-secondary nunito">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
-            <div className="text-center mt-6">
+            <div className="text-center mt-2">
               <Link href="/ContactUs">
                 <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
                   {/* Colored background */}
@@ -428,10 +433,10 @@ export default function Page() {
           className="py-20"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-bold mb-12 text-center text-primary">
               Customization Options
             </h2>
-            <p className="text-xl text-gray-600 text-center mb-12">
+            <p className="text-xl text-secondary text-center mb-12 din-semibold">
               Tailor your glass railing system to perfectly match your vision
               and architectural requirements.
             </p>
@@ -467,18 +472,20 @@ export default function Page() {
               ].map((option, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-md text-center flex flex-col justify-between"
+                  className="bg-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-between"
                   variants={fadeInUp}
                 >
                   <Image
                     src={option.image}
                     alt={option.name}
-                    width={200}
-                    height={200}
-                    className="mx-auto mb-4 rounded-full"
+                    width={300}
+                    height={300}
+                    className="mx-auto mb-4 rounded-2xl"
                   />
-                  <h3 className="text-xl font-semibold mb-2">{option.name}</h3>
-                  <p className="text-gray-600">{option.description}</p>
+                  <h3 className="text-xl din-semibold text-primary mb-2">
+                    {option.name}
+                  </h3>
+                  <p className="text-secondary nunito">{option.description}</p>
                 </motion.div>
               ))}
             </motion.div>
