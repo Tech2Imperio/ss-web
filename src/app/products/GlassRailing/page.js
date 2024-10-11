@@ -453,25 +453,26 @@ export default function Component() {
                 </p>
               </motion.div>
 
-              {/* Right Side Image */}
-              <motion.div
-                variants={FadeLeft(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
-              >
-                <Image
-                  src={heroSlides[nextSlide].image}
-                  alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
-                />
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
+        {/* Right Side Image */}
+        <motion.div
+          variants={FadeLeft(0.3)}
+          initial="hidden"
+          animate="visible"
+          className="relative h-[20rem] w-full  md:w-full  md:h-[32rem] flex  md:mt-24 ml-0 md:ml-24"
+        >
+          <Image
+            src={heroSlides[nextSlide].image}
+            alt={heroSlides[nextSlide].title}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg shadow-xl"
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  </div>
+</section>
+
 
       <main className=" container overflow-hidden mx-auto">
         {/* Products Section */}

@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Link from "next/link";
+import Image from "next/image";
+
 import Img1 from "./assets/home-swiper/image1.webp";
 import Img2 from "./assets/home-swiper/image2.webp";
 import Img3 from "./assets/home-swiper/image3.webp";
@@ -15,8 +19,14 @@ import section2 from "./assets/home-swiper/section2.webp";
 import MobSection2 from "./assets/home-swiper/MobSection2.webp";
 import preview from "./assets/home-swiper/previewss.webp";
 import Mobpreview from "./assets/home-swiper/Mobpreview.webp";
-import Image from "next/image";
-import Link from "next/link";
+
+import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
+import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
+import CarouselImg4 from "./assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
+import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stainBlack.png";
+import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
+import CarouselImg7 from "./assets/product/profile/flutedPanel/flutedImg.webp";
+import sectionImg4 from "./assets/home-swiper/section4.webp";
 
 import {
   FaShieldAlt,
@@ -29,11 +39,15 @@ import {
   FaChevronRight,
   FaChevronLeft,
 } from "react-icons/fa";
-import sectionImg4 from "./assets/home-swiper/section4.webp";
 import { LuLightbulb, LuCog } from "react-icons/lu";
 import { GoZap } from "react-icons/go";
-import { useInView } from "react-intersection-observer";
 import { FiCheckCircle } from "react-icons/fi";
+import { PiCircleDashedLight } from "react-icons/pi";
+import { TfiHome } from "react-icons/tfi";
+import { TbBulb } from "react-icons/tb";
+import { HiArrowUpRight } from "react-icons/hi2";
+import { BsArrowRight } from "react-icons/bs";
+
 const images = [Img1, Img2, Img3, Img4, Img5];
 const images2 = [Img6, Img7, Img8, Img9, Img6];
 
@@ -139,7 +153,7 @@ function Section1() {
   );
 }
 
-function Section2() {
+function Section4() {
   const [isMobileView, setMobileView] = useState(false);
 
   const [ref, inView] = useInView({
@@ -367,7 +381,7 @@ function Section3() {
   );
 }
 
-function Section4() {
+function Section2() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -507,13 +521,6 @@ function Section4() {
   );
 }
 
-import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
-import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
-import CarouselImg4 from "./assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
-import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stainBlack.png";
-import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
-import CarouselImg7 from "./assets/product/profile/flutedPanel/flutedImg.webp";
-
 const Carousel = () => {
   const Carouselimages = [
     {
@@ -626,8 +633,15 @@ const Carousel = () => {
         </motion.div>
       </div>
       <Link href={Carouselimages[currentIndex].link}>
-        <button className="relative ml-4 mb-6 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-          Know More
+        <button className="relative inline-flex items-center justify-center overflow-hidden ml-4 mb-6 px-6 py-3 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+          <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+          <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+            <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+            <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+          </span>
+          <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold flex gap-2">
+            Know More
+          </span>
         </button>
       </Link>
     </div>
@@ -744,10 +758,6 @@ function Section5() {
   );
 }
 
-import { PiCircleDashedLight } from "react-icons/pi";
-import { TfiHome } from "react-icons/tfi";
-import { TbBulb } from "react-icons/tb";
-import { HiArrowUpRight } from "react-icons/hi2";
 const solutions = [
   {
     icon: <TbBulb className="w-12 h-12" />,
@@ -877,8 +887,15 @@ function Section6() {
             </motion.div>
           ))}
           <Link href="/ContactUs">
-            <button className="mt-8 px-6 py-3 bg-[#335c98] nunito text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50">
-              GET A QUOTE
+            <button className="relative mt-4 inline-flex items-center justify-center overflow-hidden px-4 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+              <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+              <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+              </span>
+              <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold flex gap-2">
+                GET A QUOTE <BsArrowRight className="h-4 w-4 mt-[0.10rem]" />
+              </span>
             </button>
           </Link>
         </motion.div>
@@ -916,9 +933,9 @@ function Home() {
     // className="h-screen no-scrollbar snap-y snap-mandatory overflow-x-hidden"
     >
       <Section1 />
-      <Section4 />
-      <Section3 />
       <Section2 />
+      <Section3 />
+      <Section4 />
       <Section5 />
       <Section6 />
     </div>

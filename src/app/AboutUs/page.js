@@ -200,7 +200,7 @@ export default function Page() {
           className="relative lg:absolute lg:z-40 flex flex-col justify-center w-full lg:max-w-3xl mx-auto lg:bottom-14 items-center bg-gray-200 lg:shadow-xl lg:shadow-[#335c98] lg:rounded-2xl px-6 lg:px-20 py-8"
         >
           <motion.h1
-            className="text-4xl my-2 text-center poppins-bold text-[#335c98]"
+            className="text-4xl my-2 text-center din-bold text-[#335c98]"
             variants={fadeInUp}
           >
             About Us
@@ -217,7 +217,7 @@ export default function Page() {
           </motion.p>
 
           <motion.h3
-            className="text-4xl my-4 text-center poppins-bold text-[#335c98]"
+            className="text-4xl my-4 text-center din-bold text-[#335c98]"
             variants={fadeInUp}
           >
             Why Rajguru?
@@ -240,7 +240,7 @@ export default function Page() {
                   <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
                   <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
                 </span>
-                <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out poppins-semibold">
+                <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out din-semibold">
                   GET A QUOTE
                 </span>
               </button>
@@ -345,7 +345,7 @@ export default function Page() {
                       className="hover:shadow-xl rounded-lg md:p-4 p-3 transition duration-500 flex flex-col gap-2"
                       variants={fadeInUp}
                     >
-                      <h3 className="text-lg poppins-bold text-[#335c98] ">
+                      <h3 className="text-lg din-bold text-[#335c98] ">
                         {feature.title}
                       </h3>
                       <p className="text-slate-500 text-sm nunito md:text-justify">
@@ -416,7 +416,7 @@ export default function Page() {
                     </span>
 
                     {/* Button text */}
-                    <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out poppins-semibold">
+                    <span className="relative z-10 group-hover:text-primary transition duration-700 ease-in-out din-semibold">
                       View More
                     </span>
                   </button>
