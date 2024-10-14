@@ -47,6 +47,7 @@ import { TfiHome } from "react-icons/tfi";
 import { TbBulb } from "react-icons/tb";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { BsArrowRight } from "react-icons/bs";
+import { HomeFadeLeft, HomeFadeRight } from "./components/utility/animation";
 
 const images = [Img1, Img2, Img3, Img4, Img5];
 const images2 = [Img6, Img7, Img8, Img9, Img6];
@@ -54,6 +55,39 @@ const images2 = [Img6, Img7, Img8, Img9, Img6];
 function Section1() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobileView, setMobileView] = useState(false);
+
+  const [visible, setVisible] = useState(true);
+  const [textIndex, setTextIndex] = useState(0);
+
+  const messages = [
+    {
+      title: "Crafted for Trust \n Built for Strength",
+      description:
+        "Delivering premium craftsmanship and durability, \n ensuring quality you can trust and strength that lasts.",
+    },
+    {
+      title: "Innovative Solutions \n Unmatched Quality",
+      description:
+        "Transforming industries with state-of-the-art technologies, \n our products stand the test of time.",
+    },
+    {
+      title: "Your Reliable Partner \n In Every Venture",
+      description:
+        "Empowering your business with robust materials, \n built to endure and exceed expectations.",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setTextIndex((prevIndex) => (prevIndex + 1) % messages.length);
+        setVisible(true);
+      }, 500);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,7 +99,7 @@ function Section1() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3500);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -74,7 +108,7 @@ function Section1() {
   }, [isMobileView]);
 
   return (
-    <section className=" flex top-0 h-screen w-screen relative -z-10 snap-start">
+    <section className=" flex h-screen w-screen relative snap-start">
       <div className="relative w-full h-full overflow-hidden">
         {(isMobileView ? images2 : images).map(
           (image, index) =>
@@ -111,42 +145,42 @@ function Section1() {
             duration: 1,
             repeat: Infinity,
             repeatType: "loop",
-            repeatDelay: 6,
+            repeatDelay: 9,
           }}
-          className="relative bottom-0 right-0 bg-gray-950 opacity-60 flex items-start justify-center text-white p-16 flex-col gap-4 h-full w-full lg:items-center "
+          className="relative right-0 bg-gray-950 opacity-60 flex items-start justify-center text-white p-16 flex-col gap-4 h-full w-full lg:items-center text-center"
         >
-          <motion.h1
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{
-              duration: 1,
-              delay: 0.6,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 6,
-            }}
-            className="text-[2rem] sm:text-[3rem] md:text-[3.3rem] lg:text-[3.5rem] xl:text-[3.8rem] whitespace-nowrap din-bold"
-          >
-            Crafted for Trust, <br />
-            Built for Strength
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            exit={{ opacity: 0, x: "-100%" }}
-            transition={{
-              duration: 1,
-              delay: 0.6,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 6,
-            }}
-            className="text-xs md:text-2xl whitespace-nowrap nunito"
-          >
-            "Delivering premium craftsmanship and durability, <br />
-            ensuring quality you can trust and strength that lasts."
-          </motion.p>
+          {visible && (
+            <>
+              <motion.h1
+                variants={HomeFadeLeft(0.6)}
+                initial="hidden"
+                animate="visible"
+                className="text-[2rem] sm:text-[3rem] md:text-[3.3rem] lg:text-[3.5rem] xl:text-[3.8rem] whitespace-nowrap din-bold"
+              >
+                {messages[textIndex].title.split("\n").map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </motion.h1>
+              <motion.p
+                variants={HomeFadeRight(0.6)}
+                initial="hidden"
+                animate="visible"
+                className="text-xs md:text-2xl whitespace-nowrap nunito"
+              >
+                {messages[textIndex].description
+                  .split("\n")
+                  .map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </motion.p>
+            </>
+          )}
         </motion.div>
       </div>
     </section>
@@ -525,7 +559,7 @@ const Carousel = () => {
   const Carouselimages = [
     {
       src: CarouselImg1,
-      name: "Stainless Steel Balustrade",
+      name: "Stainless Steel Balustrade System",
       description: "A sturdy railing system for various applications.",
       link: "/products/BalustradeSystem",
     },
@@ -610,10 +644,10 @@ const Carousel = () => {
         />
       </motion.div>
       <div className="p-4 flex flex-col rounded-b-xl rounded-t-xl bg-white z-0">
-        <h5 className="mb-2 text-xl font-semibold text-gray-900">
+        <h5 className="mb-2 text-xl din-semibold text-gray-900">
           {Carouselimages[currentIndex].name}
         </h5>
-        <p className="text-base font-light text-gray-600">
+        <p className="text-base din-regular text-gray-600">
           {Carouselimages[currentIndex].description}
         </p>
       </div>

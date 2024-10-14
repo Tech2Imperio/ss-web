@@ -59,10 +59,6 @@ export default function Navbar() {
               href: "/products/profile/uProfile",
             },
             {
-              name: "Stainless Steel Q-Profile",
-              href: "/products/profile/qProfile",
-            },
-            {
               name: "Stainless Steel L-Profile",
               href: "/products/profile/lProfile",
             },
@@ -174,7 +170,7 @@ export default function Navbar() {
             >
               <div className="px-4 flex flex-col">
                 <div className="flex flex-col ">
-                  <ul className="flex justify-center flex-col gap-2 md:gap-12 cursor-pointer">
+                  <ul className="flex justify-center flex-col gap-2 lg:gap-12 cursor-pointer">
                     <Link
                       onClick={toggleSidebar}
                       href="/"
@@ -271,13 +267,6 @@ export default function Navbar() {
                               href="/products/profile/uProfile"
                             >
                               Stainless Steel U-Profile
-                            </Link>
-                            <Link
-                              onClick={toggleSidebar}
-                              href="/products/profile/qProfile"
-                              className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
-                            >
-                              Stainless Steel Q-Profile
                             </Link>
                             <Link
                               onClick={toggleSidebar}
