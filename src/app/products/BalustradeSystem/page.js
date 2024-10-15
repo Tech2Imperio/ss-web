@@ -1,12 +1,16 @@
 "use client";
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import bg from "../../assets/product/balustrade/bg.webp";
 import stairImg from "../../assets/product/balustrade/Images/stairsGlass.webp";
 import floorImg from "../../assets/product/balustrade/Images/floorGlass.webp";
 import houseImg from "../../assets/product/balustrade/Images/building.webp";
 import office from "../../assets/product/balustrade/Images/office balcony.webp";
 import Balustrade from "../../assets/product/balustrade/main.webp";
-import { FadeRight,FadeLeft, FadeUp } from "../../components/utility/animation.jsx";
+import {
+  FadeRight,
+  FadeLeft,
+  FadeUp,
+} from "../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import main2 from "../../assets/product/balustrade/main2.webp";
@@ -44,7 +48,6 @@ import stairsImg from "../../assets/product/balustrade/hero/floor.webp";
 //   </div>
 // );
 
-
 const heroSlides = [
   {
     image: bg,
@@ -65,7 +68,6 @@ const heroSlides = [
       "Invest in our durable outdoor balustrade railing systems, designed to withstand the elements while providing safety and style for your outdoor spaces.",
   },
 ];
-
 
 export default function Page() {
   const relatedProducts = [
@@ -132,7 +134,7 @@ export default function Page() {
 
   return (
     <section className="relative">
-       <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
@@ -246,7 +248,9 @@ export default function Page() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 p-4 text-white">
-                <h3 className="text-xl whitespace-nowrap md:whitespace-normal din-semibold">{label}</h3>
+                <h3 className="text-xl whitespace-nowrap md:whitespace-normal din-semibold">
+                  {label}
+                </h3>
                 <p className="text-sm raleway text-gray-300">{description}</p>
               </div>
             </motion.div>
@@ -255,12 +259,12 @@ export default function Page() {
 
         {/* Add button to interact */}
 
-        <section className="wavo-column-gap-default elementor-section elementor-top-section mt-8 overflow-hidden mx-auto">
+        <section className="wavo-column-gap-default elementor-section elementor-top-section mt-8 overflow-hidden mx-auto container xl:-ml-44">
           <div className="elementor-container flex flex-col md:flex-row">
             <div className="elementor-column md:flex-1"></div>
-            <section className="bg-gray-50 py-10">
+            <section className="bg-gray-50 py-10 ">
               <div className="container mx-auto px-6">
-                <h2 className="text-3xl din-bold text-center text-[#335c98] mb-8">
+                <h2 className=" text-3xl din-semibold text-center text-[#335c98] mb-8">
                   Balustrade Railing Specifications
                 </h2>
                 <motion.div
@@ -268,21 +272,17 @@ export default function Page() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="flex flex-col gap-14 md:flex-row justify-center mb-6"
+                  className="flex flex-col gap-4 lg:gap-14 md:flex-row justify-center mb-6"
                 >
                   <Image
                     src={Balustrade}
                     alt="Balustrade Railing"
-                    width={400}
-                    height={300}
-                    className="rounded-lg shadow-lg"
+                    className="rounded-lg shadow-lg h-[20rem] w-[20rem] lg:w-[400px] lg:h-[300px] transition-transform duration-300 transform group-hover:scale-110 "
                   />
                   <Image
                     src={main2}
                     alt="Balustrade Railing"
-                    width={400}
-                    height={200}
-                    className="rounded-lg shadow-lg"
+                    className="rounded-lg shadow-lg  h-[20rem] w-[20rem] lg:w-[400px] lg:h-[300px]"
                   />
                 </motion.div>
 
@@ -312,19 +312,19 @@ export default function Page() {
                       Material
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Frame:{" "}
                         </b>{" "}
                         Stainless Steel (Grade 304 or 316)
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Infill:{" "}
                         </b>{" "}
                         Tempered Glass (10mm or 12mm thick)
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Finish:{" "}
                         </b>{" "}
@@ -338,25 +338,25 @@ export default function Page() {
                       Dimensions
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Height:{" "}
                         </b>{" "}
                         36 inches (914 mm) standard; custom heights available
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Top Rail Width:{" "}
                         </b>{" "}
                         1.5 inches (38 mm) minimum
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Post Size:
                         </b>{" "}
                         2 inches x 2 inches (50 mm x 50 mm)
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Glass Panel Size:{" "}
                         </b>{" "}
@@ -370,19 +370,19 @@ export default function Page() {
                       Safety Standards
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Load Capacity:{" "}
                         </b>{" "}
                         Must withstand a horizontal load of 200 lbs
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Height Requirements:{" "}
                         </b>{" "}
                         Minimum of 36 inches above walking surface
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Glass Safety:{" "}
                         </b>{" "}
@@ -396,19 +396,19 @@ export default function Page() {
                       Design Options
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Post Design:{" "}
                         </b>{" "}
                         Square or round with decorative caps
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Infill Options:{" "}
                         </b>{" "}
                         Glass, horizontal cables, or vertical bars
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Color Options:{" "}
                         </b>{" "}
@@ -422,19 +422,19 @@ export default function Page() {
                       Installation Details
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Mounting:{" "}
                         </b>{" "}
                         Top-mounted or side-mounted options
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Surface Types:{" "}
                         </b>{" "}
                         Suitable for concrete, wood, and metal
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Hardware:{" "}
                         </b>{" "}
@@ -448,13 +448,13 @@ export default function Page() {
                       Maintenance
                     </h3>
                     <ul className="list-none list-inside text-gray-700">
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Cleaning:{" "}
                         </b>{" "}
                         Regular cleaning with mild soap and water
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Inspection:{" "}
                         </b>{" "}
@@ -468,19 +468,19 @@ export default function Page() {
                       Applications
                     </h3>
                     <ul className="list-none list-inside  text-gray-700">
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Residential:{" "}
                         </b>{" "}
                         Balconies, staircases
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         <b className="text-[#335c98] din-medium text-[1.125rem]">
                           Commercial:{" "}
                         </b>{" "}
                         Office buildings, restaurants
                       </li>
-                      <li className=" text-gray-500 nunito">
+                      <li className=" text-gray-500 din-regular">
                         {" "}
                         <b className=" text-[#335c98] din-medium text-[1.125rem]">
                           Public Spaces:{" "}
@@ -494,7 +494,7 @@ export default function Page() {
             </section>
           </div>
           {/* swiper */}
-          <div className="w-full py-20 fade-in ">
+          <div className="w-full py-20 fade-in container mx-auto xl:ml-44">
             <div className="max-w-6xl mx-auto text-center">
               <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
                 Other Products

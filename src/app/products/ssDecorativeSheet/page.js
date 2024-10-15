@@ -208,7 +208,7 @@ const page = () => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
       setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -286,7 +286,7 @@ const page = () => {
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 px-14">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 xl:px-14">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
@@ -392,7 +392,7 @@ const page = () => {
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:px-14">
               <div className="text-left space-y-6">
                 <h3 className="text-xl din-semibold text-[#335c98]">
                   Finishes
@@ -479,7 +479,7 @@ const page = () => {
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block px-14">
+        <div className="container mx-auto my-14 hidden md:block xl:px-14">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
@@ -580,7 +580,7 @@ const page = () => {
 
         <main
           ref={card1Ref}
-          className={`flex flex-col justify-center text-justify gap-20 m-4 px-14 `}
+          className={`flex flex-col justify-center text-justify gap-20 m-4 xl:px-14 `}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
@@ -653,11 +653,11 @@ const page = () => {
           </div>
         </main>
 
-        <div className="flex justify-center flex-col m-4 px-36">
+        <div className="flex justify-center flex-col m-4 lg:px-36">
           <h3 className=" text-3xl mx-auto md:text-4xl text-primary din-semibold">
             Why Choose Stainless Steel Decorative Sheets?
           </h3>
-          <p className="text-base lg:text-base text-secondary text-justify w-[100%] p-4">
+          <p className="text-base lg:text-base din-regular text-secondary text-justify w-[100%] p-4">
             Rajguru Steel Industries offers high-quality stainless steel
             decorative sheets that elevate your interiors with elegance and
             durability. Our corrosion-resistant panels are ideal for various

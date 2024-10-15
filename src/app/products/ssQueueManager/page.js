@@ -42,7 +42,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTruck, FaCheck, FaInfoCircle } from "react-icons/fa";
@@ -50,7 +50,7 @@ import React from "react";
 import bg from "../../assets/product/queueManager/bg.webp";
 import main from "../../assets/product/queueManager/productImg/main.webp";
 import Link from "next/link";
-import { FadeDown, FadeUp } from "../../components/utility/animation.jsx";
+import { FadeDown, FadeUp, FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
 // import { motion } from "framer-motion";
 import ropeImg from "../../assets/product/queueManager/productImg/rope.webp";
 import wallMount from "../../assets/product/queueManager/productImg/wallmount.webp";
@@ -70,12 +70,37 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaRuler, FaWeight, FaPalette, FaBox } from "react-icons/fa";
+import LivingImg from "../../assets/product/ssdecorativesheet/hero/hall.webp";
+import HallImg from "../../assets/product/ssdecorativesheet/hero/hall2.webp";
+import bedroom from "../../assets/product/ssdecorativesheet/hero/bedroom.webp";
 
 const Card = ({ children }) => (
   <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
     {children}
   </div>
 );
+
+
+const heroSlides = [
+  {
+    image: LivingImg,
+    title: "Stainless Steel Queue Managers Elevate Efficiency and Style",
+    description:
+      "Transform your space with stainless steel queue managers that not only improve crowd control but also add a touch of elegance to any environment.",
+  },
+  {
+    image: HallImg,
+    title: "Sleek Stainless Steel Queue Barriers Ultimate Line Control Solutions",
+    description:
+      "Achieve seamless organization with our stylish stainless steel queue barriers, designed for durability and a contemporary look in retail, events, and public spaces.",
+  },
+  {
+    image: bedroom,
+    title: "Durable Stainless Steel Queue Management Systems Professional and Reliable",
+    description:
+      "Opt for robust stainless steel queue management systems that ensure effective line control while enhancing the overall aesthetic of your venue.",
+  },
+];
 
 export default function StainlessSteelQueueManager() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -187,6 +212,20 @@ export default function StainlessSteelQueueManager() {
     },
   ];
 
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <motion.div
       className="flex flex-col min-h-screen"
@@ -195,31 +234,71 @@ export default function StainlessSteelQueueManager() {
       exit="exit"
       variants={pageAnimation}
     >
-      <div className="relative">
-        <Image
-          className="h-[22rem] md:h-[30rem] w-full object-cover"
-          src={bg}
-          alt="U Profile"
-        />
-        <div className="absolute inset-0 bg-black opacity-25" />
-        <motion.div
-          variants={FadeDown(0.001)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
-        >
-          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 din-semibold mb-6 tracking-tight">
-            Stainless Steel Queue Manager
-          </h1>
-          <p className=" text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify raleway mb-12 ">
-            "Rajguru Steel Industries offers durable stainless steel crowd
-            control solutions ideal for hospitals, airports, and public spaces.
-            Our barriers ensure safety and organization while enhancing
-            aesthetic appeal."
-          </p>
-        </motion.div>
-      </div>
+        <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
+
 
       <main className="flex flex-col overflow-hidden mx-auto container ">
         <div className=" flex flex-col justify-center text-justify text-sm md:text-sm text-slate-500 gap-4 din-regular p-8">
@@ -234,7 +313,7 @@ export default function StainlessSteelQueueManager() {
         </div>
 
         {/* Hero Section */}
-        <section className="mb-12 p-8 px-14 ">
+        <section className="mb-12 p-8 xl:px-14 ">
           <div className="flex flex-col md:flex-row items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -245,7 +324,7 @@ export default function StainlessSteelQueueManager() {
               <Image
                 src={main}
                 alt="Stainless Steel Queue Manager"
-                width={500}
+                width={600}
                 height={500}
                 className="rounded-3xl shadow-lg"
               />
@@ -256,7 +335,7 @@ export default function StainlessSteelQueueManager() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="md:w-1/2 mt-4 md:mt-0 md:ml-8"
             >
-              <h2 className="text-3xl md:text-4xl din-bold mb-4 text-[#335c98]">
+              <h2 className="text-2xl  md:text-4xl din-bold mb-4 text-[#335c98]">
                 Premium Crowd Control Solution
               </h2>
               <p className="text-gray-500 mb-4 din-regular flex text-justify">
@@ -295,7 +374,7 @@ export default function StainlessSteelQueueManager() {
          whileInView="visible"
          viewport={{ once: true }}
         className="mb-12 p-8 px-4 md:px-14">
-          <h2 className="text-3xl font-semibold text-[#335c98] mb-6">
+          <h2 className="text-3xl flex justify-center md:justify-normal  font-semibold text-[#335c98] mb-6">
             Specifications
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -337,7 +416,7 @@ export default function StainlessSteelQueueManager() {
         </section>
 
         {/* Accessories Section */}
-        <section className="mb-12 p-8 px-14">
+        <section className="mb-12 p-8 xl:px-14">
           <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
             Accessories
           </h2>
@@ -613,7 +692,7 @@ export default function StainlessSteelQueueManager() {
           </motion.div>
         </section>
         {/* Features Section */}
-        <section className="mb-12 p-8 px-14">
+        <section className="mb-12 p-8 xl:px-14">
           <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
             Key Features
           </h2>
@@ -656,7 +735,7 @@ export default function StainlessSteelQueueManager() {
         </section>
 
         {/* Maintenance Guide Section */}
-        <section className="mb-12 p-8 px-14">
+        <section className="mb-12 p-8 xl:px-14">
           <h2 className="text-3xl din-bold text-[#335c98] mb-6">
             Maintenance Guide
           </h2>

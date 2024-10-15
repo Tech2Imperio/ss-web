@@ -458,7 +458,7 @@ export default function Component() {
           variants={FadeLeft(0.3)}
           initial="hidden"
           animate="visible"
-          className="relative h-[20rem] w-full  md:w-full  md:h-[32rem] flex  md:mt-24 ml-0 md:ml-24"
+          className="relative  h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
         >
           <Image
             src={heroSlides[nextSlide].image}

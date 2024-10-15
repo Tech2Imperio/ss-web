@@ -16,7 +16,7 @@ import {
   FadeLeft,
   FadeRight,
 } from "../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import UProfile from "../../assets/RelatedProducts/UProfile.webp";
 import LProfile from "../../assets/RelatedProducts/LProfile.webp";
@@ -32,6 +32,30 @@ import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Impor
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import LivingImg from "../../assets/product/sswirerope/slider/Img1.webp";
+import HallImg from "../../assets/product/sswirerope/slider/Img2.webp";
+import bedroom from "../../assets/product/sswirerope/slider/Img3.webp";
+
+const heroSlides = [
+  {
+    image: LivingImg,
+    title: "The Perfect Choice for Balcony Safety",
+    description:
+      "Enhance your balcony safety with durable stainless steel wire rope, offering strong support and stylish protection without obstructing views.",
+  },
+  {
+    image: HallImg,
+    title: "Upgrade Your Balcony with High-Quality Stainless Steel Wire Rope",
+    description:
+      "Transform your balcony with premium stainless steel wire rope, ensuring robust safety and a sleek, modern look for your outdoor space.",
+  },
+  {
+    image: bedroom,
+    title: "Durable Stainless Steel Wire Rope for Stylish Balcony Railings",
+    description:
+      "Choose durable stainless steel wire rope for your balcony railings, providing reliable safety and a contemporary design that complements any home.",
+  },
+];
 
 export default function Page() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -93,45 +117,96 @@ export default function Page() {
     },
   ];
 
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative  ">
       {/* Hero Section */}
-      <section className="relative h-[25rem] md:h-[30rem] w-full">
-        <Image
-          className="h-full w-full object-cover"
-          src={bg}
-          alt="Wire Rope Profile"
-          layout="fill"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-45" />
-        <motion.div
-          variants={FadeDown(0.01)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
-        >
-          <h1 className=" text-3xl md:text-5xl text-white opacity-90 din-bold mb-6 tracking-tight">
-            Stainless Steel Wire Rope
-          </h1>
-          <p className=" text-gray-200 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify din-regular mb-12 ">
-            "Discover our premium stainless steel wire rope, designed for
-            exceptional strength and corrosion resistance in rigging and
-            lifting. Ideal for industrial and marine applications, it guarantees
-            safety and reliability in demanding environments."
-          </p>
-        </motion.div>
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </section>
 
       <main className=" mx-auto container">
         {/* Product Overview with Image Slider */}
-        <section className=" bg-white container mx-auto md:p-28">
+        <section className=" bg-white container mx-auto pt-8 md:p-28">
           <div className=" px-6">
             {/* <h2 className="text-4xl pt-10 din-semibold text-[#335c98] mb-12 md:mb-16 md:pt-0 text-center">
               Wire Rope
             </h2> */}
-            <div className="flex flex-col lg:flex-row items-center gap-28">
+            <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-28">
               <motion.div
                 variants={FadeRight(0.01)}
                 initial="hidden"
@@ -351,9 +426,9 @@ export default function Page() {
         </section>
 
         {/* Maintenance Tips Section */}
-        <section className="py-24 bg-gray-100 mt-14 container mx-auto px-14">
+        <section className="py-24 bg-gray-100 container mx-auto xl:px-14">
           <div className="container mx-auto px-6">
-            <h2 className="text-5xl din-semibold text-primary mb-16 text-center">
+            <h2 className="text-3xl md:text-5xl din-semibold text-primary mb-16 text-center">
               Maintenance Tips
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -398,10 +473,10 @@ export default function Page() {
         {/* Call to Action Section */}
         <section className="pt-8  text-white">
           <div className="container mx-auto px-6 text-center">
-            <h2 className=" text-base md:text-5xl din-semibold text-primary mb-8">
+            <h2 className="  text-xl md:text-5xl din-semibold text-primary mb-8">
               Ready to Elevate Your Project?
             </h2>
-            <p className="text-xl text-secondary din-regular mb-12 max-w-3xl mx-auto">
+            <p className="text-base text-justify text-secondary din-regular mb-12 max-w-3xl mx-auto">
               Discover the unmatched strength and versatility of Rajguru
               Stainless Steel Wire Rope. Let us help you bring your vision to
               life.
@@ -428,50 +503,50 @@ export default function Page() {
           </div>
         </section>
         {/* call action close */}
-         {/* swiper */}
-         <div className="w-full py-20 fade-in ">
-            <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
-                Other Products
-              </h2>
-              <Swiper
-                modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
-                spaceBetween={15}
-                slidesPerView={1}
-                loop
-                autoplay={{
-                  delay: 1500,
-                  disableOnInteraction: false,
-                }}
-                scrollbar={{ draggable: true }}
-                breakpoints={{
-                  640: { slidesPerView: -1 },
-                  768: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-              >
-                {relatedProducts.map((product, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="flex flex-col items-center cursor-pointer">
-                      <Link href={product.link} passHref>
-                        <Image
-                          src={product.image}
-                          alt={product.title}
-                          width={150}
-                          height={150}
-                          className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
-                        />
-                        <h3 className="mt-4 text-xl text-[#335c98] din-regular">
-                          {product.title}
-                        </h3>
-                      </Link>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+        {/* swiper */}
+        <div className="w-full py-20 fade-in ">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
+              Other Products
+            </h2>
+            <Swiper
+              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+              spaceBetween={15}
+              slidesPerView={1}
+              loop
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: { slidesPerView: -1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              {relatedProducts.map((product, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex flex-col items-center cursor-pointer">
+                    <Link href={product.link} passHref>
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={150}
+                        height={150}
+                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
+                      />
+                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
+                        {product.title}
+                      </h3>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-          {/* swiper close */}
+        </div>
+        {/* swiper close */}
       </main>
     </div>
   );

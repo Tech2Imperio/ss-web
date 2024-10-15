@@ -26,14 +26,39 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import { FadeDown } from "../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
+import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
+import { motion,AnimatePresence } from "framer-motion";
+// import LivingImg from "../../assets/product/ssdecorativesheet/hero/hall.webp";
+import HallImg from "../../assets/product/invisiblegrill/slider/invisiblegrill.webp";
+import bedroom from "../../assets/product/invisiblegrill/slider/Grill1.webp";
+
+const heroSlides = [
+  {
+    image: bgImg,
+    title: "The Ultimate Safety Solution for Modern Homes",
+    description:
+      "Discover the ultimate safety solution for modern homes with invisible grills—durable barriers that protect balconies and windows while enhancing aesthetics and maintaining unobstructed views.",
+  },
+  {
+    image: HallImg,
+    title: "Enhance Your Views with Stylish Invisible Grills",
+    description:
+      "Enhance your views and safety with stylish invisible grills, offering unobstructed sightlines, robust balcony protection, and modern aesthetics for homes while ensuring child safety and security.",
+  },
+  {
+    image: bedroom,
+    title: "Combining Safety and Aesthetic Appeal",
+    description:
+      "Combine safety and aesthetic appeal with invisible grills, providing secure balcony protection and unobstructed views while enhancing your home's modern design and ensuring child safety.",
+  },
+];
+
 
 export default function Home() {
   const items = [img1, img2, img3];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlides = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
@@ -43,9 +68,28 @@ export default function Home() {
     );
   };
 
+
+  // hweo section 
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+  // hero section slider
+
+  
+
   // Auto slide functionality
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000); // Change slides every 3 seconds
+    const interval = setInterval(nextSlides, 3000); // Change slides every 3 seconds
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 
@@ -213,33 +257,74 @@ export default function Home() {
     setSelectedAccessory(selectedAccessory === accessory ? null : accessory);
   };
 
+
+
   return (
     <main className=" h-full w-full relative">
-      <div className="relative">
-        <Image
-          className="h-[22rem] md:h-[30rem] w-full object-cover"
-          src={bgImg}
-          alt="invisible grill"
-        />
-        <div className="absolute inset-0 bg-black opacity-45" />
-        <motion.div
-          variants={FadeDown(0.001)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4 "
-        >
-          <h1 className=" text-3xl md:text-[3.125rem] text-white opacity-90 din-bold mb-6 tracking-tight">
-            Stainless Steel Invisible Grill
-          </h1>
-          <p className=" text-gray-200 text-opacity-90 text-[0.850rem] w-auto md:text-lg din-regular  md:w-[48rem] text-justify mb-12 ">
-            "Rajguru Steel Industry offers premium invisible grills that enhance
-            safety and aesthetics for homes and balconies. Our durable stainless
-            steel solutions provide unobstructed views while ensuring
-            long-lasting protection, making them ideal for modern architecture."
-          </p>
-        </motion.div>
-      </div>
+                  <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
       <div className=" flex flex-col overflow-hidden mx-auto container">
         <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-scrren md:h-[90vh] md:mt-9 w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
