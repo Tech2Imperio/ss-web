@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function ThankYou() {
   const [displayedText, setDisplayedText] = useState("");
   const [confetti, setConfetti] = useState([]);
-  const fullText = "Thank you for your response!";
+  const fullText = "Thhank you for your response!";
 
   useEffect(() => {
     let i = 0;
