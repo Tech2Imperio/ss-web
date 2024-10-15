@@ -76,6 +76,46 @@ export const FadeRight = (delay) => {
   };
 };
 
+export const HomeFadeLeft = (delay) => {
+  return {
+    hidden: {
+      opacity: 0,
+      x: 100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        delay: delay,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 9,
+      },
+    },
+  };
+};
+
+export const HomeFadeRight = (delay) => {
+  return {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        delay: delay,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 9,
+      },
+    },
+  };
+};
+
 export const FadeDown = (delay) => {
   return {
     hidden: {

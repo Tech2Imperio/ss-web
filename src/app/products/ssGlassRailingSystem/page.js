@@ -2,8 +2,24 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+
+import UProfile from "../../assets/RelatedProducts/UProfile.webp";
+import LProfile from "../../assets/RelatedProducts/LProfile.webp";
+import fluted from "../../assets/RelatedProducts/fluted.webp";
+import TProfile from "../../assets/product/profile/T_profile/wall.webp";
+import customized from "../../assets/RelatedProducts/customized.webp";
+import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
+import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
+import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
+import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import {
   FaShieldAlt,
   FaBolt,
@@ -24,6 +40,61 @@ import customImg3 from "../../assets/product/ssGlassRailingSystem/extra/customIm
 import customImg4 from "../../assets/product/ssGlassRailingSystem/extra/customImg4.webp";
 import ssGlassRailing from "../../assets/product/ssGlassRailingSystem/extra/ssGlassRailing.webp";
 import Link from "next/link";
+import HeroImg1 from "../../assets/product/ssGlassRailingSystem/hero/Hero1Img.webp";
+import HeroImg2 from "../../assets/product/ssGlassRailingSystem/hero/Hero2Img.webp";
+import HeroImg3 from "../../assets/product/ssGlassRailingSystem/hero/Hero3Img.webp";
+import HeroImg4 from "../../assets/product/ssGlassRailingSystem/hero/Hero4Img.webp";
+import HeroImg5 from "../../assets/product/ssGlassRailingSystem/hero/Hero5Img.webp";
+import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
+
+const relatedProducts = [
+  {
+    title: "U Profile",
+    image: UProfile,
+    link: "/products/profile/uProfile",
+  },
+  {
+    title: "T Profile",
+    image: TProfile,
+    link: "/products/profile/tProfile",
+  },
+  {
+    title: "L Profile",
+    image: LProfile,
+    link: "/products/profile/lProfile",
+  },
+  {
+    title: "Fluted Panel",
+    image: fluted,
+    link: "/products/profile/ssFlutedPanelProfile",
+  },
+  {
+    title: "SS Balustrade",
+    image: SSbalustrade,
+    link: "/products/BalustradeSystem",
+  },
+  {
+    title: "Invisible Grill",
+    image: invisibleGril,
+    link: "/products/ssInvisibleGrill",
+  },
+  {
+    title: "Decorative Sheet",
+    image: DecorativeSheet,
+    link: "/products/ssDecorativeSheet",
+  },
+  {
+    title: "Queue Manager",
+    image: queuemanager,
+    link: "/products/ssQueueManager",
+  },
+  {
+    title: "Custom Profile",
+    image: customized,
+    link: "/products/profile/ssCustomProfile",
+  },
+];
+
 export default function Page() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -109,27 +180,6 @@ export default function Page() {
       ],
     },
     {
-      name: "Post Caps",
-      image: glasscap,
-      description:
-        "Stylish caps for the top of posts to enhance appearance and safety.",
-      specs: [
-        { name: "Material", value: "316 Stainless Steel" },
-        { name: "Finish", value: "Brushed or Polished" },
-        { name: "Compatibility", value: "Fits standard post sizes" },
-      ],
-    },
-    {
-      name: "Handrail Brackets",
-      image: mountingbracket,
-      description: "Sturdy brackets for supporting handrails.",
-      specs: [
-        { name: "Material", value: "304 Stainless Steel" },
-        { name: "Finish", value: "Polished" },
-        { name: "Compatibility", value: "For 42.4mm handrails" },
-      ],
-    },
-    {
       name: "Base Plates",
       image: baseplate,
       description: "Robust base plates for secure mounting of glass panels.",
@@ -151,12 +201,140 @@ export default function Page() {
         { name: "Length", value: "Custom cut to size" },
       ],
     },
+    {
+      name: "Post Caps",
+      image: glasscap,
+      description:
+        "Stylish caps for the top of posts to enhance appearance and safety.",
+      specs: [
+        { name: "Material", value: "316 Stainless Steel" },
+        { name: "Finish", value: "Brushed or Polished" },
+        { name: "Compatibility", value: "Fits standard post sizes" },
+      ],
+    },
+    {
+      name: "Handrail Brackets",
+      image: mountingbracket,
+      description: "Sturdy brackets for supporting handrails.",
+      specs: [
+        { name: "Material", value: "304 Stainless Steel" },
+        { name: "Finish", value: "Polished" },
+        { name: "Compatibility", value: "For 42.4mm handrails" },
+      ],
+    },
   ];
 
   const [hoveredAccessory, setHoveredAccessory] = useState(null);
+  const heroSlides = [
+    {
+      image: HeroImg1,
+      title: "Modern Stainless Steel Glass Railing Systems",
+      description:
+        "Transform your space with our sleek stainless steel railing systems, offering a modern aesthetic and robust durability for both indoor and outdoor applications.",
+    },
+    {
+      image: HeroImg2,
+      title: "Durable Stainless Steel Glass Railing Systems",
+      description:
+        "Discover our weather-resistant stainless steel railings, engineered to withstand the elements while providing a stylish and secure barrier for your property.",
+    },
+    {
+      image: HeroImg3,
+      title: "Customizable Stainless Steel Glass Railing Systems",
+      description:
+        "Design your ideal space with our custom stainless steel glass railings, combining elegance and strength to enhance your home or business with a contemporary flair.",
+    },
+    {
+      image: HeroImg4,
+      title: "Minimalist Stainless Steel Glass Railing Systems",
+      description:
+        "Embrace simplicity with our minimalist stainless steel railing solutions, perfect for modern designs that prioritize clean lines and unobtrusive safety.",
+    },
+    {
+      image: HeroImg5,
+      title: "Premium Stainless Steel Glass Railing Systems",
+      description:
+        "Upgrade your property with our premium stainless steel glass railings, featuring high-quality materials and craftsmanship for lasting beauty and security at an affordable price.",
+    },
+  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen">
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[17rem] w-full  lg:w-[90%]  md:h-[32rem] flex  md:mt-24 lg:ml-14"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
       <main className="max-w-[85rem] mx-auto">
         {/* Section 1 */}
         <motion.section
@@ -164,10 +342,10 @@ export default function Page() {
           initial="hidden"
           animate={controls1}
           variants={fadeInUp}
-          className="py-20"
+          className="py-10"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
               Elevate Your Space with Stainless Steel Glass Railing Systems
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -179,16 +357,16 @@ export default function Page() {
                 />
               </motion.div>
               <motion.div variants={fadeInUp}>
-                <h3 className="text-2xl font-semibold mb-4">
+                <h3 className="text-2xl din-semibold mb-4 text-primary">
                   Unparalleled Elegance and Safety
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-secondary mb-6 nunito">
                   Our stainless steel glass railing systems combine modern
                   aesthetics with robust engineering to provide a seamless blend
                   of style and security. Perfect for both indoor and outdoor
                   applications, these systems offer:
                 </p>
-                <ul className="list-disc list-inside text-gray-600 mb-6">
+                <ul className="list-disc list-inside text-secondary mb-6 nunito">
                   <li>Unobstructed views and enhanced spatial perception</li>
                   <li>
                     Durability and corrosion resistance for long-lasting beauty
@@ -220,10 +398,10 @@ export default function Page() {
           initial="hidden"
           animate={controls2}
           variants={fadeInUp}
-          className="py-20"
+          className="py-10"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
               Key Features
             </h2>
             <motion.div
@@ -258,14 +436,14 @@ export default function Page() {
               ].map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-md text-center"
+                  className="bg-gray-200 p-6 rounded-lg hover:shadow-2xl text-center"
                   variants={fadeInUp}
                 >
-                  <feature.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-                  <h3 className="text-xl font-semibold mb-2">
+                  <feature.icon className="w-8 h-8 mx-auto mb-4 text-primary" />
+                  <h3 className="text-xl din-semibold mb-2 text-primary">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-secondary nunito">{feature.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -281,43 +459,43 @@ export default function Page() {
           className="py-10"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-bold mb-12 text-center text-primary">
               Premium Accessories
             </h2>
-            <p className="text-xl text-gray-600 text-center mb-12">
+            <p className="text-xl text-secondary text-center mb-12 din-medium">
               Explore our range of high-quality accessories designed to
               complement your glass railing system.
             </p>
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-10">
               {accessories.map((accessory, index) => (
                 <motion.div
                   key={index}
-                  className="relative overflow-hidden bg-white rounded-lg shadow-lg mb-4"
+                  className="relative overflow-hidden bg-white rounded-lg shadow-lg mb-8"
                   onMouseEnter={() => setHoveredAccessory(index)}
                   onMouseLeave={() => setHoveredAccessory(null)}
                 >
                   <Image
                     src={accessory.image}
                     alt={accessory.name}
-                    width={250}
-                    height={150}
                     className="rounded-lg w-full h-auto"
                   />
                   <motion.div
-                    className={`absolute inset-0 opacity-60 bg-gradient-to-r from-gray-800 to-transparent p-4 transition-transform duration-1000 ease-in-out ${
+                    className={`absolute inset-0 opacity-70 bg-gradient-to-r from-gray-900 to-gray-400 p-4 transition-transform duration-1000 ease-in-out flex flex-col gap-2 ${
                       hoveredAccessory === index
                         ? "translate-x-0"
                         : "translate-x-full"
                     }`}
                   >
-                    <h3 className="text-white text-lg font-semibold">
+                    <h3 className="text-white text-3xl din-semibold">
                       {accessory.name}
                     </h3>
-                    <p className="text-gray-300">{accessory.description}</p>
-                    <h4 className="text-xl font-semibold text-white mt-2">
+                    <p className="text-white din-medium">
+                      {accessory.description}
+                    </p>
+                    <h4 className="text-xl din-semibold text-white mt-2">
                       Specifications:
                     </h4>
-                    <ul className="text-gray-200">
+                    <ul className="text-white din-medium">
                       {accessory.specs.map((spec, specIndex) => (
                         <li key={specIndex}>{`${spec.name}: ${spec.value}`}</li>
                       ))}
@@ -335,13 +513,16 @@ export default function Page() {
           initial="hidden"
           animate={controls4}
           variants={fadeInUp}
-          className="py-20"
+          className="py-10"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-extrabold mb-8 text-center text-primary">
               Installation Process
             </h2>
-            <motion.div className="grid grid-cols-3" variants={staggerChildren}>
+            <motion.div
+              className="grid md:grid-cols-3 grid-cols-2 gap-3 mb-6"
+              variants={staggerChildren}
+            >
               {[
                 {
                   title: "Site Measurement",
@@ -359,9 +540,8 @@ export default function Page() {
                     "Secure mounting of base plates to the floor or structure.",
                 },
                 {
-                  title: "Post and Clamp Attachment",
-                  description:
-                    "Installation of posts and glass clamps or spigots.",
+                  title: "Post Attachment",
+                  description: "Installation of posts or spigots.",
                 },
                 {
                   title: "Glass Panel Mounting",
@@ -386,18 +566,22 @@ export default function Page() {
               ].map((step, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start mb-8"
+                  className="flex items-start hover:shadow-lg rounded-lg p-1 md:p-4 transition duration-300"
                   variants={fadeInUp}
                 >
-                  <FaCheckCircle className="w-6 h-6 text-green-500 mr-4 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
+                  <FaCheckCircle className="w-6 h-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                  <div className="flex flex-col justify-between">
+                    <h3 className="text-xl din-semibold mb-2 text-primary">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs text-secondary nunito">
+                      {step.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
-            <div className="text-center mt-6">
+            <div className="text-center mt-2">
               <Link href="/ContactUs">
                 <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
                   {/* Colored background */}
@@ -425,13 +609,13 @@ export default function Page() {
           initial="hidden"
           animate={controls5}
           variants={fadeInUp}
-          className="py-20"
+          className="py-10"
         >
           <div className="px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl din-bold mb-8 text-center text-primary">
               Customization Options
             </h2>
-            <p className="text-xl text-gray-600 text-center mb-12">
+            <p className="text-xl text-secondary text-center mb-8 din-semibold">
               Tailor your glass railing system to perfectly match your vision
               and architectural requirements.
             </p>
@@ -467,23 +651,67 @@ export default function Page() {
               ].map((option, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-md text-center flex flex-col justify-between"
+                  className="bg-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-between"
                   variants={fadeInUp}
                 >
                   <Image
                     src={option.image}
                     alt={option.name}
-                    width={200}
-                    height={200}
-                    className="mx-auto mb-4 rounded-full"
+                    width={300}
+                    height={300}
+                    className="mx-auto mb-4 rounded-2xl"
                   />
-                  <h3 className="text-xl font-semibold mb-2">{option.name}</h3>
-                  <p className="text-gray-600">{option.description}</p>
+                  <h3 className="text-xl din-semibold text-primary mb-2">
+                    {option.name}
+                  </h3>
+                  <p className="text-secondary nunito">{option.description}</p>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </motion.section>
+        <div className="w-full py-20 fade-in ">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
+              Other Products
+            </h2>
+            <Swiper
+              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
+              spaceBetween={15}
+              slidesPerView={1}
+              loop
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: { slidesPerView: -1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              {relatedProducts.map((product, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex flex-col items-center cursor-pointer">
+                    <Link href={product.link} passHref>
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={150}
+                        height={150}
+                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
+                      />
+                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
+                        {product.title}
+                      </h3>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
       </main>
     </div>
   );

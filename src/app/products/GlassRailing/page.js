@@ -265,7 +265,7 @@ export default function Component() {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
       setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);

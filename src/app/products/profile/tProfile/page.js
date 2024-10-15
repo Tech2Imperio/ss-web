@@ -23,8 +23,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import { FadeDown } from "../../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
+import { FadeLeft, FadeRight } from "../../../components/utility/animation.jsx";
+import { motion, AnimatePresence } from "framer-motion";
+import LivingImg from "../../../assets/product/profile/T_profile/slider/Img1.webp";
+import HallImg from "../../../assets/product/profile/T_profile/slider/Img2.webp";
+import bedroom from "../../../assets/product/profile/T_profile/slider/Img3.webp";
 
 // Black finishes
 import MirrorImg from "../../../assets/product/profile/T_profile/finishes/black/mirrorBlack.png";
@@ -60,6 +63,24 @@ import HairlineImgC from "../../../assets/product/profile/T_profile/finishes/cha
 import StainImgC from "../../../assets/product/profile/T_profile/finishes/champagne/stainChampagne.png";
 import StraightlineImgC from "../../../assets/product/profile/T_profile/finishes/champagne/straightlineChampagne.png";
 import MeshImgC from "../../../assets/product/profile/T_profile/finishes/champagne/meshChampagne.png";
+
+const heroSlides = [
+  {
+    image: LivingImg,
+    title: "Stainless Steel T Profiles Elevate Your Home",
+    description: "Transform your space with sleek stainless steel T profiles. Create stunning accent walls and enhance your home's modern aesthetic.",
+  },
+  {
+    image: HallImg,
+    title: "Versatile Wall Designs with T Profiles",
+    description: "Discover stainless steel T profiles for innovative wall design. Their sleek lines and geometric patterns add a contemporary touch to any interior.",
+  },
+  {
+    image: bedroom,
+    title: "T Profiles: The Future of Interior Design",
+    description: "Stay ahead of the trend with stainless steel T profiles, a cutting-edge solution for modern decor. These durable, stylish profiles add sophistication and elevate your living space.",
+  },
+];
 
 const page = () => {
   const finishes = [
@@ -181,33 +202,86 @@ const page = () => {
     threshold: 0.1,
   });
 
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className=" relative ">
-      <div className="relative">
-        <Image
-          className=" h-[22rem] md:h-[30rem] w-full object-cover"
-          src={bg}
-          alt="T Profile"
-        />
-        <div className="absolute inset-0 bg-black opacity-55" />
-        <motion.div
-          variants={FadeDown(0.01)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4"
-        >
-          <h1 className="text-3xl md:text-5xl text-white opacity-90 font-semibold mb-6 tracking-tight">
-            Stainless Steel T Profile
-          </h1>
-          <p className="text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify mb-12">
-            "Transform your space with our stainless steel T profiles, perfect
-            for decorative home and commercial walls. These stylish, durable
-            profiles resist rust and corrosion, making them ideal for any
-            interior design project. Upgrade your decor today!"
-          </p>
-        </motion.div>
-      </div>
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
 
       <div className=" flex flex-col overflow-hidden mx-auto container">
         {/* <div className=" flex justify-center">
