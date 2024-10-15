@@ -6,11 +6,12 @@ import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import Image from "next/image";
 
-import Img1 from "./assets/home-swiper/image1.webp";
-import Img2 from "./assets/home-swiper/image2.webp";
-import Img3 from "./assets/home-swiper/image3.webp";
-import Img4 from "./assets/home-swiper/image4.webp";
-import Img5 from "./assets/home-swiper/image5.webp";
+import Img1 from "./assets/product/glassrailingSystems/gallery/penthouse.webp";
+import Img2 from "./assets/product/balustrade/hero/floor.webp";
+import Img3 from "./assets/product/ssGlassRailingSystem/hero/Hero6Img.webp";
+import Img4 from "./assets/product/ssdecorativesheet/hero/bedroom.webp";
+import Img5 from "./assets/product/ssdecorativesheet/hero/bedroom.webp";
+// import Img5 from "./assets/product/profile/T_profile/slider/Img1.webp";
 import Img6 from "./assets/home-swiper/image6.webp";
 import Img7 from "./assets/home-swiper/image7.webp";
 import Img8 from "./assets/home-swiper/image8.webp";
@@ -22,10 +23,14 @@ import Mobpreview from "./assets/home-swiper/Mobpreview.webp";
 
 import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
 import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
+import CarouselImg3 from "./assets/product/sswirerope/product/ssrailing.jpg";
 import CarouselImg4 from "./assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
 import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stainBlack.png";
 import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
 import CarouselImg7 from "./assets/product/profile/flutedPanel/flutedImg.webp";
+import CarouselImg8 from "./assets/product/glassrailingSystems/gallery/balcony.webp";
+import CarouselImg9 from "./assets/product/ssGlassRailingSystem/extra/customImg1.webp";
+import CarouselImg10 from "./assets/product/ssdecorativesheet/middle.webp";
 import sectionImg4 from "./assets/home-swiper/section4.webp";
 
 import {
@@ -49,7 +54,7 @@ import { HiArrowUpRight } from "react-icons/hi2";
 import { BsArrowRight } from "react-icons/bs";
 import { HomeFadeLeft, HomeFadeRight } from "./components/utility/animation";
 
-const images = [Img1, Img2, Img3, Img4, Img5];
+const images = [Img3, Img1, Img2, Img4, Img5];
 const images2 = [Img6, Img7, Img8, Img9, Img6];
 
 function Section1() {
@@ -570,6 +575,12 @@ const Carousel = () => {
       link: "/products/ssInvisibleGrill",
     },
     {
+      src: CarouselImg3,
+      name: "Stainless Steel Wire Rope",
+      description: "Durable wire rope designed for strength and versatility..",
+      link: "/products/ssWireRope",
+    },
+    {
       src: CarouselImg4,
       name: "T Profile",
       description: "A versatile profile for modern designs.",
@@ -592,6 +603,24 @@ const Carousel = () => {
       name: "Fluted Panel",
       description: "Elegant paneling for enhanced visual appeal.",
       link: "/products/profile/ssFlutedPanelProfile",
+    },
+    {
+      src: CarouselImg8,
+      name: "Glass Railing Systems",
+      description: "Sleek glass railings that elevate any space.",
+      link: "/products/profile/GlassRailing",
+    },
+    {
+      src: CarouselImg9,
+      name: "Stainless Steel Glass Railing System",
+      description: "A modern blend of strength and transparency.",
+      link: "/products/profile/ssGlassRailingSystem",
+    },
+    {
+      src: CarouselImg10,
+      name: "Stainless Steel Decorative Sheets",
+      description: "Stylish sheets that add a touch of elegance.",
+      link: "/products/profile/ssDecorativeSheet",
     },
   ];
 
@@ -713,7 +742,7 @@ function Section5() {
 
   return (
     <section className="relative md:h-screen md:w-screen snap-start flex flex-col justify-center overflow-hidden">
-      <div className="container mx-auto w-[80%]">
+      <div className="container mx-auto lg:w-[80%]">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -726,10 +755,10 @@ function Section5() {
             <div className="flex flex-col gap-4">
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl md:text-5xl text-[#335c98] din-bold text-center whitespace-nowrap"
+                className="text-4xl lg:text-5xl text-[#335c98] din-bold text-center whitespace-nowrap"
               >
-                A strong partner at <br />
-                your side
+                A strong partner <br />
+                at your side
               </motion.h2>
               <motion.p
                 variants={itemVariants}
@@ -770,7 +799,7 @@ function Section5() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`flex flex-col justify-between items-center hover:shadow-lg transition duration-500 gap-4 ${
+                className={`flex flex-col justify-between items-center text-center hover:shadow-lg transition duration-500 gap-4 ${
                   index !== 2 ? "border-b-2" : ""
                 } border-gray-200 p-4 h-full`}
               >
