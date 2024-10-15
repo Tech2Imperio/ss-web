@@ -264,7 +264,7 @@ export default function Page() {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
       setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 9000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);

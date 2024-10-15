@@ -7,7 +7,8 @@ import Link from "next/link";
 
 export default function ThankYou() {
   const [displayedText, setDisplayedText] = useState("");
-  const fullText = "Thhankyou for your response!";
+  const [confetti, setConfetti] = useState([]);
+  const fullText = "Thank you for your response!";
 
   useEffect(() => {
     let i = 0;
@@ -23,33 +24,40 @@ export default function ThankYou() {
     return () => clearInterval(typingInterval);
   }, []);
 
-  const confetti = [...Array(50)].map((_, i) => (
-    <motion.div
-      key={i}
-      className="absolute w-2 h-2 bg-blue-500 rounded-full"
-      initial={{
-        x: Math.random() * window.innerWidth,
-        y: -10,
-        opacity: 1,
-      }}
-      animate={{
-        y: window.innerHeight + 10,
-        opacity: 0,
-      }}
-      transition={{
-        duration: Math.random() * 2 + 1,
-        repeat: Infinity,
-        repeatDelay: Math.random() * 3,
-      }}
-    />
-  ));
+  useEffect(() => {
+    const generateConfetti = () => {
+      const newConfetti = [...Array(50)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 bg-blue-500 rounded-full"
+          initial={{
+            x: Math.random() * window.innerWidth,
+            y: -10,
+            opacity: 1,
+          }}
+          animate={{
+            y: window.innerHeight + 10,
+            opacity: 0,
+          }}
+          transition={{
+            duration: Math.random() * 2 + 1,
+            repeat: Infinity,
+            repeatDelay: Math.random() * 3,
+          }}
+        />
+      ));
+      setConfetti(newConfetti);
+    };
+
+    generateConfetti();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-600 to-gray-500 flex flex-col items-center justify-center relative overflow-hidden">
       {confetti}
 
       <motion.div
-        className="absolute top-10 left-0"
+        className="absolute top-[20%] left-[20%]"
         animate={{
           x: ["0%", "100%"],
           y: ["0%", "50%", "0%"],

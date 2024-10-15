@@ -15,6 +15,7 @@ export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
@@ -39,7 +40,7 @@ export default function ContactUs() {
       });
 
       if (response.ok) {
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
         router.push("/ThankYou");
       } else {
         const errorData = await response.json();
@@ -158,6 +159,7 @@ export default function ContactUs() {
             {[
               { name: "name", label: "Name", type: "text" },
               { name: "email", label: "Email", type: "email" },
+              { name: "phone", label: "Phone", type: "number" },
               { name: "message", label: "Message", type: "textarea" },
             ].map((field) => (
               <motion.div key={field.name} variants={fadeInUp}>
