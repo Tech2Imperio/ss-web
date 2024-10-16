@@ -6,9 +6,9 @@ import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import Image from "next/image";
 
-import Img1 from "./assets/product/glassrailingSystems/gallery/penthouse.webp";
-import Img2 from "./assets/product/balustrade/hero/floor.webp";
-import Img3 from "./assets/product/ssGlassRailingSystem/hero/Hero6Img.webp";
+import Img1 from "./assets/home-swiper/Gemini_Generated_Image_3hif8p3hif8p3hif.jpeg";
+import Img2 from "./assets/home-swiper/Gemini_Generated_Image_e21juue21juue21j.jpeg";
+import Img3 from "./assets/home-swiper/Gemini_Generated_Image_keakpbkeakpbkeak.jpeg";
 import Img4 from "./assets/product/ssdecorativesheet/hero/bedroom.webp";
 import Img5 from "./assets/product/profile/T_profile/slider/Img1.webp";
 import Img6 from "./assets/home-swiper/image6.webp";

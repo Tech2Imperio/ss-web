@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </section>
 
-        <section className="flex flex-col justify-between border-t-2 md:border-r-2 flex-grow md:w-1/3">
+        <section className="flex flex-col justify-between border-t-2 md:border-t-0 md:border-r-2 flex-grow md:w-1/3">
           <div className="flex flex-col w-full h-full gap-4 px-8 pt-4 md:pt-12 pb-6">
             <h2 className="text-3xl din-bold text-primary">Find US</h2>
             <iframe
@@ -68,13 +68,13 @@ const Footer = () => {
           </div>
         </section>
 
-        <section className="flex flex-col justify-between flex-grow md:w-1/3 border-t-2 md:border-r-2">
+        <section className="flex flex-col justify-between flex-grow md:w-1/3 border-t-2 md:border-t-0 md:border-r-2">
           <div className="flex flex-col gap-6 px-8 pt-4 md:pt-12 pb-6">
             <h3 className="text-lg din-semibold text-primary">
               Would like to talk about your future project?
             </h3>
-            <Link href="/ContactUs">
-              <button className="relative inline-flex items-center justify-center overflow-hidden px-4 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+            <Link href="/ContactUs" className="w-36">
+              <button className="relative inline-flex items-center justify-center overflow-hidden px-4 py-3 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
                 <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
                 <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
                   <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
