@@ -167,6 +167,7 @@ export default function Page() {
         { name: "Installation", value: "Floor mounted or side mounted" },
         { name: "Glass Thickness", value: "10mm to 12mm" },
       ],
+      dimensions: { height: "h-[30rem]", width: "w-full" },
     },
 
     {
@@ -178,6 +179,7 @@ export default function Page() {
         { name: "Finish", value: "Brushed" },
         { name: "Usage", value: "For 90-degree corners" },
       ],
+      dimensions: { height: "h-72", width: "w-full" },
     },
     {
       name: "Base Plates",
@@ -189,6 +191,7 @@ export default function Page() {
         { name: "Finish", value: "Brushed" },
         { name: "Mounting", value: "4 anchor bolts (included)" },
       ],
+      dimensions: { height: "h-72", width: "w-full" },
     },
     {
       name: "Handrails",
@@ -200,6 +203,7 @@ export default function Page() {
         { name: "Finish", value: "Brushed or Mirror Polished" },
         { name: "Length", value: "Custom cut to size" },
       ],
+      dimensions: { height: "h-[30rem]", width: "w-full" },
     },
     {
       name: "Post Caps",
@@ -211,6 +215,7 @@ export default function Page() {
         { name: "Finish", value: "Brushed or Polished" },
         { name: "Compatibility", value: "Fits standard post sizes" },
       ],
+      dimensions: { height: "h-[30rem]", width: "w-full" },
     },
     {
       name: "Handrail Brackets",
@@ -221,6 +226,7 @@ export default function Page() {
         { name: "Finish", value: "Polished" },
         { name: "Compatibility", value: "For 42.4mm handrails" },
       ],
+      dimensions: { height: "h-72", width: "w-full" },
     },
   ];
 
@@ -335,117 +341,57 @@ export default function Page() {
           </AnimatePresence>
         </div>
       </section>
-      <main className="max-w-[85rem] mx-auto">
+      <main className="max-w-[80rem] mx-auto">
         {/* Section 1 */}
         <motion.section
           ref={ref1}
           initial="hidden"
           animate={controls1}
           variants={fadeInUp}
-          className="py-10"
+          className="py-10 px-4 lg:px-0"
         >
-          <div className="px-4">
-            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
-              Elevate Your Space with Stainless Steel Glass Railing Systems
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <motion.div variants={fadeInUp}>
-                <Image
-                  src={ssGlassRailing}
-                  alt="Stainless Steel Glass Railing System"
-                  className="rounded-lg shadow-lg"
-                />
-              </motion.div>
-              <motion.div variants={fadeInUp}>
-                <h3 className="text-2xl din-semibold mb-4 text-primary">
-                  Unparalleled Elegance and Safety
-                </h3>
-                <p className="text-secondary mb-6 nunito">
-                  Our stainless steel glass railing systems combine modern
-                  aesthetics with robust engineering to provide a seamless blend
-                  of style and security. Perfect for both indoor and outdoor
-                  applications, these systems offer:
-                </p>
-                <ul className="list-disc list-inside text-secondary mb-6 nunito">
-                  <li>Unobstructed views and enhanced spatial perception</li>
-                  <li>
-                    Durability and corrosion resistance for long-lasting beauty
-                  </li>
-                  <li>Customizable designs to suit any architectural style</li>
-                  <li>Easy maintenance and cleaning for lasting brilliance</li>
-                  <li>Compliance with international safety standards</li>
-                </ul>
-                <Link href="/ContactUs">
-                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                    <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
-                    <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
-                      <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                      <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                    </span>
-                    <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
-                      GET A QUOTE
-                    </span>
-                  </button>
-                </Link>
-              </motion.div>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Section 2 */}
-        <motion.section
-          ref={ref2}
-          initial="hidden"
-          animate={controls2}
-          variants={fadeInUp}
-          className="py-10"
-        >
-          <div className="px-4">
-            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
-              Key Features
-            </h2>
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-              variants={staggerChildren}
-            >
-              {[
-                {
-                  icon: FaShieldAlt,
-                  title: "Enhanced Safety",
-                  description:
-                    "Tempered glass and high-grade stainless steel ensure maximum protection without compromising visibility.",
-                },
-                {
-                  icon: FaBolt,
-                  title: "Quick Installation",
-                  description:
-                    "Our innovative design allows for faster and easier installation, reducing project timelines.",
-                },
-                {
-                  icon: FaPaintBrush,
-                  title: "Customizable Finishes",
-                  description:
-                    "Choose from a variety of finishes to match your specific aesthetic needs and architectural style.",
-                },
-                {
-                  icon: FaTools,
-                  title: "Low Maintenance",
-                  description:
-                    "Resistant to corrosion and easy to clean, our systems maintain their beauty with minimal upkeep.",
-                },
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gray-200 p-6 rounded-lg hover:shadow-2xl text-center"
-                  variants={fadeInUp}
-                >
-                  <feature.icon className="w-8 h-8 mx-auto mb-4 text-primary" />
-                  <h3 className="text-xl din-semibold mb-2 text-primary">
-                    {feature.title}
-                  </h3>
-                  <p className="text-secondary nunito">{feature.description}</p>
-                </motion.div>
-              ))}
+          <h2 className="text-4xl din-extrabold mb-8 text-center text-primary">
+            Elevate Your Space with Stainless Steel Glass Railing Systems
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div variants={fadeInUp}>
+              <Image
+                src={ssGlassRailing}
+                alt="Stainless Steel Glass Railing System"
+                className="rounded-lg shadow-lg lg:h-[33rem]"
+              />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <h3 className="text-2xl din-semibold mb-4 text-primary">
+                Unparalleled Elegance and Safety
+              </h3>
+              <p className="text-secondary mb-6 nunito">
+                Our stainless steel glass railing systems combine modern
+                aesthetics with robust engineering to provide a seamless blend
+                of style and security. Perfect for both indoor and outdoor
+                applications, these systems offer:
+              </p>
+              <ul className="list-disc list-inside  text-secondary mb-6 nunito">
+                <li>Unobstructed views and enhanced spatial perception</li>
+                <li>
+                  Durability and corrosion resistance for long-lasting beauty
+                </li>
+                <li>Customizable designs to suit any architectural style</li>
+                <li>Easy maintenance and cleaning for lasting brilliance</li>
+                <li>Compliance with international safety standards</li>
+              </ul>
+              <Link href="/ContactUs">
+                <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                  <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                  <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                    <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                    <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  </span>
+                  <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                    GET A QUOTE
+                  </span>
+                </button>
+              </Link>
             </motion.div>
           </div>
         </motion.section>
@@ -456,28 +402,28 @@ export default function Page() {
           initial="hidden"
           animate={controls3}
           variants={fadeInUp}
-          className="py-10"
+          className="py-10 bg-gray-100 rounded-xl"
         >
-          <div className="px-4">
-            <h2 className="text-4xl din-bold mb-12 text-center text-primary">
+          <div className="px-4 lg:px-20">
+            <h2 className="text-4xl din-bold mb-6 text-center text-primary">
               Premium Accessories
             </h2>
-            <p className="text-xl text-secondary text-center mb-12 din-medium">
+            <p className="text-xl text-secondary text-center mb-6 din-medium">
               Explore our range of high-quality accessories designed to
               complement your glass railing system.
             </p>
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-10">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
               {accessories.map((accessory, index) => (
                 <motion.div
                   key={index}
-                  className="relative overflow-hidden bg-white rounded-lg shadow-lg mb-8"
+                  className="relative overflow-hidden bg-white rounded-lg shadow-lg mb-4"
                   onMouseEnter={() => setHoveredAccessory(index)}
                   onMouseLeave={() => setHoveredAccessory(null)}
                 >
                   <Image
                     src={accessory.image}
                     alt={accessory.name}
-                    className="rounded-lg w-full h-auto"
+                    className={`rounded-lg ${accessory.dimensions.height} ${accessory.dimensions.width}`}
                   />
                   <motion.div
                     className={`absolute inset-0 opacity-70 bg-gradient-to-r from-gray-900 to-gray-400 p-4 transition-transform duration-1000 ease-in-out flex flex-col gap-2 ${
@@ -603,6 +549,62 @@ export default function Page() {
           </div>
         </motion.section>
 
+        <motion.section
+          ref={ref2}
+          initial="hidden"
+          animate={controls2}
+          variants={fadeInUp}
+          className="py-10"
+        >
+          <div className="px-4">
+            <h2 className="text-4xl din-extrabold mb-12 text-center text-primary">
+              Key Features
+            </h2>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              variants={staggerChildren}
+            >
+              {[
+                {
+                  icon: FaShieldAlt,
+                  title: "Enhanced Safety",
+                  description:
+                    "Tempered glass and high-grade stainless steel ensure maximum protection without compromising visibility.",
+                },
+                {
+                  icon: FaBolt,
+                  title: "Quick Installation",
+                  description:
+                    "Our innovative design allows for faster and easier installation, reducing project timelines.",
+                },
+                {
+                  icon: FaPaintBrush,
+                  title: "Customizable Finishes",
+                  description:
+                    "Choose from a variety of finishes to match your specific aesthetic needs and architectural style.",
+                },
+                {
+                  icon: FaTools,
+                  title: "Low Maintenance",
+                  description:
+                    "Resistant to corrosion and easy to clean, our systems maintain their beauty with minimal upkeep.",
+                },
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-200 p-6 rounded-lg hover:shadow-2xl text-center"
+                  variants={fadeInUp}
+                >
+                  <feature.icon className="w-8 h-8 mx-auto mb-4 text-primary" />
+                  <h3 className="text-xl din-semibold mb-2 text-primary">
+                    {feature.title}
+                  </h3>
+                  <p className="text-secondary nunito">{feature.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.section>
         {/* Section 5 */}
         <motion.section
           ref={ref5}
@@ -611,11 +613,11 @@ export default function Page() {
           variants={fadeInUp}
           className="py-10"
         >
-          <div className="px-4">
-            <h2 className="text-4xl din-bold mb-8 text-center text-primary">
+          <div className="px-4 text-center">
+            <h2 className="text-4xl din-bold mb-8 text-primary">
               Customization Options
             </h2>
-            <p className="text-xl text-secondary text-center mb-8 din-semibold">
+            <p className="text-xl text-secondary mb-8 din-semibold">
               Tailor your glass railing system to perfectly match your vision
               and architectural requirements.
             </p>
@@ -668,6 +670,18 @@ export default function Page() {
                 </motion.div>
               ))}
             </motion.div>
+            <Link href="/ContactUs">
+              <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mt-8 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                  GET A QUOTE
+                </span>
+              </button>
+            </Link>
           </div>
         </motion.section>
         <div className="w-full py-20 fade-in ">
