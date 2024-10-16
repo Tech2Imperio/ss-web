@@ -67,21 +67,21 @@ import MeshImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/
 const heroSlides = [
   {
     image: LivingImg,
-    title: "Elegant Stainless Steel Balustrade Railing",
+    title: "Elevate Your Space with Fluted Design",
     description:
-      "Elevate your space with our elegant stainless steel balustrade railings, combining modern aesthetics with unmatched durability.",
+      "Transform your interiors with stainless steel decorative sheets featuring elegant fluted designs. Perfect for modern wall decor, they add sophistication and style to any setting.",
   },
   {
     image: HallImg,
-    title: "Customizable Glass Balustrade Railing Solutions",
+    title: " Durable Decorative Solutions for Any Room",
     description:
-      "Create a unique look with our customizable glass balustrade railings, tailored to fit your style and enhance any architectural design.",
+      "Discover the beauty and durability of fluted stainless steel panels. Ideal for both residential and commercial spaces, these decorative sheets enhance visual interest and create lasting impressions.",
   },
   {
     image: bedroom,
-    title: "Durable Outdoor Balustrade Railing Systems",
+    title: "Stylish Stainless Steel Decorative Sheets with Fluted Texture",
     description:
-      "Invest in our durable outdoor balustrade railing systems, designed to withstand the elements while providing safety and style for your outdoor spaces.",
+      "Achieve a contemporary aesthetic with stylish stainless steel decorative sheets that showcase a unique fluted texture. Perfect for adding depth and elegance to your modern wall decor.",
   },
 ];
 

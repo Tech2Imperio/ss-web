@@ -68,21 +68,21 @@ import MeshImgC from "../../../assets/product/profile/L_profile/finishes/champag
 const heroSlides = [
   {
     image: LivingImg,
-    title: "Elegant Stainless Steel Balustrade Railing",
+    title: "Fluted Stainless Steel Panels for Modern Wall Decor",
     description:
-      "Elevate your space with our elegant stainless steel balustrade railings, combining modern aesthetics with unmatched durability.",
+      "Transform your interiors with stunning fluted stainless steel panels that add depth and sophistication to your modern wall decor.",
   },
   {
     image: HallImg,
-    title: "Customizable Glass Balustrade Railing Solutions",
+    title: "Sleek Fluted Stainless Steel Panels for Contemporary Spaces",
     description:
-      "Create a unique look with our customizable glass balustrade railings, tailored to fit your style and enhance any architectural design.",
+      "Achieve a sleek, contemporary look effortlessly with fluted stainless steel panels, perfect for enhancing visual interest in modern wall decor.",
   },
   {
     image: bedroom,
-    title: "Durable Outdoor Balustrade Railing Systems",
+    title: "Fluted Wall Panels for Lasting Impact",
     description:
-      "Invest in our durable outdoor balustrade railing systems, designed to withstand the elements while providing safety and style for your outdoor spaces.",
+      "Combine beauty and durability with fluted wall panels, ideal for both residential and commercial settings, creating a lasting impression with durable wall panels.",
   },
 ];
 
@@ -295,7 +295,7 @@ const page = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
               {/* Finishes Section */}
-              <div className="flex flex-col items-center lg:items-start px-14">
+              <div className="flex flex-col items-center lg:items-start xl:px-14">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
@@ -395,7 +395,7 @@ const page = () => {
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:px-14">
               <div className="text-left space-y-6">
                 <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
                 <p className="text-lg text-gray-600 din-regular">
@@ -458,7 +458,7 @@ const page = () => {
           {/* Properties Section */}
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className=" text-xl md:whitespace-normal md:text-[27px]  text-[#335c98] mb-6 din-semibold">
+              <h2 className=" text-lg md:text-xl md:whitespace-normal md:text-[27px]  text-[#335c98] mb-6 din-semibold">
                 Properties of Stainless Steel Fluted Panel Profiles
               </h2>
               <p className="text-gray-600 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 din-regular">
@@ -553,7 +553,7 @@ const page = () => {
         {/* example phone */}
         <div className="container mx-auto my-14 md:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] din-semibold mb-4">
+            <h2 className="text-2xl text-[#335c98] din-semibold mb-4">
               Benefits of Stainless Steel Fluted Panel Profiles
             </h2>
             <ul className="space-y-6 text-justify ">
@@ -601,7 +601,7 @@ const page = () => {
 
         <main
           ref={card1Ref}
-          className="flex flex-col justify-center text-justify gap-20 m-4 px-14 "
+          className="flex flex-col justify-center text-justify gap-20 m-4 xl:px-14 "
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}

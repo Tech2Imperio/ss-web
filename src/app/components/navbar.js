@@ -35,6 +35,10 @@ export default function Navbar() {
           href: "/products/GlassRailing",
         },
         {
+          name: "Aluminium Windows",
+          href: "/products/AluminiumWindows",
+        },
+        {
           name: "Stainless Steel Balustrade System",
           href: "/products/BalustradeSystem",
         },
@@ -213,6 +217,13 @@ export default function Navbar() {
                           className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
                         >
                           Glass Railing System
+                        </Link>
+                        <Link
+                          onClick={toggleSidebar}
+                          href="/products/GlassRailing"
+                          className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
+                        >
+                          Aluminium Windows
                         </Link>
                         <Link
                           onClick={toggleSidebar}

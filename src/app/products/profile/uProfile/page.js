@@ -541,7 +541,7 @@ import SSbalustrade from "../../../assets/RelatedProducts/SSbalustrade.webp";
 import invisibleGril from "../../../assets/RelatedProducts/invisibleGril.webp";
 import DecorativeSheet from "../../../assets/RelatedProducts/decorativesheet.webp";
 import queuemanager from "../../../assets/RelatedProducts/queuemanager.webp";
-import bg from "../../../assets/product/profile/U_profile/bg.webp";
+// import bg from "../../../assets/product/profile/U_profile/bg.webp";
 import Umessurement from "../../../assets/product/profile/U_profile/Umessure.png";
 import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -550,8 +550,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import { FadeDown, FadeUp } from "../../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
+import { FadeUp, FadeRight, FadeLeft } from "../../../components/utility/animation.jsx";
+import { motion,AnimatePresence } from "framer-motion";
+import LivingImg from "../../../assets/product/profile/U_profile/slider/Img.webp";
+import HallImg from "../../../assets/product/profile/U_profile/slider/Img1.webp";
+import bedroom from "../../../assets/product/profile/U_profile/slider/Img2.webp";
 
 // Black finishes
 import MirrorImg from "../../../assets/product/profile/U_profile/finishes/black/mirrorBlack.png";
@@ -588,6 +591,28 @@ import StainImgC from "../../../assets/product/profile/U_profile/finishes/champa
 import StraightlineImgC from "../../../assets/product/profile/U_profile/finishes/champagne/straightlineChampagne.png";
 import MeshImgC from "../../../assets/product/profile/U_profile/finishes/champagne/meshChampagne.png";
 
+
+
+const heroSlides = [
+  {
+    image: LivingImg,
+    title: "Transform Your Space with Stainless Steel U Profiles",
+    description:
+      "Elevate your interior design with innovative stainless steel U profile wall designs. These sleek profiles add a contemporary touch, perfect for both residential and commercial spaces.",
+  },
+  {
+    image: HallImg,
+    title: "Versatile Stainless Steel U Profile Wall Panels",
+    description:
+      " Stainless steel U profile wall panels offer a modern, versatile solution for unique wall decor in both home and commercial spaces. Elevate your design with these striking, innovative panels.",
+  },
+  {
+    image: bedroom,
+    title: "Stainless Steel U Profile Accents for Modern Interiors",
+    description:
+      "Elevate your decor with elegant stainless steel U profile accents that add luxury and style to any space.",
+  },
+];
 const page = () => {
   const finishes = [
     { name: "Mirror" },
@@ -707,34 +732,87 @@ const page = () => {
     threshold: 0.1,
   });
 
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   return (
     <section className=" relative">
-      <div className="relative">
-        <Image
-          className=" h-[22rem] md:h-[30rem] w-full object-cover"
-          src={bg}
-          alt="U Profile"
-        />
-        <div className="absolute inset-0 bg-black opacity-55" />
-        <motion.div
-          variants={FadeDown(0.01)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="absolute inset-0 flex justify-end md:justify-center flex-col p-2 md:p-0 md:pl-4"
-        >
-          <h1 className="text-3xl md:text-5xl text-white opacity-90 font-semibold mb-6 tracking-tight">
-            Stainless Steel U Profile
-          </h1>
-          <p className="text-yellow-400 text-opacity-90 text-[0.850rem] w-auto md:text-lg md:w-[48rem] text-justify mb-12">
-            "Revamp your environment with our premium stainless steel U
-            profiles, ideal for stylish home and commercial wall applications.
-            These chic, resilient profiles are rust and corrosion-resistant,
-            making them perfect for any interior design endeavor. Upgrade your
-            aesthetic and add a touch of elegance today!"
-          </p>
-        </motion.div>
-      </div>
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
 
       <div className=" flex flex-col overflow-hidden mx-auto container">
         {/* <div className=" flex justify-center">
@@ -760,7 +838,7 @@ const page = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 ">
               {/* Finishes Section */}
-              <div className="flex flex-col items-center lg:items-start px-14">
+              <div className="flex flex-col items-center lg:items-start xl:px-14">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
@@ -867,7 +945,7 @@ const page = () => {
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:px-14">
               <div className="text-left space-y-6">
                 <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
                 <p className="text-lg text-gray-600 din-regular">

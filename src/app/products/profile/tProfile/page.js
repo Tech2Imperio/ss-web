@@ -299,7 +299,7 @@ const page = () => {
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 px-14">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 xl:px-14">
               {/* Finishes Section */}
               <div className="flex flex-col items-center lg:items-start">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
@@ -405,7 +405,7 @@ const page = () => {
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:px-14">
               <div className="text-left space-y-6">
                 <h3 className="text-xl din-semibold text-[#335c98]">Finishes</h3>
                 <p className="text-lg text-gray-600 din-regular">
@@ -557,7 +557,7 @@ const page = () => {
         {/* example phone */}
         <div className="container mx-auto my-14 md:hidden ">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] din-regular mb-4">
+            <h2 className="text-2xl text-[#335c98] din-semibold mb-4">
               Benefits of Stainless Steel T Profiles
             </h2>
             <ul className="space-y-6 text-justify ">
@@ -595,7 +595,7 @@ const page = () => {
 
         {/* example phone colse  */}
 
-        <main className="flex flex-col justify-center text-justify gap-20  px-14 ">
+        <main className="flex flex-col justify-center text-justify gap-20 px-4  xl:px-14 ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div
