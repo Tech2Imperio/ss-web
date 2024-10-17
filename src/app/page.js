@@ -11,14 +11,8 @@ import Img2 from "./assets/home-swiper/Gemini_Generated_Image_e21juue21juue21j.j
 import Img3 from "./assets/home-swiper/Gemini_Generated_Image_keakpbkeakpbkeak.jpeg";
 import Img4 from "./assets/product/ssdecorativesheet/hero/bedroom.webp";
 import Img5 from "./assets/product/profile/T_profile/slider/Img1.webp";
-import Img6 from "./assets/home-swiper/image6.webp";
-import Img7 from "./assets/home-swiper/image7.webp";
-import Img8 from "./assets/home-swiper/image8.webp";
-import Img9 from "./assets/home-swiper/image9.webp";
 import section2 from "./assets/home-swiper/section2.webp";
-import MobSection2 from "./assets/home-swiper/MobSection2.webp";
 import preview from "./assets/home-swiper/previewss.webp";
-import Mobpreview from "./assets/home-swiper/Mobpreview.webp";
 
 import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
 import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
@@ -54,7 +48,6 @@ import { BsArrowRight } from "react-icons/bs";
 import { HomeFadeLeft, HomeFadeRight } from "./components/utility/animation";
 
 const images = [Img3, Img1, Img2, Img4, Img5];
-const images2 = [Img6, Img7, Img8, Img9, Img6];
 
 function Section1() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -114,7 +107,7 @@ function Section1() {
   return (
     <section className=" flex h-screen w-screen relative snap-start">
       <div className="relative w-full h-full overflow-hidden">
-        {(isMobileView ? images2 : images).map(
+        {images.map(
           (image, index) =>
             index === currentIndex && (
               <motion.div
@@ -218,7 +211,7 @@ function Section4() {
       <div className="flex flex-col items-center relative w-auto h-auto xl:w-full xl:h:full xl:flex-row xl:justify-between">
         <Image
           priority
-          src={isMobileView ? section2 : MobSection2}
+          src={section2}
           alt="Section2Img"
           className="h-[50vh] w-full xl:w-[60%] xl:h-[100%] xl:absolute"
         />
@@ -304,19 +297,6 @@ function Section4() {
 }
 
 function Section3() {
-  const [isMobileView, setMobileView] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setMobileView(window.innerWidth < 1025);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -354,7 +334,7 @@ function Section3() {
         <div className="h-auto w-auto flex justify-center xl:justify-start xl:items-start xl:h-[90%] xl:w-[35%]">
           <Image
             priority
-            src={isMobileView ? Mobpreview : preview}
+            src={preview}
             alt="Modern room with large windows"
             className="rounded-lg relative h-[100%] w-full xl:absolute xl:w-[45%] xl:h-[75%]"
           />
