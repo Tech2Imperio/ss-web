@@ -61,6 +61,7 @@ const Footer = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full md:w-auto md:h-48"
+              title="Find Us With the help of Google Maps"
             ></iframe>
           </div>
           <div className="hidden md:flex text-center text-sm text-primary nunito border-t-2 px-8 py-6 w-full whitespace-normal xl:whitespace-nowrap">
