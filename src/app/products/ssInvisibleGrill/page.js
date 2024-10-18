@@ -289,19 +289,19 @@ export default function Home() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className=" mx-auto max-w-[85rem] px-4 h-full flex flex-col lg:flex-row items-center justify-center"
+              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
             >
               {/* Left Side Text */}
               <motion.div
                 variants={FadeRight(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col justify-center items-start p-4  md:pr-14"
+                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
               >
-                <h1 className=" text-3xl md:text-4xl lg:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] hidden md:block text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -311,7 +311,7 @@ export default function Home() {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full md:w-[70%] md:h-[20rem]  lg:w-[80%]  lg:h-[25rem] "
+                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
               >
                 <Image
                   src={heroSlides[nextSlide].image}
@@ -326,12 +326,12 @@ export default function Home() {
         </div>
       </section>
       <div className=" flex flex-col overflow-hidden mx-auto container">
-        <section className="flex flex-col lg:flex-row items-center justify-center gap-36 h-scrren md:h-[90vh] md:mt-9 w-full bg-gray-50">
-          <div className="relative flex flex-col items-center justify-center md:pt-[15rem] lg:pt-0">
+        <section className="flex flex-col md:flex-row items-center justify-center gap-20 xl:gap-36 h-scrren md:h-[90vh]  w-full bg-gray-50">
+          <div className="relative flex flex-col items-center justify-center lg:pt-0">
             <h1 className="text-3xl din-semibold text-[#335c98] p-4">
               Invisible Grill
             </h1>
-            <div className="overflow-hidden rounded-3xl h-[25rem] w-[20rem] md:h-[42rem] md:w-[28rem] lg:h-[45rem] lg:w-[28rem] xl:h-[35rem] xl:w-[24rem] xl:mb-8 border border-gray-300 relative">
+            <div className="overflow-hidden rounded-3xl h-[25rem] w-[20rem] md:h-[36rem] md:w-[22rem] lg:h-[45rem] lg:w-[28rem] xl:h-[35rem] xl:w-[24rem] xl:mb-8 border border-gray-300 relative">
               {items.map((item, index) => (
                 <div
                   key={index}
@@ -352,15 +352,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col -mt-28 md:-mt-14 lg:-mt-0">
+          <div className="flex flex-col">
             <h2 className="text-3xl din-semibold text-[#335c98] flex justify-center">
               Accessories
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 justify-center items-center list-none -mx-4 transition-transform duration-300">
+            <div className="grid grid-cols-2  lg:grid-cols-2 xl:grid-cols-2 justify-center items-center list-none -mx-4 transition-transform duration-300">
               {accessoriesData.map((accessory) => (
                 <div key={accessory.id} className="flex flex-col items-center">
                   <li
-                    className="h-[7rem] w-[7rem] md:h-[10rem] md:w-[10rem] lg:h-[12rem] lg:w-[12rem] xl:h-[10rem] xl:w-[10rem] hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    className="h-[7rem] w-[7rem] md:h-[8rem] md:w-[8rem] lg:h-[12rem] lg:w-[12rem] xl:h-[10rem] xl:w-[10rem] hover:scale-110 transition-transform duration-300 cursor-pointer"
                     onClick={() => toggleAccessory(accessory)}
                   >
                     <Image src={accessory.image} alt={accessory.name} />
@@ -405,12 +405,29 @@ export default function Home() {
                     )}
                   </tbody>
                 </table>
-                <button
+                {/* <button
                   className="mt-8 px-6 py-3 din-regular bg-[#335c98] text-white rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-[#6a8bb1] focus:ring-opacity-50"
                   onClick={() => setSelectedAccessory(null)}
                 >
                   Close
-                </button>
+                </button> */}
+
+
+                <button  onClick={() => setSelectedAccessory(null)} className="relative inline-flex items-center justify-center overflow-hidden mt-4 px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                {/* Colored background */}
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                {/* Top-left to bottom-right diagonal animation */}
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
+
+                {/* Button text */}
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                  Close
+                </span>
+              </button>
               </div>
             </div>
           )}
@@ -420,7 +437,7 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto">
           <h2 className=" text-2xl md:text-3xl din-semibold text-[#335c98] py-8 text-center">
             Benefits of Invisible Grills
-            <p className=" text-sm md:text-lg md:mx-24 py-2 text-gray-600 din-regular">
+            <p className=" text-sm md:text-lg md:mx-24 py-2 text-gray-600 din-regular text-justify">
               Invisible grills are becoming increasingly popular in modern
               architecture due to their unique advantages. Here are some of the
               key benefits:
@@ -533,7 +550,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="flex justify-center flex-col mt-8 md:px-36">
+        <div className="flex justify-center items-center flex-col mt-8 md:px-36">
           <h3 className=" text-3xl mx-auto md:text-4xl text-primary din-semibold">
             Why Choose Invisible Grill ?
           </h3>

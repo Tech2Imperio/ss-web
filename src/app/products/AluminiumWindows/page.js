@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
@@ -39,25 +39,25 @@ import Sec3Img5 from "../../assets/product/aluminiumWindows/section3/Img5.webp";
 import Sec3Img6 from "../../assets/product/aluminiumWindows/section3/Img6.webp";
 
 const heroSlides = [
-    {
-      image: LivingImg,
-      title: "Elevate Your Space with Fluted Design",
-      description:
-        "Transform your interiors with stainless steel decorative sheets featuring elegant fluted designs. Perfect for modern wall decor, they add sophistication and style to any setting.",
-    },
-    {
-      image: HallImg,
-      title: " Durable Decorative Solutions for Any Room",
-      description:
-        "Discover the beauty and durability of fluted stainless steel panels. Ideal for both residential and commercial spaces, these decorative sheets enhance visual interest and create lasting impressions.",
-    },
-    {
-      image: bedroom,
-      title: "Stylish Stainless Steel Decorative Sheets with Fluted Texture",
-      description:
-        "Achieve a contemporary aesthetic with stylish stainless steel decorative sheets that showcase a unique fluted texture. Perfect for adding depth and elegance to your modern wall decor.",
-    },
-  ];
+  {
+    image: LivingImg,
+    title: "Elevate Your Space with Fluted Design",
+    description:
+      "Transform your interiors with stainless steel decorative sheets featuring elegant fluted designs. Perfect for modern wall decor, they add sophistication and style to any setting.",
+  },
+  {
+    image: HallImg,
+    title: " Durable Decorative Solutions for Any Room",
+    description:
+      "Discover the beauty and durability of fluted stainless steel panels. Ideal for both residential and commercial spaces, these decorative sheets enhance visual interest and create lasting impressions.",
+  },
+  {
+    image: bedroom,
+    title: "Stylish Stainless Steel Decorative Sheets with Fluted Texture",
+    description:
+      "Achieve a contemporary aesthetic with stylish stainless steel decorative sheets that showcase a unique fluted texture. Perfect for adding depth and elegance to your modern wall decor.",
+  },
+];
 
 // products DATA
 const windowTypes = [
@@ -220,7 +220,7 @@ const windowTypes = [
 ];
 
 export default function page() {
-    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [nextSlide, setNextSlide] = useState(1);
@@ -353,7 +353,7 @@ export default function page() {
 
   return (
     <div>
-        <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
@@ -381,19 +381,19 @@ export default function page() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
             >
               {/* Left Side Text */}
               <motion.div
                 variants={FadeRight(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col justify-center items-start p-4  md:pr-14"
+                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
               >
                 <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -403,7 +403,7 @@ export default function page() {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
               >
                 <Image
                   src={heroSlides[nextSlide].image}
@@ -586,7 +586,7 @@ export default function page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-2xl md:text-4xl din-bold text-center mb-4 text-primary"
+            className="text-2xl md:text-4xl din-semibold text-center mb-4 text-primary"
           >
             Premium Aluminum Windows for Modern Homes
           </motion.h1>
@@ -594,12 +594,14 @@ export default function page() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-center text-secondary max-w-2xl mx-auto mb-4 nunito text-sm"
+            className=" text-secondary text-justify max-w-2xl mx-auto mb-4 din-regular text-xs md:text-sm"
           >
-            Discover our range of high-quality, energy-efficient aluminum
-            windows designed to enhance your home's aesthetics and
-            functionality. Perfect for both residential and commercial
-            applications.
+            Upgrade your home with premium aluminum windows that combine
+            durability and style, perfect for modern aesthetics. Our stainless
+            steel window sliders offer seamless operation and enhanced security,
+            ensuring your living space is both functional and elegant.
+            Experience the perfect blend of energy efficiency and contemporary
+            design with our innovative airwing technology.
           </motion.p>
           <div className="flex flex-col md:flex-row gap-8">
             <motion.div
@@ -664,7 +666,7 @@ export default function page() {
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl din-bold text-center text-primary"
+              className="text-3xl din-semibold text-center text-primary"
             >
               Why Choose Our Aluminum Windows?
             </motion.h2>
@@ -688,7 +690,9 @@ export default function page() {
                   <h3 className="text-xl din-semibold mb-2 text-primary">
                     {feature.title}
                   </h3>
-                  <p className="text-secondary nunito">{feature.description}</p>
+                  <p className="text-secondary din regular text-sm">
+                    {feature.description}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -702,7 +706,7 @@ export default function page() {
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl din-bold text-center mb-8 text-primary"
+              className="text-3xl din-semibold text-center mb-8 text-primary"
             >
               Customization Options
             </motion.h2>
@@ -710,11 +714,13 @@ export default function page() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-center text-gray-600 mb-8 max-w-2xl mx-auto nunito"
+              className=" text-gray-600 mb-8 max-w-2xl mx-auto din-regular text-justify"
             >
-              Tailor your aluminum windows to perfectly match your home's style
-              and your specific needs. Our wide range of customization options
-              ensures you get the perfect windows for your space.
+              Explore our extensive customization options for windows, including
+              frame color, glass type, and window style to perfectly match your
+              home’s aesthetic. Choose from a variety of hardware finishes and
+              advanced locking systems to enhance both the beauty and security
+              of your living space.
             </motion.p>
             <motion.div
               variants={containerVariants}
@@ -750,7 +756,7 @@ export default function page() {
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl din-bold mb-8 text-primary"
+              className="text-3xl din-semibold mb-8 text-primary"
             >
               Ready to Upgrade Your Windows?
             </motion.h2>
@@ -758,11 +764,15 @@ export default function page() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl mb-8 max-w-2xl mx-auto nunito text-secondary"
+              className=" text-sm text-justify md:text-lg mb-8 max-w-2xl mx-auto din-regular text-secondary"
             >
-              Transform your home with our premium aluminum windows. Our expert
-              team is ready to guide you through the selection process and
-              provide a free, no-obligation consultation and quote.
+              Are you ready to upgrade your windows for improved energy
+              efficiency and style? Discover our range of high-performance
+              windows, including double-glazed, vinyl, and aluminum options,
+              designed to enhance your home's comfort and aesthetics. Join
+              countless satisfied homeowners who have transformed their spaces
+              with our affordable window replacement solutions and enjoy lower
+              energy bills today!
             </motion.p>
             <Link href="/ContactUs">
               <motion.button
@@ -787,5 +797,5 @@ export default function page() {
         </section>
       </main>
     </div>
-  )
+  );
 }

@@ -35,6 +35,9 @@ import "swiper/css/pagination";
 import LivingImg from "../../assets/product/sswirerope/slider/Img1.webp";
 import HallImg from "../../assets/product/sswirerope/slider/Img2.webp";
 import bedroom from "../../assets/product/sswirerope/slider/Img3.webp";
+import BalconyImage1 from "../../assets/product/sswirerope/images/Img1.webp";
+import BalconyImage2 from "../../assets/product/sswirerope/images/tearace.webp";
+import terace from "../../assets/product/sswirerope/images/balcony.webp";
 
 const heroSlides = [
   {
@@ -162,19 +165,19 @@ export default function Page() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className=" mx-auto max-w-[85rem] px-4 h-full flex flex-col lg:flex-row items-center justify-center"
+              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
             >
               {/* Left Side Text */}
               <motion.div
                 variants={FadeRight(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col justify-center items-start p-4  md:pr-14"
+                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
               >
-                <h1 className=" text-3xl md:text-4xl lg:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] hidden md:block text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -184,7 +187,7 @@ export default function Page() {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full md:w-[70%] md:h-[20rem]  lg:w-[80%]  lg:h-[25rem] "
+                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
               >
                 <Image
                   src={heroSlides[nextSlide].image}
@@ -280,27 +283,27 @@ export default function Page() {
 
         {/* Applications & Use Cases Section */}
         <section className=" bg-gray-100 p-20 container mx-auto">
-          <div className="container mx-auto">
+          <div className=" max-w-[85rem] mx-auto ">
             <h2 className=" text-3xl md:text-5xl din-semibold text-[#335c98] mb-10 md:mb-16 text-center">
               Applications & Use Cases
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-3 gap-6">
+            <div className=" mx-auto flex flex-col items-center lg:flex-row justify-center gap-6">
               {[
                 {
                   title: "Outdoor Structures",
-                  image: outdoorImg,
+                  image: BalconyImage1,
                   description:
                     "Enhance the strength and aesthetics of outdoor installations.",
                 },
                 {
-                  title: "Staircases",
-                  image: StairImg,
+                  title: "Terrace ",
+                  image: BalconyImage2,
                   description:
-                    "Create secure and stylish railings for staircases.",
+                    "Create secure and stylish railings for terrace.",
                 },
                 {
                   title: "Balcony Railings",
-                  image: BalconyImg,
+                  image: terace,
                   description:
                     "Ensure safety with elegant balcony railing solutions.",
                 },
@@ -313,7 +316,7 @@ export default function Page() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white -ml-12  md:ml-6 rounded-3xl h-[18rem] w-[20rem] md:h-[23rem] md:w-[23rem] shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  className="bg-white rounded-3xl h-[18rem] w-[20rem] md:h-[24rem] md:w-[30rem] lg:h-[24rem] lg:w-[25rem] shadow-lg overflow-hidden transition-all duration-700 hover:shadow-2xl hover:-translate-y-4"
                 >
                   <div className="relative h-44 md:h-60 ">
                     <Image
@@ -338,12 +341,12 @@ export default function Page() {
         </section>
 
         {/* Accessories Section */}
-        <section className="py-24 bg-white mx-auto container">
-          <div className="container mx-auto md:px-[12rem]">
+        <section className="py-24 bg-white mx-auto container overflow-hidden">
+          <div className=" mx-auto">
             <h2 className="text-5xl din-semibold text-[#335c98] mb-16 text-center">
               Accessories
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-3 gap-12">
+            <div className=" grid grid-rows-1 md:grid-cols-2 md:m-2 md:gap-14 gap-4 lg:grid-cols-2 lg:m-14 xl:grid-cols-3 justify-center xl:gap-14 xl:px-14">
               {[
                 {
                   title: "Turnbuckles",
@@ -389,7 +392,7 @@ export default function Page() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-xl h-[33rem] w-auto md:h-[36rem] md:w-[22rem] shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
+                  className="bg-gray-50 rounded-xl h-auto w-auto md:h-[40rem] md:w-[24rem] shadow-md  transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="relative h-[10rem] md:h-[10rem] w-auto">
                     <Image
@@ -409,7 +412,7 @@ export default function Page() {
                     <h4 className=" din-medium text-[#335c98] mb-2">
                       Specifications:
                     </h4>
-                    <ul className="list-disc list-inside text-sm text-secondary">
+                    <ul className="list-decimal list-inside text-sm text-secondary grid grid-cols-1 gap-2 ">
                       {item.specs.map((spec, i) => (
                         <li key={i}>{spec}</li>
                       ))}
@@ -430,7 +433,7 @@ export default function Page() {
             <h2 className="text-3xl md:text-5xl din-semibold text-primary mb-16 text-center">
               Maintenance Tips
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center">
               {[
                 {
                   title: "Regular Inspections",

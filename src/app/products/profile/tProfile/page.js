@@ -246,19 +246,19 @@ const page = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
             >
               {/* Left Side Text */}
               <motion.div
                 variants={FadeRight(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col justify-center items-start p-4  md:pr-14"
+                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
               >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4">
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -268,7 +268,7 @@ const page = () => {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
               >
                 <Image
                   src={heroSlides[nextSlide].image}
@@ -295,7 +295,7 @@ const page = () => {
         </div> */}
 
         {/* new model open */}
-        <section className="min-h-screen bg-gray-50 py-10 mt-8">
+        <section className=" bg-gray-50 py-10 mt-8">
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
@@ -306,7 +306,7 @@ const page = () => {
                   Available Finishes
                 </h2>
 
-                <div className="grid grid-cols-2 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-2 gap-12 xl:gap-6 ">
                   {finishes.map((finish) => (
                     <div key={finish.name} className="relative">
                       <Image
@@ -437,7 +437,7 @@ const page = () => {
         </section>
         {/* new model colse */}
 
-        <div className="flex flex-col items-center w-full min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center w-full  bg-gray-100">
           {/* Hero Section */}
 
           {/* What is Section */}
@@ -497,7 +497,7 @@ const page = () => {
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden md:block  px-14">
+        <div className="container mx-auto my-14 hidden xl:block  px-14">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
@@ -555,7 +555,7 @@ const page = () => {
 
         {/* example */}
         {/* example phone */}
-        <div className="container mx-auto my-14 md:hidden ">
+        <div className="container mx-auto my-14 xl:hidden ">
           <div className="p-6 bg-white rounded-lg shadow-lg">
             <h2 className="text-2xl text-[#335c98] din-semibold mb-4">
               Benefits of Stainless Steel T Profiles

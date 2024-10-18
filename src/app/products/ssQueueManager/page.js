@@ -84,19 +84,19 @@ const Card = ({ children }) => (
 const heroSlides = [
   {
     image: LivingImg,
-    title: "Stainless Steel Queue Managers Elevate Efficiency and Style",
+    title: "Elegant Stainless Steel Queue Manager",
     description:
       "Transform your space with stainless steel queue managers that not only improve crowd control but also add a touch of elegance to any environment.",
   },
   {
     image: HallImg,
-    title: "Sleek Stainless Steel Queue Barriers Ultimate Line Control Solutions",
+    title: "Sleek Barriers for Crowd Control",
     description:
       "Achieve seamless organization with our stylish stainless steel queue barriers, designed for durability and a contemporary look in retail, events, and public spaces.",
   },
   {
     image: bedroom,
-    title: "Durable Stainless Steel Queue Management Systems Professional and Reliable",
+    title: "Durable and Reliable Stainless Steel Queue Manager",
     description:
       "Opt for robust stainless steel queue management systems that ensure effective line control while enhancing the overall aesthetic of your venue.",
   },
@@ -262,19 +262,19 @@ export default function StainlessSteelQueueManager() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className=" mx-auto max-w-[85rem] px-4 h-full flex flex-col lg:flex-row items-center justify-center"
+              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
             >
               {/* Left Side Text */}
               <motion.div
                 variants={FadeRight(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col justify-center items-start p-4  md:pr-14"
+                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
               >
-                <h1 className=" text-3xl md:text-4xl lg:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] hidden md:block text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -284,7 +284,7 @@ export default function StainlessSteelQueueManager() {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full md:w-[70%] md:h-[20rem]  lg:w-[80%]  lg:h-[25rem] "
+                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
               >
                 <Image
                   src={heroSlides[nextSlide].image}

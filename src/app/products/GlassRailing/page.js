@@ -408,7 +408,7 @@ export default function Component() {
           </AnimatePresence>
         </div>
       </section> */}
-        <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+         <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
@@ -436,19 +436,19 @@ export default function Component() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className=" mx-auto max-w-[85rem] px-4 h-full flex flex-col lg:flex-row items-center justify-center"
+              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
             >
               {/* Left Side Text */}
               <motion.div
                 variants={FadeRight(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col justify-center items-start p-4  md:pr-14"
+                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
               >
-                <h1 className=" text-3xl md:text-4xl lg:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] hidden md:block text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -458,7 +458,7 @@ export default function Component() {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full md:w-[70%] md:h-[20rem]  lg:w-[80%]  lg:h-[25rem] "
+                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
               >
                 <Image
                   src={heroSlides[nextSlide].image}
@@ -472,7 +472,6 @@ export default function Component() {
           </AnimatePresence>
         </div>
       </section>
-
 
       <main className=" container overflow-hidden mx-auto">
         {/* Products Section */}
