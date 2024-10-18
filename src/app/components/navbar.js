@@ -220,7 +220,7 @@ export default function Navbar() {
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/GlassRailing"
+                          href="/products/AluminiumWindows"
                           className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
                         >
                           Aluminium Windows

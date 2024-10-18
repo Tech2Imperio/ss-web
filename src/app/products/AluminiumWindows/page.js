@@ -3,11 +3,21 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import {FaTimes } from 'react-icons'
-import LivingImg from "../../assets/product/ssdecorativesheet/hero/hall.webp";
-import HallImg from "../../assets/product/ssdecorativesheet/hero/hall2.webp";
-import bedroom from "../../assets/product/ssdecorativesheet/hero/bedroom.webp";
-
+import { FaTimes, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaWindowMaximize,
+  FaShieldAlt,
+  FaPaintBrush,
+  FaRuler,
+  FaLeaf,
+  FaSun,
+  FaSnowflake,
+  FaWrench,
+} from "react-icons/fa";
+import Link from "next/link";
+import LivingImg from "../../assets/product/aluminiumWindows/slider/img1.webp";
+import HallImg from "../../assets/product/aluminiumWindows/slider/img2.webp";
+import bedroom from "../../assets/product/aluminiumWindows/slider/img3.webp";
 
 // sliding Image
 import slider3Img from "../../assets/product/aluminiumWindows/slidingWindows/Img1.webp";
@@ -17,9 +27,16 @@ import slider5Img from "../../assets/product/aluminiumWindows/slidingWindows/Img
 import slider6Img from "../../assets/product/aluminiumWindows/slidingWindows/Img5.webp";
 
 // Awing Image
-import awing1 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/Img1.webp"
-import awing2 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/Img2.webp"
-import awing3 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/Img3.webp"
+import awing1 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/Img1.webp";
+import awing2 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/Img2.webp";
+import awing3 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/Img3.webp";
+
+import Sec3Img1 from "../../assets/product/aluminiumWindows/section3/Img1.webp";
+import Sec3Img2 from "../../assets/product/aluminiumWindows/section3/Img2.webp";
+import Sec3Img3 from "../../assets/product/aluminiumWindows/section3/Img3.webp";
+import Sec3Img4 from "../../assets/product/aluminiumWindows/section3/Img4.webp";
+import Sec3Img5 from "../../assets/product/aluminiumWindows/section3/Img5.webp";
+import Sec3Img6 from "../../assets/product/aluminiumWindows/section3/Img6.webp";
 
 const heroSlides = [
     {
@@ -44,169 +61,295 @@ const heroSlides = [
 
 // products DATA
 const windowTypes = [
-    {
-      id: "83",
-      name: "Aluminium Sliding Windows",
-      products: [
-        {
-          id: "1",
-          name: "Sliding window (3 panels on 3 tracks)",
-          image: slider3Img,
-          series: ["We Plus"],
-          design: "Aluminium Sliding Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: "5, 6, 8, 13.52 mm",
-            frameDepth: "104 mm - for 3 Track Slider",
-            Max_Height: "1600 mm",
-            Max_Width: "3000 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+  {
+    id: "83",
+    name: "Aluminium Sliding Windows",
+    products: [
+      {
+        id: "1",
+        name: "Sliding window (3 panels on 3 tracks)",
+        image: slider3Img,
+        series: ["We Plus"],
+        design: "Aluminium Sliding Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "5, 6, 8, 13.52 mm" },
+          { key: "Frame Depth", value: "104 mm - for 3 Track Slider" },
+          { key: "Max Height", value: "1600 mm" },
+          { key: "Max Width", value: "3000 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-        {
-          id: "2",
-          name: "4 Panels On 2 Tracks Sliding Window",
-          image: slider4Img,
-          series: ["We 70"],
-          design: "Aluminium Sliding Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: "Up to 13.52 mm",
-            frameDepth: "72 mm",
-            Max_Height: "1600 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        ],
+      },
+      {
+        id: "2",
+        name: "Sliding window (2 panels on 2 tracks)",
+        image: slider2Img,
+        series: ["We Plus"],
+        design: "Aluminium Sliding Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "5, 6, 8, 13.52 mm" },
+          { key: "Frame Depth", value: "104 mm - for 2 Track Slider" },
+          { key: "Max Height", value: "1600 mm" },
+          { key: "Max Width", value: "2500 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-        {
-          id: "3",
-          name: "2 Panels On 2 Tracks We-70 Sliding Window",
-          image: slider2Img,
-          series: ["We 70"],
-          design: "Aluminium Sliding Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: "5, 6, 8 mm",
-            frameDepth: "72 mm",
-            Max_Height_of_Window: "1600 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        ],
+      },
+      {
+        id: "3",
+        name: "Sliding window (4 panels on 4 tracks)",
+        image: slider4Img,
+        series: ["We Plus"],
+        design: "Aluminium Sliding Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "5, 6, 8, 13.52 mm" },
+          { key: "Frame Depth", value: "104 mm - for 4 Track Slider" },
+          { key: "Max Height", value: "1600 mm" },
+          { key: "Max Width", value: "4000 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-        {
-          id: "4",
-          name: "2 Panels On 2 Tracks Grants Sliding Window",
-          image: slider5Img,
-          series: ["We 70"],
-          design: "Aluminium Sliding Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: "31.5  mm",
-            frameDepth:
-              "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
-            Max_Height_of_Door: "2,500 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        ],
+      },
+      {
+        id: "4",
+        name: "Sliding window (lift & slide)",
+        image: slider5Img,
+        series: ["We Plus"],
+        design: "Aluminium Sliding Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "5, 6, 8, 13.52 mm" },
+          { key: "Frame Depth", value: "104 mm" },
+          { key: "Max Height", value: "2400 mm" },
+          { key: "Max Width", value: "6000 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-        {
-          id: "5",
-          name: "4 Panels On 2 Tracks Grants Sliding Window",
-          image: slider6Img,
-          series: ["We 70"],
-          design: "Aluminium Sliding Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: " Up to 31.5  mm",
-            frameDepth:
-              "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
-            Max_Height_of_Door: "2,500 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        ],
+      },
+      {
+        id: "5",
+        name: "Sliding window (corner)",
+        image: slider6Img,
+        series: ["We Plus"],
+        design: "Aluminium Sliding Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "5, 6, 8, 13.52 mm" },
+          { key: "Frame Depth", value: "104 mm" },
+          { key: "Max Height", value: "2400 mm" },
+          { key: "Max Width", value: "3000 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-      ],
-    },
-    {
-      id: "90",
-      name: "Aluminium Awning Windows",
-      products: [
-        {
-          id: "6",
-          name: "Awning Window WE-70",
-          image: awing1,
-          series: ["We 70"],
-          design: "Aluminium Awning Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: "5, 6, 8 mm",
-            frameDepth: "72 mm",
-            maxOpeningAngle: "45°",
-            Max_Height_of_Window: "1800 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        ],
+      },
+    ],
+  },
+  {
+    id: "90",
+    name: "Aluminium Awning Windows",
+    products: [
+      {
+        id: "6",
+        name: "Awning Window WE-70",
+        image: awing1,
+        series: ["We 70"],
+        design: "Aluminium Awning Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "5, 6, 8 mm" },
+          { key: "Frame Depth", value: "72 mm" },
+          { key: "Max Opening Angle", value: "45°" },
+          { key: "Max Height of Window", value: "1800 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-        {
-          id: "7",
-          name: "Awning window (Single lock)",
-          image: awing2,
-          series: ["We Plus"],
-          design: "Aluminium Awning Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: "Up to 13.5 mm",
-            frameDepth: "72 mm",
-            maxOpeningAngle: "60°",
-            Max_Height_of_Window: "1800 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        ],
+      },
+      {
+        id: "7",
+        name: "Awning Window WE-50",
+        image: awing2,
+        series: ["We 50"],
+        design: "Aluminium Awning Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "5, 6 mm" },
+          { key: "Frame Depth", value: "50 mm" },
+          { key: "Max Opening Angle", value: "45°" },
+          { key: "Max Height of Window", value: "1200 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-        {
-          id: "8",
-          name: "Awning window",
-          image: awing3,
-          series: ["We Plus"],
-          design: "Aluminium Awning Windows",
-          specifications: {
-            material: "Aluminum",
-            glassThickness: "Up to 31.5 mm",
-            frameDepth: "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
-            maxOpeningAngle: "60°",
-            Max_Height_of_Door: "3000 mm",
-            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        ],
+      },
+      {
+        id: "8",
+        name: "Awning Window WE-100",
+        image: awing3,
+        series: ["We 100"],
+        design: "Aluminium Awning Windows",
+        specifications: [
+          { key: "Material", value: "Aluminum" },
+          { key: "Glass Thickness", value: "6, 8 mm" },
+          { key: "Frame Depth", value: "100 mm" },
+          { key: "Max Opening Angle", value: "45°" },
+          { key: "Max Height of Window", value: "2400 mm" },
+          {
+            key: "Visit Website",
+            value: "selectivesystems.in",
           },
-        },
-      ],
-    },
-  ];
-  
+        ],
+      },
+    ],
+  },
+];
+
 export default function page() {
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [nextSlide, setNextSlide] = useState(1);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-        setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-      }, 4000);
-  
-      return () => clearInterval(interval);
-    }, []);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 4000);
 
+    return () => clearInterval(interval);
+  }, []);
 
-     // product handeler
-  const [activeTab, setActiveTab] = useState(windowTypes[0].id)
-  const [selectedProduct, setSelectedProduct] = useState(null)
+  // product handeler
+  const [activeTab, setActiveTab] = useState(windowTypes[0].id);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const openModal = (product) => {
-    setSelectedProduct(product)
-    
-  }
+    setSelectedProduct(product);
+  };
 
   const closeModal = () => {
-    setSelectedProduct(null)
-    
-  }
+    setSelectedProduct(null);
+  };
 
+  const [selectedImage, setSelectedImage] = useState(0);
+
+  const images = [Sec3Img1, Sec3Img2, Sec3Img3, Sec3Img4, Sec3Img5, Sec3Img6];
+
+  const features = [
+    {
+      icon: <FaWindowMaximize />,
+      title: "Durable",
+      description:
+        "Long-lasting aluminum frames resistant to warping, rotting, and cracking",
+    },
+    {
+      icon: <FaShieldAlt />,
+      title: "Secure",
+      description:
+        "Enhanced security features with multi-point locking systems for peace of mind",
+    },
+    {
+      icon: <FaPaintBrush />,
+      title: "Customizable",
+      description:
+        "Wide range of colors and finishes to match your home's aesthetic",
+    },
+    {
+      icon: <FaRuler />,
+      title: "Energy Efficient",
+      description:
+        "Excellent insulation properties to reduce energy costs year-round",
+    },
+    {
+      icon: <FaLeaf />,
+      title: "Eco-Friendly",
+      description:
+        "Recyclable materials and sustainable manufacturing processes",
+    },
+    {
+      icon: <FaSun />,
+      title: "UV Protection",
+      description:
+        "Special coatings to block harmful UV rays and protect your interiors",
+    },
+    {
+      icon: <FaSnowflake />,
+      title: "Weather Resistant",
+      description:
+        "Withstands extreme temperatures and harsh weather conditions",
+    },
+    {
+      icon: <FaWrench />,
+      title: "Low Maintenance",
+      description: "Easy to clean and maintain, saving you time and effort",
+    },
+  ];
+
+  const customizationOptions = [
+    {
+      title: "Frame Color",
+      description:
+        "Choose from a wide palette of colors to match your home's exterior",
+    },
+    {
+      title: "Glass Type",
+      description:
+        "Select from various glass options including tempered, laminated, or low-E glass",
+    },
+    {
+      title: "Hardware Finish",
+      description: "Customize handles and locks with different metal finishes",
+    },
+    {
+      title: "Screen Options",
+      description:
+        "Pick from standard mesh, pet-resistant, or retractable screens",
+    },
+    {
+      title: "Window Style",
+      description:
+        "Select from casement, sliding, double-hung, or picture window styles",
+    },
+    {
+      title: "Glazing Options",
+      description:
+        "Choose single, double, or triple glazing for optimal insulation",
+    },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.5, staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const imageVariants = {
+    enter: { opacity: 0, scale: 0.8 },
+    center: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 1.1 },
+  };
 
   return (
     <div>
@@ -275,148 +418,374 @@ export default function page() {
         </div>
       </section>
 
-       {/* Part 2 */}
-       <section className="py-12 bg-gray-50 container mx-auto overflow-hidden">
-      <div className=" mx-auto container px-4">
-        <h2 className="text-3xl din-semibold text-primary text-center mb-8">Available Designs For Aluminium Windows</h2>
-        
-        <div className="mb-8">
-          <ul className="flex flex-wrap justify-center gap-4">
-            {windowTypes.map((type) => (
-              <li key={type.id}>
-                <button
-                  onClick={() => setActiveTab(type.id)}
-                  className={`px-4 py-2 rounded-full din-regular transition-colors ${
-                    activeTab === type.id
-                      ? 'bg-[#335c98] text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {type.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <main className="max-w-[80rem] mx-auto">
+        <section className="py-10 ">
+          <div className="px-4">
+            <h2 className="text-3xl din-semibold text-primary text-center mb-8">
+              Available Designs For Aluminium Windows
+            </h2>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {windowTypes.find(type => type.id === activeTab).products.map((product) => (
-                <div 
-                  key={product.id} 
-                  className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform hover:scale-105"
-                  onClick={() => openModal(product)}
-                >
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={800}
-                    height={800}
-                    className="w-full h-[18rem] p-4 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className=" din-semibold text-primary text-lg mb-2">{product.name}</h3>
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {product.series.map((series) => (
-                        <span key={series} className="text-xs din-regular bg-gray-200 px-2 py-1 rounded">{series}</span>
-                      ))}
-                    </div>
-                    <p className="text-sm din-regular text-gray-600">{product.design}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="mb-8">
+              <ul className="flex flex-wrap justify-center gap-4">
+                {windowTypes.map((type) => (
+                  <li key={type.id}>
+                    <button
+                      onClick={() => setActiveTab(type.id)}
+                      className={`px-4 py-2 rounded-full nunito transition-colors ${
+                        activeTab === type.id
+                          ? "bg-[#335c98] text-white"
+                          : "bg-white text-secondary hover:bg-gray-200"
+                      }`}
+                    >
+                      {type.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </motion.div>
-        </AnimatePresence>
 
-        <AnimatePresence>
-          {selectedProduct && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-              onClick={closeModal}
-            >
+            <AnimatePresence mode="wait">
               <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.9 }}
-                className="bg-white rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto"
-                onClick={(e) => e.stopPropagation()}
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl text-primary din-semibold">{selectedProduct.name}</h3>
-                  <button 
-                    onClick={closeModal} 
-                    className="text-gray-500 hover:text-gray-700"
-                    aria-label="Close modal"
-                  >
-                    <FaTimes size={24} />
-                  </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {windowTypes
+                    .find((type) => type.id === activeTab)
+                    .products.map((product) => (
+                      <div
+                        key={product.id}
+                        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform hover:scale-105"
+                        onClick={() => openModal(product)}
+                      >
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-[18rem] p-4 object-cover"
+                        />
+                        <div className="p-4 flex flex-col gap-2 w-full">
+                          <h3 className="din-semibold text-primary text-lg">
+                            {product.name.split(" (")[0]} <br />
+                            <span className="din-semibold text-primary text-lg">
+                              {`(${product.name.split(" (")[1]}`}
+                            </span>
+                          </h3>
+                          <p className="text-sm din-regular text-gray-600">
+                            {product.design}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                 </div>
-                <Image
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  width={800}
-                  height={800}
-                  className="w-full h-auto p-4 object-cover rounded mb-4"
-                />
-                <h4 className=" din-semibold text-primary mb-2">Specifications:</h4>
-                <ul className="space-y-2">
-                  {Object.entries(selectedProduct.specifications).map(([key, value]) => (
-                    key !== 'Visit_Web' ? (
-                      <li key={key} className="flex justify-between">
-                        <span className="text-gray-600 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}:</span>
-                        <span className="din-medium">{value}</span>
-                      </li>
-                    ) : null
-                  ))}
-                </ul>
-                {selectedProduct.specifications.Visit_Web && (
-                  <Link
-                    href={selectedProduct.specifications.Visit_Web}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center px-4 py-2 border  text-sm font-medium rounded-md shadow-sm text-black bg-white hover:bg-[#335c98] hover:text-white duration-700 din-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              </motion.div>
+            </AnimatePresence>
+
+            <AnimatePresence>
+              {selectedProduct && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 "
+                  onClick={closeModal}
+                >
+                  <motion.div
+                    initial={{ scale: 0.9 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0.9 }}
+                    className="bg-white rounded-lg p-6 max-w-[50rem] w-full h-auto overflow-y-hidden flex flex-col"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    Visit Website <FaExternalLinkAlt className="ml-2" />
-                  </Link>
-                // <Link href={selectedProduct.specifications.Visit_Web}>
-                //     <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
-                //       {/* Colored background */}
-                //       <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-xl text-primary din-semibold">
+                        {selectedProduct.name}
+                      </h3>
+                      <button
+                        onClick={closeModal}
+                        className="text-gray-500 hover:text-gray-700"
+                        aria-label="Close modal"
+                      >
+                        <FaTimes size={24} />
+                      </button>
+                    </div>
+                    <div className="flex flex-col lg:flex-row gap-6">
+                      <Image
+                        src={selectedProduct.image}
+                        alt={selectedProduct.name}
+                        className="md:w-[50%] md:h-[60%] p-4 object-cover rounded-lg shadow-lg mb-4"
+                      />
+                      <div className="flex flex-col">
+                        <h4 className="din-semibold text-primary mb-2">
+                          Specifications:
+                        </h4>
+                        <ul className="flex flex-col gap-2">
+                          {selectedProduct.specifications.map((spec) => (
+                            <li key={spec.key} className="flex gap-2">
+                              <span className="text-secondary capitalize whitespace-nowrap">
+                                {spec.key}:
+                              </span>
+                              {spec.key === "Visit Website" ? (
+                                <Link
+                                  href={`https://${spec.value}/products/aluminium-windows`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-blue-500 hover:text-blue-700 din-medium whitespace-nowrap"
+                                >
+                                  {spec.value}
+                                </Link>
+                              ) : (
+                                <span className="text-secondary din-medium whitespace-nowrap">
+                                  {spec.value}
+                                </span>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
 
-                //       {/* Top-left to bottom-right diagonal animation */}
-                //       <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
-                //         <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                //         <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
-                //       </span>
+                    {selectedProduct.specifications.Visit_Web && (
+                      <Link
+                        href={selectedProduct.specifications.Visit_Web}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center px-4 py-2 border  text-sm font-medium rounded-md shadow-sm text-black bg-white hover:bg-[#335c98] hover:text-white duration-700 din-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Visit Website <FaExternalLinkAlt className="ml-2" />
+                      </Link>
+                      // <Link href={selectedProduct.specifications.Visit_Web}>
+                      //     <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                      //       {/* Colored background */}
+                      //       <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
 
-                //       {/* Button text */}
-                //       <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
-                //         GET A QUOTE
-                //       </span>
-                //     </button>
-                //   </Link>
-                  
-                )}
-              </motion.div>
+                      //       {/* Top-left to bottom-right diagonal animation */}
+                      //       <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                      //         <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      //         <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      //       </span>
+
+                      //       {/* Button text */}
+                      //       <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                      //         GET A QUOTE
+                      //       </span>
+                      //     </button>
+                      //   </Link>
+                    )}
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </section>
+        <section className="py-8 px-4 lg:h-screen relative flex flex-col items-center justify-center bg-gray-100">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="text-2xl md:text-4xl din-bold text-center mb-4 text-primary"
+          >
+            Premium Aluminum Windows for Modern Homes
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center text-secondary max-w-2xl mx-auto mb-4 nunito text-sm"
+          >
+            Discover our range of high-quality, energy-efficient aluminum
+            windows designed to enhance your home's aesthetics and
+            functionality. Perfect for both residential and commercial
+            applications.
+          </motion.p>
+          <div className="flex flex-col md:flex-row gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-full md:w-2/3 relative overflow-hidden"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedImage}
+                  variants={imageVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    opacity: { duration: 0.3 },
+                    scale: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
+                  }}
+                  className="w-full h-full"
+                >
+                  <Image
+                    src={images[selectedImage]}
+                    alt={`Aluminum Window ${selectedImage + 1}`}
+                    className="rounded-lg shadow-lg object-cover xl:h-[65vh] xl:w-[40vw]"
+                  />
+                </motion.div>
+              </AnimatePresence>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </section>
+            <div className=" grid grid-cols-2 gap-6 h-auto">
+              {images.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="cursor-pointer w-auto h-auto"
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <Image
+                    src={img}
+                    alt={`Thumbnail ${index + 1}`}
+                    width={150}
+                    height={100}
+                    className={`rounded-md ${
+                      selectedImage === index
+                        ? "shadow-xl shadow-[#335c98]"
+                        : ""
+                    }`}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      
+        {/* Features Section */}
+        <section className="py-12 px-4 md:px-8 relative">
+          <div className="container mx-auto flex flex-col gap-10">
+            <motion.h2
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl din-bold text-center text-primary"
+            >
+              Why Choose Our Aluminum Windows?
+            </motion.h2>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+            >
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="text-4xl text-primary mb-4 flex justify-center">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl din-semibold mb-2 text-primary">
+                    {feature.title}
+                  </h3>
+                  <p className="text-secondary nunito">{feature.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Customization Options Section */}
+        <section className="py-16 px-4 md:px-8 bg-gray-100">
+          <div className="container mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl din-bold text-center mb-8 text-primary"
+            >
+              Customization Options
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center text-gray-600 mb-8 max-w-2xl mx-auto nunito"
+            >
+              Tailor your aluminum windows to perfectly match your home's style
+              and your specific needs. Our wide range of customization options
+              ensures you get the perfect windows for your space.
+            </motion.p>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {customizationOptions.map((option, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-white rounded-lg shadow-md p-6 text-center flex flex-col gap-4"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-xl din-semibold text-primary">
+                    {option.title}
+                  </h3>
+                  <p className="text-secondary nunito">{option.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-16 px-4 md:px-8">
+          <div className="container mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl din-bold mb-8 text-primary"
+            >
+              Ready to Upgrade Your Windows?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl mb-8 max-w-2xl mx-auto nunito text-secondary"
+            >
+              Transform your home with our premium aluminum windows. Our expert
+              team is ready to guide you through the selection process and
+              provide a free, no-obligation consultation and quote.
+            </motion.p>
+            <Link href="/ContactUs">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10"
+              >
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                  GET A QUOTE
+                </span>
+              </motion.button>
+            </Link>
+          </div>
+        </section>
+      </main>
     </div>
   )
 }
