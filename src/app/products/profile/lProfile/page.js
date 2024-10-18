@@ -23,8 +23,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import { FadeUp } from "../../../components/utility/animation.jsx";
-import { motion } from "framer-motion";
+import { FadeRight, FadeLeft, FadeUp } from "../../../components/utility/animation.jsx";
+import { motion, AnimatePresence } from "framer-motion";
+import LivingImg from "../../../assets/product/profile/L_profile/slider/img1.webp";
+import HallImg from "../../../assets/product/profile/L_profile/slider/img2.webp";
+import bedroom from "../../../assets/product/profile/L_profile/slider/img3.webp";
 
 // Black finishes
 import MirrorImg from "../../../assets/product/profile/L_profile/finishes/black/mirrorBlack.png";
@@ -60,6 +63,29 @@ import HairlineImgC from "../../../assets/product/profile/L_profile/finishes/cha
 import StainImgC from "../../../assets/product/profile/L_profile/finishes/champagne/stainChampagne.png";
 import StraightlineImgC from "../../../assets/product/profile/L_profile/finishes/champagne/straightlineChampagne.png";
 import MeshImgC from "../../../assets/product/profile/L_profile/finishes/champagne/meshChampagne.png";
+
+
+const heroSlides = [
+  {
+    image: LivingImg,
+    title: "Sleek Corner Protectors",
+    description:
+      "These L profiles offer a stylish and functional way to protect your wall corners from damage while enhancing your interior design.",
+  },
+  {
+    image: HallImg,
+    title: "Versatile Wall Accents",
+    description:
+      " L profiles can be used to create a variety of decorative effects, from geometric patterns to floating shelves, adding a unique touch to your space.",
+  },
+  {
+    image: bedroom,
+    title: "Modern Edge Enhancers",
+    description:
+      "L profiles are a modern and contemporary way to define and enhance the edges of your walls, creating a clean and polished look.",
+  },
+];
+
 
 const page = () => {
   const finishes = [
@@ -181,24 +207,87 @@ const page = () => {
     threshold: 0.1,
   });
 
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className=" relative ">
-      <div className="relative">
-        <Image
-          className=" h-[22rem] md:h-[40rem] w-full object-cover"
-          src={bg}
-          alt="L Profile"
-        />
-        <div className="absolute inset-0 bg-black opacity-25" />
-        <h1 className="absolute inset-0 flex flex-col items-start justify-end pl-3 md:justify-center pb-4  md:pt-0 text-[#19355e] text-5xl md:text-[4rem] md:p-4  din-bold">
-          RAJGURU
-          <br />
-          <p className=" text-xs w-[20.8rem] md:w-[28rem] din-regular pt-2 md:pt-4 text-gray-200">
-            Stainless Steel L Profile offers superior strength and durability,
-            making it ideal for a variety of structural applications.
-          </p>
-        </h1>
-      </div>
+<section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <AnimatePresence initial={true}>
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].image}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-50"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-10 h-full">
+          <AnimatePresence initial={true}>
+            <motion.div
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+            >
+              {/* Left Side Text */}
+              <motion.div
+                variants={FadeRight(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center items-start p-4  md:pr-14"
+              >
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                  {heroSlides[currentSlide].description}
+                </p>
+              </motion.div>
+
+              {/* Right Side Image */}
+              <motion.div
+                variants={FadeLeft(0.3)}
+                initial="hidden"
+                animate="visible"
+                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+              >
+                <Image
+                  src={heroSlides[nextSlide].image}
+                  alt={heroSlides[nextSlide].title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg shadow-xl"
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
+
 
       <div className=" flex flex-col overflow-hidden mx-auto container mt-14">
         <div className=" flex justify-center ">
@@ -431,7 +520,7 @@ const page = () => {
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
                   <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-semibold">
-                    Benefits of Stainless Steel T Profiles
+                    Benefits of Stainless Steel L Profiles
                   </th>
                 </tr>
               </thead>

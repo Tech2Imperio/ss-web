@@ -162,7 +162,7 @@ export default function Page() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+              className=" mx-auto max-w-[85rem] px-4 h-full flex flex-col lg:flex-row items-center justify-center"
             >
               {/* Left Side Text */}
               <motion.div
@@ -171,10 +171,10 @@ export default function Page() {
                 animate="visible"
                 className="flex flex-col justify-center items-start p-4  md:pr-14"
               >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                <h1 className=" text-3xl md:text-4xl lg:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem] hidden md:block text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -184,7 +184,7 @@ export default function Page() {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+                className="relative h-[15rem] w-full md:w-[70%] md:h-[20rem]  lg:w-[80%]  lg:h-[25rem] "
               >
                 <Image
                   src={heroSlides[nextSlide].image}
@@ -198,7 +198,6 @@ export default function Page() {
           </AnimatePresence>
         </div>
       </section>
-
       <main className=" mx-auto container">
         {/* Product Overview with Image Slider */}
         <section className=" bg-white container mx-auto pt-8 md:p-28">
@@ -285,7 +284,7 @@ export default function Page() {
             <h2 className=" text-3xl md:text-5xl din-semibold text-[#335c98] mb-10 md:mb-16 text-center">
               Applications & Use Cases
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-3 gap-6">
               {[
                 {
                   title: "Outdoor Structures",
@@ -344,7 +343,7 @@ export default function Page() {
             <h2 className="text-5xl din-semibold text-[#335c98] mb-16 text-center">
               Accessories
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-3 gap-12">
               {[
                 {
                   title: "Turnbuckles",

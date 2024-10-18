@@ -70,9 +70,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaRuler, FaWeight, FaPalette, FaBox } from "react-icons/fa";
-import LivingImg from "../../assets/product/ssdecorativesheet/hero/hall.webp";
-import HallImg from "../../assets/product/ssdecorativesheet/hero/hall2.webp";
-import bedroom from "../../assets/product/ssdecorativesheet/hero/bedroom.webp";
+import LivingImg from "../../assets/product/queueManager/slider/Img1.webp";
+import HallImg from "../../assets/product/queueManager/slider/Img2.webp";
+import bedroom from "../../assets/product/queueManager/slider/Img3.webp";
 
 const Card = ({ children }) => (
   <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
@@ -234,7 +234,7 @@ export default function StainlessSteelQueueManager() {
       exit="exit"
       variants={pageAnimation}
     >
-        <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
@@ -262,7 +262,7 @@ export default function StainlessSteelQueueManager() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="container mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0"
+              className=" mx-auto max-w-[85rem] px-4 h-full flex flex-col lg:flex-row items-center justify-center"
             >
               {/* Left Side Text */}
               <motion.div
@@ -271,10 +271,10 @@ export default function StainlessSteelQueueManager() {
                 animate="visible"
                 className="flex flex-col justify-center items-start p-4  md:pr-14"
               >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                <h1 className=" text-3xl md:text-4xl lg:text-5xl din-semibold text-white mb-2 md:mb-4  ">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className=" text-[1rem] text-justify md:text-xl din-regular text-gray-200">
+                <p className=" text-[1rem] hidden md:block text-justify md:text-xl din-regular text-gray-200">
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
@@ -284,7 +284,7 @@ export default function StainlessSteelQueueManager() {
                 variants={FadeLeft(0.3)}
                 initial="hidden"
                 animate="visible"
-                className="relative h-[15rem] w-full  md:w-[85%]  md:h-[28rem] flex  md:mt-28 ml-0 md:ml-24"
+                className="relative h-[15rem] w-full md:w-[70%] md:h-[20rem]  lg:w-[80%]  lg:h-[25rem] "
               >
                 <Image
                   src={heroSlides[nextSlide].image}

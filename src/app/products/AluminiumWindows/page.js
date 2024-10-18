@@ -1,13 +1,13 @@
-"use client";
+'use client'
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaTimes, FaExternalLinkAlt  } from "react-icons/fa";
-import Link from 'next/link'
-import LivingImg from "../../assets/product/aluminiumWindows/slider/img1.webp";
-import HallImg from "../../assets/product/aluminiumWindows/slider/img2.webp";
-import bedroom from "../../assets/product/aluminiumWindows/slider/img3.webp";
+import {FaTimes } from 'react-icons'
+import LivingImg from "../../assets/product/ssdecorativesheet/hero/hall.webp";
+import HallImg from "../../assets/product/ssdecorativesheet/hero/hall2.webp";
+import bedroom from "../../assets/product/ssdecorativesheet/hero/bedroom.webp";
+
 
 // sliding Image
 import slider3Img from "../../assets/product/aluminiumWindows/slidingWindows/Img1.webp";
@@ -22,197 +22,195 @@ import awing2 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/I
 import awing3 from "../../assets/product/aluminiumWindows/aluminiumAwingWindow/Img3.webp"
 
 const heroSlides = [
-  {
-    image: LivingImg,
-    title: "Elevate Your Space with Fluted Design",
-    description:
-      "Transform your interiors with stainless steel decorative sheets featuring elegant fluted designs. Perfect for modern wall decor, they add sophistication and style to any setting.",
-  },
-  {
-    image: HallImg,
-    title: " Durable Decorative Solutions for Any Room",
-    description:
-      "Discover the beauty and durability of fluted stainless steel panels. Ideal for both residential and commercial spaces, these decorative sheets enhance visual interest and create lasting impressions.",
-  },
-  {
-    image: bedroom,
-    title: "Stylish Stainless Steel Decorative Sheets with Fluted Texture",
-    description:
-      "Achieve a contemporary aesthetic with stylish stainless steel decorative sheets that showcase a unique fluted texture. Perfect for adding depth and elegance to your modern wall decor.",
-  },
-];
+    {
+      image: LivingImg,
+      title: "Elevate Your Space with Fluted Design",
+      description:
+        "Transform your interiors with stainless steel decorative sheets featuring elegant fluted designs. Perfect for modern wall decor, they add sophistication and style to any setting.",
+    },
+    {
+      image: HallImg,
+      title: " Durable Decorative Solutions for Any Room",
+      description:
+        "Discover the beauty and durability of fluted stainless steel panels. Ideal for both residential and commercial spaces, these decorative sheets enhance visual interest and create lasting impressions.",
+    },
+    {
+      image: bedroom,
+      title: "Stylish Stainless Steel Decorative Sheets with Fluted Texture",
+      description:
+        "Achieve a contemporary aesthetic with stylish stainless steel decorative sheets that showcase a unique fluted texture. Perfect for adding depth and elegance to your modern wall decor.",
+    },
+  ];
 
 // products DATA
 const windowTypes = [
-  {
-    id: "83",
-    name: "Aluminium Sliding Windows",
-    products: [
-      {
-        id: "1",
-        name: "Sliding window (3 panels on 3 tracks)",
-        image: slider3Img,
-        series: ["We Plus"],
-        design: "Aluminium Sliding Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: "5, 6, 8, 13.52 mm",
-          frameDepth: "104 mm - for 3 Track Slider",
-          Max_Height: "1600 mm",
-          Max_Width: "3000 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+    {
+      id: "83",
+      name: "Aluminium Sliding Windows",
+      products: [
+        {
+          id: "1",
+          name: "Sliding window (3 panels on 3 tracks)",
+          image: slider3Img,
+          series: ["We Plus"],
+          design: "Aluminium Sliding Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: "5, 6, 8, 13.52 mm",
+            frameDepth: "104 mm - for 3 Track Slider",
+            Max_Height: "1600 mm",
+            Max_Width: "3000 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-      {
-        id: "2",
-        name: "4 Panels On 2 Tracks Sliding Window",
-        image: slider4Img,
-        series: ["We 70"],
-        design: "Aluminium Sliding Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: "Up to 13.52 mm",
-          frameDepth: "72 mm",
-          Max_Height: "1600 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        {
+          id: "2",
+          name: "4 Panels On 2 Tracks Sliding Window",
+          image: slider4Img,
+          series: ["We 70"],
+          design: "Aluminium Sliding Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: "Up to 13.52 mm",
+            frameDepth: "72 mm",
+            Max_Height: "1600 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-      {
-        id: "3",
-        name: "2 Panels On 2 Tracks We-70 Sliding Window",
-        image: slider2Img,
-        series: ["We 70"],
-        design: "Aluminium Sliding Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: "5, 6, 8 mm",
-          frameDepth: "72 mm",
-          Max_Height_of_Window: "1600 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        {
+          id: "3",
+          name: "2 Panels On 2 Tracks We-70 Sliding Window",
+          image: slider2Img,
+          series: ["We 70"],
+          design: "Aluminium Sliding Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: "5, 6, 8 mm",
+            frameDepth: "72 mm",
+            Max_Height_of_Window: "1600 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-      {
-        id: "4",
-        name: "2 Panels On 2 Tracks Grants Sliding Window",
-        image: slider5Img,
-        series: ["We 70"],
-        design: "Aluminium Sliding Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: "31.5  mm",
-          frameDepth:
-            "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
-          Max_Height_of_Door: "2,500 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        {
+          id: "4",
+          name: "2 Panels On 2 Tracks Grants Sliding Window",
+          image: slider5Img,
+          series: ["We 70"],
+          design: "Aluminium Sliding Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: "31.5  mm",
+            frameDepth:
+              "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
+            Max_Height_of_Door: "2,500 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-      {
-        id: "5",
-        name: "4 Panels On 2 Tracks Grants Sliding Window",
-        image: slider6Img,
-        series: ["We 70"],
-        design: "Aluminium Sliding Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: " Up to 31.5  mm",
-          frameDepth:
-            "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
-          Max_Height_of_Door: "2,500 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        {
+          id: "5",
+          name: "4 Panels On 2 Tracks Grants Sliding Window",
+          image: slider6Img,
+          series: ["We 70"],
+          design: "Aluminium Sliding Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: " Up to 31.5  mm",
+            frameDepth:
+              "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
+            Max_Height_of_Door: "2,500 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-    ],
-  },
-  {
-    id: "90",
-    name: "Aluminium Awning Windows",
-    products: [
-      {
-        id: "6",
-        name: "Awning Window WE-70",
-        image: awing1,
-        series: ["We 70"],
-        design: "Aluminium Awning Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: "5, 6, 8 mm",
-          frameDepth: "72 mm",
-          maxOpeningAngle: "45°",
-          Max_Height_of_Window: "1800 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+      ],
+    },
+    {
+      id: "90",
+      name: "Aluminium Awning Windows",
+      products: [
+        {
+          id: "6",
+          name: "Awning Window WE-70",
+          image: awing1,
+          series: ["We 70"],
+          design: "Aluminium Awning Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: "5, 6, 8 mm",
+            frameDepth: "72 mm",
+            maxOpeningAngle: "45°",
+            Max_Height_of_Window: "1800 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-      {
-        id: "7",
-        name: "Awning window (Single lock)",
-        image: awing2,
-        series: ["We Plus"],
-        design: "Aluminium Awning Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: "Up to 13.5 mm",
-          frameDepth: "72 mm",
-          maxOpeningAngle: "60°",
-          Max_Height_of_Window: "1800 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        {
+          id: "7",
+          name: "Awning window (Single lock)",
+          image: awing2,
+          series: ["We Plus"],
+          design: "Aluminium Awning Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: "Up to 13.5 mm",
+            frameDepth: "72 mm",
+            maxOpeningAngle: "60°",
+            Max_Height_of_Window: "1800 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-      {
-        id: "8",
-        name: "Awning window",
-        image: awing3,
-        series: ["We Plus"],
-        design: "Aluminium Awning Windows",
-        specifications: {
-          material: "Aluminum",
-          glassThickness: "Up to 31.5 mm",
-          frameDepth: "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
-          maxOpeningAngle: "60°",
-          Max_Height_of_Door: "3000 mm",
-          Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+        {
+          id: "8",
+          name: "Awning window",
+          image: awing3,
+          series: ["We Plus"],
+          design: "Aluminium Awning Windows",
+          specifications: {
+            material: "Aluminum",
+            glassThickness: "Up to 31.5 mm",
+            frameDepth: "101.6 mm., 120 mm (2 tracks sliding), 178 mm (3 tracks sliding)",
+            maxOpeningAngle: "60°",
+            Max_Height_of_Door: "3000 mm",
+            Visit_Web:"https://selectivesystems.in/products/aluminium-windows",
+          },
         },
-      },
-    ],
-  },
-];
-
+      ],
+    },
+  ];
+  
 export default function page() {
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [nextSlide, setNextSlide] = useState(1);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+        setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+      }, 4000);
+  
+      return () => clearInterval(interval);
+    }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
 
-  // product handeler
+     // product handeler
   const [activeTab, setActiveTab] = useState(windowTypes[0].id)
   const [selectedProduct, setSelectedProduct] = useState(null)
 
   const openModal = (product) => {
     setSelectedProduct(product)
-    document.body.style.overflow = 'hidden'
+    
   }
 
   const closeModal = () => {
     setSelectedProduct(null)
-    document.body.style.overflow = 'unset'
+    
   }
 
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [])
+
   return (
     <div>
-      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+        <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
@@ -277,9 +275,9 @@ export default function page() {
         </div>
       </section>
 
-      {/* Part 2 */}
-      <section className="py-12 bg-gray-100">
-      <div className="container mx-auto px-4">
+       {/* Part 2 */}
+       <section className="py-12 bg-gray-50 container mx-auto overflow-hidden">
+      <div className=" mx-auto container px-4">
         <h2 className="text-3xl din-semibold text-primary text-center mb-8">Available Designs For Aluminium Windows</h2>
         
         <div className="mb-8">
@@ -418,7 +416,7 @@ export default function page() {
       </div>
     </section>
 
-    
+      
     </div>
-  );
+  )
 }
