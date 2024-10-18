@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
@@ -39,25 +39,25 @@ import Sec3Img5 from "../../assets/product/aluminiumWindows/section3/Img5.webp";
 import Sec3Img6 from "../../assets/product/aluminiumWindows/section3/Img6.webp";
 
 const heroSlides = [
-    {
-      image: LivingImg,
-      title: "Elevate Your Space with Fluted Design",
-      description:
-        "Transform your interiors with stainless steel decorative sheets featuring elegant fluted designs. Perfect for modern wall decor, they add sophistication and style to any setting.",
-    },
-    {
-      image: HallImg,
-      title: " Durable Decorative Solutions for Any Room",
-      description:
-        "Discover the beauty and durability of fluted stainless steel panels. Ideal for both residential and commercial spaces, these decorative sheets enhance visual interest and create lasting impressions.",
-    },
-    {
-      image: bedroom,
-      title: "Stylish Stainless Steel Decorative Sheets with Fluted Texture",
-      description:
-        "Achieve a contemporary aesthetic with stylish stainless steel decorative sheets that showcase a unique fluted texture. Perfect for adding depth and elegance to your modern wall decor.",
-    },
-  ];
+  {
+    image: LivingImg,
+    title: "Elevate Your Space with Fluted Design",
+    description:
+      "Transform your interiors with stainless steel decorative sheets featuring elegant fluted designs. Perfect for modern wall decor, they add sophistication and style to any setting.",
+  },
+  {
+    image: HallImg,
+    title: " Durable Decorative Solutions for Any Room",
+    description:
+      "Discover the beauty and durability of fluted stainless steel panels. Ideal for both residential and commercial spaces, these decorative sheets enhance visual interest and create lasting impressions.",
+  },
+  {
+    image: bedroom,
+    title: "Stylish Stainless Steel Decorative Sheets with Fluted Texture",
+    description:
+      "Achieve a contemporary aesthetic with stylish stainless steel decorative sheets that showcase a unique fluted texture. Perfect for adding depth and elegance to your modern wall decor.",
+  },
+];
 
 // products DATA
 const windowTypes = [
@@ -220,7 +220,7 @@ const windowTypes = [
 ];
 
 export default function page() {
-    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [nextSlide, setNextSlide] = useState(1);
@@ -353,7 +353,7 @@ export default function page() {
 
   return (
     <div>
-        <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
@@ -787,5 +787,5 @@ export default function page() {
         </section>
       </main>
     </div>
-  )
+  );
 }

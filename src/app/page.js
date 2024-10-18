@@ -144,7 +144,7 @@ function Section1() {
             repeatType: "loop",
             repeatDelay: 9,
           }}
-          className="relative right-0 bg-gray-950 opacity-60 flex items-start justify-center text-white p-16 flex-col gap-4 h-full w-full lg:items-center text-center"
+          className="relative right-0 bg-gray-950 opacity-60 flex items-center justify-center text-white p-16 flex-col gap-4 h-full w-full lg:items-center text-center"
         >
           {visible && (
             <>
@@ -152,7 +152,7 @@ function Section1() {
                 variants={HomeFadeLeft(0.6)}
                 initial="hidden"
                 animate="visible"
-                className="text-[2rem] sm:text-[3rem] md:text-[3.3rem] lg:text-[3.5rem] xl:text-[3.8rem] whitespace-nowrap din-bold"
+                className="text-[2rem] sm:text-[3rem] md:text-[3.3rem] lg:text-[3.5rem] xl:text-[3.8rem] text-center whitespace-nowrap din-bold"
               >
                 {messages[textIndex].title.split("\n").map((line, index) => (
                   <span key={index}>
@@ -165,7 +165,7 @@ function Section1() {
                 variants={HomeFadeRight(0.6)}
                 initial="hidden"
                 animate="visible"
-                className="text-xs md:text-2xl whitespace-nowrap nunito"
+                className="text-xs md:text-2xl whitespace-nowrap nunito text-center"
               >
                 {messages[textIndex].description
                   .split("\n")
