@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-import Logo from "../assets/logo/blueLogo.webp";
+import WhatsAppLogo from "../assets/logo/whatsappLogo.webp";
 export default function WhatsAppButton() {
   return (
     <FloatingWhatsApp
@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
       chatMessage="Hello! How can we assist you today?"
       placeholder="Type a message..."
       statusMessage="Typically replies within minutes"
-      avatar={Logo.src}
+      avatar={WhatsAppLogo.src}
     />
   );
 }
