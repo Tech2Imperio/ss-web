@@ -167,7 +167,7 @@ const page = () => {
     {
       title: "Fluted Panel",
       image: fluted,
-      link: "/products/profile/ssFlutedPanelProfile",
+      link: "/products/profile/SSFlutedPanelProfile",
     },
     {
       title: "SS Balustrade",
@@ -177,7 +177,7 @@ const page = () => {
     {
       title: "Invisible Grill",
       image: invisibleGril,
-      link: "/products/ssInvisibleGrill",
+      link: "/products/SSInvisibleGrill",
     },
     {
       title: "Decorative Sheet",
@@ -187,7 +187,7 @@ const page = () => {
     {
       title: "Queue Manager",
       image: queuemanager,
-      link: "/products/ssQueueManager",
+      link: "/products/SSQueueManager",
     },
     {
       title: "Custom Profile",
@@ -217,7 +217,7 @@ const page = () => {
 
   return (
     <section className=" relative ">
-       <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}

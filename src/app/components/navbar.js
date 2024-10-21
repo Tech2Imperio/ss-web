@@ -44,11 +44,11 @@ export default function Navbar() {
         },
         {
           name: "Stainless Steel Glass Railing System",
-          href: "/products/ssGlassRailingSystem",
+          href: "/products/SSGlassRailingSystem",
         },
         {
           name: "Stainless Steel Decorative Sheet",
-          href: "/products/ssDecorativeSheet",
+          href: "/products/SSDecorativeSheet",
         },
         {
           name: "Stainless Steel Profile",
@@ -56,29 +56,29 @@ export default function Navbar() {
           subItems: [
             {
               name: "Stainless Steel T-Profile ",
-              href: "/products/profile/tProfile",
+              href: "/products/profile/TProfile",
             },
             {
               name: "Stainless Steel U-Profile",
-              href: "/products/profile/uProfile",
+              href: "/products/profile/UProfile",
             },
             {
               name: "Stainless Steel L-Profile",
-              href: "/products/profile/lProfile",
+              href: "/products/profile/LProfile",
             },
             {
               name: "Stainless Steel Fluted Panels",
-              href: "/products/profile/ssFlutedPanelProfile",
+              href: "/products/profile/SSFlutedPanelProfile",
             },
             {
               name: "Stainless Steel Customize Profile",
-              href: "/products/profile/ssCustomProfile",
+              href: "/products/profile/SSCustomProfile",
             },
           ],
         },
-        { name: "Stainless Steel Wire Rope", href: "/products/ssWireRope" },
-        { name: "Invisible Grill", href: "/products/ssInvisibleGrill" },
-        { name: "Queue Manager", href: "/products/ssQueueManager" },
+        { name: "Stainless Steel Wire Rope", href: "/products/SSWireRope" },
+        { name: "Invisible Grill", href: "/products/SSInvisibleGrill" },
+        { name: "Queue Manager", href: "/products/SSQueueManager" },
       ],
     },
     // { name: "Blog", href: "/" },
@@ -234,7 +234,7 @@ export default function Navbar() {
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/ssGlassRailingSystem"
+                          href="/products/SSGlassRailingSystem"
                           className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
                         >
                           Stainless Steel Glass Railing System
@@ -268,34 +268,34 @@ export default function Navbar() {
                             <Link
                               onClick={toggleSidebar}
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
-                              href="/products/profile/tProfile"
+                              href="/products/profile/TProfile"
                             >
                               Stainless Steel T-Profile
                             </Link>
                             <Link
                               onClick={toggleSidebar}
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
-                              href="/products/profile/uProfile"
+                              href="/products/profile/UProfile"
                             >
                               Stainless Steel U-Profile
                             </Link>
                             <Link
                               onClick={toggleSidebar}
-                              href="/products/profile/lProfile"
+                              href="/products/profile/LProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel L-Profile
                             </Link>
                             <Link
                               onClick={toggleSidebar}
-                              href="/products/profile/ssFlutedPanelProfile"
+                              href="/products/profile/SSFlutedPanelProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel Fluted Panels
                             </Link>
                             <Link
                               onClick={toggleSidebar}
-                              href="/products/profile/ssCustomProfile"
+                              href="/products/profile/SSCustomProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel Customize Profile
@@ -305,28 +305,28 @@ export default function Navbar() {
 
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/ssDecorativeSheet"
+                          href="/products/SSDecorativeSheet"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Stainless Steel Decorative Sheet
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/ssWireRope"
+                          href="/products/SSWireRope"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Stainless Steel Wire Rope
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/ssInvisibleGrill"
+                          href="/products/SSInvisibleGrill"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Invisible Grill
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/ssQueueManager"
+                          href="/products/SSQueueManager"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Queue Manager

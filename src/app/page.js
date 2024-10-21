@@ -16,13 +16,13 @@ import preview from "./assets/home-swiper/previewss.webp";
 
 import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
 import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
-import CarouselImg3 from "./assets/product/sswirerope/product/ssrailing.jpg";
+import CarouselImg3 from "./assets/product/SSWireRope/product/ssrailing.jpg";
 import CarouselImg4 from "./assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
 import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stainBlack.png";
 import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
 import CarouselImg7 from "./assets/product/profile/flutedPanel/flutedImg.webp";
 import CarouselImg8 from "./assets/product/glassrailingSystems/gallery/balcony.webp";
-import CarouselImg9 from "./assets/product/ssGlassRailingSystem/extra/customImg1.webp";
+import CarouselImg9 from "./assets/product/SSGlassRailingSystem/extra/customImg1.webp";
 import CarouselImg10 from "./assets/product/ssdecorativesheet/middle.webp";
 import sectionImg4 from "./assets/home-swiper/section4.webp";
 
@@ -46,6 +46,7 @@ import { TbBulb } from "react-icons/tb";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { BsArrowRight } from "react-icons/bs";
 import { HomeFadeLeft, HomeFadeRight } from "./components/utility/animation";
+import Meta from "./components/Meta";
 
 const images = [Img3, Img1, Img2, Img4, Img5];
 
@@ -551,13 +552,13 @@ const Carousel = () => {
       src: CarouselImg2,
       name: "Invisible Grill",
       description: "A seamless grill solution for safety and style.",
-      link: "/products/ssInvisibleGrill",
+      link: "/products/SSInvisibleGrill",
     },
     {
       src: CarouselImg3,
       name: "Stainless Steel Wire Rope",
       description: "Durable wire rope designed for strength and versatility..",
-      link: "/products/ssWireRope",
+      link: "/products/SSWireRope",
     },
     {
       src: CarouselImg4,
@@ -581,7 +582,7 @@ const Carousel = () => {
       src: CarouselImg7,
       name: "Fluted Panel",
       description: "Elegant paneling for enhanced visual appeal.",
-      link: "/products/profile/ssFlutedPanelProfile",
+      link: "/products/profile/SSFlutedPanelProfile",
     },
     {
       src: CarouselImg8,
@@ -593,7 +594,7 @@ const Carousel = () => {
       src: CarouselImg9,
       name: "Stainless Steel Glass Railing System",
       description: "A modern blend of strength and transparency.",
-      link: "/products/profile/ssGlassRailingSystem",
+      link: "/products/profile/SSGlassRailingSystem",
     },
     {
       src: CarouselImg10,
@@ -974,6 +975,17 @@ function Home() {
     // ref={containerRef}
     // className="h-screen no-scrollbar snap-y snap-mandatory overflow-x-hidden"
     >
+      <Meta
+        title="Rajguru Steel Industry"
+        description="Discover Rajguru Steel Industry, your premier source for high-quality stainless steel products, decorative sheet solutions, and elegant glass railings."
+        keywords={[
+          "glass railing",
+          "glass railing designs",
+          "Sustainability",
+          // add other keywords here
+        ]}
+        url="https://rajgurusteel.vercel.app/"
+      />
       <Section1 />
       <Section2 />
       <Section3 />
