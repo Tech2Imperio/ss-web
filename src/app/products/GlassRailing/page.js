@@ -50,7 +50,8 @@ export const metadata = {
     "Glass railing",
     "durability",
     "safety",
-    "maximum visibility"
+    "maximum visibility",
+    "durable railing",
   ],
 };
 
