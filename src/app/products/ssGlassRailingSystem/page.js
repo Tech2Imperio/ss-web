@@ -1,5 +1,6 @@
 import React from "react";
 import SSGlassRailingSystem from "./SSGlassRailingSystem";
+
 // SEO
 export const metadata = {
   title: "Stainless Steel Glass Railing System",
@@ -36,7 +37,7 @@ export const metadata = {
 export default function page() {
   return (
     <div>
-      <SSGlassRailingSystem />
+      <SSGlassRailingSystem/>
     </div>
   );
 }

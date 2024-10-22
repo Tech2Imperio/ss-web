@@ -44,11 +44,11 @@ export default function Navbar() {
         },
         {
           name: "Stainless Steel Glass Railing System",
-          href: "/products/SSGlassRailingSystem",
+          href: "/products/ssGlassRailingSystem",
         },
         {
           name: "Stainless Steel Decorative Sheet",
-          href: "/products/SSDecorativeSheet",
+          href: "/products/ssDecorativeSheet",
         },
         {
           name: "Stainless Steel Profile",
@@ -76,9 +76,9 @@ export default function Navbar() {
             },
           ],
         },
-        { name: "Stainless Steel Wire Rope", href: "/products/SSWireRope" },
-        { name: "Invisible Grill", href: "/products/SSInvisibleGrill" },
-        { name: "Queue Manager", href: "/products/SSQueueManager" },
+        { name: "Stainless Steel Wire Rope", href: "/products/ssWireRope" },
+        { name: "Invisible Grill", href: "/products/ssInvisibleGrill" },
+        { name: "Queue Manager", href: "/products/ssQueueManager" },
       ],
     },
     // { name: "Blog", href: "/" },
@@ -234,7 +234,7 @@ export default function Navbar() {
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/SSGlassRailingSystem"
+                          href="/products/ssGlassRailingSystem"
                           className="p-2 text-[1.25rem] whitespace-nowrap flex items-center justify-center"
                         >
                           Stainless Steel Glass Railing System
@@ -305,28 +305,28 @@ export default function Navbar() {
 
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/SSDecorativeSheet"
+                          href="/products/ssDecorativeSheet"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Stainless Steel Decorative Sheet
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/SSWireRope"
+                          href="/products/ssWireRope"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Stainless Steel Wire Rope
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/SSInvisibleGrill"
+                          href="/products/ssInvisibleGrill"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Invisible Grill
                         </Link>
                         <Link
                           onClick={toggleSidebar}
-                          href="/products/SSQueueManager"
+                          href="/products/ssQueueManager"
                           className="p-2 text-[1.25rem] flex items-center justify-center"
                         >
                           Queue Manager

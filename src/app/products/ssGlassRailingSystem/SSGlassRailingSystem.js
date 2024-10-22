@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -28,23 +28,23 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 // import clampsImg from "../../assets/product/SSGlassRailingSystem/clamps.webp";
-import handrail from "../../assets/product/SSGlassRailingSystem/handrail.webp";
-import baseplate from "../../assets/product/SSGlassRailingSystem/baseplate.webp";
-import glasscap from "../../assets/product/SSGlassRailingSystem/glasscap.webp";
-import spigot from "../../assets/product/SSGlassRailingSystem/spigot.webp";
-import mountingbracket from "../../assets/product/SSGlassRailingSystem/mountingbracket.webp";
-import cornerconnector from "../../assets/product/SSGlassRailingSystem/cornerconnector.webp";
-import customImg1 from "../../assets/product/SSGlassRailingSystem/extra/customImg1.webp";
-import customImg2 from "../../assets/product/SSGlassRailingSystem/extra/customImg2.webp";
-import customImg3 from "../../assets/product/SSGlassRailingSystem/extra/customImg3.webp";
-import customImg4 from "../../assets/product/SSGlassRailingSystem/extra/customImg4.webp";
-import ssGlassRailing from "../../assets/product/SSGlassRailingSystem/extra/ssGlassRailing.webp";
+import handrail from "../../assets/product/ssGlassRailingSystem/handrail.webp";
+import baseplate from "../../assets/product/ssGlassRailingSystem/baseplate.webp";
+import glasscap from "../../assets/product/ssGlassRailingSystem/glasscap.webp";
+import spigot from "../../assets/product/ssGlassRailingSystem/spigot.webp";
+import mountingbracket from "../../assets/product/ssGlassRailingSystem/mountingbracket.webp";
+import cornerconnector from "../../assets/product/ssGlassRailingSystem/cornerconnector.webp";
+import customImg1 from "../../assets/product/ssGlassRailingSystem/extra/customImg1.webp";
+import customImg2 from "../../assets/product/ssGlassRailingSystem/extra/customImg2.webp";
+import customImg3 from "../../assets/product/ssGlassRailingSystem/extra/customImg3.webp";
+import customImg4 from "../../assets/product/ssGlassRailingSystem/extra/customImg4.webp";
+import ssGlassRailing from "../../assets/product/ssGlassRailingSystem/extra/ssGlassRailing.webp";
 import Link from "next/link";
-import HeroImg1 from "../../assets/product/SSGlassRailingSystem/hero/Hero1Img.webp";
-import HeroImg2 from "../../assets/product/SSGlassRailingSystem/hero/Hero2Img.webp";
-import HeroImg3 from "../../assets/product/SSGlassRailingSystem/hero/Hero3Img.webp";
-import HeroImg4 from "../../assets/product/SSGlassRailingSystem/hero/Hero4Img.webp";
-import HeroImg5 from "../../assets/product/SSGlassRailingSystem/hero/Hero5Img.webp";
+import HeroImg1 from "../../assets/product/ssGlassRailingSystem/hero/Hero1Img.webp";
+import HeroImg2 from "../../assets/product/ssGlassRailingSystem/hero/Hero2Img.webp";
+import HeroImg3 from "../../assets/product/ssGlassRailingSystem/hero/Hero3Img.webp";
+import HeroImg4 from "../../assets/product/ssGlassRailingSystem/hero/Hero4Img.webp";
+import HeroImg5 from "../../assets/product/ssGlassRailingSystem/hero/Hero5Img.webp";
 import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
 
 const relatedProducts = [

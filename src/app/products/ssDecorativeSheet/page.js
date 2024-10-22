@@ -38,7 +38,7 @@ export const metadata = {
 export default function page() {
   return (
     <div>
-      <SSDecorativeSheet />
+     <SSDecorativeSheet/>
     </div>
   );
 }
