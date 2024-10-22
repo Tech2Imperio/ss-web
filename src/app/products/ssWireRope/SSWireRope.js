@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Image from 'next/image';
 import { FaCheck } from "react-icons/fa6";
-
 import bg from "../../assets/product/SSWireRope/bg.webp";
 import outdoorImg from "../../assets/product/SSWireRope/product/outdoorrope.webp";
 import StairImg from "../../assets/product/SSWireRope/product/stairs.webp";

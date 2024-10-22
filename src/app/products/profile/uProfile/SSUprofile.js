@@ -2,7 +2,7 @@
 
 // "use client";
 // import React, { useState, useEffect } from "react";
-// import Image from "next/image";
+// import Image from 'next/image';
 // import wallImg from "../../../assets/product/profile/T_profile/wall.webp";
 // // import upofile from "../../../assets/product/profile/U_profile/Uprofile.webp";
 // import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";

@@ -14,7 +14,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import main2 from "../../assets/product/balustrade/main2.webp";
-import Image from "next/image";
+import Image from 'next/image';
 import UProfile from "../../assets/RelatedProducts/UProfile.webp";
 import LProfile from "../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../assets/RelatedProducts/fluted.webp";

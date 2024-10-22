@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Image from 'next/image';
 import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaExternalLinkAlt } from "react-icons/fa";
@@ -18,7 +18,6 @@ import Link from "next/link";
 import LivingImg from "../../assets/product/aluminiumWindows/slider/img1.webp";
 import HallImg from "../../assets/product/aluminiumWindows/slider/img2.webp";
 import bedroom from "../../assets/product/aluminiumWindows/slider/img3.webp";
-
 
 // sliding Image
 import slider3Img from "../../assets/product/aluminiumWindows/slidingWindows/Img1.webp";
@@ -38,7 +37,6 @@ import Sec3Img3 from "../../assets/product/aluminiumWindows/section3/Img3.webp";
 import Sec3Img4 from "../../assets/product/aluminiumWindows/section3/Img4.webp";
 import Sec3Img5 from "../../assets/product/aluminiumWindows/section3/Img5.webp";
 import Sec3Img6 from "../../assets/product/aluminiumWindows/section3/Img6.webp";
-
 
 const heroSlides = [
   {
@@ -368,7 +366,8 @@ export default function Aluminium() {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              layout="fill"
+              // layout="fill"
+              layout="responsive"
               objectFit="cover"
               className="opacity-50"
             />
@@ -410,8 +409,8 @@ export default function Aluminium() {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
+                 layout="responsive"
+               objectFit="cover"
                   className="rounded-lg shadow-xl"
                 />
               </motion.div>
@@ -801,6 +800,3 @@ export default function Aluminium() {
     </div>
   );
 }
-
-
-

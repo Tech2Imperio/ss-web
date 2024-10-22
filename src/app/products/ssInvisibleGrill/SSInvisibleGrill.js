@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import Image from 'next/image';
 import bgImg from "../../assets/product/invisiblegrill/bg.webp";
 import img1 from "../../assets/product/invisiblegrill/tallImg/img1.jpg";
 import img2 from "../../assets/product/invisiblegrill/tallImg/img2.jpg";

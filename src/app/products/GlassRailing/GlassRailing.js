@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Image from 'next/image';
 import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus, FaChevronDown } from "react-icons/fa";

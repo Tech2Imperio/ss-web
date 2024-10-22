@@ -2,7 +2,7 @@
 
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Image from 'next/image';
 import wallImg from "../../assets/product/profile/T_profile/wall.webp";
 import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
 import UProfile from "../../assets/RelatedProducts/UProfile.webp";
@@ -62,7 +62,6 @@ import HairlineImgC from "../../assets/product/ssdecorativesheet/finishes/champa
 import StainImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/stainChampagne.png";
 import StraightlineImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/straightlineChampagne.png";
 import MeshImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/meshChampagne.png";
-
 
 const heroSlides = [
   {
@@ -215,7 +214,7 @@ const SSDecorativeSheet = () => {
 
   return (
     <section className="relative">
-             <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
