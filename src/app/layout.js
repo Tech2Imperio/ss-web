@@ -36,18 +36,12 @@ const geistMono = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <Meta
-        title="Your Page Title"
-        description="Page description goes here"
-        keywords={["example", "keywords", "here"]}
-        url="https://yourwebsite.com"
-      /> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         {children}
-        {/* <WhatsAppButton /> */}
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

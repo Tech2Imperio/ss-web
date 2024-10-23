@@ -1,14 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Tprofile from "../../../assets/product/profile/T_profile/Tprofile.webp";
+import flutedImg from "../../../assets/product/profile/flutedPanel/flutedImg.webp";
 import UProfile from "../../../assets/RelatedProducts/UProfile.webp";
 import TProfile from "../../../assets/product/profile/T_profile/wall.webp";
-import fluted from "../../../assets/RelatedProducts/fluted.webp";
-import DecorativeSheet from "../../../assets/RelatedProducts/decorativesheet.webp";
+import LProfile from "../../../assets/RelatedProducts/LProfile.webp";
 import customized from "../../../assets/RelatedProducts/customized.webp";
 import SSbalustrade from "../../../assets/RelatedProducts/SSbalustrade.webp";
 import invisibleGril from "../../../assets/RelatedProducts/invisibleGril.webp";
+import fluted from "../../../assets/RelatedProducts/fluted.webp";
+import DecorativeSheet from "../../../assets/RelatedProducts/decorativesheet.webp";
 import queuemanager from "../../../assets/RelatedProducts/queuemanager.webp";
 import messurement from "../../../assets/product/profile/L_profile/messurement.png";
 import { useInView } from "react-intersection-observer";
@@ -18,15 +19,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
-import {
-  FadeRight,
-  FadeLeft,
-  FadeUp,
-} from "../../../components/utility/animation.jsx";
+import { FadeRight, FadeLeft } from "../../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import LivingImg from "../../../assets/product/profile/L_profile/slider/img1.webp";
-import HallImg from "../../../assets/product/profile/L_profile/slider/img2.webp";
-import bedroom from "../../../assets/product/profile/L_profile/slider/img3.webp";
+import LivingImg from "../../../assets/product/profile/customized/slider/Img1.webp";
+import HallImg from "../../../assets/product/profile/customized/slider/Img2.webp";
+import bedroom from "../../../assets/product/profile/customized/slider/Img3.webp";
 
 // Black finishes
 import MirrorImg from "../../../assets/product/profile/L_profile/finishes/black/mirrorBlack.png";
@@ -66,25 +63,25 @@ import MeshImgC from "../../../assets/product/profile/L_profile/finishes/champag
 const heroSlides = [
   {
     image: LivingImg,
-    title: "Sleek Corner Protectors",
+    title: "Durable Stainless Steel Wall Decor",
     description:
-      "These L profiles offer a stylish and functional way to protect your wall corners from damage while enhancing your interior design.",
+      "Enhance your interior with our customized stainless steel profiles that combine durability and style. Perfect for any wall design, these pieces elevate your home decor with a modern touch.",
   },
   {
     image: HallImg,
-    title: "Versatile Wall Accents",
+    title: "Customized Stainless Steel Profiles for Unique Wall Design Styles",
     description:
-      " L profiles can be used to create a variety of decorative effects, from geometric patterns to floating shelves, adding a unique touch to your space.",
+      "Transform your living space with bespoke stainless steel wall decor that reflects your personal style. Ideal for various interior aesthetics, our profiles are both stylish and long-lasting.",
   },
   {
     image: bedroom,
-    title: "Modern Edge Enhancers",
+    title: "Sleek and Stylish Stainless Steel Solutions for Home Interiors",
     description:
-      "L profiles are a modern and contemporary way to define and enhance the edges of your walls, creating a clean and polished look.",
+      "Revamp your home with our stainless steel customized profiles, designed for durability and elegance. Explore endless wall design options that bring sophistication to your interior decor.",
   },
 ];
 
-const SSLprofile = () => {
+const SSCustomProfile = () => {
   const finishes = [
     { name: "Mirror" },
     { name: "Hairline" },
@@ -158,6 +155,11 @@ const SSLprofile = () => {
       link: "/products/profile/tProfile",
     },
     {
+      title: "L Profile",
+      image: LProfile,
+      link: "/products/profile/lProfile",
+    },
+    {
       title: "Fluted Panel",
       image: fluted,
       link: "/products/profile/SSFlutedPanelProfile",
@@ -168,14 +170,14 @@ const SSLprofile = () => {
       link: "/products/BalustradeSystem",
     },
     {
-      title: "Decorative Sheet",
-      image: DecorativeSheet,
-      link: "/products/ssDecorativeSheet",
-    },
-    {
       title: "Invisible Grill",
       image: invisibleGril,
       link: "/products/SSInvisibleGrill",
+    },
+    {
+      title: "Decorative Sheet",
+      image: DecorativeSheet,
+      link: "/products/ssDecorativeSheet",
     },
     {
       title: "Queue Manager",
@@ -185,23 +187,13 @@ const SSLprofile = () => {
     {
       title: "Custom Profile",
       image: customized,
-      link: "/products/profile/SSCustomProfile",
+      link: "/products/profile/customProfile",
     },
   ];
 
   const { ref: card1Ref, inView: card1InView } = useInView({
     triggerOnce: true, // Animates only once
     threshold: 0.1, // 10% of the card needs to be visible to trigger the animation
-  });
-
-  const { ref: card2Ref, inView: card2InView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const { ref: card3Ref, inView: card3InView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
   });
 
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -255,7 +247,7 @@ const SSLprofile = () => {
                 animate="visible"
                 className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
               >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
+                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4">
                   {heroSlides[currentSlide].title}
                 </h1>
                 <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
@@ -287,20 +279,14 @@ const SSLprofile = () => {
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8 px-14">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-8">
               {/* Finishes Section */}
-              <div className="flex flex-col items-center lg:items-start">
+              <div className="flex flex-col items-center lg:items-start xl:px-14">
                 <h2 className="text-3xl din-semibold text-[#335c98] mb-6">
                   Available Finishes
                 </h2>
 
-                <motion.div
-                  variants={FadeUp(0.01)}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="grid grid-cols-2 lg:grid-cols-2 gap-12 xl:gap-6 "
-                >
+                <div className="grid grid-cols-2 lg:grid-cols-2 gap-12 xl:gap-6">
                   {finishes.map((finish) => (
                     <div key={finish.name} className="relative">
                       <Image
@@ -318,13 +304,13 @@ const SSLprofile = () => {
                       </div>
                     </div>
                   ))}
-                </motion.div>
+                </div>
               </div>
 
               {/* Color Preview Section */}
               <div className="flex flex-col items-center lg:items-center lg:mt-52 space-y-14">
                 {/* Title with Gradient */}
-                <h2 className="text-2xl lg:text-4xl din-semibold text-primary">
+                <h2 className="text-2xl lg:text-4xl din-regular text-primary din-semibold">
                   Select a Color
                 </h2>
 
@@ -399,7 +385,7 @@ const SSLprofile = () => {
             </div>
 
             {/* Finishes and Sizes Section */}
-            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 px-14">
+            <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:px-14">
               <div className="text-left space-y-6">
                 <h3 className="text-xl din-semibold text-[#335c98]">
                   Finishes
@@ -440,24 +426,25 @@ const SSLprofile = () => {
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20 text-justify">
               <div className="lg:w-1/2 p-6">
                 <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-4 din-semibold">
-                  What is Stainless Steel L Profile?
+                  What is Stainless Steel Customized Profile?
                 </h2>
-                <p className="text-gray-600 text-sm md:text-[1.10rem] leading-relaxed din-regular">
-                  A stainless steel L profile is a structural component with an
-                  L-shaped cross-section, widely used in construction and
-                  manufacturing. Known for their corrosion resistance and
-                  durability, these profiles are ideal for wall decoration and
-                  commercial wall design. Their strength makes them suitable for
-                  load-bearing applications, while their sleek appearance
-                  enhances modern aesthetics. Easy to fabricate and install,
-                  stainless steel L profiles are a versatile choice for various
-                  architectural projects.
+                <p className="text-gray-600 text-xs md:text-[1rem] leading-relaxed din-regular">
+                  A stainless steel customized profile is an essential component
+                  for modern wall design, offering tailored solutions that
+                  enhance both functionality and aesthetics. These profiles are
+                  ideal for creating unique architectural features, providing
+                  superior corrosion resistance and durability for indoor and
+                  outdoor applications. With their versatile shapes and sizes,
+                  customized profiles streamline the construction process while
+                  ensuring a sleek, contemporary look. Perfect for commercial
+                  and residential projects, they combine style and strength,
+                  making them a popular choice in interior architecture.
                 </p>
               </div>
-              <div className=" w-[21rem] md:w-[38rem] lg:w-[50%] md:pl-14">
+              <div className="w-[21rem] md:w-[38rem] lg:w-[50%] md:pl-14">
                 <Image
                   className="rounded-lg  transition-transform duration-300 hover:scale-105"
-                  src={Tprofile}
+                  src={flutedImg}
                   alt="Stainless Steel T Profile"
                 />
               </div>
@@ -467,87 +454,89 @@ const SSLprofile = () => {
           {/* Properties Section */}
           <div className="w-full bg-[#f7f7f7] py-20 h-auto fade-in">
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className=" text-xl md:text-[27px]  text-[#335c98] mb-6 din-semibold">
-                Properties of Stainless Steel L Profiles
+              <h2 className=" text-xl md:whitespace-normal md:text-[27px]  text-[#335c98] mb-6 din-semibold">
+                Properties of Stainless Steel Customized Profile
               </h2>
-              <p className="text-gray-600 text-sm  md:text-[1.10rem] leading-relaxed text-justify px-10 din-regular">
-                Stainless steel L profiles from Rajgure Steel Industry in Mumbai
-                are an excellent choice for enhancing wall decoration and
-                commercial wall design. Known for their corrosion resistance,
-                these profiles ensure durability and longevity, making them
-                perfect for corner wall installations. Their strength and
-                stability provide reliable support for various structural
-                applications, while their sleek appearance adds a modern touch
-                to any space. Easy to fabricate and install, these profiles
-                allow for efficient project execution and customization. With
-                outstanding load-bearing capabilities, they serve both
-                decorative and functional purposes. Rajgure Steel Industry's
-                stainless steel L profiles combine aesthetic appeal with robust
-                performance, making them a valuable asset in contemporary
-                architectural projects.
+              <p className="text-gray-600 text-xs  md:text-[1rem] leading-relaxed text-justify px-10 din-regular">
+                Stainless steel customized profiles from Rajgur Steel Industry,
+                Mumbai, offer exceptional properties that make them ideal for
+                wall decoration and architectural applications. These profiles
+                are renowned for their corrosion resistance, ensuring longevity
+                and durability in both indoor and outdoor environments. Their
+                strength and versatility allow for unique designs, enabling
+                architects and designers to create stunning interior and
+                exterior features. With a variety of shapes and sizes available,
+                these customized profiles can enhance the aesthetic appeal of
+                any space while providing structural support. The sleek finish
+                of stainless steel adds a modern touch, making it a popular
+                choice for commercial and residential projects. Additionally,
+                the ease of fabrication and installation streamlines the
+                construction process, making Rajgur Steel Industry a go-to
+                source for high-quality stainless steel solutions. Elevate your
+                wall design with customized stainless steel profiles that
+                combine style, strength, and functionality.
               </p>
             </div>
           </div>
         </div>
         {/* example */}
-        <div className="container mx-auto my-14 hidden xl:block p-4">
+        <div className="container mx-auto my-14 hidden xl:block p-14 px-14 ">
           <div className="overflow-x-auto shadow-lg rounded-lg">
             <table className="min-w-full bg-white rounded-lg">
               <thead>
                 <tr className="border-b-2 border-[#335c98] whitespace-nowrap">
                   <th className="py-6 px-4 text-xl md:text-[29px] text-[#335c98] din-semibold">
-                    Benefits of Stainless Steel L Profiles
+                    Benefits of Stainless Steel Customized Profile
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-sm md:text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    1. Durability and Strength
+                    1. Corrosion Resistance
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    Stainless steel L profiles are known for their exceptional
-                    durability and strength, capable of withstanding heavy loads
-                    without compromising structural integrity. Their resistance
-                    to corrosion ensures longevity, making them ideal for both
-                    indoor and outdoor applications.
+                    One of the standout features of stainless steel is its
+                    ability to resist rust and corrosion. This property makes
+                    customized profiles suitable for outdoor use, ensuring
+                    long-lasting performance in various environmental
+                    conditions.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    2. Versatile Applications
+                    2. Durability
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    The versatility of stainless steel L profiles allows them to
-                    be utilized in a wide range of applications, from
-                    architectural designs to automotive reinforcement. This
-                    adaptability makes them suitable for various industries,
-                    enhancing their functionality and appeal across multiple
-                    sectors.
+                    Stainless steel customized profiles are known for their
+                    exceptional strength and resistance to wear and tear. This
+                    durability ensures that structures maintain their integrity
+                    over time, making them ideal for both commercial and
+                    residential applications.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    3. Aesthetic Appeal
+                    3. Versatile Design Options
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    Featuring a sleek and polished finish, stainless steel L
-                    profiles contribute a modern and sophisticated look to any
-                    design. Their aesthetic appeal makes them a favored choice
-                    for contemporary architecture and interior design projects,
-                    elevating the overall visual impact.
+                    Customized profiles can be tailored to meet specific design
+                    requirements, allowing for unique shapes and sizes. This
+                    versatility enables architects and designers to create
+                    innovative wall decorations and structural elements that
+                    enhance the aesthetic appeal of any project.
                   </td>
                 </tr>
                 <tr className="border-t hover:bg-gray-100 transition-all duration-200">
                   <td className="py-6 px-6 text-2xl text-[#335c98] din-regular whitespace-nowrap">
-                    4. Easy Installation
+                    4. Cost-Effective Solutions
                   </td>
                   <td className="py-6 px-6 text-base text-gray-600 din-regular">
-                    Stainless steel L profiles are easy to fabricate and
-                    install, streamlining the construction process. This ease of
-                    use not only reduces labor costs and time but also allows
-                    for quick project completion, making them a practical choice
-                    for builders and designers alike.
+                    By utilizing stainless steel customized profiles, businesses
+                    can reduce material waste and improve efficiency in
+                    construction. The long lifespan and low maintenance
+                    requirements of stainless steel also contribute to overall
+                    cost savings in the long run.
                   </td>
                 </tr>
               </tbody>
@@ -559,45 +548,39 @@ const SSLprofile = () => {
         {/* example phone */}
         <div className="container mx-auto my-14 xl:hidden">
           <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-[#335c98] mb-4">
-              Benefits of Stainless Steel T Profiles
+            <h2 className="text-2xl text-[#335c98] din-semibold mb-4">
+              Benefits of Stainless Steel Customized Profile
             </h2>
             <ul className="space-y-6 text-justify ">
-              <li className="text-base text-gray-600 din-regular">
+              <li className="text-base text-gray-500 din-regular">
                 <strong className=" text-[#335c98]">
-                  1. Durability and Strength:
+                  1. Corrosion Resistance:
                 </strong>{" "}
-                Stainless steel L profiles are renowned for their exceptional
-                durability and strength. They can withstand heavy loads and
-                resist corrosion, making them ideal for both indoor and outdoor
-                applications.
+                Their inherent resistance to rust and corrosion makes these
+                profiles ideal for outdoor use, maintaining structural integrity
+                in various environments.
               </li>
-              <li className="text-base text-gray-600 din-regular">
-                <strong className=" text-[#335c98]">
-                  2. Versatile Applications:
-                </strong>{" "}
-                The versatility of stainless steel L profiles allows them to be
-                used in a wide range of applications, from architectural designs
-                to automotive reinforcement. Their adaptability makes them
-                suitable for various industries, enhancing their utility.
+              <li className="text-base text-gray-500 din-regular">
+                <strong className=" text-[#335c98]">2. Durability:</strong>{" "}
+                Stainless steel customized profiles offer exceptional strength,
+                ensuring long-lasting performance in both commercial and
+                residential applications.
               </li>
-              <li className="text-base text-gray-600  din-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">
-                  3. Aesthetic Appeal:
+                  3. Versatile Design Options:
                 </strong>{" "}
-                With a sleek and polished finish, stainless steel L profiles add
-                a modern touch to any design. Their aesthetic appeal makes them
-                a popular choice for contemporary architecture and interior
-                design projects.
+                Tailored to meet specific design needs, customized profiles
+                allow for unique shapes that enhance the aesthetic appeal of
+                wall decorations and architectural features.
               </li>
-              <li className="text-base text-gray-600  din-regular">
+              <li className="text-base text-gray-500  din-regular">
                 <strong className=" text-[#335c98]">
-                  4. Easy Installation:
+                  4. Cost-Effective Solutions:
                 </strong>{" "}
-                Stainless steel L profiles are easy to fabricate and install,
-                allowing for quick and efficient project completion. This ease
-                of use reduces labor costs and time, making them a practical
-                choice for builders and designers.
+                Utilizing stainless steel profiles reduces material waste and
+                improves construction efficiency, leading to significant
+                long-term cost savings.
               </li>
             </ul>
           </div>
@@ -605,76 +588,79 @@ const SSLprofile = () => {
 
         {/* example phone colse  */}
 
-        <main className="flex flex-col justify-center text-justify gap-20 m-4 ">
+        <main
+          ref={card1Ref}
+          className="flex flex-col justify-center text-justify gap-20 m-4 xl:px-14 "
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div
-              ref={card1Ref}
+              //   ref={card1Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
                 ${card1InView ? "animate-wave delay-100" : "opacity-0"}`}
             >
-              <h2 className="text-xl  text-[#335c98] din-semibold mb-4 text-center">
+              <h2 className="text-xl din-semibold text-[#335c98] din-regular mb-4 text-center">
                 Architectural and Construction Applications.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                L profiles are integral components in architectural and
-                construction applications, known for their strength,
-                versatility, and aesthetic appeal. Their unique L-shaped
-                cross-section provides a robust framework that is essential for
-                various structural and decorative purposes, making them a
-                preferred choice among architects and builders.
+                Customized stainless steel profiles are essential in
+                architectural and construction projects, providing strength and
+                versatility for structural elements. Their corrosion resistance
+                and durability make them ideal for both interior and exterior
+                applications, enhancing the aesthetic appeal of buildings. By
+                incorporating these profiles, architects can achieve innovative
+                designs while ensuring compliance with industry standards.
               </p>
             </div>
 
             {/* Card 2 */}
             <div
-              ref={card2Ref}
+              //   ref={card2Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card2InView ? "animate-wave delay-200" : "opacity-0"}`}
+                ${card1InView ? "animate-wave delay-200" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-[#335c98] din-semibold mb-4 text-center">
+              <h2 className="text-xl text-[#335c98] din-semibold mb-4 text-center">
                 Furniture and Shelving.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                L profiles are characterized by their distinct L shape, which
-                allows for seamless integration into a wide range of furniture
-                designs. This profile can be used to create clean lines and
-                modern silhouettes, making it ideal for contemporary interiors.
-                The sleek design of L profiles complements various materials,
-                including wood, glass, and metal, enabling designers to achieve
-                a cohesive look that enhances the overall decor of a space.
+                In the furniture industry, customized stainless steel profiles
+                offer sleek and modern solutions for shelving and structural
+                support. Their strength and stylish finish make them perfect for
+                contemporary furniture designs, providing both functionality and
+                aesthetic appeal. Utilizing these profiles allows manufacturers
+                to create durable, long-lasting pieces that stand out in any
+                space.
               </p>
             </div>
 
             {/* Card 3 */}
             <div
-              ref={card3Ref}
+              //   ref={card3Ref}
               className={`bg-white shadow-md rounded-lg p-6 border border-gray-200 
-                ${card3InView ? "animate-wave delay-300" : "opacity-0"}`}
+                ${card1InView ? "animate-wave delay-300" : "opacity-0"}`}
             >
-              <h2 className="text-xl font-semibold text-center text-[#335c98] din-semibold mb-4">
+              <h2 className="text-xl  text-center text-[#335c98] din-semibold mb-4">
                 Automotive and Marine Industry.
               </h2>
               <p className="text-gray-600 text-xs md:text-base din-regular">
-                Stainless steel L profiles are integral components in both the
-                automotive and marine industries, offering a unique combination
-                of strength, durability, and aesthetic appeal. In automotive
-                applications, these profiles are commonly utilized in car
-                frames, providing essential reinforcement while significantly
-                minimizing overall weight. This lightweight characteristic is
-                crucial for enhancing fuel efficiency and performance in modern
-                vehicles.
+                Customized stainless steel profiles play a crucial role in the
+                automotive and marine industries, where strength and corrosion
+                resistance are paramount. These profiles are used in various
+                applications, from structural components to decorative elements,
+                ensuring reliability in harsh environments. By leveraging the
+                benefits of stainless steel, manufacturers can enhance the
+                performance and longevity of their products.
               </p>
             </div>
           </div>
         </main>
-        <div className="w-full py-20 fade-in mt-20">
+        <div className="w-full py-20 fade-in">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-[35px]  text-[#335c98] mb-16 din-semibold">
               Other Products
             </h2>
             <Swiper
-              modules={[Pagination, Scrollbar, A11y, Autoplay]} // Include the required Swiper modules
+              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
               spaceBetween={15}
               slidesPerView={1}
               loop
@@ -700,7 +686,7 @@ const SSLprofile = () => {
                         height={150}
                         className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
                       />
-                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
+                      <h3 className="mt-4 text-xl  text-[#335c98] din-regular">
                         {product.title}
                       </h3>
                     </Link>
@@ -715,4 +701,4 @@ const SSLprofile = () => {
   );
 };
 
-export default SSLprofile;
+export default SSCustomProfile;

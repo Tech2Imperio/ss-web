@@ -2,7 +2,7 @@ import React from "react";
 import Aluminium from "./Aluminium";
 // SEO metadata
 export const metadata = {
-  title: "Aluminum Windows",
+  title: "Rajguru steel | Aluminum Windows",
 
   description:
     "Discover our premium aluminum windows, designed with customizable frame colors to perfectly match your architectural style. Our energy-efficient aluminum windows offer durability and low maintenance, making them an ideal choice for any home or commercial space. Experience the perfect blend of aesthetics and functionality with our tailored aluminum window solutions.",
@@ -11,7 +11,7 @@ export const metadata = {
   property: "og:type",
   content: "website",
   property: "og:url",
-  content: "https://rajgurusteel.vercel.app/",
+  content: "https://rajgurusteel.vercel.app/products/AluminiumWindows",
   keywords: [
     "Aluminum Windows",
     "Stainless Steel Windows",

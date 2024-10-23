@@ -174,7 +174,7 @@ export default function Navbar() {
             >
               <div className="px-4 flex flex-col">
                 <div className="flex flex-col ">
-                  <ul className="flex justify-center flex-col gap-2 lg:gap-12 cursor-pointer">
+                  <ul className="flex justify-center flex-col gap-2 xl:gap-12 cursor-pointer">
                     <Link
                       onClick={toggleSidebar}
                       href="/"
