@@ -15,7 +15,7 @@ import preview from "./assets/home-swiper/previewss.webp";
 
 import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
 import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
-// import CarouselImg3 from "./assets/product/ssWireRope/product/outdorSSrailing.webp";
+import CarouselImg3 from "./assets/product/ssWireRope/product/outdorSSrailing.webp";
 import CarouselImg4 from "./assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
 import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stainBlack.png";
 import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
@@ -553,12 +553,12 @@ const Carousel = () => {
       description: "A seamless grill solution for safety and style.",
       link: "/products/ssInvisibleGrill",
     },
-    // {
-    //   src: CarouselImg3,
-    //   name: "Stainless Steel Wire Rope",
-    //   description: "Durable wire rope designed for strength and versatility..",
-    //   link: "/products/ssWireRope",
-    // },
+    {
+      src: CarouselImg3,
+      name: "Stainless Steel Wire Rope",
+      description: "Durable wire rope designed for strength and versatility..",
+      link: "/products/ssWireRope",
+    },
     {
       src: CarouselImg4,
       name: "T Profile",
