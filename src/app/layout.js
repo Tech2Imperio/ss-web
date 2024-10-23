@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import WhatsAppButton from "./components/WhatsAppButton";
-import Meta from "./components/Meta";
+// import Meta from "./components/Meta";
 
 
 const geistSans = localFont({
@@ -37,12 +37,12 @@ const geistMono = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Meta
+      {/* <Meta
         title="Your Page Title"
         description="Page description goes here"
         keywords={["example", "keywords", "here"]}
         url="https://yourwebsite.com"
-      />
+      /> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

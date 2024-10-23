@@ -42,7 +42,6 @@
 //   );
 // }
 
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -79,10 +78,10 @@ import glasscap from "../../assets/product/ssGlassRailingSystem/glasscap.webp";
 import spigot from "../../assets/product/ssGlassRailingSystem/spigot.webp";
 import mountingbracket from "../../assets/product/ssGlassRailingSystem/mountingbracket.webp";
 import cornerconnector from "../../assets/product/ssGlassRailingSystem/cornerconnector.webp";
-import customImg1 from "../../assets/product/ssGlassRailingSystem/extra/customImg1.webp";
-import customImg2 from "../../assets/product/ssGlassRailingSystem/extra/customImg2.webp";
-import customImg3 from "../../assets/product/ssGlassRailingSystem/extra/customImg3.webp";
-import customImg4 from "../../assets/product/ssGlassRailingSystem/extra/customImg4.webp";
+import section6Img1 from "../../assets/product/ssGlassRailingSystem/extra/section6img1.webp";
+import section6Img2 from "../../assets/product/ssGlassRailingSystem/extra/section6img2.webp";
+import section6Img3 from "../../assets/product/ssGlassRailingSystem/extra/section6img3.webp";
+import section6Img4 from "../../assets/product/ssGlassRailingSystem/extra/section6img4.webp";
 import ssGlassRailing from "../../assets/product/ssGlassRailingSystem/extra/ssGlassRailing.webp";
 import Link from "next/link";
 import HeroImg1 from "../../assets/product/ssGlassRailingSystem/hero/Hero1Img.webp";
@@ -335,9 +334,7 @@ export default function page() {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-50"
+              className="opacity-50 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -377,9 +374,7 @@ export default function page() {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </motion.div>
             </motion.div>
@@ -673,25 +668,25 @@ export default function page() {
               {[
                 {
                   name: "Glass Types",
-                  image: customImg1,
+                  image: section6Img1,
                   description:
                     "Choose from clear, frosted, or tinted glass options.",
                 },
                 {
                   name: "Railing Styles",
-                  image: customImg2,
+                  image: section6Img2,
                   description:
                     "Select from various post designs and top rail profiles.",
                 },
                 {
                   name: "Finishes",
-                  image: customImg3,
+                  image: section6Img3,
                   description:
                     "Available in brushed, polished, or powder-coated finishes.",
                 },
                 {
                   name: "Mounting Options",
-                  image: customImg4,
+                  image: section6Img4,
                   description:
                     "Side mount, top mount, or embedded installation methods.",
                 },

@@ -47,11 +47,10 @@
 //   )
 // }
 
-
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTruck, FaCheck, FaInfoCircle } from "react-icons/fa";
 import React from "react";
@@ -259,9 +258,7 @@ export default function page() {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-50"
+              className="opacity-50 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -301,9 +298,7 @@ export default function page() {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </motion.div>
             </motion.div>
@@ -337,7 +332,7 @@ export default function page() {
                 alt="Stainless Steel Queue Manager"
                 width={600}
                 height={500}
-                className="rounded-3xl shadow-lg"
+                className="rounded-3xl shadow-lg object-cover"
               />
             </motion.div>
             <motion.div
@@ -474,7 +469,7 @@ export default function page() {
                         alt="rope image"
                         width={300}
                         height={300}
-                        className="rounded-lg"
+                        className="rounded-lg object-cover"
                       />
                     </div>
                     <div className="md:w-1/2">

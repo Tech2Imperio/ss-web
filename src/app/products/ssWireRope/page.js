@@ -57,10 +57,9 @@
 //   )
 // }
 
-
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
 import bg from "../../assets/product/SSWireRope/bg.webp";
 import outdoorImg from "../../assets/product/ssWireRope/product/outdoorrope.webp";
@@ -209,9 +208,7 @@ export default function page() {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-50"
+              className="opacity-50 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -251,9 +248,7 @@ export default function page() {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </motion.div>
             </motion.div>

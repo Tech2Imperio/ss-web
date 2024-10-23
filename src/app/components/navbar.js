@@ -72,7 +72,7 @@ export default function Navbar() {
             },
             {
               name: "Stainless Steel Customize Profile",
-              href: "/products/profile/SSCustomProfile",
+              href: "/products/profile/ssCustomProfile",
             },
           ],
         },
@@ -295,7 +295,7 @@ export default function Navbar() {
                             </Link>
                             <Link
                               onClick={toggleSidebar}
-                              href="/products/profile/SSCustomProfile"
+                              href="/products/profile/ssCustomProfile"
                               className="flex items-center text-base hover:bg-gray-400 rounded-xl px-2 py-1"
                             >
                               Stainless Steel Customize Profile

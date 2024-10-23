@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import Image from "next/image";
-
 import Img1 from "./assets/home-swiper/Gemini_Generated_Image_3hif8p3hif8p3hif.jpeg";
 import Img2 from "./assets/home-swiper/Gemini_Generated_Image_e21juue21juue21j.jpeg";
 import Img3 from "./assets/home-swiper/Gemini_Generated_Image_keakpbkeakpbkeak.jpeg";
@@ -22,7 +21,7 @@ import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stai
 import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
 import CarouselImg7 from "./assets/product/profile/flutedPanel/flutedImg.webp";
 import CarouselImg8 from "./assets/product/glassrailingSystems/gallery/balcony.webp";
-import CarouselImg9 from "./assets/product/SSGlassRailingSystem/extra/customImg1.webp";
+import CarouselImg9 from "./assets/product/ssGlassRailingSystem/extra/section6img1.webp";
 import CarouselImg10 from "./assets/product/ssdecorativesheet/middle.webp";
 import sectionImg4 from "./assets/home-swiper/section4.webp";
 

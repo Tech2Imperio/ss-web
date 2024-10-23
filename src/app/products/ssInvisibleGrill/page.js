@@ -38,10 +38,9 @@
 //   );
 // }
 
-
 "use client";
 import { useState, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import bgImg from "../../assets/product/invisiblegrill/bg.webp";
 import img1 from "../../assets/product/invisiblegrill/tallImg/img1.jpg";
 import img2 from "../../assets/product/invisiblegrill/tallImg/img2.jpg";
@@ -309,9 +308,7 @@ export default function page() {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-50"
+              className="opacity-50 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -351,9 +348,7 @@ export default function page() {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </motion.div>
             </motion.div>
