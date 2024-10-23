@@ -1,7 +1,6 @@
 // import React from 'react'
 // import GlassRailing from './GlassRailing'
 
-
 // export const metadata = {
 //   title: "Glass Railing System",
 
@@ -63,11 +62,10 @@
 //   )
 // }
 
-
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus, FaChevronDown } from "react-icons/fa";
@@ -117,7 +115,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -134,7 +132,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -151,7 +149,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -168,7 +166,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -185,7 +183,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -202,7 +200,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -219,7 +217,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -236,7 +234,7 @@ const products = [
       {
         title: "Visit Website",
         value:
-          "<a href='https://imperiorailing.vercel.app/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
+          "<a href='https://imperiorailing.com/products' target='_blank' rel='noopener noreferrer'>Imperiorailing.com</a>",
       },
     ],
   },
@@ -389,7 +387,7 @@ export default function page() {
     {
       title: "Invisible Grill",
       image: invisibleGril,
-      link: "/products/SSInvisibleGrill",
+      link: "/products/ssInvisibleGrill",
     },
     {
       title: "Decorative Sheet",
@@ -399,12 +397,12 @@ export default function page() {
     {
       title: "Queue Manager",
       image: queuemanager,
-      link: "/products/SSQueueManager",
+      link: "/products/ssQueueManager",
     },
     {
       title: "Custom Profile",
       image: customized,
-      link: "/products/profile/SSCustomProfile",
+      link: "/products/profile/ssCustomProfile",
     },
   ];
 

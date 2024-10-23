@@ -61,19 +61,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
-import bg from "../../assets/product/SSWireRope/bg.webp";
 import outdoorImg from "../../assets/product/ssWireRope/product/outdoorrope.webp";
 import StairImg from "../../assets/product/ssWireRope/product/stairs.webp";
-import BalconyImg from "../../assets/product/ssWireRope/product/ssrailing.jpg";
+import BalconyImg from "../../assets/product/ssWireRope/product/outdorSSrailing.webp";
 import Link from "next/link";
 import hangingHook from "../../assets/product/ssWireRope/accessoris/hangingHook.webp";
 import cableWire from "../../assets/product/ssWireRope/accessoris/WireRope.webp";
 import thimble from "../../assets/product/ssWireRope/accessoris/thimble.webp";
-import {
-  FadeDown,
-  FadeLeft,
-  FadeRight,
-} from "../../components/utility/animation.jsx";
+import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 
 import UProfile from "../../assets/RelatedProducts/UProfile.webp";
@@ -86,16 +81,16 @@ import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
 import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
 import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
+import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import LivingImg from "../../assets/product/ssWireRope/slider/Img1.webp";
 import HallImg from "../../assets/product/ssWireRope/slider/Img2.webp";
 import bedroom from "../../assets/product/ssWireRope/slider/Img3.webp";
-import BalconyImage1 from "../../assets/product/ssWireRope/images/Img1.webp";
+import BalconyImage1 from "../../assets/product/ssWireRope/images/balcony.webp";
 import BalconyImage2 from "../../assets/product/ssWireRope/images/tearace.webp";
-import terace from "../../assets/product/ssWireRope/images/balcony.webp";
+import terace from "../../assets/product/ssWireRope/images/balcony1.webp";
 
 const heroSlides = [
   {
@@ -177,8 +172,6 @@ export default function page() {
       link: "/products/profile/SSCustomProfile",
     },
   ];
-
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [nextSlide, setNextSlide] = useState(1);
@@ -274,9 +267,7 @@ export default function page() {
                   <Image
                     src={images[currentImageIndex]}
                     alt={`Product Image ${currentImageIndex + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-opacity duration-500"
+                    className="transition-opacity duration-500 h-full w-full object-cover"
                   />
                 </div>
               </motion.div>

@@ -5,9 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import Image from "next/image";
-import Img1 from "./assets/home-swiper/Gemini_Generated_Image_3hif8p3hif8p3hif.jpeg";
-import Img2 from "./assets/home-swiper/Gemini_Generated_Image_e21juue21juue21j.jpeg";
-import Img3 from "./assets/home-swiper/Gemini_Generated_Image_keakpbkeakpbkeak.jpeg";
+import Img1 from "./assets/home-swiper/Slider1.webp";
+import Img2 from "./assets/home-swiper/Slider2.webp";
+import Img3 from "./assets/home-swiper/Slider3.webp";
 import Img4 from "./assets/product/ssdecorativesheet/hero/bedroom.webp";
 import Img5 from "./assets/product/profile/T_profile/slider/Img1.webp";
 import section2 from "./assets/home-swiper/section2.webp";
@@ -15,7 +15,7 @@ import preview from "./assets/home-swiper/previewss.webp";
 
 import CarouselImg1 from "./assets/product/balustrade/Images/building.webp";
 import CarouselImg2 from "./assets/product/invisiblegrill/tallImg/img1.jpg";
-import CarouselImg3 from "./assets/product/SSWireRope/product/ssrailing.jpg";
+import CarouselImg3 from "./assets/product/ssWireRope/product/outdorSSrailing.webp";
 import CarouselImg4 from "./assets/product/profile/T_profile/finishes/black/hairlineBlack.png";
 import CarouselImg5 from "./assets/product/profile/U_profile/finishes/black/stainBlack.png";
 import CarouselImg6 from "./assets/product/profile/L_profile/finishes/black/stainBlack.png";
@@ -551,13 +551,13 @@ const Carousel = () => {
       src: CarouselImg2,
       name: "Invisible Grill",
       description: "A seamless grill solution for safety and style.",
-      link: "/products/SSInvisibleGrill",
+      link: "/products/ssInvisibleGrill",
     },
     {
       src: CarouselImg3,
       name: "Stainless Steel Wire Rope",
       description: "Durable wire rope designed for strength and versatility..",
-      link: "/products/SSWireRope",
+      link: "/products/ssWireRope",
     },
     {
       src: CarouselImg4,
