@@ -374,8 +374,7 @@ export default function page() {
                   <Image
                     src={item}
                     alt={`Slide ${index + 1}`}
-                    layout="fill" // Ensures the image fills the parent container
-                    className="object-cover rounded-3xl"
+                    className=" rounded-3xl h-full w-full object-cover"
                   />
                 </div>
               ))}

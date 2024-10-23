@@ -47,7 +47,7 @@
 
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import wallImg from "../../assets/product/profile/T_profile/wall.webp";
 import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
 import UProfile from "../../assets/RelatedProducts/UProfile.webp";
@@ -272,9 +272,7 @@ const page = () => {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-50"
+              className="opacity-50 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -314,9 +312,7 @@ const page = () => {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </motion.div>
             </motion.div>
@@ -763,4 +759,3 @@ const page = () => {
 };
 
 export default page;
-

@@ -189,8 +189,7 @@ export default function Navbar() {
                     >
                       About Us
                     </Link>
-                    <Link
-                      href="#"
+                    <div
                       onClick={(e) => {
                         e.preventDefault(), toggleProductsDropdown();
                       }}
@@ -202,7 +201,7 @@ export default function Navbar() {
                           rotateProductsIcon ? "rotate-90" : "rotate-0"
                         }`}
                       />
-                    </Link>
+                    </div>
                   </ul>
 
                   {isProductsDropdownOpen && (
@@ -239,8 +238,7 @@ export default function Navbar() {
                         >
                           Stainless Steel Glass Railing System
                         </Link>
-                        <Link
-                          href="#"
+                        <div
                           onMouseEnter={() => handleProfileDropdownHover(true)}
                           onMouseLeave={() => handleProfileDropdownHover(false)}
                           onClick={toggleProfileDropdown}
@@ -252,7 +250,7 @@ export default function Navbar() {
                               rotateProfileIcon ? "rotate-90" : "rotate-0"
                             }`}
                           />
-                        </Link>
+                        </div>
 
                         {isProfileDropdownOpen && (
                           <motion.ul

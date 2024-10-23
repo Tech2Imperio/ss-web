@@ -39,7 +39,6 @@
 //   return  <BalustradeSystem/>;
 // }
 
-
 "use client";
 import React, { useState, useEffect } from "react";
 import bg from "../../assets/product/balustrade/bg.webp";
@@ -56,7 +55,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import main2 from "../../assets/product/balustrade/main2.webp";
-import Image from 'next/image';
+import Image from "next/image";
 import UProfile from "../../assets/RelatedProducts/UProfile.webp";
 import LProfile from "../../assets/RelatedProducts/LProfile.webp";
 import fluted from "../../assets/RelatedProducts/fluted.webp";
@@ -189,9 +188,7 @@ export default function Page() {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-50"
+              className="opacity-50 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -231,9 +228,7 @@ export default function Page() {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </motion.div>
             </motion.div>

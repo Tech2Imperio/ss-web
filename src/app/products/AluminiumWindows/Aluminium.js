@@ -366,10 +366,7 @@ export default function Aluminium() {
             <Image
               src={heroSlides[currentSlide].image}
               alt="Background"
-              // layout="fill"
-              layout="responsive"
-              objectFit="cover"
-              className="opacity-50"
+              className="opacity-50 h-full w-full object-cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -409,9 +406,7 @@ export default function Aluminium() {
                 <Image
                   src={heroSlides[nextSlide].image}
                   alt={heroSlides[nextSlide].title}
-                  layout="responsive"
-                  objectFit="cover"
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </motion.div>
             </motion.div>
