@@ -239,9 +239,9 @@ export default function Navbar() {
                           Stainless Steel Glass Railing System
                         </Link>
                         <div
-                          onMouseEnter={() => handleProfileDropdownHover(true)}
-                          onMouseLeave={() => handleProfileDropdownHover(false)}
-                          onClick={toggleProfileDropdown}
+                          onClick={(e) => {
+                            e.preventDefault(), toggleProfileDropdown();
+                          }}
                           className="flex gap-1 cursor-pointer p-2 text-[1.25rem] items-center justify-center"
                         >
                           Stainless Steel Profile
