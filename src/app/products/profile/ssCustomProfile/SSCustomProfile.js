@@ -147,17 +147,17 @@ const SSCustomProfile = () => {
     {
       title: "U Profile",
       image: UProfile,
-      link: "/products/profile/uProfile",
+      link: "/products/profile/UProfile",
     },
     {
       title: "T Profile",
       image: TProfile,
-      link: "/products/profile/tProfile",
+      link: "/products/profile/TProfile",
     },
     {
       title: "L Profile",
       image: LProfile,
-      link: "/products/profile/lProfile",
+      link: "/products/profile/LProfile",
     },
     {
       title: "Fluted Panel",
@@ -172,7 +172,7 @@ const SSCustomProfile = () => {
     {
       title: "Invisible Grill",
       image: invisibleGril,
-      link: "/products/SSInvisibleGrill",
+      link: "/products/ssInvisibleGrill",
     },
     {
       title: "Decorative Sheet",
@@ -182,13 +182,13 @@ const SSCustomProfile = () => {
     {
       title: "Queue Manager",
       image: queuemanager,
-      link: "/products/SSQueueManager",
+      link: "/products/ssQueueManager",
     },
-    {
-      title: "Custom Profile",
-      image: customized,
-      link: "/products/profile/customProfile",
-    },
+    // {
+    //   title: "Custom Profile",
+    //   image: customized,
+    //   link: "/products/profile/ssCustomProfile",
+    // },
   ];
 
   const { ref: card1Ref, inView: card1InView } = useInView({

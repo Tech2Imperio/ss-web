@@ -149,17 +149,17 @@ const SSFlutedPanelProfile = () => {
     {
       title: "U Profile",
       image: UProfile,
-      link: "/products/profile/uProfile",
+      link: "/products/profile/UProfile",
     },
     {
       title: "T Profile",
       image: TProfile,
-      link: "/products/profile/tProfile",
+      link: "/products/profile/TProfile",
     },
     {
       title: "L Profile",
       image: LProfile,
-      link: "/products/profile/lProfile",
+      link: "/products/profile/LProfile",
     },
     {
       title: "SS Balustrade",
@@ -174,17 +174,17 @@ const SSFlutedPanelProfile = () => {
     {
       title: "Invisible Grill",
       image: invisibleGril,
-      link: "/products/SSInvisibleGrill",
+      link: "/products/ssInvisibleGrill",
     },
     {
       title: "Queue Manager",
       image: queuemanager,
-      link: "/products/SSQueueManager",
+      link: "/products/ssQueueManager",
     },
     {
       title: "Custom Profile",
       image: customized,
-      link: "/products/profile/SSCustomProfile",
+      link: "/products/profile/ssCustomProfile",
     },
   ];
 

@@ -150,12 +150,12 @@ const SSLprofile = () => {
     {
       title: "U Profile",
       image: UProfile,
-      link: "/products/profile/uProfile",
+      link: "/products/profile/UProfile",
     },
     {
       title: "T Profile",
       image: TProfile,
-      link: "/products/profile/tProfile",
+      link: "/products/profile/TProfile",
     },
     {
       title: "Fluted Panel",
@@ -175,17 +175,17 @@ const SSLprofile = () => {
     {
       title: "Invisible Grill",
       image: invisibleGril,
-      link: "/products/SSInvisibleGrill",
+      link: "/products/ssInvisibleGrill",
     },
     {
       title: "Queue Manager",
       image: queuemanager,
-      link: "/products/SSQueueManager",
+      link: "/products/ssQueueManager",
     },
     {
       title: "Custom Profile",
       image: customized,
-      link: "/products/profile/SSCustomProfile",
+      link: "/products/profile/ssCustomProfile",
     },
   ];
 

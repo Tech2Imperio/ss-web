@@ -149,12 +149,12 @@ const SSUprofile = () => {
     {
       title: "T Profile",
       image: wallImg,
-      link: "/products/profile/tProfile",
+      link: "/products/profile/TProfile",
     },
     {
       title: "L Profile",
       image: LProfile,
-      link: "/products/profile/lProfile",
+      link: "/products/profile/LProfile",
     },
     {
       title: "Fluted Panel",
@@ -169,7 +169,7 @@ const SSUprofile = () => {
     {
       title: "Invisible Grill",
       image: invisibleGril,
-      link: "/products/SSInvisibleGrill",
+      link: "/products/ssInvisibleGrill",
     },
     {
       title: "Decorative Sheet",
@@ -179,12 +179,12 @@ const SSUprofile = () => {
     {
       title: "Queue Manager",
       image: queuemanager,
-      link: "/products/SSQueueManager",
+      link: "/products/ssQueueManager",
     },
     {
       title: "Custom Profile",
       image: customized,
-      link: "/products/profile/SSCustomProfile",
+      link: "/products/profile/ssCustomProfile",
     },
   ];
   const { ref: card1Ref, inView: card1InView } = useInView({
