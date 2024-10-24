@@ -184,11 +184,6 @@ const SSCustomProfile = () => {
       image: queuemanager,
       link: "/products/ssQueueManager",
     },
-    // {
-    //   title: "Custom Profile",
-    //   image: customized,
-    //   link: "/products/profile/ssCustomProfile",
-    // },
   ];
 
   const { ref: card1Ref, inView: card1InView } = useInView({
