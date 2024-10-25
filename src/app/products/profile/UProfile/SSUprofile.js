@@ -40,7 +40,7 @@ import MirrorImgS from "../../../assets/product/profile/U_profile/finishes/silve
 import HairlineImgS from "../../../assets/product/profile/U_profile/finishes/silver/hairlineSilver.png";
 import StainImgS from "../../../assets/product/profile/U_profile/finishes/silver/stainSilver.png";
 import StraightlineImgS from "../../../assets/product/profile/U_profile/finishes/silver/straightlineSilver.png";
-import MeshImgS from "../../../assets/product/profile/U_profile/finishes/silver/meshSilver.png";
+import MeshImgS from "../../../assets/product/profile/U_profile/finishes/silver/meshSilver.jpg";
 
 //Gold finishes
 import MirrorImgG from "../../../assets/product/profile/U_profile/finishes/gold/mirrorGold.png";
