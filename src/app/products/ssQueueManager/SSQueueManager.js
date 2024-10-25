@@ -67,11 +67,11 @@ export default function SSQueueManager() {
   const [activeTab, setActiveTab] = useState(0);
 
   // Animation variants
-  const pageAnimation = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  };
+  // const pageAnimation = {
+  //   initial: { opacity: 0, y: 20 },
+  //   animate: { opacity: 1, y: 0 },
+  //   exit: { opacity: 0, y: -20 },
+  // };
 
   const staggerChildren = {
     animate: {
@@ -182,12 +182,12 @@ export default function SSQueueManager() {
   }, []);
 
   return (
-    <motion.div
+    <div
       className="flex flex-col min-h-screen"
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageAnimation}
+      // initial="initial"
+      // animate="animate"
+      // exit="exit"
+      // variants={pageAnimation}
     >
       <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
@@ -781,6 +781,6 @@ export default function SSQueueManager() {
         </div>
         {/* swiper close */}
       </main>
-    </motion.div>
+    </div>
   );
 }
