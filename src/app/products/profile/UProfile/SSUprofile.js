@@ -306,8 +306,8 @@ const SSUprofile = () => {
                         className="rounded-lg shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105"
                         src={finishImages[selectedColor.name][finish.name]} // Dynamic image for each finish based on the selected color
                         alt={`${finish.name} - ${selectedColor.name}`}
-                        width={200} // Increased width for better visibility
-                        height={200} // Increased height for better visibility
+                        width={250} // Increased width for better visibility
+                        height={250} // Increased height for better visibility
                       />
                       {/* Finish Name below the image */}
                       <div className="text-center mt-2">
