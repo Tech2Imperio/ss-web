@@ -1,25 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
-import UProfile from "../../assets/RelatedProducts/UProfile.webp";
-import TProfile from "../../assets/product/profile/T_profile/wall.webp";
-import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
-import LProfile from "../../assets/RelatedProducts/LProfile.webp";
-import fluted from "../../assets/RelatedProducts/fluted.webp";
-import customized from "../../assets/RelatedProducts/customized.webp";
-import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
-import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
-import Umessurement from "../../assets/product/ssdecorativesheet/decorativeSheets.webp";
-import { useInView } from "react-intersection-observer";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Scrollbar, A11y } from "swiper/modules"; // Import Swiper modules
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 import Link from "next/link";
-import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
-import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
+import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
+
+import { motion } from "framer-motion";
+
+import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
+import Umessurement from "../../assets/product/ssdecorativesheet/decorativeSheets.webp";
 import LivingImg from "../../assets/product/ssdecorativesheet/hero/hall.webp";
 import HallImg from "../../assets/product/ssdecorativesheet/hero/hall2.webp";
 import bedroom from "../../assets/product/ssdecorativesheet/hero/bedroom.webp";
@@ -58,6 +48,9 @@ import HairlineImgC from "../../assets/product/ssdecorativesheet/finishes/champa
 import StainImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/stainChampagne.png";
 import StraightlineImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/straightlineChampagne.png";
 import MeshImgC from "../../assets/product/ssdecorativesheet/finishes/champagne/meshChampagne.png";
+
+import Banner from "@/app/components/Banner";
+import MainSwiper from "@/app/components/MainSwiper";
 
 const heroSlides = [
   {
@@ -142,130 +135,15 @@ const SSDecorativeSheet = () => {
     // Add more colors with their respective finish images
   };
 
-  const relatedProducts = [
-    {
-      title: "U Profile",
-      image: UProfile,
-      link: "/products/profile/uProfile",
-    },
-    {
-      title: "T Profile",
-      image: TProfile,
-      link: "/products/profile/tProfile",
-    },
-    {
-      title: "L Profile",
-      image: LProfile,
-      link: "/products/profile/lProfile",
-    },
-    {
-      title: "Fluted Panel",
-      image: fluted,
-      link: "/products/profile/SSFlutedPanelProfile",
-    },
-    {
-      title: "SS Balustrade",
-      image: SSbalustrade,
-      link: "/products/BalustradeSystem",
-    },
-    {
-      title: "Invisible Grill",
-      image: invisibleGril,
-      link: "/products/SSInvisibleGrill",
-    },
-    {
-      title: "Queue Manager",
-      image: queuemanager,
-      link: "/products/SSQueueManager",
-    },
-    {
-      title: "Custom Profile",
-      image: customized,
-      link: "/products/profile/SSCustomProfile",
-    },
-  ];
   const { ref: card1Ref, inView: card1InView } = useInView({
     triggerOnce: true, // Animates only once
     threshold: 0.1, // 10% of the card needs to be visible to trigger the animation
   });
 
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative">
-      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
-        <AnimatePresence initial={true}>
-          <motion.div
-            key={`bg-${currentSlide}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroSlides[currentSlide].image}
-              alt="Background"
-              className="opacity-50 h-full w-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        <div className="relative z-10 h-full">
-          <AnimatePresence initial={true}>
-            <motion.div
-              key={`content-${currentSlide}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
-            >
-              {/* Left Side Text */}
-              <motion.div
-                variants={FadeRight(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
-              >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
-                  {heroSlides[currentSlide].title}
-                </h1>
-                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
-                  {heroSlides[currentSlide].description}
-                </p>
-              </motion.div>
-
-              {/* Right Side Image */}
-              <motion.div
-                variants={FadeLeft(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
-              >
-                <Image
-                  src={heroSlides[nextSlide].image}
-                  alt={heroSlides[nextSlide].title}
-                  className="rounded-lg shadow-xl h-full w-full object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
-      <div className=" flex flex-col overflow-hidden mx-auto container">
+      <Banner slides={heroSlides} />
+      <div className=" flex flex-col overflow-hidden mx-auto max-w-[85rem]">
         {/* new model open */}
         <section className=" bg-gray-50 py-10">
           <div className=" mx-auto px-6 lg:px-20">
@@ -638,11 +516,11 @@ const SSDecorativeSheet = () => {
           </div>
         </main>
 
-        <div className="flex justify-center flex-col m-4 lg:px-36">
+        <div className="flex justify-center items-center flex-col m-4">
           <h3 className=" text-2xl pl-2 md:pl-0 mx-auto md:text-4xl text-primary din-semibold">
             Why Choose Stainless Steel Decorative Sheets?
           </h3>
-          <p className="text-sm lg:text-base din-regular text-secondary text-justify w-[100%] p-4">
+          <p className="text-sm lg:text-base din-regular text-secondary text-center max-w-3xl p-4">
             Rajguru Steel Industries offers high-quality stainless steel
             decorative sheets that elevate your interiors with elegance and
             durability. Our corrosion-resistant panels are ideal for various
@@ -654,50 +532,28 @@ const SSDecorativeSheet = () => {
             functionality, making them the ideal choice for transforming any
             environment.
           </p>
+          <Link href="/ContactUs">
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10"
+            >
+              <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+              <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+              </span>
+              <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                GET A QUOTE
+              </span>
+            </motion.button>
+          </Link>
         </div>
         {/* swiper */}
-        <div className="w-full py-20 fade-in ">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
-              Other Products
-            </h2>
-            <Swiper
-              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
-              spaceBetween={15}
-              slidesPerView={1}
-              loop
-              autoplay={{
-                delay: 1500,
-                disableOnInteraction: false,
-              }}
-              scrollbar={{ draggable: true }}
-              breakpoints={{
-                640: { slidesPerView: -1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-            >
-              {relatedProducts.map((product, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex flex-col items-center cursor-pointer">
-                    <Link href={product.link} passHref>
-                      <Image
-                        src={product.image}
-                        alt={product.title}
-                        width={150}
-                        height={150}
-                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
-                      />
-                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
-                        {product.title}
-                      </h3>
-                    </Link>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+        <MainSwiper />
         {/* swiper close */}
       </div>
     </section>

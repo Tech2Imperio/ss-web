@@ -1,37 +1,29 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
 import Image from "next/image";
+import Link from "next/link";
+
+import React, { useState, useEffect } from "react";
 import { FaCheck } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
+
 import outdoorImg from "../../assets/product/ssWireRope/product/outdoorrope.webp";
 import StairImg from "../../assets/product/ssWireRope/product/stairs.webp";
 import BalconyImg from "../../assets/product/ssWireRope/product/outdorSSrailing.webp";
-import Link from "next/link";
 import hangingHook from "../../assets/product/ssWireRope/accessoris/hangingHook.webp";
 import cableWire from "../../assets/product/ssWireRope/accessoris/WireRope.webp";
 import thimble from "../../assets/product/ssWireRope/accessoris/thimble.webp";
-import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 
-import UProfile from "../../assets/RelatedProducts/UProfile.webp";
-import LProfile from "../../assets/RelatedProducts/LProfile.webp";
-import fluted from "../../assets/RelatedProducts/fluted.webp";
-import TProfile from "../../assets/product/profile/T_profile/wall.webp";
-import customized from "../../assets/RelatedProducts/customized.webp";
-import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
-import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
-import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
-import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import LivingImg from "../../assets/product/ssWireRope/slider/Img1.webp";
 import HallImg from "../../assets/product/ssWireRope/slider/Img2.webp";
 import bedroom from "../../assets/product/ssWireRope/slider/Img3.webp";
 import BalconyImage1 from "../../assets/product/ssWireRope/images/balcony.webp";
 import BalconyImage2 from "../../assets/product/ssWireRope/images/tearace.webp";
 import terace from "../../assets/product/ssWireRope/images/balcony1.webp";
+
+import Banner from "@/app/components/Banner";
+import MainSwiper from "@/app/components/MainSwiper";
 
 const heroSlides = [
   {
@@ -66,130 +58,12 @@ export default function SSWireRope() {
     return () => clearInterval(interval);
   }, []);
 
-  const relatedProducts = [
-    {
-      title: "U Profile",
-      image: UProfile,
-      link: "/products/profile/uProfile",
-    },
-    {
-      title: "T Profile",
-      image: TProfile,
-      link: "/products/profile/tProfile",
-    },
-    {
-      title: "L Profile",
-      image: LProfile,
-      link: "/products/profile/lProfile",
-    },
-    {
-      title: "Fluted Panel",
-      image: fluted,
-      link: "/products/profile/SSFlutedPanelProfile",
-    },
-    {
-      title: "SS Balustrade",
-      image: SSbalustrade,
-      link: "/products/BalustradeSystem",
-    },
-    {
-      title: "Invisible Grill",
-      image: invisibleGril,
-      link: "/products/SSInvisibleGrill",
-    },
-    {
-      title: "Decorative Sheet",
-      image: DecorativeSheet,
-      link: "/products/ssDecorativeSheet",
-    },
-    {
-      title: "Queue Manager",
-      image: queuemanager,
-      link: "/products/SSQueueManager",
-    },
-    {
-      title: "Custom Profile",
-      image: customized,
-      link: "/products/profile/SSCustomProfile",
-    },
-  ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="relative  ">
+    <main className="relative  w-screen">
       {/* Hero Section */}
-      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
-        <AnimatePresence initial={true}>
-          <motion.div
-            key={`bg-${currentSlide}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroSlides[currentSlide].image}
-              alt="Background"
-              className="opacity-50 h-full w-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
 
-        <div className="relative z-10 h-full">
-          <AnimatePresence initial={true}>
-            <motion.div
-              key={`content-${currentSlide}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
-            >
-              {/* Left Side Text */}
-              <motion.div
-                variants={FadeRight(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
-              >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
-                  {heroSlides[currentSlide].title}
-                </h1>
-                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
-                  {heroSlides[currentSlide].description}
-                </p>
-              </motion.div>
-
-              {/* Right Side Image */}
-              <motion.div
-                variants={FadeLeft(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
-              >
-                <Image
-                  src={heroSlides[nextSlide].image}
-                  alt={heroSlides[nextSlide].title}
-                  className="rounded-lg shadow-xl h-full w-full object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
-      <main className=" mx-auto container">
+      <Banner slides={heroSlides} />
+      <main className=" mx-auto max-w-[90rem]">
         {/* Product Overview with Image Slider */}
         <section className=" bg-white container mx-auto pt-8 md:p-28">
           <div className=" px-6">
@@ -456,7 +330,7 @@ export default function SSWireRope() {
             <h2 className="  text-xl md:text-5xl din-semibold text-primary mb-8">
               Ready to Elevate Your Project?
             </h2>
-            <p className="text-base text-justify text-secondary din-regular mb-12 max-w-3xl mx-auto">
+            <p className="text-base text-center text-secondary din-regular mb-12 max-w-3xl mx-auto">
               Discover the unmatched strength and versatility of Rajguru
               Stainless Steel Wire Rope. Let us help you bring your vision to
               life.
@@ -483,51 +357,11 @@ export default function SSWireRope() {
           </div>
         </section>
         {/* call action close */}
+
         {/* swiper */}
-        <div className="w-full py-20 fade-in ">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
-              Other Products
-            </h2>
-            <Swiper
-              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
-              spaceBetween={15}
-              slidesPerView={1}
-              loop
-              autoplay={{
-                delay: 1500,
-                disableOnInteraction: false,
-              }}
-              scrollbar={{ draggable: true }}
-              breakpoints={{
-                640: { slidesPerView: -1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-            >
-              {relatedProducts.map((product, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex flex-col items-center cursor-pointer">
-                    <Link href={product.link} passHref>
-                      <Image
-                        src={product.image}
-                        alt={product.title}
-                        width={150}
-                        height={150}
-                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
-                      />
-                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
-                        {product.title}
-                      </h3>
-                    </Link>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+        <MainSwiper />
         {/* swiper close */}
       </main>
-    </div>
+    </main>
   );
 }

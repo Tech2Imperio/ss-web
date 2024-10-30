@@ -1,7 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
 import Image from "next/image";
-import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
+import Link from "next/link";
+
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaExternalLinkAlt } from "react-icons/fa";
 import {
@@ -14,7 +16,7 @@ import {
   FaSnowflake,
   FaWrench,
 } from "react-icons/fa";
-import Link from "next/link";
+
 import LivingImg from "../../assets/product/aluminiumWindows/slider/img1.webp";
 import HallImg from "../../assets/product/aluminiumWindows/slider/img2.webp";
 import bedroom from "../../assets/product/aluminiumWindows/slider/img3.webp";
@@ -37,6 +39,9 @@ import Sec3Img3 from "../../assets/product/aluminiumWindows/section3/Img3.webp";
 import Sec3Img4 from "../../assets/product/aluminiumWindows/section3/Img4.webp";
 import Sec3Img5 from "../../assets/product/aluminiumWindows/section3/Img5.webp";
 import Sec3Img6 from "../../assets/product/aluminiumWindows/section3/Img6.webp";
+
+import Banner from "@/app/components/Banner.js";
+import MainSwiper from "@/app/components/MainSwiper.js";
 
 const heroSlides = [
   {
@@ -220,20 +225,6 @@ const windowTypes = [
 ];
 
 export default function Aluminium() {
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   // product handeler
   const [activeTab, setActiveTab] = useState(windowTypes[0].id);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -352,69 +343,10 @@ export default function Aluminium() {
   };
 
   return (
-    <div>
-      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
-        <AnimatePresence initial={true}>
-          <motion.div
-            key={`bg-${currentSlide}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroSlides[currentSlide].image}
-              alt="Background"
-              className="opacity-50 h-full w-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
+    <main className="min-h-screen">
+      <Banner slides={heroSlides} />
 
-        <div className="relative z-10 h-full">
-          <AnimatePresence initial={true}>
-            <motion.div
-              key={`content-${currentSlide}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
-            >
-              {/* Left Side Text */}
-              <motion.div
-                variants={FadeRight(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
-              >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
-                  {heroSlides[currentSlide].title}
-                </h1>
-                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
-                  {heroSlides[currentSlide].description}
-                </p>
-              </motion.div>
-
-              {/* Right Side Image */}
-              <motion.div
-                variants={FadeLeft(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
-              >
-                <Image
-                  src={heroSlides[nextSlide].image}
-                  alt={heroSlides[nextSlide].title}
-                  className="rounded-lg shadow-xl h-full w-full object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
-
-      <main className="max-w-[80rem] mx-auto">
+      <div className="max-w-[85rem] mx-auto">
         <section className="py-10 ">
           <div className="px-4">
             <h2 className="text-3xl din-semibold text-primary text-center mb-8">
@@ -577,6 +509,7 @@ export default function Aluminium() {
             </AnimatePresence>
           </div>
         </section>
+
         <section className="py-8 px-4 lg:h-screen relative flex flex-col items-center justify-center bg-gray-100">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -710,7 +643,7 @@ export default function Aluminium() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className=" text-gray-600 mb-8 max-w-2xl mx-auto din-regular text-justify"
+              className=" text-gray-600 mb-8 max-w-2xl mx-auto din-regular text-center"
             >
               Explore our extensive customization options for windows, including
               frame color, glass type, and window style to perfectly match your
@@ -746,7 +679,7 @@ export default function Aluminium() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-4 md:px-8">
+        <section className="py-8 px-4 md:px-8">
           <div className="container mx-auto text-center">
             <motion.h2
               initial={{ opacity: 0, y: -30 }}
@@ -760,7 +693,7 @@ export default function Aluminium() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className=" text-sm text-justify md:text-lg mb-8 max-w-2xl mx-auto din-regular text-secondary"
+              className=" text-sm text-center md:text-lg mb-8 max-w-2xl mx-auto din-regular text-secondary"
             >
               Are you ready to upgrade your windows for improved energy
               efficiency and style? Discover our range of high-performance
@@ -791,7 +724,9 @@ export default function Aluminium() {
             </Link>
           </div>
         </section>
-      </main>
-    </div>
+
+        <MainSwiper />
+      </div>
+    </main>
   );
 }

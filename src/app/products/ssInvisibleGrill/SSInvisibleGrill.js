@@ -1,6 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
 import bgImg from "../../assets/product/invisiblegrill/bg.webp";
 import img1 from "../../assets/product/invisiblegrill/tallImg/img1.jpg";
 import img2 from "../../assets/product/invisiblegrill/tallImg/img2.jpg";
@@ -11,24 +14,11 @@ import Hooks2 from "../../assets/product/invisiblegrill/Accessories/Hooks2.webp"
 import invisiblematerial from "../../assets/product/invisiblegrill/Accessories/invisible_Material.webp";
 import Invisiblerope from "../../assets/product/invisiblegrill/Accessories/Invisible_Wire.webp";
 import turnbuckle from "../../assets/product/invisiblegrill/Accessories/turn_Buckle.webp";
-import UProfile from "../../assets/RelatedProducts/UProfile.webp";
-import LProfile from "../../assets/RelatedProducts/LProfile.webp";
-import fluted from "../../assets/RelatedProducts/fluted.webp";
-import TProfile from "../../assets/product/profile/T_profile/wall.webp";
-import customized from "../../assets/RelatedProducts/customized.webp";
-import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
-import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
-import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import Link from "next/link";
-import { FadeRight, FadeLeft } from "../../components/utility/animation.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import HallImg from "../../assets/product/invisiblegrill/slider/invisiblegrill.webp";
 import bedroom from "../../assets/product/invisiblegrill/slider/Grill1.webp";
+
+import Banner from "@/app/components/Banner";
+import MainSwiper from "@/app/components/MainSwiper";
 
 const heroSlides = [
   {
@@ -59,81 +49,11 @@ export default function SSInvisibleGrill() {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + items.length) % items.length
-    );
-  };
-
-  // hweo section
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-  // hero section slider
-
   // Auto slide functionality
   useEffect(() => {
     const interval = setInterval(nextSlides, 3000); // Change slides every 3 seconds
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
-
-  const relatedProducts = [
-    {
-      title: "U Profile",
-      image: UProfile,
-      link: "/products/profile/uProfile",
-    },
-    {
-      title: "T Profile",
-      image: TProfile,
-      link: "/products/profile/tProfile",
-    },
-    {
-      title: "L Profile",
-      image: LProfile,
-      link: "/products/profile/lProfile",
-    },
-    {
-      title: "Fluted Panel",
-      image: fluted,
-      link: "/products/profile/SSFlutedPanelProfile",
-    },
-    {
-      title: "SS Balustrade",
-      image: SSbalustrade,
-      link: "/products/BalustradeSystem",
-    },
-    // {
-    //   title: "Invisible Grill",
-    //   image: invisibleGril,
-    //   link: "/products/SSInvisibleGrill",
-    // },
-    {
-      title: "Decorative Sheet",
-      image: DecorativeSheet,
-      link: "/products/ssDecorativeSheet",
-    },
-    {
-      title: "Queue Manager",
-      image: queuemanager,
-      link: "/products/SSQueueManager",
-    },
-    {
-      title: "Custom Profile",
-      image: customized,
-      link: "/products/profile/SSCustomProfile",
-    },
-  ];
 
   const accessoriesData = [
     {
@@ -253,67 +173,8 @@ export default function SSInvisibleGrill() {
 
   return (
     <main className=" h-full w-full relative">
-      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
-        <AnimatePresence initial={true}>
-          <motion.div
-            key={`bg-${currentSlide}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroSlides[currentSlide].image}
-              alt="Background"
-              className="opacity-50 h-full w-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        <div className="relative z-10 h-full">
-          <AnimatePresence initial={true}>
-            <motion.div
-              key={`content-${currentSlide}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
-            >
-              {/* Left Side Text */}
-              <motion.div
-                variants={FadeRight(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="flex flex-col justify-center items-start max-w-sm lg:max-w-full xl:max-w-2xl"
-              >
-                <h1 className=" text-3xl md:text-5xl din-semibold text-white mb-2 md:mb-4  ">
-                  {heroSlides[currentSlide].title}
-                </h1>
-                <p className=" text-[1rem]  text-justify md:text-xl din-regular text-gray-200">
-                  {heroSlides[currentSlide].description}
-                </p>
-              </motion.div>
-
-              {/* Right Side Image */}
-              <motion.div
-                variants={FadeLeft(0.3)}
-                initial="hidden"
-                animate="visible"
-                className="relative h-[17rem] w-full  lg:w-[60%]  md:h-[28rem] flex"
-              >
-                <Image
-                  src={heroSlides[nextSlide].image}
-                  alt={heroSlides[nextSlide].title}
-                  className="rounded-lg shadow-xl h-full w-full object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
-      <div className=" flex flex-col overflow-hidden mx-auto container">
+      <Banner slides={heroSlides} />
+      <section className=" flex flex-col overflow-hidden mx-auto max-w-[90rem]">
         <section className="flex flex-col md:flex-row items-center justify-center gap-20 xl:gap-36 h-scrren md:h-[90vh]  w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center lg:pt-0">
             <h1 className="text-3xl din-semibold text-[#335c98] p-4">
@@ -421,8 +282,8 @@ export default function SSInvisibleGrill() {
             </div>
           )}
         </section>
-      </div>
-      <main className="flex flex-col overflow-hidden w-full h-full xl:px-[1rem] p-4 md:p-6 lg:p-8">
+      </section>
+      <section className="flex flex-col overflow-hidden w-full h-full xl:px-[1rem] p-4 md:p-6 lg:p-8">
         <div className="max-w-screen-xl mx-auto">
           <h2 className=" text-2xl md:text-3xl din-semibold text-[#335c98] py-8 text-center">
             Benefits of Invisible Grills
@@ -561,51 +422,10 @@ export default function SSInvisibleGrill() {
             safety in high-rise buildings and balconies.
           </p>
         </div>
-      </main>
+      </section>
 
       {/* swiper */}
-      <div className="w-full py-20 fade-in ">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
-            Other Products
-          </h2>
-          <Swiper
-            modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
-            spaceBetween={15}
-            slidesPerView={1}
-            loop
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
-            scrollbar={{ draggable: true }}
-            breakpoints={{
-              640: { slidesPerView: -1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-          >
-            {relatedProducts.map((product, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex flex-col items-center cursor-pointer">
-                  <Link href={product.link} passHref>
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      width={150}
-                      height={150}
-                      className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
-                    />
-                    <h3 className="mt-4 text-xl text-[#335c98] din-regular">
-                      {product.title}
-                    </h3>
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
+      <MainSwiper />
     </main>
   );
 }

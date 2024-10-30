@@ -563,19 +563,19 @@ const Carousel = () => {
       src: CarouselImg4,
       name: "T Profile",
       description: "A versatile profile for modern designs.",
-      link: "/products/profile/tProfile",
+      link: "/products/profile/TProfile",
     },
     {
       src: CarouselImg5,
       name: "U Profile",
       description: "Perfect for structural support and aesthetics.",
-      link: "/products/profile/uProfile",
+      link: "/products/profile/UProfile",
     },
     {
       src: CarouselImg6,
       name: "L Profile",
       description: "Ideal for corner fittings and enhancements.",
-      link: "/products/profile/lProfile",
+      link: "/products/profile/LProfile",
     },
     {
       src: CarouselImg7,
@@ -587,19 +587,19 @@ const Carousel = () => {
       src: CarouselImg8,
       name: "Glass Railing Systems",
       description: "Sleek glass railings that elevate any space.",
-      link: "/products/profile/GlassRailing",
+      link: "/products/GlassRailing",
     },
     {
       src: CarouselImg9,
       name: "Stainless Steel Glass Railing System",
       description: "A modern blend of strength and transparency.",
-      link: "/products/profile/SSGlassRailingSystem",
+      link: "/products/ssGlassRailingSystem",
     },
     {
       src: CarouselImg10,
       name: "Stainless Steel Decorative Sheets",
       description: "Stylish sheets that add a touch of elegance.",
-      link: "/products/profile/ssDecorativeSheet",
+      link: "/products/ssDecorativeSheet",
     },
   ];
 

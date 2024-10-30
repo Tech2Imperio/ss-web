@@ -1,29 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { FadeLeft, FadeRight } from "../../components/utility/animation.jsx";
+
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus, FaChevronDown } from "react-icons/fa";
-import Link from "next/link";
-
-import UProfile from "../../assets/RelatedProducts/UProfile.webp";
-import LProfile from "../../assets/RelatedProducts/LProfile.webp";
-import fluted from "../../assets/RelatedProducts/fluted.webp";
-import TProfile from "../../assets/product/profile/T_profile/wall.webp";
-import customized from "../../assets/RelatedProducts/customized.webp";
-import SSbalustrade from "../../assets/RelatedProducts/SSbalustrade.webp";
-import invisibleGril from "../../assets/RelatedProducts/invisibleGril.webp";
-import queuemanager from "../../assets/RelatedProducts/queuemanager.webp";
-import DecorativeSheet from "../../assets/RelatedProducts/decorativesheet.webp";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 // Assuming these imports are available in your project
-import bg from "../../assets/product/glassrailingSystems/bg.webp";
 import A50 from "../../assets/product/glassrailingSystems/products/IMPERIO-A50-BLACK.webp";
 import L50 from "../../assets/product/glassrailingSystems/products/blackPro.webp";
 import semiSmart from "../../assets/product/glassrailingSystems/products/IMPERIO-D75-BLACK.webp";
@@ -35,6 +19,8 @@ import oval60 from "../../assets/product/glassrailingSystems/products/handrail/B
 import buildingImg from "../../assets/product/glassrailingSystems/gallery/building.webp";
 import penthuseImg from "../../assets/product/glassrailingSystems/gallery/penthouse.webp";
 import stairsImg from "../../assets/product/glassrailingSystems/gallery/stairs.webp";
+import Banner from "@/app/components/Banner.js";
+import MainSwiper from "@/app/components/MainSwiper.js";
 // import balconyImg from "../../assets/product/glassrailingSystems/gallery/balcony.webp";
 
 const products = [
@@ -255,28 +241,28 @@ const heroSlides = [
 
 export default function GlassRailing() {
   const [expandedProduct, setExpandedProduct] = useState(null);
-  const [expandedIndex, setExpandedIndex] = useState(null);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  // const [expandedIndex, setExpandedIndex] = useState(null);
+  // const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
+  // const [currentSlide, setCurrentSlide] = useState(0);
+  // const [nextSlide, setNextSlide] = useState(1);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-      setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 4000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+  //     setNextSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
+  //   }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const toggleProductSpecs = (productId) => {
     setExpandedProduct(expandedProduct === productId ? null : productId);
   };
 
-  const toggleFAQ = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
+  // const toggleFAQ = (index) => {
+  //   setExpandedIndex(expandedIndex === index ? null : index);
+  // };
 
   const [expandedFaq, setExpandedFaq] = useState(0);
   const fadeInUp = {
@@ -294,56 +280,8 @@ export default function GlassRailing() {
     },
   };
 
-  const relatedProducts = [
-    {
-      title: "U Profile",
-      image: UProfile,
-      link: "/products/profile/uProfile",
-    },
-    {
-      title: "T Profile",
-      image: TProfile,
-      link: "/products/profile/tProfile",
-    },
-    {
-      title: "L Profile",
-      image: LProfile,
-      link: "/products/profile/lProfile",
-    },
-    {
-      title: "Fluted Panel",
-      image: fluted,
-      link: "/products/profile/SSFlutedPanelProfile",
-    },
-    {
-      title: "SS Balustrade",
-      image: SSbalustrade,
-      link: "/products/BalustradeSystem",
-    },
-    {
-      title: "Invisible Grill",
-      image: invisibleGril,
-      link: "/products/ssInvisibleGrill",
-    },
-    {
-      title: "Decorative Sheet",
-      image: DecorativeSheet,
-      link: "/products/ssDecorativeSheet",
-    },
-    {
-      title: "Queue Manager",
-      image: queuemanager,
-      link: "/products/ssQueueManager",
-    },
-    {
-      title: "Custom Profile",
-      image: customized,
-      link: "/products/profile/ssCustomProfile",
-    },
-  ];
-
   return (
-    <div className=" min-h-screen">
+    <main className=" min-h-screen">
       {/* Hero Section with Carousel */}
       {/* <section className="relative  bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
@@ -408,7 +346,7 @@ export default function GlassRailing() {
           </AnimatePresence>
         </div>
       </section> */}
-      <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
+      {/* <section className="relative bg-gray-800 h-[40rem] overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={`bg-${currentSlide}`}
@@ -436,7 +374,6 @@ export default function GlassRailing() {
               transition={{ duration: 0.5 }}
               className="max-w-[92rem] mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center mt-4 gap-10"
             >
-              {/* Left Side Text */}
               <motion.div
                 variants={FadeRight(0.3)}
                 initial="hidden"
@@ -450,8 +387,6 @@ export default function GlassRailing() {
                   {heroSlides[currentSlide].description}
                 </p>
               </motion.div>
-
-              {/* Right Side Image */}
               <motion.div
                 variants={FadeLeft(0.3)}
                 initial="hidden"
@@ -467,9 +402,9 @@ export default function GlassRailing() {
             </motion.div>
           </AnimatePresence>
         </div>
-      </section>
-
-      <main className=" container overflow-hidden mx-auto">
+      </section> */}
+      <Banner slides={heroSlides} />
+      <main className=" max-w-[90rem] overflow-hidden mx-auto">
         {/* Products Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
@@ -493,7 +428,7 @@ export default function GlassRailing() {
                     className="mx-auto mb-4"
                   />
                   <div className="text-center">
-                    <h3 className="text-xl din-medium text-primary">
+                    <h3 className="text-xl din-semibold text-primary">
                       {product.name}
                     </h3>
                     <p className="text-secondary text-sm">{product.model}</p>
@@ -520,16 +455,26 @@ export default function GlassRailing() {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.5 }}
-                          className="mt-2 space-y-2"
+                          transition={{ duration: 0.3 }}
+                          className={`mt-2 space-y-2 `}
                         >
                           {product.specs.map((spec, index) => (
-                            <li key={index} className="text-sm">
+                            <li
+                              key={index}
+                              className={`${
+                                expandedProduct ? "opacity-100" : "opacity-0"
+                              }`}
+                            >
                               <strong className=" din-semibold text-primary">
                                 {spec.title}:
                               </strong>{" "}
                               <span
                                 dangerouslySetInnerHTML={{ __html: spec.value }}
+                                className={`${
+                                  index === 3
+                                    ? "text-blue-600 din-rugular"
+                                    : "din-regular"
+                                }`}
                               />
                             </li>
                           ))}
@@ -596,7 +541,7 @@ export default function GlassRailing() {
           variants={staggerChildren}
           className="py-16 px-4 "
         >
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-center">
             <h2 className="text-2xl md:text-3xl din-semibold mb-8 text-center text-primary">
               Frequently Asked Questions
             </h2>
@@ -641,54 +586,32 @@ export default function GlassRailing() {
                 </motion.div>
               ))}
             </motion.div>
+            <Link href="/ContactUs">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 my-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10"
+              >
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                  GET A QUOTE
+                </span>
+              </motion.button>
+            </Link>
           </div>
         </motion.section>
         {/* FAQ close */}
         {/* swiper */}
-        <div className="w-full py-20 fade-in ">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-[35px] text-[#335c98] mb-16 din-semibold">
-              Other Products
-            </h2>
-            <Swiper
-              modules={[Autoplay, Pagination, Scrollbar, A11y]} // Include the required Swiper modules
-              spaceBetween={15}
-              slidesPerView={1}
-              loop
-              autoplay={{
-                delay: 1500,
-                disableOnInteraction: false,
-              }}
-              scrollbar={{ draggable: true }}
-              breakpoints={{
-                640: { slidesPerView: -1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-            >
-              {relatedProducts.map((product, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex flex-col items-center cursor-pointer">
-                    <Link href={product.link} passHref>
-                      <Image
-                        src={product.image}
-                        alt={product.title}
-                        width={150}
-                        height={150}
-                        className="rounded-lg object-cover hover:scale-110 hover:shadow-lg"
-                      />
-                      <h3 className="mt-4 text-xl text-[#335c98] din-regular">
-                        {product.title}
-                      </h3>
-                    </Link>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+        <MainSwiper />
         {/* swiper close */}
       </main>
-    </div>
+    </main>
   );
 }
