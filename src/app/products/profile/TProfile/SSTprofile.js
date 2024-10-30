@@ -150,9 +150,9 @@ const SSTprofile = () => {
   return (
     <main className=" relative ">
       <Banner slides={heroSlides} />
-      <div className=" flex flex-col overflow-hidden mx-auto container">
+      <div className=" flex flex-col overflow-hidden mx-auto max-w-[90rem]">
         {/* new model open */}
-        <section className=" bg-gray-50">
+        <section className=" bg-gray-50 py-10">
           <div className="container mx-auto px-6 lg:px-20">
             {/* <h1 className="text-center text-5xl font-bold text-[#335c98] mb-10">T Profile</h1> */}
 

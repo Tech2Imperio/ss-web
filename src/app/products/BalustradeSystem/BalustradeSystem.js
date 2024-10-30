@@ -61,7 +61,7 @@ export default function BalustradeSystem() {
   return (
     <main className="relative">
       <Banner slides={heroSlides} />
-      <div className="container mx-auto flex flex-col justify-center items-center ">
+      <div className="max-w-[90rem] mx-auto flex flex-col justify-center items-center ">
         {/* <p className="text-slate-500 text-xs lg:text-sm text-justify w-[80%] p-4">
         With a focus on innovation and craftsmanship, our railings enhance your space while meeting high safety standards. Enjoy reliable quality and all-India delivery with Rajguru Steel’s trusted solutions.
         </p> */}
@@ -350,6 +350,25 @@ export default function BalustradeSystem() {
                     </li>
                   </ul>
                 </div>
+              </div>
+              <div className="flex justify-center">
+                <Link href="/ContactUs">
+                  <button className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 my-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10">
+                    {/* Colored background */}
+                    <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+
+                    {/* Top-left to bottom-right diagonal animation */}
+                    <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                      <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                      <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                    </span>
+
+                    {/* Button text */}
+                    <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                      GET A QUOTE
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

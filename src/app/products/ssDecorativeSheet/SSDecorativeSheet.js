@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-// import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import allFinishes from "../../assets/product/ssdecorativesheet/middle.webp";
 import Umessurement from "../../assets/product/ssdecorativesheet/decorativeSheets.webp";
@@ -143,7 +143,7 @@ const SSDecorativeSheet = () => {
   return (
     <section className="relative">
       <Banner slides={heroSlides} />
-      <div className=" flex flex-col overflow-hidden mx-auto container">
+      <div className=" flex flex-col overflow-hidden mx-auto max-w-[85rem]">
         {/* new model open */}
         <section className=" bg-gray-50 py-10">
           <div className=" mx-auto px-6 lg:px-20">
@@ -516,11 +516,11 @@ const SSDecorativeSheet = () => {
           </div>
         </main>
 
-        <div className="flex justify-center flex-col m-4 lg:px-36">
+        <div className="flex justify-center items-center flex-col m-4">
           <h3 className=" text-2xl pl-2 md:pl-0 mx-auto md:text-4xl text-primary din-semibold">
             Why Choose Stainless Steel Decorative Sheets?
           </h3>
-          <p className="text-sm lg:text-base din-regular text-secondary text-justify w-[100%] p-4">
+          <p className="text-sm lg:text-base din-regular text-secondary text-center max-w-3xl p-4">
             Rajguru Steel Industries offers high-quality stainless steel
             decorative sheets that elevate your interiors with elegance and
             durability. Our corrosion-resistant panels are ideal for various
@@ -532,6 +532,25 @@ const SSDecorativeSheet = () => {
             functionality, making them the ideal choice for transforming any
             environment.
           </p>
+          <Link href="/ContactUs">
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 mb-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10"
+            >
+              <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+              <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+              </span>
+              <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                GET A QUOTE
+              </span>
+            </motion.button>
+          </Link>
         </div>
         {/* swiper */}
         <MainSwiper />

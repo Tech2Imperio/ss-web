@@ -346,7 +346,7 @@ export default function Aluminium() {
     <main className="min-h-screen">
       <Banner slides={heroSlides} />
 
-      <div className="max-w-[80rem] mx-auto">
+      <div className="max-w-[85rem] mx-auto">
         <section className="py-10 ">
           <div className="px-4">
             <h2 className="text-3xl din-semibold text-primary text-center mb-8">
@@ -643,7 +643,7 @@ export default function Aluminium() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className=" text-gray-600 mb-8 max-w-2xl mx-auto din-regular text-justify"
+              className=" text-gray-600 mb-8 max-w-2xl mx-auto din-regular text-center"
             >
               Explore our extensive customization options for windows, including
               frame color, glass type, and window style to perfectly match your
@@ -679,7 +679,7 @@ export default function Aluminium() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-4 md:px-8">
+        <section className="py-8 px-4 md:px-8">
           <div className="container mx-auto text-center">
             <motion.h2
               initial={{ opacity: 0, y: -30 }}
@@ -693,7 +693,7 @@ export default function Aluminium() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className=" text-sm text-justify md:text-lg mb-8 max-w-2xl mx-auto din-regular text-secondary"
+              className=" text-sm text-center md:text-lg mb-8 max-w-2xl mx-auto din-regular text-secondary"
             >
               Are you ready to upgrade your windows for improved energy
               efficiency and style? Discover our range of high-performance

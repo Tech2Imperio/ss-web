@@ -1,12 +1,16 @@
 // src/components/MainSwiper.js
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+
 import React, { useEffect, useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules"; // Import Swiper modules
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Link from "next/link";
-import Image from "next/image";
 
 import UProfile from "../assets/RelatedProducts/UProfile.webp";
 import LProfile from "../assets/RelatedProducts/LProfile.webp";
@@ -80,7 +84,7 @@ const MainSwiper = () => {
   );
 
   return (
-    <section className="w-full py-20 fade-in">
+    <section className="w-full py-12 fade-in">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-[35px] text-primary mb-16 din-semibold">
           Other Products

@@ -59,11 +59,11 @@ export default function SSWireRope() {
   }, []);
 
   return (
-    <main className="relative  ">
+    <main className="relative  w-screen">
       {/* Hero Section */}
 
       <Banner slides={heroSlides} />
-      <main className=" mx-auto container">
+      <main className=" mx-auto max-w-[90rem]">
         {/* Product Overview with Image Slider */}
         <section className=" bg-white container mx-auto pt-8 md:p-28">
           <div className=" px-6">
@@ -330,7 +330,7 @@ export default function SSWireRope() {
             <h2 className="  text-xl md:text-5xl din-semibold text-primary mb-8">
               Ready to Elevate Your Project?
             </h2>
-            <p className="text-base text-justify text-secondary din-regular mb-12 max-w-3xl mx-auto">
+            <p className="text-base text-center text-secondary din-regular mb-12 max-w-3xl mx-auto">
               Discover the unmatched strength and versatility of Rajguru
               Stainless Steel Wire Rope. Let us help you bring your vision to
               life.

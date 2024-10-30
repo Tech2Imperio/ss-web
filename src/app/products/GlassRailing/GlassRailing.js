@@ -428,7 +428,7 @@ export default function GlassRailing() {
                     className="mx-auto mb-4"
                   />
                   <div className="text-center">
-                    <h3 className="text-xl din-medium text-primary">
+                    <h3 className="text-xl din-semibold text-primary">
                       {product.name}
                     </h3>
                     <p className="text-secondary text-sm">{product.model}</p>
@@ -455,16 +455,26 @@ export default function GlassRailing() {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.5 }}
-                          className="mt-2 space-y-2"
+                          transition={{ duration: 0.3 }}
+                          className={`mt-2 space-y-2 `}
                         >
                           {product.specs.map((spec, index) => (
-                            <li key={index} className="text-sm">
+                            <li
+                              key={index}
+                              className={`${
+                                expandedProduct ? "opacity-100" : "opacity-0"
+                              }`}
+                            >
                               <strong className=" din-semibold text-primary">
                                 {spec.title}:
                               </strong>{" "}
                               <span
                                 dangerouslySetInnerHTML={{ __html: spec.value }}
+                                className={`${
+                                  index === 3
+                                    ? "text-blue-600 din-rugular"
+                                    : "din-regular"
+                                }`}
                               />
                             </li>
                           ))}
@@ -531,7 +541,7 @@ export default function GlassRailing() {
           variants={staggerChildren}
           className="py-16 px-4 "
         >
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-center">
             <h2 className="text-2xl md:text-3xl din-semibold mb-8 text-center text-primary">
               Frequently Asked Questions
             </h2>
@@ -576,6 +586,25 @@ export default function GlassRailing() {
                 </motion.div>
               ))}
             </motion.div>
+            <Link href="/ContactUs">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative inline-flex items-center justify-center overflow-hidden px-6 py-3 my-6 text-white border border-[#335c98] rounded-md din-regular text-sm font-normal uppercase transition-all duration-700 cursor-pointer group z-10"
+              >
+                <span className="absolute inset-0 bg-[#335c98] transition-all duration-700 ease-in-out group-hover:bg-transparent"></span>
+                <span className="absolute inset-0 bg-transparent transition-all duration-700 ease-in-out">
+                  <span className="absolute top-0 left-0 w-full h-full bg-[#335c98] origin-top-left transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                  <span className="absolute bottom-0 right-0 w-full h-full bg-[#335c98] origin-bottom-right transition-all duration-700 ease-in-out group-hover:scale-x-0"></span>
+                </span>
+                <span className="relative z-10 group-hover:text-primary transition-colors duration-700 ease-in-out din-semibold">
+                  GET A QUOTE
+                </span>
+              </motion.button>
+            </Link>
           </div>
         </motion.section>
         {/* FAQ close */}

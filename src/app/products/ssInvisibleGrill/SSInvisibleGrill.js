@@ -174,7 +174,7 @@ export default function SSInvisibleGrill() {
   return (
     <main className=" h-full w-full relative">
       <Banner slides={heroSlides} />
-      <section className=" flex flex-col overflow-hidden mx-auto container">
+      <section className=" flex flex-col overflow-hidden mx-auto max-w-[90rem]">
         <section className="flex flex-col md:flex-row items-center justify-center gap-20 xl:gap-36 h-scrren md:h-[90vh]  w-full bg-gray-50">
           <div className="relative flex flex-col items-center justify-center lg:pt-0">
             <h1 className="text-3xl din-semibold text-[#335c98] p-4">
